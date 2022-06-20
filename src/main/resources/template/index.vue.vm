@@ -178,9 +178,9 @@
 #if($DateQuery == "Y")
   import moment from 'moment'
 #end
-  import { ${className}Page, ${className}Delete, ${className}Export } from '@/api/modular/main/${busName}/${className}Manage'
-  import addForm from './addForm.vue.vm'
-  import editForm from './editForm.vue.vm'
+  import { ${className}Page, ${className}Delete, ${className}Export } from '@/api/modular/board/${busName}/${className}Manage'
+  import addForm from './addForm.vue'
+  import editForm from './editForm.vue'
   export default {
     components: {
 #if($Ellipsis == "Y")

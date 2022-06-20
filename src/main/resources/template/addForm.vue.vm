@@ -111,7 +111,7 @@
 </template>
 
 <script>
-  import { ${className}Add } from '@/api/modular/main/${busName}/${className}Manage'
+  import { ${className}Add } from '@/api/modular/board/${busName}/${className}Manage'
   export default {
     data () {
       return {

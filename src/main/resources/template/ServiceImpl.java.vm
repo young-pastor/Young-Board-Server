@@ -1,6 +1,7 @@
 
 package ${packageName}.${modularName}.${busName}.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

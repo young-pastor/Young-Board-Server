@@ -39,7 +39,7 @@ public class GenConstant {
     /**
      * 大模块名称（生成到代码中哪个模块下）
      */
-    public static String BASE_MODULAR_NAME = "Young-Board-System";
+    public static String BASE_MODULAR_NAME = "Young-Board-Server";
 
     /**
      * java文件夹
@@ -49,7 +49,7 @@ public class GenConstant {
     /**
      * vue文件夹
      */
-    public static String BASE_VUE_PATH = FILE_SEP + "_web" + FILE_SEP + "src" + FILE_SEP;
+    public static String BASE_VUE_PATH = FILE_SEP + "Young-Board-Vue" + FILE_SEP + "src" + FILE_SEP;
 
     /**
      * sql文件夹
@@ -79,18 +79,18 @@ public class GenConstant {
      */
     public static String[] xnCodeGenFilePath (String busName, String packageName) {
         String packageNameString = packageName.replace(".",FILE_SEP) + FILE_SEP;
-        controllerPath = BASE_JAVA_PATH + packageNameString + MODULAR_NAME + FILE_SEP + busName + FILE_SEP + "controller" + FILE_SEP;
-        entityPath = BASE_JAVA_PATH + packageNameString + MODULAR_NAME + FILE_SEP + busName + FILE_SEP + "entity" + FILE_SEP;
-        enumsPath = BASE_JAVA_PATH+ packageNameString  + MODULAR_NAME + FILE_SEP + busName + FILE_SEP + "enums" + FILE_SEP;
-        mapperPath = BASE_JAVA_PATH + packageNameString  + MODULAR_NAME + FILE_SEP + busName + FILE_SEP + "mapper" + FILE_SEP;
+        controllerPath = BASE_JAVA_PATH + packageNameString  + FILE_SEP + "controller" + FILE_SEP;
+        entityPath = BASE_JAVA_PATH + packageNameString  + FILE_SEP + "entity" + FILE_SEP;
+        enumsPath = BASE_JAVA_PATH+ packageNameString  + FILE_SEP + "enums" + FILE_SEP;
+        mapperPath = BASE_JAVA_PATH + packageNameString   + FILE_SEP + "mapper" + FILE_SEP;
         mappingPath = mapperPath + FILE_SEP + "mapping" + FILE_SEP;
-        paramPath = BASE_JAVA_PATH+ FILE_SEP + packageNameString  + MODULAR_NAME + FILE_SEP + busName + FILE_SEP + "param" + FILE_SEP;
-        servicePath = BASE_JAVA_PATH+ FILE_SEP + packageNameString  + MODULAR_NAME + FILE_SEP + busName + FILE_SEP + "service" + FILE_SEP;
+        paramPath = BASE_JAVA_PATH+ FILE_SEP + packageNameString   + FILE_SEP + "param" + FILE_SEP;
+        servicePath = BASE_JAVA_PATH+ FILE_SEP + packageNameString   + FILE_SEP + "service" + FILE_SEP;
         serviceImplPath = servicePath + FILE_SEP + "impl" + FILE_SEP;
-        manageJsPath = BASE_VUE_PATH + FILE_SEP + "api" + FILE_SEP + MODULAR_NAME + FILE_SEP + "main" + FILE_SEP + busName + FILE_SEP;
-        vueIndexPath = BASE_VUE_PATH + FILE_SEP + "views" + FILE_SEP + "main" + FILE_SEP + busName + FILE_SEP;
-        vueAddFromPath = BASE_VUE_PATH + FILE_SEP + "views" + FILE_SEP + "main" + FILE_SEP + busName + FILE_SEP;
-        vueEditFromPath = BASE_VUE_PATH + FILE_SEP + "views" + FILE_SEP + "main" + FILE_SEP + busName + FILE_SEP;
+        manageJsPath = BASE_VUE_PATH + FILE_SEP + "api" + FILE_SEP + MODULAR_NAME + FILE_SEP + "board" + FILE_SEP + busName + FILE_SEP;
+        vueIndexPath = BASE_VUE_PATH + FILE_SEP + "views" + FILE_SEP + "board" + FILE_SEP + busName + FILE_SEP;
+        vueAddFromPath = BASE_VUE_PATH + FILE_SEP + "views" + FILE_SEP + "board" + FILE_SEP + busName + FILE_SEP;
+        vueEditFromPath = BASE_VUE_PATH + FILE_SEP + "views" + FILE_SEP + "board" + FILE_SEP + busName + FILE_SEP;
         mysqlSqlPath = BASE_SQL_PATH;
         oracleSqlPath = BASE_SQL_PATH;
         return new String[] {
