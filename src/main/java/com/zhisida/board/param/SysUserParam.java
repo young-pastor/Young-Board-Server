@@ -2,10 +2,9 @@
 package com.zhisida.board.param;
 
 import com.zhisida.board.core.pojo.base.param.BaseParam;
-import com.zhisida.board.core.validation.date.DateValue;
+import com.zhisida.board.core.validator.date.DateValue;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import com.zhisida.board.param.SysEmpParam;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;

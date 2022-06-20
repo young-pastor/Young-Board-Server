@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zhisida.board.core.consts.CommonConstant;
 import com.zhisida.board.core.consts.SymbolConstant;
-import com.zhisida.board.util.OnlineDocumentUtil;
+import com.zhisida.board.core.util.OnlineDocumentUtil;
 import lombok.Data;
 
 import java.io.File;

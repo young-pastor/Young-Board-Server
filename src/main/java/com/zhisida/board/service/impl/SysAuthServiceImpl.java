@@ -30,7 +30,7 @@ import com.zhisida.board.core.enums.LogSuccessStatusEnum;
 import com.zhisida.board.core.jwt.JwtPayLoad;
 import com.zhisida.board.core.jwt.JwtTokenUtil;
 import com.zhisida.board.core.log.LogManager;
-import com.zhisida.board.context.factory.LoginUserFactory;
+import com.zhisida.board.core.context.factory.LoginUserFactory;
 import com.zhisida.board.service.SysAuthService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

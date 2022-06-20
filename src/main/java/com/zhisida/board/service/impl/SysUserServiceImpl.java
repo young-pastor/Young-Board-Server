@@ -36,7 +36,7 @@ import com.zhisida.board.param.SysEmpParam;
 import com.zhisida.board.result.SysEmpInfo;
 import com.zhisida.board.entity.SysUser;
 import com.zhisida.board.enums.SysUserExceptionEnum;
-import com.zhisida.board.context.factory.SysUserFactory;
+import com.zhisida.board.core.context.factory.SysUserFactory;
 import com.zhisida.board.mapper.SysUserMapper;
 import com.zhisida.board.param.SysUserParam;
 import com.zhisida.board.result.SysUserResult;

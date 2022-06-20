@@ -4,7 +4,7 @@ package com.zhisida.board.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhisida.board.core.pojo.node.LoginMenuTreeNode;
 import com.zhisida.board.entity.SysMenu;
-import com.zhisida.board.context.node.MenuBaseTreeNode;
+import com.zhisida.board.core.context.node.MenuBaseTreeNode;
 import com.zhisida.board.param.SysMenuParam;
 
 import java.util.List;

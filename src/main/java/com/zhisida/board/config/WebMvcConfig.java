@@ -2,7 +2,7 @@
 package com.zhisida.board.config;
 
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import com.zhisida.board.core.error.BoardErrorAttributes;
+import com.zhisida.board.core.exception.BoardErrorAttributes;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

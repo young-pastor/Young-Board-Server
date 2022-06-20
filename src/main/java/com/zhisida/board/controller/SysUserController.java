@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.zhisida.board.param.SysUserParam;
 import com.zhisida.board.service.SysUserService;
-import com.zhisida.board.context.wrapper.SysUserWrapper;
+import com.zhisida.board.core.context.wrapper.SysUserWrapper;
 import javax.annotation.Resource;
 import java.util.List;
 

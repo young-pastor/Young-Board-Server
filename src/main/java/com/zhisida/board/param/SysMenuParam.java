@@ -2,7 +2,7 @@
 package com.zhisida.board.param;
 
 import com.zhisida.board.core.pojo.base.param.BaseParam;
-import com.zhisida.board.core.validation.flag.FlagValue;
+import com.zhisida.board.core.validator.flag.FlagValue;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

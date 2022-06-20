@@ -4,7 +4,7 @@ package com.zhisida.board.param;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import com.zhisida.board.core.pojo.base.param.BaseParam;
-import com.zhisida.board.core.validation.flag.FlagValue;
+import com.zhisida.board.core.validator.flag.FlagValue;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

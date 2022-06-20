@@ -29,7 +29,7 @@
         <easypoi.version>4.2.0</easypoi.version>
         <jodconverter.version>4.2.0</jodconverter.version>
         <libreoffice.version>6.4.3</libreoffice.version>
-        <justauth.version>1.15.6</justauth.version>
+        <justauth.version>1.16.5</justauth.version>
         <aliyun.oss.version>3.8.0</aliyun.oss.version>
         <qcloud.oss.version>5.6.23</qcloud.oss.version>
         <aliyun.sms.sdk.version>4.4.6</aliyun.sms.sdk.version>
@@ -146,6 +146,18 @@
                 <groupId>me.zhyd.oauth</groupId>
                 <artifactId>JustAuth</artifactId>
                 <version>${justauth.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba</groupId>
+                        <artifactId>fastjson</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <!--阿里云上传文件客户端，用的时候手动引入-->

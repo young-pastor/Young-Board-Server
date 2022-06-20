@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.zhisida.board.entity.SysMenu;
 import com.zhisida.board.enums.SysMenuExceptionEnum;
-import com.zhisida.board.context.node.MenuBaseTreeNode;
+import com.zhisida.board.core.context.node.MenuBaseTreeNode;
 import com.zhisida.board.param.SysMenuParam;
 import com.zhisida.board.service.SysRoleMenuService;
 import com.zhisida.board.entity.SysUser;
