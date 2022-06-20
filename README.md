@@ -53,29 +53,29 @@
 #### 工作流程
 完成数据采集技术构建和业务设计，在App、小程序的系统供应商配合下完成用户行为数据采集埋点，并基于埋点的数据构建线上用户行为标签和画像。
  
-![输入图片说明](Image/1.jpg "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/1.jpg "屏幕截图.png")
 
 #### 架构设计思路
 所谓“埋点”，是数据采集领域（尤其是用户行为数据采集领域）的术语，指的是针对特定用户行为或事件进行捕获、处理和发送的相关技术及其实施过程。比如用户某个icon点击次数、观看某个视频的时长等等。
 
-![输入图片说明](Image/2.png "屏幕截图.png") 
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/2.png "屏幕截图.png") 
 
 #### 业务设计思路
 埋点业务设计，首先需要根据业务分析明确采集的目标行为，进一步搞清楚应该在哪些地方埋什么样的点。过程中建议使用“事件模型(Event 模型）”来描述用户的各种行为，事件模型包括事件(Event)和用户(User)两个核心实体。
 基于4W1H模型描述用户行为可将整个行为描述清楚，要点包括：是谁、什么时间、什么地点、以什么方式、干了什么。通过这两个实体结合在一起就可以清晰地描述清楚用户行为。
 
-![输入图片说明](Image/3.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/3.png "屏幕截图.png")
  
 #### 技术架构
 SDK埋点采集行为数据来源终端包括iOS、安卓、Web、H5、微信小程序等。不同终端SDK采用对应平台和主流语言的SDK，埋点采集到的数据通过JSON数据以HTTP POST方式提交到服务端API。
 服务端API由数据接入系统组成，采用Nginx来接收通过 API 发送的数据，并且将之写到日志文件上。使用Nginx实现高可靠性与高可扩展性。
 对于Nginx打印到文件的日志，会由Flume的 Source 模块来实时读取Nginx日志，并由Channel模块进行数据处理，最终通过Sink模块将处理结果发布到 Kafka中。
 
-![输入图片说明](Image/4.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/4.png "屏幕截图.png")
 
 #### 软件完整架构
 
-![输入图片说明](Image/5.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/5.png "屏幕截图.png")
 
 #### 第三方埋点SDK集成步骤
 - 引入SDK：在终端应用配置文件添加 SDK 依赖，不同终端引入方式会有差异，具体操作步骤将在后续SDK技术文档中体现。
@@ -92,32 +92,32 @@ SDK埋点采集行为数据来源终端包括iOS、安卓、Web、H5、微信小
 - 重要操作场景：重要操作整体归因
 - 业务主流程场景：以业务线定义完整过程
 
-![输入图片说明](Image/6.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/6.png "屏幕截图.png")
 
 #### 应用效果
-![输入图片说明](Image/7.png "屏幕截图.png")
-![输入图片说明](Image/8.png "屏幕截图.png")
-![输入图片说明](Image/9.png "屏幕截图.png")
-![输入图片说明](Image/10.png "屏幕截图.png")
-![输入图片说明](Image/11.png "屏幕截图.png")
-![输入图片说明](Image/12.png "屏幕截图.png")
-![输入图片说明](Image/13.png "屏幕截图.png")
-![输入图片说明](Image/14.png "屏幕截图.png")
-![输入图片说明](Image/15.png "屏幕截图.png")
-![输入图片说明](Image/16.png "屏幕截图.png")
-![输入图片说明](Image/17.png "屏幕截图.png")
-![输入图片说明](Image/18.png "屏幕截图.png")
-![输入图片说明](Image/19.png "屏幕截图.png")
-![输入图片说明](Image/20.png "屏幕截图.png")
-![输入图片说明](Image/21.png "屏幕截图.png")
-![输入图片说明](Image/22.png "屏幕截图.png")
-![输入图片说明](Image/23.png "屏幕截图.png")
-![输入图片说明](Image/24.png "屏幕截图.png")
-![输入图片说明](Image/25.png "屏幕截图.png")
-![输入图片说明](Image/26.png "屏幕截图.png")
-![输入图片说明](Image/27.png "屏幕截图.png")
-![输入图片说明](Image/28.png "屏幕截图.png")
-![输入图片说明](Image/29.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/7.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/8.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/9.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/10.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/11.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/12.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/13.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/14.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/15.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/16.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/17.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/18.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/19.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/20.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/21.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/22.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/23.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/24.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/25.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/26.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/27.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/28.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/29.png "屏幕截图.png")
 
 #### 版权声明
 小象数据行为分析用Apache2.0开源协议
@@ -137,7 +137,7 @@ SDK埋点采集行为数据来源终端包括iOS、安卓、Web、H5、微信小
 如果您觉得我们的开源项目 小象数据行为分析 对您有帮助，那就请项目开发者们来一杯喜茶吧！当前我们接受来自于微信、支付宝或者码云的捐赠，请在捐赠时备注自己的昵称或附言。
 
 您的捐赠将用于支付该项目的一些费用支出，并激励开发者们以便更好的推动项目的发展，同时欢迎捐赠公网服务器用于提高在线演示系统体验。
-|![输入图片说明](Image/alipay.jpg "屏幕截图.png")| ![输入图片说明](Image/alipay.jpg "屏幕截图.png")|
+|![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/alipay.jpg "屏幕截图.png")| ![输入图片说明](https://gitee.com/young-pastor/Young-Board-Server/raw/master/Image/alipay.jpg "屏幕截图.png")|
 |---|---|
 
 #### 长期捐赠
