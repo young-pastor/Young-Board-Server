@@ -90,4 +90,5 @@ public interface SysTimersService extends IService<SysTimers> {
      */
     List<String> getActionClasses();
 
+    void execute(SysTimersParam sysTimersParam);
 }

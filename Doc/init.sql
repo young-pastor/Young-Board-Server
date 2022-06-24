@@ -13,10 +13,12 @@
 
 
 -- Dumping database structure for young-board
+DROP DATABASE IF EXISTS `young-board`;
 CREATE DATABASE IF NOT EXISTS `young-board` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `young-board`;
 
 -- Dumping structure for table young-board.sys_app
+DROP TABLE IF EXISTS `sys_app`;
 CREATE TABLE IF NOT EXISTS `sys_app` (
   `id` bigint(20) NOT NULL COMMENT '主键id',
   `name` varchar(100) NOT NULL COMMENT '应用名称',
@@ -38,6 +40,7 @@ INSERT INTO `sys_app` (`id`, `name`, `code`, `active`, `status`, `create_time`, 
 /*!40000 ALTER TABLE `sys_app` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_area
+DROP TABLE IF EXISTS `sys_area`;
 CREATE TABLE IF NOT EXISTS `sys_area` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `level_code` tinyint(3) unsigned DEFAULT NULL COMMENT '层级',
@@ -62,6 +65,7 @@ DELETE FROM `sys_area`;
 /*!40000 ALTER TABLE `sys_area` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_code_generate
+DROP TABLE IF EXISTS `sys_code_generate`;
 CREATE TABLE IF NOT EXISTS `sys_code_generate` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `author_name` varchar(255) NOT NULL COMMENT '作者姓名',
@@ -81,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `sys_code_generate` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成基础配置';
 
--- Dumping data for table young-board.sys_code_generate: ~8 rows (approximately)
+-- Dumping data for table young-board.sys_code_generate: ~9 rows (approximately)
 DELETE FROM `sys_code_generate`;
 /*!40000 ALTER TABLE `sys_code_generate` DISABLE KEYS */;
 INSERT INTO `sys_code_generate` (`id`, `author_name`, `class_name`, `table_prefix`, `generate_type`, `table_name`, `package_name`, `bus_name`, `table_comment`, `app_code`, `menu_pid`, `create_user`, `create_time`, `update_user`, `update_time`) VALUES
@@ -93,10 +97,12 @@ INSERT INTO `sys_code_generate` (`id`, `author_name`, `class_name`, `table_prefi
 	(1537702183149981697, 'young-pastor', 'BoardEventGroup', 'Y', '2', 'tbl_board_event_group', 'com.zhisida.board', 'boardEventGroup', '元事件分组', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:42:24', 1265476890672672808, '2022-06-20 11:34:27'),
 	(1537702828053581826, 'young-pastor', 'BoardProperty', 'Y', '2', 'tbl_board_property', 'com.zhisida.board', 'boardProperty', '属性配置', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:44:58', 1265476890672672808, '2022-06-20 11:58:25'),
 	(1537703542846869506, 'young-pastor', 'BoardPropertyGroup', 'Y', '2', 'tbl_board_property_group', 'com.zhisida.board', 'boardPropertyGroup', '属性分组', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:47:48', 1265476890672672808, '2022-06-20 11:58:19'),
-	(1537703612946272257, 'young-pastor', 'BoardPropertyValue', 'Y', '2', 'tbl_board_property_value', 'com.zhisida.board', 'boardPropertyValue', '属性值', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:48:05', 1265476890672672808, '2022-06-20 11:58:09');
+	(1537703612946272257, 'young-pastor', 'BoardPropertyValue', 'Y', '2', 'tbl_board_property_value', 'com.zhisida.board', 'boardPropertyValue', '属性值', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:48:05', 1265476890672672808, '2022-06-20 11:58:09'),
+	(1540259046307590146, 'young-pastor', 'SysTimersLog', 'N', '2', 'sys_timers_log', 'com.zhisida.board', 'sysTimersLog', '任务日志', 'system', '1264622039642256611', 1265476890672672808, '2022-06-24 17:02:27', NULL, NULL);
 /*!40000 ALTER TABLE `sys_code_generate` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_code_generate_config
+DROP TABLE IF EXISTS `sys_code_generate_config`;
 CREATE TABLE IF NOT EXISTS `sys_code_generate_config` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `code_gen_id` bigint(20) DEFAULT NULL COMMENT '代码生成主表ID',
@@ -123,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `sys_code_generate_config` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成详细配置';
 
--- Dumping data for table young-board.sys_code_generate_config: ~44 rows (approximately)
+-- Dumping data for table young-board.sys_code_generate_config: ~54 rows (approximately)
 DELETE FROM `sys_code_generate_config`;
 /*!40000 ALTER TABLE `sys_code_generate_config` DISABLE KEYS */;
 INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `java_name`, `data_type`, `column_comment`, `java_type`, `effect_type`, `dict_type_code`, `whether_table`, `whether_add_update`, `whether_retract`, `whether_required`, `query_whether`, `query_type`, `column_key`, `column_key_name`, `whether_common`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -173,10 +179,18 @@ INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `jav
 	(1537702828334600193, 1537702828053581826, 'REMARK', 'remark', 'varchar', '属性值类型', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Remark', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
 	(1537703542981087233, 1537703542846869506, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:47:48', 1265476890672672808, NULL, NULL),
 	(1537703542981087234, 1537703542846869506, 'DISPLAY_NAME', 'displayName', 'varchar', '分组名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:47:48', 1265476890672672808, NULL, NULL),
-	(1537703613009186818, 1537703612946272257, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:48:05', 1265476890672672808, NULL, NULL);
+	(1537703613009186818, 1537703612946272257, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:48:05', 1265476890672672808, NULL, NULL),
+	(1540259046466973697, 1540259046307590146, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1540259046475362306, 1540259046307590146, 'TIMER_ID', 'timerId', 'bigint', '任务编号', 'Long', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'TimerId', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1540259046492139522, 1540259046307590146, 'EXECUTE_START_TIME', 'executeStartTime', 'datetime', '执行开始时间', 'Date', 'datepicker', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteStartTime', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1540259046500528130, 1540259046307590146, 'EXECUTE_END_TIME', 'executeEndTime', 'datetime', '执行结束时间', 'Date', 'datepicker', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteEndTime', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1540259046508916737, 1540259046307590146, 'EXECUTE_CODE', 'executeCode', 'varchar', '执行结果', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteCode', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1540259046525693954, 1540259046307590146, 'EXECUTE_MSG', 'executeMsg', 'text', '执行信息', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteMsg', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1540259046534082562, 1540259046307590146, 'EXECUTE_PARAM', 'executeParam', 'text', '执行参数', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteParam', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_code_generate_config` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_config
+DROP TABLE IF EXISTS `sys_config`;
 CREATE TABLE IF NOT EXISTS `sys_config` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `name` varchar(100) NOT NULL COMMENT '名称',
@@ -237,6 +251,7 @@ INSERT INTO `sys_config` (`id`, `name`, `code`, `value`, `sys_flag`, `remark`, `
 /*!40000 ALTER TABLE `sys_config` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_dict_data
+DROP TABLE IF EXISTS `sys_dict_data`;
 CREATE TABLE IF NOT EXISTS `sys_dict_data` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `type_id` bigint(20) NOT NULL COMMENT '字典类型id',
@@ -357,6 +372,7 @@ INSERT INTO `sys_dict_data` (`id`, `type_id`, `value`, `code`, `sort`, `remark`,
 /*!40000 ALTER TABLE `sys_dict_data` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_dict_type
+DROP TABLE IF EXISTS `sys_dict_type`;
 CREATE TABLE IF NOT EXISTS `sys_dict_type` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `name` varchar(100) NOT NULL COMMENT '名称',
@@ -400,6 +416,7 @@ INSERT INTO `sys_dict_type` (`id`, `name`, `code`, `sort`, `remark`, `status`, `
 /*!40000 ALTER TABLE `sys_dict_type` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_emp
+DROP TABLE IF EXISTS `sys_emp`;
 CREATE TABLE IF NOT EXISTS `sys_emp` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `job_num` varchar(100) DEFAULT NULL COMMENT '工号',
@@ -414,6 +431,7 @@ DELETE FROM `sys_emp`;
 /*!40000 ALTER TABLE `sys_emp` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_emp_ext_org_pos
+DROP TABLE IF EXISTS `sys_emp_ext_org_pos`;
 CREATE TABLE IF NOT EXISTS `sys_emp_ext_org_pos` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `emp_id` bigint(20) NOT NULL COMMENT '员工id',
@@ -428,6 +446,7 @@ DELETE FROM `sys_emp_ext_org_pos`;
 /*!40000 ALTER TABLE `sys_emp_ext_org_pos` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_emp_pos
+DROP TABLE IF EXISTS `sys_emp_pos`;
 CREATE TABLE IF NOT EXISTS `sys_emp_pos` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `emp_id` bigint(20) NOT NULL COMMENT '员工id',
@@ -441,6 +460,7 @@ DELETE FROM `sys_emp_pos`;
 /*!40000 ALTER TABLE `sys_emp_pos` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_file_info
+DROP TABLE IF EXISTS `sys_file_info`;
 CREATE TABLE IF NOT EXISTS `sys_file_info` (
   `id` bigint(20) NOT NULL COMMENT '主键id',
   `file_location` tinyint(4) NOT NULL COMMENT '文件存储位置（1:阿里云，2:腾讯云，3:minio，4:本地）',
@@ -464,6 +484,7 @@ DELETE FROM `sys_file_info`;
 /*!40000 ALTER TABLE `sys_file_info` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_menu
+DROP TABLE IF EXISTS `sys_menu`;
 CREATE TABLE IF NOT EXISTS `sys_menu` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `pid` bigint(20) NOT NULL COMMENT '父id',
@@ -639,15 +660,15 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 	(1264622039642256721, 0, '[0],', '区域管理', 'sys_area', 0, 'environment', '/area', 'PageView', NULL, 'system', 1, 'Y', NULL, NULL, 1, 11, NULL, 0, '2021-05-19 13:55:40', 1265476890672672808, '2022-06-20 12:09:31', 1265476890672672808),
 	(1264622039642256731, 1264622039642256721, '[0],[1264622039642256721],', '系统区域', 'sys_area_mgr', 1, NULL, '/area', 'system/area/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, '2021-05-19 13:57:42', 1265476890672672808, '2022-06-20 12:09:25', 1265476890672672808),
 	(1264622039642256741, 1264622039642256731, '[0],[1264622039642256721],[1264622039642256731],', '系统区域列表', 'sys_area_mgr_list', 2, NULL, NULL, NULL, 'sysArea:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, '2021-05-19 14:01:39', 1265476890672672808, NULL, NULL),
-	(1342445437296771074, 1264622039642255961, '[0],[1264622039642255961],', '代码生成', 'code_gen', 1, 'thunderbolt', '/sysCodeGenerate/index', 'system/sysCodeGenerate/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 10, NULL, 0, '2020-12-25 20:21:48', 1265476890672672808, '2022-06-22 18:00:58', 1265476890672672808),
-	(1410859007809736705, 1264622039642256521, '[0],[1264622039642256521],', '在线文档', 'file_oline', 1, '', '/file_oline', 'system/fileOnline/index', '', 'system', 1, 'Y', NULL, '', 1, 100, NULL, 0, '2021-07-02 15:12:55', 1265476890672672808, '2021-08-25 20:02:46', 1265476890672672808),
+	(1342445437296771074, 1264622039642255961, '[0],[1264622039642255961],', '代码生成', 'code_gen', 1, NULL, '/sysCodeGenerate/index', 'system/sysCodeGenerate/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 10, NULL, 0, '2020-12-25 20:21:48', 1265476890672672808, '2022-06-22 18:00:58', 1265476890672672808),
+	(1410859007809736705, 1264622039642256521, '[0],[1264622039642256521],', '在线文档', 'file_oline', 1, NULL, '/file_oline', 'system/fileOnline/index', '', 'system', 1, 'Y', NULL, '', 1, 100, NULL, 0, '2021-07-02 15:12:55', 1265476890672672808, '2021-08-25 20:02:46', 1265476890672672808),
 	(1465891999388803073, 1264622039642255961, '[0],[1264622039642255961],', 'sdfsadsa', 'sdfasdsa', 1, NULL, '/timers1', '', '', 'system', 3, 'Y', 'https://snowy.xiaonuo.vip/timers', '', 1, 100, NULL, 2, '2021-12-01 11:54:22', 1265476890672672808, NULL, NULL),
 	(1465892080888324097, 1264622039642255961, '[0],[1264622039642255961],', 'asdfasfas', 'sdfasdfas', 1, NULL, '/sdfsfsdf', '', '', 'system', 3, 'Y', 'https://snowy.xiaonuo.vip/timers', '', 1, 100, NULL, 2, '2021-12-01 11:54:42', 1265476890672672808, NULL, NULL),
 	(1465892187004215298, 1264622039642255961, '[0],[1264622039642255961],', 'rwerwqrwqr', 'rwrqwrwqrq', 1, NULL, '/fsfasfasfa', '', '', 'system', 3, 'Y', 'https://snowy.xiaonuo.vip/timers', '', 1, 100, NULL, 2, '2021-12-01 11:55:07', 1265476890672672808, NULL, NULL),
 	(1537693069254561793, 0, '[0],', '数据管理', 'board_metadata', 0, 'pic-left', '/board_metadata', 'PageView', '', 'system', 1, 'Y', NULL, '', 1, 3, NULL, 0, '2022-06-17 15:06:11', 1265476890672672808, '2022-06-22 18:04:08', 1265476890672672808),
 	(1539187940297420802, 0, '[0],', '实时分析', 'board_analysis', 0, 'bar-chart', '/board_analysis', 'PageView', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:06:16', 1265476890672672808, '2022-06-22 18:03:44', 1265476890672672808),
-	(1539188385652813825, 1539187940297420802, '[0],[1539187940297420802],', '事件分析', 'evnentAn', 1, 'line-chart', '/evnentAn', 'evnentAn', '', 'system', 1, 'Y', NULL, '', 1, 1, NULL, 0, '2022-06-21 18:08:02', 1265476890672672808, '2022-06-22 18:01:46', 1265476890672672808),
-	(1539188990165266434, 1539187940297420802, '[0],[1539187940297420802],', '漏洞分析', 'funll', 1, 'fall', '/funll', 'funll', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:10:26', 1265476890672672808, '2022-06-22 18:02:34', 1265476890672672808),
+	(1539188385652813825, 1539187940297420802, '[0],[1539187940297420802],', '事件分析', 'evnentAn', 1, NULL, '/evnentAn', 'evnentAn', '', 'system', 1, 'Y', NULL, '', 1, 1, NULL, 0, '2022-06-21 18:08:02', 1265476890672672808, '2022-06-22 18:01:46', 1265476890672672808),
+	(1539188990165266434, 1539187940297420802, '[0],[1539187940297420802],', '漏洞分析', 'funll', 1, NULL, '/funll', 'funll', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:10:26', 1265476890672672808, '2022-06-22 18:02:34', 1265476890672672808),
 	(1539863115309432833, 1264622039642256351, '[0],[1264622039642256351],', '缓存管理', 'sys_cache_mgr', 1, NULL, '/cache', 'system/cache/index', '', 'system', 1, 'Y', NULL, '', 1, 100, NULL, 0, '2022-06-23 14:49:10', 1265476890672672808, NULL, NULL),
 	(4629717631863884805, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组导出', 'boardEventGroup_index_export', 2, NULL, NULL, NULL, 'boardEventGroup:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(4727346430688865203, 1537693069254561793, '[0],[1537693069254561793],', '属性分组', 'boardpropertygroup_index', 1, NULL, '/boardPropertyGroup', 'board/boardPropertyGroup/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
@@ -740,6 +761,7 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 /*!40000 ALTER TABLE `sys_menu` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_notice
+DROP TABLE IF EXISTS `sys_notice`;
 CREATE TABLE IF NOT EXISTS `sys_notice` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `title` varchar(1000) DEFAULT NULL COMMENT '标题',
@@ -765,6 +787,7 @@ DELETE FROM `sys_notice`;
 /*!40000 ALTER TABLE `sys_notice` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_notice_user
+DROP TABLE IF EXISTS `sys_notice_user`;
 CREATE TABLE IF NOT EXISTS `sys_notice_user` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `notice_id` bigint(20) NOT NULL COMMENT '通知公告id',
@@ -780,6 +803,7 @@ DELETE FROM `sys_notice_user`;
 /*!40000 ALTER TABLE `sys_notice_user` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_oauth_user
+DROP TABLE IF EXISTS `sys_oauth_user`;
 CREATE TABLE IF NOT EXISTS `sys_oauth_user` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `uuid` varchar(255) NOT NULL COMMENT '第三方平台的用户唯一id',
@@ -806,6 +830,7 @@ DELETE FROM `sys_oauth_user`;
 /*!40000 ALTER TABLE `sys_oauth_user` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_op_log
+DROP TABLE IF EXISTS `sys_op_log`;
 CREATE TABLE IF NOT EXISTS `sys_op_log` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `name` varchar(50) DEFAULT NULL COMMENT '名称',
@@ -834,6 +859,7 @@ DELETE FROM `sys_op_log`;
 /*!40000 ALTER TABLE `sys_op_log` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_org
+DROP TABLE IF EXISTS `sys_org`;
 CREATE TABLE IF NOT EXISTS `sys_org` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `pid` bigint(20) NOT NULL COMMENT '父id',
@@ -856,6 +882,7 @@ DELETE FROM `sys_org`;
 /*!40000 ALTER TABLE `sys_org` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_pos
+DROP TABLE IF EXISTS `sys_pos`;
 CREATE TABLE IF NOT EXISTS `sys_pos` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `name` varchar(100) NOT NULL COMMENT '名称',
@@ -877,6 +904,7 @@ DELETE FROM `sys_pos`;
 /*!40000 ALTER TABLE `sys_pos` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_role
+DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE IF NOT EXISTS `sys_role` (
   `id` bigint(20) NOT NULL COMMENT '主键id',
   `name` varchar(100) NOT NULL COMMENT '名称',
@@ -898,6 +926,7 @@ DELETE FROM `sys_role`;
 /*!40000 ALTER TABLE `sys_role` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_role_data_scope
+DROP TABLE IF EXISTS `sys_role_data_scope`;
 CREATE TABLE IF NOT EXISTS `sys_role_data_scope` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `role_id` bigint(20) NOT NULL COMMENT '角色id',
@@ -911,6 +940,7 @@ DELETE FROM `sys_role_data_scope`;
 /*!40000 ALTER TABLE `sys_role_data_scope` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_role_menu
+DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE IF NOT EXISTS `sys_role_menu` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `role_id` bigint(20) NOT NULL COMMENT '角色id',
@@ -924,6 +954,7 @@ DELETE FROM `sys_role_menu`;
 /*!40000 ALTER TABLE `sys_role_menu` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_sms
+DROP TABLE IF EXISTS `sys_sms`;
 CREATE TABLE IF NOT EXISTS `sys_sms` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `phone_numbers` varchar(200) NOT NULL COMMENT '手机号',
@@ -946,12 +977,14 @@ DELETE FROM `sys_sms`;
 /*!40000 ALTER TABLE `sys_sms` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_timers
+DROP TABLE IF EXISTS `sys_timers`;
 CREATE TABLE IF NOT EXISTS `sys_timers` (
   `id` bigint(20) NOT NULL COMMENT '定时器id',
   `timer_name` varchar(255) DEFAULT '' COMMENT '任务名称',
   `action_class` varchar(255) DEFAULT NULL COMMENT '执行任务的class的类名（实现了TimerTaskRunner接口的类的全称）',
   `cron` varchar(255) DEFAULT '' COMMENT '定时任务表达式',
   `job_status` tinyint(4) DEFAULT 0 COMMENT '状态（字典 1运行  2停止）',
+  `param` text DEFAULT NULL,
   `remark` varchar(1000) DEFAULT '' COMMENT '备注信息',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
@@ -960,14 +993,33 @@ CREATE TABLE IF NOT EXISTS `sys_timers` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='定时任务';
 
--- Dumping data for table young-board.sys_timers: ~0 rows (approximately)
+-- Dumping data for table young-board.sys_timers: ~1 rows (approximately)
 DELETE FROM `sys_timers`;
 /*!40000 ALTER TABLE `sys_timers` DISABLE KEYS */;
-INSERT INTO `sys_timers` (`id`, `timer_name`, `action_class`, `cron`, `job_status`, `remark`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-	(1288760324837851137, '定时同步缓存常量', 'com.zhisida.board.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 1, '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', 1265476890672672808, '2022-06-17 11:09:22', 1265476890672672808);
+INSERT INTO `sys_timers` (`id`, `timer_name`, `action_class`, `cron`, `job_status`, `param`, `remark`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
+	(1288760324837851137, '定时同步缓存常量', 'com.zhisida.board.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 2, NULL, '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', 1265476890672672808, '2022-06-17 11:09:22', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_timers` ENABLE KEYS */;
 
+-- Dumping structure for table young-board.sys_timers_log
+DROP TABLE IF EXISTS `sys_timers_log`;
+CREATE TABLE IF NOT EXISTS `sys_timers_log` (
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `TIMER_ID` bigint(64) DEFAULT NULL COMMENT '任务编号',
+  `EXECUTE_START_TIME` datetime DEFAULT NULL COMMENT '执行开始时间',
+  `EXECUTE_END_TIME` datetime DEFAULT NULL COMMENT '执行结束时间',
+  `EXECUTE_CODE` varchar(128) DEFAULT NULL COMMENT '执行结果',
+  `EXECUTE_MSG` text DEFAULT NULL COMMENT '执行信息',
+  `EXECUTE_PARAM` text DEFAULT NULL COMMENT '执行参数',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='定时任务日志表';
+
+-- Dumping data for table young-board.sys_timers_log: ~0 rows (approximately)
+DELETE FROM `sys_timers_log`;
+/*!40000 ALTER TABLE `sys_timers_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_timers_log` ENABLE KEYS */;
+
 -- Dumping structure for table young-board.sys_user
+DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE IF NOT EXISTS `sys_user` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `account` varchar(50) NOT NULL COMMENT '账号',
@@ -995,10 +1047,11 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
 DELETE FROM `sys_user`;
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
 INSERT INTO `sys_user` (`id`, `account`, `pwd_hash_value`, `nick_name`, `name`, `avatar`, `birthday`, `sex`, `email`, `phone`, `tel`, `last_login_ip`, `last_login_time`, `admin_type`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-	(1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '127.0.0.1', '2022-06-24 14:19:15', 1, 0, '2020-05-29 16:39:28', -1, '2022-06-24 14:19:15', -1);
+	(1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '127.0.0.1', '2022-06-24 16:59:11', 1, 0, '2020-05-29 16:39:28', -1, '2022-06-24 16:59:11', -1);
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_user_data_scope
+DROP TABLE IF EXISTS `sys_user_data_scope`;
 CREATE TABLE IF NOT EXISTS `sys_user_data_scope` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `user_id` bigint(20) NOT NULL COMMENT '用户id',
@@ -1012,6 +1065,7 @@ DELETE FROM `sys_user_data_scope`;
 /*!40000 ALTER TABLE `sys_user_data_scope` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_user_role
+DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE IF NOT EXISTS `sys_user_role` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `user_id` bigint(20) NOT NULL COMMENT '用户id',
@@ -1025,6 +1079,7 @@ DELETE FROM `sys_user_role`;
 /*!40000 ALTER TABLE `sys_user_role` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_vis_log
+DROP TABLE IF EXISTS `sys_vis_log`;
 CREATE TABLE IF NOT EXISTS `sys_vis_log` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `name` varchar(50) DEFAULT NULL COMMENT '名称',
@@ -1047,6 +1102,7 @@ DELETE FROM `sys_vis_log`;
 /*!40000 ALTER TABLE `sys_vis_log` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_analysis
+DROP TABLE IF EXISTS `tbl_board_analysis`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '展示名称',
@@ -1064,6 +1120,7 @@ DELETE FROM `tbl_board_analysis`;
 /*!40000 ALTER TABLE `tbl_board_analysis` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_analysis_event
+DROP TABLE IF EXISTS `tbl_board_analysis_event`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
@@ -1078,6 +1135,7 @@ DELETE FROM `tbl_board_analysis_event`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_analysis_event_filter
+DROP TABLE IF EXISTS `tbl_board_analysis_event_filter`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_filter` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `PARENT_ID` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
@@ -1095,6 +1153,7 @@ DELETE FROM `tbl_board_analysis_event_filter`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event_filter` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_analysis_event_property
+DROP TABLE IF EXISTS `tbl_board_analysis_event_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_property` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `ANALYSIS_EVENT_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
@@ -1109,6 +1168,7 @@ DELETE FROM `tbl_board_analysis_event_property`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event_property` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_analysis_filter
+DROP TABLE IF EXISTS `tbl_board_analysis_filter`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_filter` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `PARENT_ID` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
@@ -1126,6 +1186,7 @@ DELETE FROM `tbl_board_analysis_filter`;
 /*!40000 ALTER TABLE `tbl_board_analysis_filter` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_analysis_group
+DROP TABLE IF EXISTS `tbl_board_analysis_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `PARENT_ID` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
@@ -1142,6 +1203,7 @@ DELETE FROM `tbl_board_analysis_group`;
 /*!40000 ALTER TABLE `tbl_board_analysis_group` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_dash
+DROP TABLE IF EXISTS `tbl_board_dash`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
@@ -1153,6 +1215,7 @@ DELETE FROM `tbl_board_dash`;
 /*!40000 ALTER TABLE `tbl_board_dash` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_dash_analysis
+DROP TABLE IF EXISTS `tbl_board_dash_analysis`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash_analysis` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
@@ -1165,6 +1228,7 @@ DELETE FROM `tbl_board_dash_analysis`;
 /*!40000 ALTER TABLE `tbl_board_dash_analysis` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_dash_group
+DROP TABLE IF EXISTS `tbl_board_dash_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '分组描述',
@@ -1177,6 +1241,7 @@ DELETE FROM `tbl_board_dash_group`;
 /*!40000 ALTER TABLE `tbl_board_dash_group` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_data_source
+DROP TABLE IF EXISTS `tbl_board_data_source`;
 CREATE TABLE IF NOT EXISTS `tbl_board_data_source` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '数据源名称',
@@ -1193,6 +1258,7 @@ DELETE FROM `tbl_board_data_source`;
 /*!40000 ALTER TABLE `tbl_board_data_source` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_event
+DROP TABLE IF EXISTS `tbl_board_event`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `EVENT_GORUP_ID` varchar(256) NOT NULL COMMENT '事件分组',
@@ -1210,6 +1276,7 @@ DELETE FROM `tbl_board_event`;
 /*!40000 ALTER TABLE `tbl_board_event` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_event_group
+DROP TABLE IF EXISTS `tbl_board_event_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '事件名称',
@@ -1222,6 +1289,7 @@ DELETE FROM `tbl_board_event_group`;
 /*!40000 ALTER TABLE `tbl_board_event_group` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_event_property
+DROP TABLE IF EXISTS `tbl_board_event_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_property` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `EVENT_ID` bigint(20) NOT NULL COMMENT '事件编号',
@@ -1235,6 +1303,7 @@ DELETE FROM `tbl_board_event_property`;
 /*!40000 ALTER TABLE `tbl_board_event_property` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_indicator
+DROP TABLE IF EXISTS `tbl_board_indicator`;
 CREATE TABLE IF NOT EXISTS `tbl_board_indicator` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
@@ -1246,6 +1315,7 @@ DELETE FROM `tbl_board_indicator`;
 /*!40000 ALTER TABLE `tbl_board_indicator` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_property
+DROP TABLE IF EXISTS `tbl_board_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(128) DEFAULT NULL COMMENT '属性名称',
@@ -1267,6 +1337,7 @@ DELETE FROM `tbl_board_property`;
 /*!40000 ALTER TABLE `tbl_board_property` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_property_group
+DROP TABLE IF EXISTS `tbl_board_property_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '分组名称',
@@ -1279,6 +1350,7 @@ DELETE FROM `tbl_board_property_group`;
 /*!40000 ALTER TABLE `tbl_board_property_group` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_property_value
+DROP TABLE IF EXISTS `tbl_board_property_value`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property_value` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
@@ -1290,6 +1362,7 @@ DELETE FROM `tbl_board_property_value`;
 /*!40000 ALTER TABLE `tbl_board_property_value` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_report
+DROP TABLE IF EXISTS `tbl_board_report`;
 CREATE TABLE IF NOT EXISTS `tbl_board_report` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
@@ -1301,6 +1374,7 @@ DELETE FROM `tbl_board_report`;
 /*!40000 ALTER TABLE `tbl_board_report` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_report_indicator
+DROP TABLE IF EXISTS `tbl_board_report_indicator`;
 CREATE TABLE IF NOT EXISTS `tbl_board_report_indicator` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `REPORT_ID` bigint(20) DEFAULT NULL COMMENT '报表ID',
@@ -1314,6 +1388,7 @@ DELETE FROM `tbl_board_report_indicator`;
 /*!40000 ALTER TABLE `tbl_board_report_indicator` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_table
+DROP TABLE IF EXISTS `tbl_board_table`;
 CREATE TABLE IF NOT EXISTS `tbl_board_table` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DATA_SOURCE_ID` bigint(20) DEFAULT NULL COMMENT '数据源ID',
@@ -1330,6 +1405,7 @@ DELETE FROM `tbl_board_table`;
 /*!40000 ALTER TABLE `tbl_board_table` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_table_column
+DROP TABLE IF EXISTS `tbl_board_table_column`;
 CREATE TABLE IF NOT EXISTS `tbl_board_table_column` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `TABLE_ID` bigint(20) NOT NULL COMMENT '数据表ID',
@@ -1348,6 +1424,7 @@ DELETE FROM `tbl_board_table_column`;
 /*!40000 ALTER TABLE `tbl_board_table_column` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_table_connect
+DROP TABLE IF EXISTS `tbl_board_table_connect`;
 CREATE TABLE IF NOT EXISTS `tbl_board_table_connect` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `column_Id` bigint(20) NOT NULL COMMENT '字段ID',

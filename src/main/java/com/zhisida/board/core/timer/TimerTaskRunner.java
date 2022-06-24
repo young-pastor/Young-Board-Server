@@ -15,6 +15,6 @@ public interface TimerTaskRunner {
      *
      * @author young-pastor
      */
-    void action();
+    void action(String param);
 
 }

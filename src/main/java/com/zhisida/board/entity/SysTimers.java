@@ -45,9 +45,12 @@ public class SysTimers extends BaseEntity {
      */
     private Integer jobStatus;
 
+    private String param;
+
     /**
      * 备注信息
      */
     private String remark;
+
 
 }

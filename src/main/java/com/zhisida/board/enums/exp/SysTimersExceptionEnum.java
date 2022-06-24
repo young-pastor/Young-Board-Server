@@ -27,8 +27,9 @@ public enum SysTimersExceptionEnum implements AbstractBaseExceptionEnum {
     /**
      * 检查定时任务启动时候的参数是否传了
      */
-    EXE_EMPTY_PARAM(3, "请检查定时器的id，定时器cron表达式，定时任务是否为空！");
+    EXE_EMPTY_PARAM(3, "请检查定时器的id，定时器cron表达式，定时任务是否为空！"),
 
+    EXE_CORN_EXPRESSION(4, "请检查定时器cron表达式！");
     private final Integer code;
 
     private final String message;

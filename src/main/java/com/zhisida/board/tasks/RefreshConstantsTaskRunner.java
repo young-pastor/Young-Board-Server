@@ -32,7 +32,7 @@ public class RefreshConstantsTaskRunner implements TimerTaskRunner {
     private SysConfigCache sysConfigCache;
 
     @Override
-    public void action() {
+    public void action(String param) {
     }
 
 }

@@ -46,6 +46,7 @@ public class SysTimersParam extends BaseParam {
      */
     private Integer jobStatus;
 
+    private String param;
     /**
      * 备注信息
      */

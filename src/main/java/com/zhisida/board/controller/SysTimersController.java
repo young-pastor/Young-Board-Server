@@ -132,4 +132,16 @@ public class SysTimersController {
         return new SuccessResponseData();
     }
 
+    /**
+     * 编辑定时任务
+     *
+     * @auther zhisida
+     * @date 2020/6/30 18:26
+     */
+    @PostMapping("/sysTimers/execute")
+    @BusinessLog(title = "定时任务_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
+    public ResponseData execute(@RequestBody @Validated(SysTimersParam.edit.class) SysTimersParam sysTimersParam) {
+        sysTimersService.execute(sysTimersParam);
+        return new SuccessResponseData();
+    }
 }

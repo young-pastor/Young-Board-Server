@@ -34,7 +34,7 @@ public class TimerTaskRunListener implements ApplicationListener<ApplicationStar
 
         // 添加定时任务到调度器
         for (SysTimers sysTimers : list) {
-            timerExeService.startTimer(String.valueOf(sysTimers.getId()), sysTimers.getCron(), sysTimers.getActionClass());
+            timerExeService.startTimer(sysTimers);
         }
 
         // 设置秒级别的启用

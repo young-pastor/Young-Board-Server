@@ -1,6 +1,8 @@
 
 package com.zhisida.board.service;
 
+import com.zhisida.board.entity.SysTimers;
+
 /**
  * 本接口用来，屏蔽定时任务的多样性
  * <p>
@@ -22,7 +24,7 @@ public interface TimerExeService {
      * @param className 类的全名，必须是TimerTaskRunner的子类
      * @author young-pastor
      */
-    void startTimer(String taskId, String cron, String className);
+    void startTimer(SysTimers sysTimers);
 
     /**
      * 停止一个定时器
@@ -32,4 +34,5 @@ public interface TimerExeService {
      */
     void stopTimer(String taskId);
 
+    void execute(SysTimers sysTimers);
 }
