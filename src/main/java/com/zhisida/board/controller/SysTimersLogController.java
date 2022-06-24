@@ -8,14 +8,12 @@ import com.zhisida.board.core.pojo.response.ResponseData;
 import com.zhisida.board.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.SysTimersLogParam;
 import com.zhisida.board.service.SysTimersLogService;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * 任务日志控制器
@@ -51,7 +49,7 @@ public class SysTimersLogController {
     @Permission
     @PostMapping("/sysTimersLog/delete")
     @BusinessLog(title = "任务日志_删除", opType = LogAnnotionOpTypeEnum.DELETE)
-    public ResponseData delete(@RequestBody @Validated(SysTimersLogParam.delete.class) SysTimersLogParam sysTimersLogParam) {
+    public ResponseData delete(@RequestBody SysTimersLogParam sysTimersLogParam) {
         sysTimersLogService.delete(sysTimersLogParam);
         return new SuccessResponseData();
     }

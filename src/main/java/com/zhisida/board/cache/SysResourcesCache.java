@@ -16,7 +16,7 @@ import java.util.Set;
 @Component
 public class SysResourcesCache {
 
-    @CachePut(cacheNames = "Board:System" ,key = "'Resources'", unless = " #result == null")
+    @CachePut(cacheNames = "Board:System:Resources" , unless = " #result == null")
     public Set<String> putAllResources(Set<String> resources) {
         return resources;
     }

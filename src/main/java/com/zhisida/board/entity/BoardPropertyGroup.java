@@ -24,6 +24,16 @@ public class BoardPropertyGroup extends BaseEntity {
     private Long id;
 
     /**
+     * 父id
+     */
+    private Long pid;
+
+    /**
+     * 父ids
+     */
+    private String pids;
+
+    /**
      * 分组名称
      */
     @Excel(name = "分组名称")

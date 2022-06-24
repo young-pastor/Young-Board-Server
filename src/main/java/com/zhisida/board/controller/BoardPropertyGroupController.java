@@ -1,5 +1,5 @@
 
-package com.zhisida.board.boardpropertygroup.controller;
+package com.zhisida.board.controller;
 
 import com.zhisida.board.core.annotion.BusinessLog;
 import com.zhisida.board.core.annotion.Permission;

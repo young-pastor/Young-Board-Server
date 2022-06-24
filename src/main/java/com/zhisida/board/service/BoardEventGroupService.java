@@ -2,6 +2,7 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardEventGroup;
 import com.zhisida.board.param.BoardEventGroupParam;
@@ -15,6 +16,8 @@ import java.util.List;
  * @date 2022-06-20 11:52:21
  */
 public interface BoardEventGroupService extends IService<BoardEventGroup> {
+
+    public List<AntdBaseTreeNode> tree(BoardEventGroupParam boardEventGroupParam);
 
     /**
      * 查询元事件分组
