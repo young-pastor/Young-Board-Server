@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 通知公告用户状态
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum NoticeUserStatusEnum {

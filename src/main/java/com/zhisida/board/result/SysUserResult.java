@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 系统用户结果
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysUserResult implements BaseWrapper {

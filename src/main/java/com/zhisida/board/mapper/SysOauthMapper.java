@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysOauthUser;
 /**
  * Oauth登录相关mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 public interface SysOauthMapper extends BaseMapper<SysOauthUser> {
 }

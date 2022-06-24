@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 业务异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

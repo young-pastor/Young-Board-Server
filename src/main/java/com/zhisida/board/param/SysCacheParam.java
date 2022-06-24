@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 系统菜单参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

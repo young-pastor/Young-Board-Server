@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * 系统应用service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysAppServiceImpl extends ServiceImpl<SysAppMapper, SysApp> implements SysAppService {
@@ -179,7 +179,7 @@ public class SysAppServiceImpl extends ServiceImpl<SysAppMapper, SysApp> impleme
     /**
      * 校验参数，检查是否存在相同的名称和编码，以及默认激活的系统的数量是否合理
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysAppParam sysAppParam, boolean isExcludeSelf) {
         Long id = sysAppParam.getId();
@@ -227,7 +227,7 @@ public class SysAppServiceImpl extends ServiceImpl<SysAppMapper, SysApp> impleme
     /**
      * 获取系统应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysApp querySysApp(SysAppParam sysAppParam) {
         SysApp sysApp = this.getById(sysAppParam.getId());

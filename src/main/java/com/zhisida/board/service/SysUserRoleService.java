@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统用户角色service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysUserRoleService extends IService<SysUserRole> {
 
@@ -19,7 +19,7 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      *
      * @param userId 用户id
      * @return 角色id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getUserRoleIdList(Long userId);
 
@@ -27,7 +27,7 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      * 授权角色
      *
      * @param sysUserParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantRole(SysUserParam sysUserParam);
 
@@ -37,7 +37,7 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      * @param userId 用户id
      * @param orgId  组织机构id
      * @return 数据范围id集合（组织机构id集合）
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getUserRoleDataScopeIdList(Long userId, Long orgId);
 
@@ -45,7 +45,7 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      * 根据角色id删除对应的用户-角色表关联信息
      *
      * @param roleId 角色id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteUserRoleListByRoleId(Long roleId);
 
@@ -53,7 +53,7 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      * 根据用户id删除对应的用户-角色表关联信息
      *
      * @param userId 用户id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteUserRoleListByUserId(Long userId);
 }

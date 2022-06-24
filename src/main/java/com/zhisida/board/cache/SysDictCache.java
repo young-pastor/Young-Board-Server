@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统参数配置获取
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 @Log4j2

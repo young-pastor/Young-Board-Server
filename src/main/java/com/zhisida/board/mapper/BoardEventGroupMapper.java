@@ -7,7 +7,7 @@ import com.zhisida.board.entity.BoardEventGroup;
 /**
  * 元事件分组
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:52:21
  */
 public interface BoardEventGroupMapper extends BaseMapper<BoardEventGroup> {

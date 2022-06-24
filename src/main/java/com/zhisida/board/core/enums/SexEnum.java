@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 性别枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum SexEnum {

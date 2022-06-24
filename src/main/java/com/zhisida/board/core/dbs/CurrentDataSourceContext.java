@@ -4,7 +4,7 @@ package com.zhisida.board.core.dbs;
 /**
  * datasource的上下文
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class CurrentDataSourceContext {
 
@@ -22,7 +22,7 @@ public class CurrentDataSourceContext {
     /**
      * 获取数据源类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getDataSourceType() {
         return CONTEXT_HOLDER.get();
@@ -31,7 +31,7 @@ public class CurrentDataSourceContext {
     /**
      * 清除数据源类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void clearDataSourceType() {
         CONTEXT_HOLDER.remove();

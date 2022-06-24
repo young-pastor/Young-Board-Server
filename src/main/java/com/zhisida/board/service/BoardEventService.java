@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 元事件配置service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:52:17
  */
 public interface BoardEventService extends IService<BoardEvent> {
@@ -19,7 +19,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 查询元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     PageResult<BoardEvent> page(BoardEventParam boardEventParam);
@@ -27,7 +27,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 元事件配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     List<BoardEvent> list(BoardEventParam boardEventParam);
@@ -35,7 +35,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 添加元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     void add(BoardEventParam boardEventParam);
@@ -43,7 +43,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 删除元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     void delete(List<BoardEventParam> boardEventParamList);
@@ -51,7 +51,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 编辑元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     void edit(BoardEventParam boardEventParam);
@@ -59,7 +59,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 查看元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
      BoardEvent detail(BoardEventParam boardEventParam);
@@ -67,7 +67,7 @@ public interface BoardEventService extends IService<BoardEvent> {
     /**
      * 导出元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
      void export(BoardEventParam boardEventParam);

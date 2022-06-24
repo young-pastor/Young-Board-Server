@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 文件操作业务异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class FileServiceException extends RuntimeException {

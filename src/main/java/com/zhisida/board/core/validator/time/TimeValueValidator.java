@@ -11,7 +11,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * 校验日期格式 HH:mm:ss
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TimeValueValidator implements ConstraintValidator<TimeValue, String> {
 

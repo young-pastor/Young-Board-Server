@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 系统用户参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

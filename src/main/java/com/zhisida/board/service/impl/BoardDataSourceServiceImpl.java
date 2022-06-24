@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 数据源配置表service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-17 15:08:24
  */
 @Service
@@ -93,7 +93,7 @@ public class BoardDataSourceServiceImpl extends ServiceImpl<BoardDataSourceMappe
     /**
      * 获取数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     private BoardDataSource queryBoardDataSource(BoardDataSourceParam boardDataSourceParam) {

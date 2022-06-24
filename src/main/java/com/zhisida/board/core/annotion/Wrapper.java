@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 /**
  * 结果包装的注解，一般用在Controller层，给最后响应结果做包装
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)

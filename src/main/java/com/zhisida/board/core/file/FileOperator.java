@@ -11,28 +11,28 @@ import java.io.InputStream;
  * <p>
  * 如果存在未包含的操作，可以调用getClient()自行获取client进行操作
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface FileOperator {
 
     /**
      * 初始化操作的客户端
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void initClient();
 
     /**
      * 销毁操作的客户端
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void destroyClient();
 
     /**
      * 获取操作的客户端
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Object getClient();
 
@@ -41,7 +41,7 @@ public interface FileOperator {
      * <p>
      * 例如：传入参数examplebucket-1250000000，返回true代表存在此桶
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean doesBucketExist(String bucketName);
 
@@ -50,7 +50,7 @@ public interface FileOperator {
      * <p>
      * 预定义策略如公有读、公有读写、私有读
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void setBucketAcl(String bucketName, BucketAuthEnum bucketAuthEnum);
 
@@ -59,7 +59,7 @@ public interface FileOperator {
      *
      * @param bucketName 桶名称
      * @param key        唯一标示id，例如a.txt, doc/a.txt
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean isExistingFile(String bucketName, String key);
 
@@ -69,7 +69,7 @@ public interface FileOperator {
      * @param bucketName 桶名称
      * @param key        唯一标示id，例如a.txt, doc/a.txt
      * @param bytes      文件字节数组
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void storageFile(String bucketName, String key, byte[] bytes);
 
@@ -79,7 +79,7 @@ public interface FileOperator {
      * @param bucketName  桶名称
      * @param key         唯一标示id，例如a.txt, doc/a.txt
      * @param inputStream 文件流
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void storageFile(String bucketName, String key, InputStream inputStream);
 
@@ -88,7 +88,7 @@ public interface FileOperator {
      *
      * @param bucketName 桶名称
      * @param key        唯一标示id，例如a.txt, doc/a.txt
-     * @author young-pastor
+     * @author Young-Pastor
      */
     byte[] getFileBytes(String bucketName, String key);
 
@@ -98,7 +98,7 @@ public interface FileOperator {
      * @param bucketName     桶名称
      * @param key            唯一标示id，例如a.txt, doc/a.txt
      * @param bucketAuthEnum 文件权限
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void setFileAcl(String bucketName, String key, BucketAuthEnum bucketAuthEnum);
 
@@ -109,7 +109,7 @@ public interface FileOperator {
      * @param originFileKey    源文件名称
      * @param newBucketName    新文件桶
      * @param newFileKey       新文件名称
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void copyFile(String originBucketName, String originFileKey, String newBucketName, String newFileKey);
 
@@ -118,7 +118,7 @@ public interface FileOperator {
      *
      * @param bucketName 文件桶
      * @param key        文件唯一标识
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getFileAuthUrl(String bucketName, String key, Long timeoutMillis);
 
@@ -127,7 +127,7 @@ public interface FileOperator {
      *
      * @param bucketName 文件桶
      * @param key        文件唯一标识
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteFile(String bucketName, String key);
 

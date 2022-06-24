@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
 /**
  * 系统菜单service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 @SuppressWarnings("unchecked")
@@ -117,7 +117,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     /**
      * 将SysMenu格式菜单转换为LoginMenuTreeNode菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public List<LoginMenuTreeNode> convertSysMenuToLoginMenu(List<SysMenu> sysMenuList) {
@@ -391,7 +391,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     /**
      * 校验参数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysMenuParam sysMenuParam, boolean isExcludeSelf) {
         //菜单类型（字典 0目录 1菜单 2按钮）
@@ -479,7 +479,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     /**
      * 获取系统菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysMenu querySysMenu(SysMenuParam sysMenuParam) {
         SysMenu sysMenu = this.getById(sysMenuParam.getId());
@@ -496,7 +496,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      * <p>
      * 如果pid不是顶级节点，pids就是 pid菜单的pids + [pid] + ,
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private String createNewPids(Long pid) {
         if (pid.equals(0L)) {
@@ -514,7 +514,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     /**
      * 根据节点id获取所有子节点id集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<Long> getChildIdListById(Long id) {
         List<Long> childIdList = CollectionUtil.newArrayList();

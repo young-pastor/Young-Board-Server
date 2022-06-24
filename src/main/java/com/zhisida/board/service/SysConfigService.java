@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 系统参数配置service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysConfigService extends IService<SysConfig> {
 
@@ -20,7 +20,7 @@ public interface SysConfigService extends IService<SysConfig> {
      *
      * @param sysConfigParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysConfig> page(SysConfigParam sysConfigParam);
 
@@ -29,7 +29,7 @@ public interface SysConfigService extends IService<SysConfig> {
      *
      * @param sysConfigParam 查询参数
      * @return 系统参数配置列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysConfig> list(SysConfigParam sysConfigParam);
 
@@ -38,7 +38,7 @@ public interface SysConfigService extends IService<SysConfig> {
      *
      * @param sysConfigParam 查看参数
      * @return 系统参数配置
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysConfig detail(SysConfigParam sysConfigParam);
 
@@ -46,7 +46,7 @@ public interface SysConfigService extends IService<SysConfig> {
      * 添加系统参数配置
      *
      * @param sysConfigParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysConfigParam sysConfigParam);
 
@@ -54,7 +54,7 @@ public interface SysConfigService extends IService<SysConfig> {
      * 删除系统参数配置
      *
      * @param sysConfigParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysConfigParam sysConfigParam);
 
@@ -62,7 +62,7 @@ public interface SysConfigService extends IService<SysConfig> {
      * 编辑系统参数配置
      *
      * @param sysConfigParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysConfigParam sysConfigParam);
 

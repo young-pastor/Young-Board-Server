@@ -6,7 +6,7 @@ package com.zhisida.board.core.consts;
  * <p>
  * 顺序越小越靠前
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface AopSortConstant {
 

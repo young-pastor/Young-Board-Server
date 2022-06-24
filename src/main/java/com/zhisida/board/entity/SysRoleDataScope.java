@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * 系统角色数据范围表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_role_data_scope")

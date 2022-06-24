@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 系统字典类型service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysDictTypeService extends IService<SysDictType> {
 
@@ -22,7 +22,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      *
      * @param sysDictTypeParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysDictType> page(SysDictTypeParam sysDictTypeParam);
 
@@ -31,7 +31,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      *
      * @param sysDictTypeParam 查询参数
      * @return 系统字典类型列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysDictType> list(SysDictTypeParam sysDictTypeParam);
 
@@ -40,7 +40,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      *
      * @param sysDictTypeParam 下拉参数
      * @return 增强版hashMap，格式：[{"code:":"1", "value":"正常"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> dropDown(SysDictTypeParam sysDictTypeParam);
 
@@ -48,7 +48,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * 添加系统字典类型
      *
      * @param sysDictTypeParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysDictTypeParam sysDictTypeParam);
 
@@ -56,7 +56,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * 删除系统字典类型
      *
      * @param sysDictTypeParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysDictTypeParam sysDictTypeParam);
 
@@ -64,7 +64,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * 编辑系统字典类型
      *
      * @param sysDictTypeParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysDictTypeParam sysDictTypeParam);
 
@@ -73,7 +73,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      *
      * @param sysDictTypeParam 查看参数
      * @return 系统字典类型
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysDictType detail(SysDictTypeParam sysDictTypeParam);
 
@@ -81,7 +81,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * 修改状态（字典 0正常 1停用 2删除）
      *
      * @param sysDictTypeParam 修改参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void changeStatus(SysDictTypeParam sysDictTypeParam);
 
@@ -89,7 +89,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * 系统字典类型与字典值构造的树
      *
      * @return 树
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysDictTreeNode> tree();
 }

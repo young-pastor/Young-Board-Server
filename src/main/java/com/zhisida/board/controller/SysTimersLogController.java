@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 任务日志控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-24 17:02:32
  */
 @RestController
@@ -31,7 +31,7 @@ public class SysTimersLogController {
     /**
      * 查询任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     @Permission
@@ -44,7 +44,7 @@ public class SysTimersLogController {
     /**
      * 删除任务日志，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     @Permission

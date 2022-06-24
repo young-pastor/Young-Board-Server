@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 字段关联配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:45:42
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardTableConnectController {
     /**
      * 查询字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardTableConnectController {
     /**
      * 添加字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardTableConnectController {
     /**
      * 删除字段关联配置，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardTableConnectController {
     /**
      * 编辑字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardTableConnectController {
     /**
      * 查看字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardTableConnectController {
     /**
      * 字段关联配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardTableConnectController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     @Permission

@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 /**
 * 数据字段配置参数类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:27:41
 */
 @Data

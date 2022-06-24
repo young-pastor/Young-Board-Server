@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 邮件的配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class EmailConfigs {

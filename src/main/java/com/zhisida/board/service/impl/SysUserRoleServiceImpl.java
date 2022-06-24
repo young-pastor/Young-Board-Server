@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 /**
  * 系统用户角色service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {

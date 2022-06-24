@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 默认递归工具类，用于遍历有父子关系的节点，例如菜单树，字典树等等
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class TreeBuildFactory<T extends BaseTreeNode> {
@@ -25,7 +25,7 @@ public class TreeBuildFactory<T extends BaseTreeNode> {
     /**
      * 树节点构造
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public List<T> doTreeBuild(List<T> nodes) {
 
@@ -39,7 +39,7 @@ public class TreeBuildFactory<T extends BaseTreeNode> {
     /**
      * 查询子节点集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void buildChildNodes(List<T> totalNodes, T node, List<T> childNodeLists) {
         if (ObjectUtil.hasEmpty(totalNodes, node)) {
@@ -56,7 +56,7 @@ public class TreeBuildFactory<T extends BaseTreeNode> {
     /**
      * 获取子一级节点的集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<T> getSubChildLevelOne(List<T> list, T node) {
         List<T> nodeList = CollectionUtil.newArrayList();
@@ -73,7 +73,7 @@ public class TreeBuildFactory<T extends BaseTreeNode> {
     /**
      * 执行构造
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<T> executeBuilding(List<T> nodes) {
         List<T> parentNodes = afterBuild(nodes);
@@ -84,7 +84,7 @@ public class TreeBuildFactory<T extends BaseTreeNode> {
     /**
      * 构造之后
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<T> afterBuild(List<T> nodes) {
         //去掉所有的二级节点

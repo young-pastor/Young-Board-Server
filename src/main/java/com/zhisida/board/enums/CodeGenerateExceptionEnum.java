@@ -9,7 +9,7 @@ import com.zhisida.board.core.consts.GenExpEnumConstant;
 /**
  * 代码生成基础配置相关异常枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = GenExpEnumConstant.GEN_CODE_EXCEPTION_ENUM, kind = GenExpEnumConstant.GEN_CONFIG_EXCEPTION_ENUM)
 public enum CodeGenerateExceptionEnum implements AbstractBaseExceptionEnum {

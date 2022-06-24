@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 系统字典值控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysDictDataController {
@@ -31,7 +31,7 @@ public class SysDictDataController {
     /**
      * 查询系统字典值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysDictData/page")
@@ -43,7 +43,7 @@ public class SysDictDataController {
     /**
      * 某个字典类型下所有的字典
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysDictData/list")
@@ -55,7 +55,7 @@ public class SysDictDataController {
     /**
      * 查看系统字典值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysDictData/detail")
@@ -67,7 +67,7 @@ public class SysDictDataController {
     /**
      * 添加系统字典值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictData/add")
@@ -80,7 +80,7 @@ public class SysDictDataController {
     /**
      * 删除系统字典值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictData/delete")
@@ -93,7 +93,7 @@ public class SysDictDataController {
     /**
      * 编辑系统字典值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictData/edit")
@@ -106,7 +106,7 @@ public class SysDictDataController {
     /**
      * 修改状态
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictData/changeStatus")

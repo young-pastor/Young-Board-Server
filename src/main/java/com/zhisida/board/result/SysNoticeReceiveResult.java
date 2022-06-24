@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 已收系统通知公告结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysNoticeReceiveResult {

@@ -18,7 +18,7 @@ import java.util.List;
  * <p>
  * 防止由于直接改动数据库，而调用缓存常量时，产生数据不一致问题
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class RefreshConstantsTaskRunner implements TimerTaskRunner {

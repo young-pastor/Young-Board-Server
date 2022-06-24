@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 短信发送异常相关枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum AliyunSmsResultEnum {

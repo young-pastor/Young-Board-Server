@@ -4,7 +4,7 @@ package com.zhisida.board.core.tenant.consts;
 /**
  * 多租户的异常编码规范
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface TenantExpEnumConstant {
 

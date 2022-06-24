@@ -4,7 +4,7 @@ package com.zhisida.board.core.tenant.consts;
 /**
  * 租户的常量
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface TenantConstants {
 

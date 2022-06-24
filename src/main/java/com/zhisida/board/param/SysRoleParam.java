@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 系统角色参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * 系统用户mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysUserMapper extends BaseMapper<SysUser> {
 
@@ -21,7 +21,7 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
      * @param page         分页参数
      * @param queryWrapper 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Page<SysUserResult> page(@Param("page") Page page, @Param("ew") QueryWrapper queryWrapper);
 }

@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 /**
  * 系统属性监控控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysMachineController {
@@ -25,7 +25,7 @@ public class SysMachineController {
     /**
      * 系统属性监控
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysMachine/query")
     @BusinessLog(title = "系统属性监控_查询", opType = LogAnnotionOpTypeEnum.QUERY)

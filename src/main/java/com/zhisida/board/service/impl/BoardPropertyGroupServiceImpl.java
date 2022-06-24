@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * 属性分组service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:37
  */
 @Service
@@ -76,7 +76,7 @@ public class BoardPropertyGroupServiceImpl extends ServiceImpl<BoardPropertyGrou
     /**
      * 获取属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     private BoardPropertyGroup queryBoardPropertyGroup(BoardPropertyGroupParam boardPropertyGroupParam) {

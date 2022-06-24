@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * 系统字典值service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDictData> implements SysDictDataService {
@@ -191,7 +191,7 @@ public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDi
     /**
      * 校验参数，校验是否存在相同的编码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysDictDataParam sysDictDataParam, boolean isExcludeSelf) {
         Long id = sysDictDataParam.getId();
@@ -221,7 +221,7 @@ public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDi
     /**
      * 获取系统字典值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysDictData querySysDictData(SysDictDataParam sysDictDataParam) {
         SysDictData sysDictData = this.getById(sysDictDataParam.getId());

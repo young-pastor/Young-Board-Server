@@ -50,7 +50,7 @@ import java.util.Map;
 /**
  * 认证相关service实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
@@ -304,7 +304,7 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
     /**
      * 根据key清空登陆信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void clearUser(String loginUserKey, String account) {
         //获取缓存的用户
@@ -322,7 +322,7 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
     /**
      * 构造登录用户信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public SysLoginUser genSysLoginUser(SysUser sysUser) {
@@ -335,7 +335,7 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
     /**
      * 缓存token与登录用户信息对应, 默认2个小时
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void cacheLoginUser(JwtPayLoad jwtPayLoad, SysLoginUser sysLoginUser) {
         SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);

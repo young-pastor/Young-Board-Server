@@ -8,7 +8,7 @@ import lombok.Getter;
  * <p>
  * 用于标识mapping.xml中不同数据库的标识
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum DbIdEnum {

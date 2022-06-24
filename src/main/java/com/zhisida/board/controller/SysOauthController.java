@@ -19,7 +19,7 @@ import java.io.IOException;
 /**
  * Oauth登录控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @RestController
 public class SysOauthController {
@@ -30,7 +30,7 @@ public class SysOauthController {
     /**
      * oauth登录
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     @GetMapping("/oauth/render/{source}")
     public void renderAuth(@PathVariable("source") String source, HttpServletResponse response) throws IOException {
@@ -41,7 +41,7 @@ public class SysOauthController {
     /**
      * oauth平台中配置的授权回调地址
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     @GetMapping("/oauth/callback/{source}")
     public void callback(@PathVariable("source") String source, AuthCallback callback, HttpServletRequest request, HttpServletResponse response) throws IOException {

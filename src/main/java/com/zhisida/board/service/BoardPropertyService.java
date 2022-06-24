@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 属性配置service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:25
  */
 public interface BoardPropertyService extends IService<BoardProperty> {
@@ -19,7 +19,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 查询属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     PageResult<BoardProperty> page(BoardPropertyParam boardPropertyParam);
@@ -27,7 +27,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 属性配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     List<BoardProperty> list(BoardPropertyParam boardPropertyParam);
@@ -35,7 +35,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 添加属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     void add(BoardPropertyParam boardPropertyParam);
@@ -43,7 +43,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 删除属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     void delete(List<BoardPropertyParam> boardPropertyParamList);
@@ -51,7 +51,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 编辑属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     void edit(BoardPropertyParam boardPropertyParam);
@@ -59,7 +59,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 查看属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
      BoardProperty detail(BoardPropertyParam boardPropertyParam);
@@ -67,7 +67,7 @@ public interface BoardPropertyService extends IService<BoardProperty> {
     /**
      * 导出属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
      void export(BoardPropertyParam boardPropertyParam);

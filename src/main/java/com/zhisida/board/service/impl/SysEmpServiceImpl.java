@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 /**
  * 员工service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysEmpServiceImpl extends ServiceImpl<SysEmpMapper, SysEmp> implements SysEmpService {

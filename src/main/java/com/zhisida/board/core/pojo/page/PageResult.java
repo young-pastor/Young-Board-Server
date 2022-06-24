@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 分页结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class PageResult<T> implements Serializable {
@@ -60,7 +60,7 @@ public class PageResult<T> implements Serializable {
     /**
      * 将mybatis-plus的page转成自定义的PageResult，扩展了totalPage总页数，和rainBow彩虹条
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public PageResult(Page<T> page) {
         this.setRows(page.getRecords());
@@ -77,7 +77,7 @@ public class PageResult<T> implements Serializable {
      * 将mybatis-plus的page转成自定义的PageResult，扩展了totalPage总页数，和rainBow彩虹条
      * 可单独设置rows
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public PageResult(Page<T> page, List<T> t) {
         this.setRows(t);

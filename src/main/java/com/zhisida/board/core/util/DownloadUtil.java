@@ -21,7 +21,7 @@ import java.net.URLEncoder;
 /**
  * 文件下载工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class DownloadUtil {
 
@@ -47,7 +47,7 @@ public class DownloadUtil {
      *
      * @param file     要下载的文件
      * @param response 响应
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void download(File file, HttpServletResponse response) {
         // 获取文件字节
@@ -69,7 +69,7 @@ public class DownloadUtil {
      *
      * @param url 下载url
      * @param file 目标文件
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void downloadToFile(String url, File file) {
         if (url == null || url.isEmpty()) throw new ServiceException(SysFileInfoExceptionEnum.DOWNLOAD_FILE_ERROR);

@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 /**
  * 获取代理原始对象的工具
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class AopTargetUtil {
 
@@ -21,7 +21,7 @@ public class AopTargetUtil {
     /**
      * 获取被代理的对象本身
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static Object getTarget(Object proxy) {
 

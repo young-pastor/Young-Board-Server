@@ -11,7 +11,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * 校验日期格式 yyyy-MM-dd 或 yyyy-MM
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class DateOrMonthValueValidator implements ConstraintValidator<DateOrMonthValue, String> {
 

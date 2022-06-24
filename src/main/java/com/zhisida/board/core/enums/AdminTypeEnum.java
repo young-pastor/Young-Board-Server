@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 管理员类型枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum AdminTypeEnum {

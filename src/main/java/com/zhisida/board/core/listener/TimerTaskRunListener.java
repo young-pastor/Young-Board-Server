@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 项目定时任务启动的listener
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TimerTaskRunListener implements ApplicationListener<ApplicationStartedEvent>, Ordered {
 

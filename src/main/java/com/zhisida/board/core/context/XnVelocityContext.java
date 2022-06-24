@@ -13,14 +13,14 @@ import java.util.UUID;
 /**
  * 设置上下文缓存
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class XnVelocityContext {
 
     /**
      * 创建上下文用到的参数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public VelocityContext createVelContext (XnCodeGenParam xnCodeGenParam) {
         VelocityContext velocityContext = new VelocityContext();

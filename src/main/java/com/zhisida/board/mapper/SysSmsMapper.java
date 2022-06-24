@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysSms;
 /**
  * 系统短信mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysSmsMapper extends BaseMapper<SysSms> {
 

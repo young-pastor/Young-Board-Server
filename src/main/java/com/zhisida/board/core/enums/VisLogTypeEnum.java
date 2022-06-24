@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 访问日志类型枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum VisLogTypeEnum {

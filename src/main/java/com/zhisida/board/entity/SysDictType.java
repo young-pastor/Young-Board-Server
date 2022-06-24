@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 系统字典类型表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

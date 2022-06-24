@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 数据表返回对象
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class InformationResult {

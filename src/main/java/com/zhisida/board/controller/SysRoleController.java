@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 系统角色控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysRoleController {
@@ -31,7 +31,7 @@ public class SysRoleController {
     /**
      * 查询系统角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysRole/page")
@@ -43,7 +43,7 @@ public class SysRoleController {
     /**
      * 系统角色下拉（用于授权角色时选择）
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysRole/dropDown")
@@ -55,7 +55,7 @@ public class SysRoleController {
     /**
      * 添加系统角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysRole/add")
@@ -68,7 +68,7 @@ public class SysRoleController {
     /**
      * 删除系统角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysRole/delete")
@@ -81,7 +81,7 @@ public class SysRoleController {
     /**
      * 编辑系统角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysRole/edit")
@@ -94,7 +94,7 @@ public class SysRoleController {
     /**
      * 查看系统角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysRole/detail")
@@ -106,7 +106,7 @@ public class SysRoleController {
     /**
      * 授权菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysRole/grantMenu")
@@ -119,7 +119,7 @@ public class SysRoleController {
     /**
      * 授权数据
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -133,7 +133,7 @@ public class SysRoleController {
     /**
      * 拥有菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysRole/ownMenu")
@@ -145,7 +145,7 @@ public class SysRoleController {
     /**
      * 拥有数据
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysRole/ownData")

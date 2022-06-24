@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * 短信发送接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class SysSmsSenderServiceImpl implements SysSmsSenderService {

@@ -4,7 +4,7 @@ package com.zhisida.board.core.file.common.enums;
 /**
  * 桶的权限策略枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public enum BucketAuthEnum {
 

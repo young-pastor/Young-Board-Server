@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 数据权限切面
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Aspect
 @Order(AopSortConstant.DATA_SCOPE_AOP)
@@ -24,7 +24,7 @@ public class DataScopeAop {
     /**
      * 数据范围切入点
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Pointcut("@annotation(com.zhisida.board.core.annotion.DataScope)")
     private void getDataScopePointCut() {
@@ -33,7 +33,7 @@ public class DataScopeAop {
     /**
      * 执行数据范围过滤
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Before("getDataScopePointCut()")
     public void doDataScope(JoinPoint joinPoint) {

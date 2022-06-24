@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * 系统通知公告用户表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_notice_user")

@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 系统应用控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysAppController {
@@ -31,7 +31,7 @@ public class SysAppController {
     /**
      * 查询系统应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysApp/page")
@@ -43,7 +43,7 @@ public class SysAppController {
     /**
      * 添加系统应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysApp/add")
@@ -56,7 +56,7 @@ public class SysAppController {
     /**
      * 删除系统应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysApp/delete")
@@ -69,7 +69,7 @@ public class SysAppController {
     /**
      * 编辑系统应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysApp/edit")
@@ -82,7 +82,7 @@ public class SysAppController {
     /**
      * 查看系统应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysApp/detail")
@@ -94,7 +94,7 @@ public class SysAppController {
     /**
      * 系统应用列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysApp/list")
@@ -106,7 +106,7 @@ public class SysAppController {
     /**
      * 设为默认应用
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysApp/setAsDefault")

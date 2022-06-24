@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 系统访问日志service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysVisLogServiceImpl extends ServiceImpl<SysVisLogMapper, SysVisLog> implements SysVisLogService {

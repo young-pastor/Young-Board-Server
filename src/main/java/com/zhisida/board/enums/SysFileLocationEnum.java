@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 文件存储位置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum SysFileLocationEnum {

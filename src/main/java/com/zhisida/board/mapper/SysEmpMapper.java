@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysEmp;
 /**
  * 员工mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysEmpMapper extends BaseMapper<SysEmp> {
 }

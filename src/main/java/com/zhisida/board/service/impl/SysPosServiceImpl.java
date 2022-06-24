@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * 系统职位service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysPosServiceImpl extends ServiceImpl<SysPosMapper, SysPos> implements SysPosService {
@@ -124,7 +124,7 @@ public class SysPosServiceImpl extends ServiceImpl<SysPosMapper, SysPos> impleme
     /**
      * 校验参数，检查是否存在相同的名称和编码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysPosParam sysPosParam, boolean isExcludeSelf) {
         Long id = sysPosParam.getId();
@@ -158,7 +158,7 @@ public class SysPosServiceImpl extends ServiceImpl<SysPosMapper, SysPos> impleme
     /**
      * 获取系统职位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysPos querySysPos(SysPosParam sysPosParam) {
         SysPos sysPos = this.getById(sysPosParam.getId());

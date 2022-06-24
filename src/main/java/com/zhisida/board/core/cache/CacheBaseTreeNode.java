@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 菜单树节点
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class CacheBaseTreeNode implements BaseTreeNode {

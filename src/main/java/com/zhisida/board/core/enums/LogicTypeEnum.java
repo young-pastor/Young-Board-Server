@@ -4,7 +4,7 @@ package com.zhisida.board.core.enums;
 /**
  * 逻辑枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public enum LogicTypeEnum {
 

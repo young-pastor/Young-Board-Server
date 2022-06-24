@@ -9,7 +9,7 @@ import com.zhisida.board.core.consts.SysExpEnumConstant;
 /**
  * 系统字典值相关异常枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = SysExpEnumConstant.BOARD_SYS_MODULE_EXP_CODE, kind = SysExpEnumConstant.SYS_DICT_DATA_EXCEPTION_ENUM)
 public enum SysDictDataExceptionEnum implements AbstractBaseExceptionEnum {

@@ -19,14 +19,14 @@ import java.util.Arrays;
 /**
  * 日志对象创建工厂
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LogFactory {
 
     /**
      * 创建登录日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     static void createSysLoginLog(SysVisLog sysVisLog, String account, String successCode, String failMessage) {
         sysVisLog.setName(VisLogTypeEnum.LOGIN.getMessage());
@@ -52,7 +52,7 @@ public class LogFactory {
     /**
      * 创建登出日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     static void createSysExitLog(SysVisLog sysVisLog, String account) {
         sysVisLog.setName(VisLogTypeEnum.EXIT.getMessage());
@@ -70,7 +70,7 @@ public class LogFactory {
     /**
      * 创建操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     static void createSysOperationLog(SysOpLog sysOpLog, String account, BusinessLog businessLog, JoinPoint joinPoint, String result) {
         fillCommonSysOpLog(sysOpLog, account, businessLog, joinPoint);
@@ -86,7 +86,7 @@ public class LogFactory {
     /**
      * 创建异常日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     static void createSysExceptionLog(SysOpLog sysOpLog, String account, BusinessLog businessLog, JoinPoint joinPoint, Exception exception) {
         fillCommonSysOpLog(sysOpLog, account, businessLog, joinPoint);
@@ -101,7 +101,7 @@ public class LogFactory {
     /**
      * 生成通用操作日志字段
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private static void fillCommonSysOpLog(SysOpLog sysOpLog, String account, BusinessLog businessLog, JoinPoint joinPoint) {
         String className = joinPoint.getTarget().getClass().getName();
@@ -122,7 +122,7 @@ public class LogFactory {
     /**
      * 构建基础访问日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static SysVisLog genBaseSysVisLog(String ip, String location, String browser, String os) {
         SysVisLog sysVisLog = new SysVisLog();
@@ -136,7 +136,7 @@ public class LogFactory {
     /**
      * 构建基础操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static SysOpLog genBaseSysOpLog(String ip, String location, String browser, String os, String url, String method) {
         SysOpLog sysOpLog = new SysOpLog();

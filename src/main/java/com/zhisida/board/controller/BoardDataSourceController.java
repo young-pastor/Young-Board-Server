@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 数据源配置表控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-17 15:08:24
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardDataSourceController {
     /**
      * 查询数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardDataSourceController {
     /**
      * 添加数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardDataSourceController {
     /**
      * 删除数据源配置表，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardDataSourceController {
     /**
      * 编辑数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardDataSourceController {
     /**
      * 查看数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardDataSourceController {
     /**
      * 数据源配置表列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardDataSourceController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     @Permission

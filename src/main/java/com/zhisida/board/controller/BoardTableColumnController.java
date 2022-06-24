@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 数据字段配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:27:41
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardTableColumnController {
     /**
      * 查询数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardTableColumnController {
     /**
      * 添加数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardTableColumnController {
     /**
      * 删除数据字段配置，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardTableColumnController {
     /**
      * 编辑数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardTableColumnController {
     /**
      * 查看数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardTableColumnController {
     /**
      * 数据字段配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardTableColumnController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     @Permission

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 字典值校验
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class DictValueValidator implements ConstraintValidator<DictValue, String> {
 

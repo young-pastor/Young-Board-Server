@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  * 文件信息表
  * </p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

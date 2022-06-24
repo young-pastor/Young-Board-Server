@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * 系统用户角色表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_user_role")

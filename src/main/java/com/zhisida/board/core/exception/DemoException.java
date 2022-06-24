@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 演示环境，无法操作的异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class DemoException extends ServiceException {

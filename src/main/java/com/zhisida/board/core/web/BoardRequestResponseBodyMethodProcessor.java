@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 拓展原有RequestResponseBodyMethodProcessor，只为缓存临时参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class BoardRequestResponseBodyMethodProcessor extends RequestResponseBodyMethodProcessor {
 

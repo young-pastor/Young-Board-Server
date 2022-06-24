@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 系统用户数据范围service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysUserDataScopeServiceImpl extends ServiceImpl<SysUserDataScopeMapper, SysUserDataScope>

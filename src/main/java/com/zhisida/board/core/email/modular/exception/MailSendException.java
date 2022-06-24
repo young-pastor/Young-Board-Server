@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 邮件发送异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class MailSendException extends RuntimeException {

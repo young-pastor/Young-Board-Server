@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统字典值service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysAreaService extends IService<SysArea> {
 
@@ -19,7 +19,7 @@ public interface SysAreaService extends IService<SysArea> {
      *
      * @param sysAreaParam 查询参数
      * @return 区域树表列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysArea> list(SysAreaParam sysAreaParam);
 }

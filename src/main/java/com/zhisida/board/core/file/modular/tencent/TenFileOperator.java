@@ -29,7 +29,7 @@ import java.util.concurrent.Executors;
 /**
  * 腾讯云内网文件操作
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TenFileOperator implements FileOperator {
 

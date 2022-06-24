@@ -50,7 +50,7 @@ import java.util.*;
 /**
  * 系统用户service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
@@ -515,7 +515,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     /**
      * 校验参数，检查是否存在相同的账号
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysUserParam sysUserParam, boolean isExcludeSelf) {
         Long id = sysUserParam.getId();
@@ -537,7 +537,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     /**
      * 获取系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysUser querySysUser(SysUserParam sysUserParam) {
         SysUser sysUser = this.getById(sysUserParam.getId());

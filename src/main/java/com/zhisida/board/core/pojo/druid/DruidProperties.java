@@ -13,7 +13,7 @@ import java.util.Properties;
  * <p>数据库数据源配置</p>
  * <p>说明:类中属性包含默认值的不要在这里修改,应该在"application.yml"中配置</p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class DruidProperties {

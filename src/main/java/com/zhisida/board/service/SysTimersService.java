@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 定时任务 服务类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysTimersService extends IService<SysTimers> {
 
@@ -20,7 +20,7 @@ public interface SysTimersService extends IService<SysTimers> {
      *
      * @param sysTimersParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysTimers> page(SysTimersParam sysTimersParam);
 
@@ -29,7 +29,7 @@ public interface SysTimersService extends IService<SysTimers> {
      *
      * @param sysTimersParam 查询参数
      * @return 定时任务列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysTimers> list(SysTimersParam sysTimersParam);
 
@@ -37,7 +37,7 @@ public interface SysTimersService extends IService<SysTimers> {
      * 添加定时任务
      *
      * @param sysTimersParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysTimersParam sysTimersParam);
 
@@ -45,7 +45,7 @@ public interface SysTimersService extends IService<SysTimers> {
      * 删除定时任务
      *
      * @param sysTimersParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysTimersParam sysTimersParam);
 
@@ -53,7 +53,7 @@ public interface SysTimersService extends IService<SysTimers> {
      * 编辑定时任务
      *
      * @param sysTimersParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysTimersParam sysTimersParam);
 
@@ -62,7 +62,7 @@ public interface SysTimersService extends IService<SysTimers> {
      *
      * @param sysTimersParam 查看参数
      * @return 定时任务
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysTimers detail(SysTimersParam sysTimersParam);
 
@@ -70,7 +70,7 @@ public interface SysTimersService extends IService<SysTimers> {
      * 启动任务
      *
      * @param sysTimersParam 启动参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void start(SysTimersParam sysTimersParam);
 
@@ -78,7 +78,7 @@ public interface SysTimersService extends IService<SysTimers> {
      * 停止任务
      *
      * @param sysTimersParam 停止参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void stop(SysTimersParam sysTimersParam);
 
@@ -86,7 +86,7 @@ public interface SysTimersService extends IService<SysTimers> {
      * 获取所有可执行的任务列表
      *
      * @return TimerTaskRunner的所有子类名称集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getActionClasses();
 

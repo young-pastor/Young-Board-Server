@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 通用基础参数，相关实体参数校验可继承此类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class BaseParam implements Serializable {

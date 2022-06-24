@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 /**
  * 系统字典值参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

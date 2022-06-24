@@ -6,7 +6,7 @@ import cn.hutool.extra.spring.SpringUtil;
 /**
  * 使用system模块相关功能的接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class SystemContextHolder {
 

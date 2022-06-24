@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 属性分组控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:37
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardPropertyGroupController {
     /**
      * 查询属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardPropertyGroupController {
     /**
      * 添加属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardPropertyGroupController {
     /**
      * 删除属性分组，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardPropertyGroupController {
     /**
      * 编辑属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardPropertyGroupController {
     /**
      * 查看属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardPropertyGroupController {
     /**
      * 属性分组列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardPropertyGroupController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     @Permission

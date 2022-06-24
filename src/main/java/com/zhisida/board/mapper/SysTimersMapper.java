@@ -9,7 +9,7 @@ import com.zhisida.board.entity.SysTimers;
  * 定时任务 Mapper 接口
  * </p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysTimersMapper extends BaseMapper<SysTimers> {
 

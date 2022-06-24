@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 腾讯云cos文件存储配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class TenCosProperties {

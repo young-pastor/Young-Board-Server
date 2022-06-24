@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 系统组织机构控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysOrgController {
@@ -33,7 +33,7 @@ public class SysOrgController {
     /**
      * 查询系统机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -46,7 +46,7 @@ public class SysOrgController {
     /**
      * 系统组织机构列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -59,7 +59,7 @@ public class SysOrgController {
     /**
      * 添加系统组织机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -73,7 +73,7 @@ public class SysOrgController {
     /**
      * 删除系统组织机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -87,7 +87,7 @@ public class SysOrgController {
     /**
      * 编辑系统组织机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -101,7 +101,7 @@ public class SysOrgController {
     /**
      * 查看系统组织机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysOrg/detail")
@@ -113,7 +113,7 @@ public class SysOrgController {
     /**
      * 获取组织机构树
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -126,7 +126,7 @@ public class SysOrgController {
     /**
      * 导出系统组织机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysOrg/export")

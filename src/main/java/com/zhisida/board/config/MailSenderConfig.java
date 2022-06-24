@@ -14,7 +14,7 @@ import com.zhisida.board.core.pojo.email.EmailConfigs;
 /**
  * 邮件发送控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 public class MailSenderConfig {
@@ -22,7 +22,7 @@ public class MailSenderConfig {
     /**
      * 邮件发射器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public MailSender mailSender(SysConfigCache sysConfigCache) {

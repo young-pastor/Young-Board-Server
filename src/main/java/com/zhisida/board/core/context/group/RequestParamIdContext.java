@@ -6,7 +6,7 @@ package com.zhisida.board.core.context.group;
  * <p>
  * 注意：如果要用@TableUniqueValue这个校验，必须得主键的字段名是id，否则会校验失败
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class RequestParamIdContext {
 
@@ -15,7 +15,7 @@ public class RequestParamIdContext {
     /**
      * 设置id
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void set(Long id) {
         PARAM_ID_HOLDER.set(id);
@@ -24,7 +24,7 @@ public class RequestParamIdContext {
     /**
      * 获取id
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static Long get() {
         return PARAM_ID_HOLDER.get();
@@ -33,7 +33,7 @@ public class RequestParamIdContext {
     /**
      * 清除缓存id
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void clear() {
         PARAM_ID_HOLDER.remove();

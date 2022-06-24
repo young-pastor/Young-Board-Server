@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysOrg;
 /**
  * 系统组织机构mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysOrgMapper extends BaseMapper<SysOrg> {
 }

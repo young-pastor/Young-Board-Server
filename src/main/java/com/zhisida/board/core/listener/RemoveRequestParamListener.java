@@ -8,7 +8,7 @@ import org.springframework.web.context.support.ServletRequestHandledEvent;
 /**
  * 用来清除临时缓存的@RequestBody的请求参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class RemoveRequestParamListener implements ApplicationListener<ServletRequestHandledEvent> {
 

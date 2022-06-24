@@ -14,7 +14,7 @@ import com.zhisida.board.core.mybatis.sqlfilter.DemoProfileSqlInterceptor;
 /**
  * mybatis扩展插件配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 @MapperScan(basePackages = {"com.zhisida.board.**.mapper"})
@@ -23,7 +23,7 @@ public class MybatisConfig {
     /**
      * mybatis-plus分页插件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
@@ -37,7 +37,7 @@ public class MybatisConfig {
      * <p>
      * 演示环境只开放查询操作，其他都不允许
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public DemoProfileSqlInterceptor demoProfileSqlInterceptor() {
@@ -47,7 +47,7 @@ public class MybatisConfig {
     /**
      * 自定义公共字段自动注入
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public MetaObjectHandler metaObjectHandler() {
@@ -57,7 +57,7 @@ public class MybatisConfig {
     /**
      * 数据库id选择器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public BoardDatabaseIdProvider boardDatabaseIdProvider() {

@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 框架中加解密配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Data
 public class CryptogramConfigs {

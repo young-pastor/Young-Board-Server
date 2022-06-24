@@ -21,7 +21,7 @@ import java.util.*;
 /**
  * 系统缓存监控控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysCacheController {
@@ -31,7 +31,7 @@ public class SysCacheController {
     /**
      * 系统缓存监控
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysCache/keyTree")
     @BusinessLog(title = "系统缓存监控_查询", opType = LogAnnotionOpTypeEnum.QUERY)

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 系统字典值mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysDictDataMapper extends BaseMapper<SysDictData> {
 
@@ -18,7 +18,7 @@ public interface SysDictDataMapper extends BaseMapper<SysDictData> {
      *
      * @param dictTypeCodes 字典类型编码集合
      * @return 字典编码值列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getDictCodesByDictTypeCode(String[] dictTypeCodes);
 

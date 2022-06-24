@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 系统字典类型参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 字段关联配置service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:45:42
  */
 public interface BoardTableConnectService extends IService<BoardTableConnect> {
@@ -19,7 +19,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 查询字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     PageResult<BoardTableConnect> page(BoardTableConnectParam boardTableConnectParam);
@@ -27,7 +27,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 字段关联配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     List<BoardTableConnect> list(BoardTableConnectParam boardTableConnectParam);
@@ -35,7 +35,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 添加字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     void add(BoardTableConnectParam boardTableConnectParam);
@@ -43,7 +43,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 删除字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     void delete(List<BoardTableConnectParam> boardTableConnectParamList);
@@ -51,7 +51,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 编辑字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     void edit(BoardTableConnectParam boardTableConnectParam);
@@ -59,7 +59,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 查看字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
      BoardTableConnect detail(BoardTableConnectParam boardTableConnectParam);
@@ -67,7 +67,7 @@ public interface BoardTableConnectService extends IService<BoardTableConnect> {
     /**
      * 导出字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
      void export(BoardTableConnectParam boardTableConnectParam);

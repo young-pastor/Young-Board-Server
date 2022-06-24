@@ -14,7 +14,7 @@ import java.util.HashMap;
 /**
  * 在线文件信息结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysOnlineFileInfoResult {

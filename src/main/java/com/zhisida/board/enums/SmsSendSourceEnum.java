@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 短信发送业务枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum SmsSendSourceEnum {

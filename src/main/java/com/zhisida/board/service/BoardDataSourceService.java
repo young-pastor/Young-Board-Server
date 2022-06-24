@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 数据源配置表service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-17 15:08:24
  */
 public interface BoardDataSourceService extends IService<BoardDataSource> {
@@ -18,7 +18,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 查询数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     PageResult<BoardDataSource> page(BoardDataSourceParam boardDataSourceParam);
@@ -26,7 +26,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 数据源配置表列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     List<BoardDataSource> list(BoardDataSourceParam boardDataSourceParam);
@@ -34,7 +34,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 添加数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     void add(BoardDataSourceParam boardDataSourceParam);
@@ -42,7 +42,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 删除数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     void delete(List<BoardDataSourceParam> boardDataSourceParamList);
@@ -50,7 +50,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 编辑数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
     void edit(BoardDataSourceParam boardDataSourceParam);
@@ -58,7 +58,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 查看数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
      BoardDataSource detail(BoardDataSourceParam boardDataSourceParam);
@@ -66,7 +66,7 @@ public interface BoardDataSourceService extends IService<BoardDataSource> {
     /**
      * 导出数据源配置表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-17 15:08:24
      */
      void export(BoardDataSourceParam boardDataSourceParam);

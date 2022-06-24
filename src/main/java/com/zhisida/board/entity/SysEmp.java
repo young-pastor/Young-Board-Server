@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * 员工表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_emp")

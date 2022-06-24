@@ -7,7 +7,7 @@ import com.zhisida.board.entity.BoardTableColumn;
 /**
  * 数据字段配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:27:41
  */
 public interface BoardTableColumnMapper extends BaseMapper<BoardTableColumn> {

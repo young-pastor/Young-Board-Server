@@ -9,7 +9,7 @@ import com.zhisida.board.core.consts.SysExpEnumConstant;
 /**
  * 系统菜单相关异常枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = SysExpEnumConstant.BOARD_SYS_MODULE_EXP_CODE, kind = SysExpEnumConstant.SYS_MENU_EXCEPTION_ENUM)
 public enum SysMenuExceptionEnum implements AbstractBaseExceptionEnum {

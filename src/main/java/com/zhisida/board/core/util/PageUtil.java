@@ -10,14 +10,14 @@ import java.util.List;
 /**
  * 分页工具类针对hutool分页的扩展
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 public class PageUtil<T> extends cn.hutool.core.util.PageUtil{
 
     /**
      * 逻辑分页
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public static <T> List<T> page(Page<T> page, List<T> list) {
         setFirstPageNo(1);

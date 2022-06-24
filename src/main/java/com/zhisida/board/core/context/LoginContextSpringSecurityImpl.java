@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * 登录用户上下文实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class LoginContextSpringSecurityImpl implements LoginContext {
@@ -44,7 +44,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前登录用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public SysLoginUser getSysLoginUser() {
@@ -59,7 +59,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前登录用户，如未登录，则返回null，不抛异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public SysLoginUser getSysLoginUserWithoutException() {
@@ -74,7 +74,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前登录用户的id
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public Long getSysLoginUserId() {
@@ -84,7 +84,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 判断用户是否登录
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public boolean hasLogin() {
@@ -99,7 +99,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前登录的用户账号
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public String getSysLoginUserAccount() {
@@ -109,7 +109,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 判断当前登录用户是否有某资源的访问权限
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public boolean hasPermission(String requestUri) {
@@ -121,7 +121,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 判断当前登录用户是否包含某个角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public boolean hasRole(String roleCode) {
@@ -132,7 +132,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 判断当前登录用户是否包含任意一个角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public boolean hasAnyRole(String roleCodes) {
@@ -152,7 +152,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
      * 管理员类型（0超级管理员 1非管理员）
      * 判断当前登录用户是否是超级管理员
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public boolean isSuperAdmin() {
@@ -162,7 +162,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 判断当前登录用户是否包含所有角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public boolean hasAllRole(String roleCodes) {
@@ -181,7 +181,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 判断当前登录用户是否是指定类型的管理员
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private boolean isAdmin(Integer adminTypeCode) {
         Integer adminType = this.getSysLoginUser().getAdminType();
@@ -195,7 +195,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 当前登录用户的数据范围（组织机构id集合）
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public List<Long> getLoginUserDataScopeIdList() {
@@ -205,7 +205,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前登录用户的组织机构id集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public Long getSysLoginUserOrgId() {
@@ -221,7 +221,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前登录用户的角色id集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public List<String> getLoginUserRoleIds() {
@@ -242,7 +242,7 @@ public class LoginContextSpringSecurityImpl implements LoginContext {
     /**
      * 获取当前用户的角色编码集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<String> getLoginUserRoleCodeList() {
         List<String> roleCodeList = CollectionUtil.newArrayList();

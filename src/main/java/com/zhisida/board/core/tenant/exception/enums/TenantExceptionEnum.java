@@ -9,7 +9,7 @@ import com.zhisida.board.core.tenant.consts.TenantExpEnumConstant;
 /**
  * 多租户异常枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = TenantExpEnumConstant.TENANT_MODULE_EXP_CODE, kind = TenantExpEnumConstant.TENANT_EXCEPTION_ENUM)
 public enum TenantExceptionEnum implements AbstractBaseExceptionEnum {

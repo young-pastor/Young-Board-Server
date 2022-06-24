@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 数据字段配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:27:41
  */
 @Service
@@ -101,7 +101,7 @@ public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMap
     /**
      * 获取数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     private BoardTableColumn queryBoardTableColumn(BoardTableColumnParam boardTableColumnParam) {

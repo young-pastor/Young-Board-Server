@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * JwtPayLoad部分
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class JwtPayLoad {

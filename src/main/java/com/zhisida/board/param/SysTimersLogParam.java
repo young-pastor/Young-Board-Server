@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 /**
 * 任务日志参数类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-24 17:02:32
 */
 @Data

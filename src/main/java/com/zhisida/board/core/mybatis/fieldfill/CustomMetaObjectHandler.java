@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * 自定义sql字段填充器，自动填充创建修改相关字段
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class CustomMetaObjectHandler implements MetaObjectHandler {
 

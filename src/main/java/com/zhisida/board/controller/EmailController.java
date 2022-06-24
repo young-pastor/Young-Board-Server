@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 /**
  * 邮件发送控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class EmailController {
@@ -35,7 +35,7 @@ public class EmailController {
     /**
      * 发送邮件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/email/sendEmail")
     @BusinessLog(title = "发送邮件", opType = LogAnnotionOpTypeEnum.OTHER)
@@ -66,7 +66,7 @@ public class EmailController {
     /**
      * 发送邮件(html)
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/email/sendEmailHtml")
     @BusinessLog(title = "发送邮件", opType = LogAnnotionOpTypeEnum.OTHER)

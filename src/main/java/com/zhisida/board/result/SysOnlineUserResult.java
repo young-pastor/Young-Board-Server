@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 系统在线用户结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysOnlineUserResult implements Serializable {

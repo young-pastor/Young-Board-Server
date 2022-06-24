@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 腾讯云短信配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class TencentSmsProperties {

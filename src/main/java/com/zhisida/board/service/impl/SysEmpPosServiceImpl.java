@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 员工职位service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysEmpPosServiceImpl extends ServiceImpl<SysEmpPosMapper, SysEmpPos> implements SysEmpPosService {

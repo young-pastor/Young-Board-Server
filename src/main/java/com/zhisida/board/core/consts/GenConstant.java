@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * 代码生成配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class GenConstant {
 

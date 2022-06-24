@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 系统组织机构表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

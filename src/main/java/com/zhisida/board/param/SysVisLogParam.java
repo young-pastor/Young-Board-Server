@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 访问日志参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

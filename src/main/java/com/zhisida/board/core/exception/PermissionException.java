@@ -13,7 +13,7 @@ import lombok.Getter;
  * 鉴权可以证明你有系统的哪些权限，鉴权的过程是校验角色是否包含某些接口的权限
  * 也包含当前用户是否有操作该数据的权限
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class PermissionException extends RuntimeException {

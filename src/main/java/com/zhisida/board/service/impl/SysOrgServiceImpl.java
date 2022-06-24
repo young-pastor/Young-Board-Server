@@ -42,7 +42,7 @@ import java.util.Set;
 /**
  * 系统组织机构service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> implements SysOrgService {
@@ -340,7 +340,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 根据条件获取组织机构id集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<Long> getOrgIdAll() {
         List<Long> resultList = CollectionUtil.newArrayList();
@@ -356,7 +356,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 校验参数，检查是否存在相同的名称和编码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysOrgParam sysOrgParam, boolean isExcludeSelf) {
         Long id = sysOrgParam.getId();
@@ -414,7 +414,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 获取系统组织机构
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysOrg querySysOrg(SysOrgParam sysOrgParam) {
         SysOrg sysOrg = this.getById(sysOrgParam.getId());
@@ -427,7 +427,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 填充父ids
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void fillPids(SysOrg sysOrg) {
         if (sysOrg.getPid().equals(0L)) {
@@ -448,7 +448,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 根据节点id获取所有子节点id集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<Long> getChildIdListById(Long id) {
         List<Long> childIdList = CollectionUtil.newArrayList();
@@ -465,7 +465,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 根据节点id获取所有父节点id集合，不包含自己
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<Long> getParentIdListById(Long id) {
         List<Long> resultList = CollectionUtil.newArrayList();
@@ -483,7 +483,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 根据节点id获取所有子节点id集合，包含自己
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<Long> getChildIdListWithSelfById(Long id) {
         List<Long> childIdListById = this.getChildIdListById(id);
@@ -495,7 +495,7 @@ public class SysOrgServiceImpl extends ServiceImpl<SysOrgMapper, SysOrg> impleme
     /**
      * 根据节点id获取父节点和子节点id集合，包含自己
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<Long> getParentAndChildIdListWithSelfById(Long id) {
         Set<Long> resultSet = CollectionUtil.newHashSet();

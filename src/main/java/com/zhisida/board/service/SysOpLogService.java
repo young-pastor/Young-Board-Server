@@ -9,7 +9,7 @@ import com.zhisida.board.param.SysOpLogParam;
 /**
  * 系统操作日志service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysOpLogService extends IService<SysOpLog> {
 
@@ -18,21 +18,21 @@ public interface SysOpLogService extends IService<SysOpLog> {
      *
      * @param sysOpLogParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysOpLog> page(SysOpLogParam sysOpLogParam);
 
     /**
      * 清空系统操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete();
 
     /**
      * 导出系统操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void export(SysOpLogParam sysOpLogParam);
 }

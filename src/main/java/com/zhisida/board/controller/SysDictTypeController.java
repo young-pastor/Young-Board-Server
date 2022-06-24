@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 系统字典类型控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysDictTypeController {
@@ -31,7 +31,7 @@ public class SysDictTypeController {
     /**
      * 分页查询系统字典类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysDictType/page")
@@ -43,7 +43,7 @@ public class SysDictTypeController {
     /**
      * 获取字典类型列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysDictType/list")
@@ -55,7 +55,7 @@ public class SysDictTypeController {
     /**
      * 获取字典类型下所有字典，举例，返回格式为：[{code:"M",value:"男"},{code:"F",value:"女"}]
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysDictType/dropDown")
     @BusinessLog(title = "系统字典类型_下拉", opType = LogAnnotionOpTypeEnum.QUERY)
@@ -66,7 +66,7 @@ public class SysDictTypeController {
     /**
      * 查看系统字典类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysDictType/detail")
@@ -78,7 +78,7 @@ public class SysDictTypeController {
     /**
      * 添加系统字典类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictType/add")
@@ -91,7 +91,7 @@ public class SysDictTypeController {
     /**
      * 删除系统字典类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictType/delete")
@@ -104,7 +104,7 @@ public class SysDictTypeController {
     /**
      * 编辑系统字典类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictType/edit")
@@ -117,7 +117,7 @@ public class SysDictTypeController {
     /**
      * 修改状态
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysDictType/changeStatus")
@@ -130,7 +130,7 @@ public class SysDictTypeController {
     /**
      * 系统字典类型与字典值构造的树
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysDictType/tree")
     @BusinessLog(title = "系统字典类型_树", opType = LogAnnotionOpTypeEnum.QUERY)

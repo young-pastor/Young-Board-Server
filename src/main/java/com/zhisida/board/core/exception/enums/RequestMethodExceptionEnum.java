@@ -9,7 +9,7 @@ import com.zhisida.board.core.factory.ExpEnumCodeFactory;
 /**
  * 请求方法相关异常枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = ExpEnumConstant.BOARD_CORE_MODULE_EXP_CODE, kind = ExpEnumConstant.REQUEST_METHOD_EXCEPTION_ENUM)
 public enum RequestMethodExceptionEnum implements AbstractBaseExceptionEnum {

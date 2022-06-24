@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统角色数据范围service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysRoleDataScopeService extends IService<SysRoleDataScope> {
 
@@ -18,7 +18,7 @@ public interface SysRoleDataScopeService extends IService<SysRoleDataScope> {
      * 授权数据
      *
      * @param sysRoleParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantDataScope(SysRoleParam sysRoleParam);
 
@@ -27,7 +27,7 @@ public interface SysRoleDataScopeService extends IService<SysRoleDataScope> {
      *
      * @param roleIdList 角色id集合
      * @return 数据范围id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getRoleDataScopeIdList(List<Long> roleIdList);
 
@@ -35,7 +35,7 @@ public interface SysRoleDataScopeService extends IService<SysRoleDataScope> {
      * 根据机构id集合删除对应的角色-数据范围关联信息
      *
      * @param orgIdList 机构id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteRoleDataScopeListByOrgIdList(List<Long> orgIdList);
 
@@ -43,7 +43,7 @@ public interface SysRoleDataScopeService extends IService<SysRoleDataScope> {
      * 根据角色id删除对应的角色-数据范围关联信息
      *
      * @param roleId 角色id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteRoleDataScopeListByRoleId(Long roleId);
 }

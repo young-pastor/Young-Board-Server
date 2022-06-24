@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 查询类型的枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum QueryTypeEnum {

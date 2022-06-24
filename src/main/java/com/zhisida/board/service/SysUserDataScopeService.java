@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统用户数据范围service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysUserDataScopeService extends IService<SysUserDataScope> {
 
@@ -18,7 +18,7 @@ public interface SysUserDataScopeService extends IService<SysUserDataScope> {
      * 授权数据
      *
      * @param sysUserParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantData(SysUserParam sysUserParam);
 
@@ -27,7 +27,7 @@ public interface SysUserDataScopeService extends IService<SysUserDataScope> {
      *
      * @param uerId 用户id
      * @return 数据范围id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getUserDataScopeIdList(Long uerId);
 
@@ -35,7 +35,7 @@ public interface SysUserDataScopeService extends IService<SysUserDataScope> {
      * 根据机构id集合删除对应的用户-数据范围关联信息
      *
      * @param orgIdList 机构id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteUserDataScopeListByOrgIdList(List<Long> orgIdList);
 
@@ -43,7 +43,7 @@ public interface SysUserDataScopeService extends IService<SysUserDataScope> {
      * 根据用户id删除对应的用户-数据范围关联信息
      *
      * @param userId 用户id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteUserDataScopeListByUserId(Long userId);
 }

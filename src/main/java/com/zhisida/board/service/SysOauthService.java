@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Oauth登录相关service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 public interface SysOauthService extends IService<SysOauthUser> {
 
@@ -19,7 +19,7 @@ public interface SysOauthService extends IService<SysOauthUser> {
      *
      * @param source 授权平台来源
      * @return 授权地址
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     String getAuthorizeUrl(String source);
 
@@ -30,7 +30,7 @@ public interface SysOauthService extends IService<SysOauthUser> {
      * @param callback 授权平台返回的用户信息
      * @param request  request请求
      * @return 登录成功的token
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     String callback(String source, AuthCallback callback, HttpServletRequest request);
 }

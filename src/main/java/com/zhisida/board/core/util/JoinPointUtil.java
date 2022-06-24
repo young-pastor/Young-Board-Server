@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Spring切面工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class JoinPointUtil {
 
     /**
      * 获取切面的参数json
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getArgsJsonString(JoinPoint joinPoint) {
         StringBuilder argsJson = new StringBuilder();
@@ -38,7 +38,7 @@ public class JoinPointUtil {
     /**
      * 判断是否需要拼接参数，过滤掉HttpServletRequest,MultipartFile,HttpServletResponse等类型参数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private static boolean isFilterObject(Object arg) {
         return arg instanceof MultipartFile || arg instanceof HttpServletRequest || arg instanceof HttpServletResponse;

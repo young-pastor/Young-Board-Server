@@ -20,7 +20,7 @@ import java.util.List;
  * 根据ip地址定位工具类，使用阿里云定位api，如使用本接口，仅需使用以下地址购买接口，然后替换sys_config表中定位appCode为你自己的即可
  * 接口购买地址：https://market.aliyun.com/products/57002003/cmapi021970.html
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class IpAddressUtil {
 
@@ -33,7 +33,7 @@ public class IpAddressUtil {
     /**
      * 获取客户端ip
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getIp(HttpServletRequest request) {
         if (ObjectUtil.isEmpty(request)) {
@@ -47,7 +47,7 @@ public class IpAddressUtil {
     /**
      * 根据ip地址定位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @SuppressWarnings("unchecked")
     public static String getAddress(HttpServletRequest request) {

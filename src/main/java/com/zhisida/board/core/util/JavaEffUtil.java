@@ -4,14 +4,14 @@ package com.zhisida.board.core.util;
 /**
  * java与effect工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class JavaEffUtil {
 
     /**
      * java转显示类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String javaToEff (String javaType) {
         if( javaType == null || javaType.trim().length() == 0 ) return javaType;

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 属性值service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:45
  */
 public interface BoardPropertyValueService extends IService<BoardPropertyValue> {
@@ -19,7 +19,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 查询属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
     PageResult<BoardPropertyValue> page(BoardPropertyValueParam boardPropertyValueParam);
@@ -27,7 +27,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 属性值列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
     List<BoardPropertyValue> list(BoardPropertyValueParam boardPropertyValueParam);
@@ -35,7 +35,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 添加属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
     void add(BoardPropertyValueParam boardPropertyValueParam);
@@ -43,7 +43,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 删除属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
     void delete(List<BoardPropertyValueParam> boardPropertyValueParamList);
@@ -51,7 +51,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 编辑属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
     void edit(BoardPropertyValueParam boardPropertyValueParam);
@@ -59,7 +59,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 查看属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
      BoardPropertyValue detail(BoardPropertyValueParam boardPropertyValueParam);
@@ -67,7 +67,7 @@ public interface BoardPropertyValueService extends IService<BoardPropertyValue> 
     /**
      * 导出属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
      void export(BoardPropertyValueParam boardPropertyValueParam);

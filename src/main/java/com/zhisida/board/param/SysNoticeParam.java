@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 系统通知公告参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

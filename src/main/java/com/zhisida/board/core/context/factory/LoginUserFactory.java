@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 /**
  * 登录用户工厂类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LoginUserFactory {
 
@@ -56,7 +56,7 @@ public class LoginUserFactory {
     /**
      * 填充登录用户相关信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void fillLoginUserInfo(SysLoginUser sysLoginUser) {
         HttpServletRequest request = HttpServletUtil.getRequest();

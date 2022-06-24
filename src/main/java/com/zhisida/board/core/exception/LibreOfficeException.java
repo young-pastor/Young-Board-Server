@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * LibreOffice相关异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class LibreOfficeException extends ServiceException {

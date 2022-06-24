@@ -62,7 +62,7 @@ import java.util.Scanner;
 /**
  * 文件信息表 服务实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysFileInfoServiceImpl extends ServiceImpl<SysFileInfoMapper, SysFileInfo> implements SysFileInfoService {
@@ -348,7 +348,7 @@ public class SysFileInfoServiceImpl extends ServiceImpl<SysFileInfoMapper, SysFi
     /**
      * 获取文件信息表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysFileInfo querySysFileInfo(SysFileInfoParam sysFileInfoParam) {
         SysFileInfo sysFileInfo = this.getById(sysFileInfoParam.getId());
@@ -441,7 +441,7 @@ public class SysFileInfoServiceImpl extends ServiceImpl<SysFileInfoMapper, SysFi
      * @param sample 是否创建相同文件内容的模板文件
      * @param userId 用户id
      * @param userName 用户名称
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public SysFileInfo createDemo(String fileSuffix, String originalFilename, Boolean sample, String userId, String userName) {
         // 文件名称拼接
@@ -485,7 +485,7 @@ public class SysFileInfoServiceImpl extends ServiceImpl<SysFileInfoMapper, SysFi
      * @param fileId 文件id
      * @param userId 用户id
      * @param userName 用户名称
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public void createMeta(String fileId, String userId, String userName) {
         // 仅限本地文件

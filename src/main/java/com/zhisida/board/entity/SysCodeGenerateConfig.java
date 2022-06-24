@@ -11,7 +11,7 @@ import com.zhisida.board.core.pojo.base.entity.BaseEntity;
 /**
  * 代码生成详细配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

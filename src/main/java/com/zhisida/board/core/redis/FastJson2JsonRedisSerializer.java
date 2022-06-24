@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 /**
  * redis序列化器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
 
@@ -26,7 +26,7 @@ public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
     /**
      * 构造函数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public FastJson2JsonRedisSerializer(Class<T> clazz) {
         super();
@@ -36,7 +36,7 @@ public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
     /**
      * 序列化
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public byte[] serialize(T t) throws SerializationException {
@@ -49,7 +49,7 @@ public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
     /**
      * 反序列化
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public T deserialize(byte[] bytes) throws SerializationException {

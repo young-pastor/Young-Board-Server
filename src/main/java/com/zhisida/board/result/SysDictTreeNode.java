@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 系统字典树
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysDictTreeNode implements BaseTreeNode {

@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 /**
  * 系统日志控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysLogController {
@@ -33,7 +33,7 @@ public class SysLogController {
     /**
      * 查询访问日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysVisLog/page")
@@ -44,7 +44,7 @@ public class SysLogController {
     /**
      * 查询操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysOpLog/page")
@@ -55,7 +55,7 @@ public class SysLogController {
     /**
      * 清空访问日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysVisLog/delete")
@@ -68,7 +68,7 @@ public class SysLogController {
     /**
      * 清空操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysOpLog/delete")
@@ -81,7 +81,7 @@ public class SysLogController {
     /**
      * 导出系统操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysOpLog/export")
@@ -93,7 +93,7 @@ public class SysLogController {
     /**
      * 导出系统访问日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysVisLog/export")

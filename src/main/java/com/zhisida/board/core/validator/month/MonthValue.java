@@ -10,7 +10,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * 校验日期格式 yyyy-MM
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Documented
 @Constraint(validatedBy = MonthValueValidator.class)

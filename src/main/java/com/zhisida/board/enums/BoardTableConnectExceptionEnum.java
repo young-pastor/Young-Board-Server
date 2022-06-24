@@ -9,7 +9,7 @@ import com.zhisida.board.core.consts.SysExpEnumConstant;
 /**
  * 字段关联配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:45:42
  */
 @ExpEnumType(module = SysExpEnumConstant.BOARD_SYS_MODULE_EXP_CODE)

@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 响应结果数据
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class ResponseData {

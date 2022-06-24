@@ -23,7 +23,7 @@ import javax.annotation.Resource;
 /**
  * 登录控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysLoginController {
@@ -41,7 +41,7 @@ public class SysLoginController {
     /**
      * 获取是否开启租户的标识
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/getTenantOpen")
     public ResponseData getTenantOpen() {
@@ -51,7 +51,7 @@ public class SysLoginController {
     /**
      * 账号密码登录
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/login")
     public ResponseData login(@RequestBody Dict dict) {
@@ -77,7 +77,7 @@ public class SysLoginController {
     /**
      * 退出登录
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/logout")
     public void logout() {
@@ -87,7 +87,7 @@ public class SysLoginController {
     /**
      * 获取当前登录用户信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/getLoginUser")
     public ResponseData getLoginUser() {
@@ -97,7 +97,7 @@ public class SysLoginController {
     /**
      * 获取验证码开关
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/getCaptchaOpen")
     public ResponseData getCaptchaOpen() {
@@ -108,7 +108,7 @@ public class SysLoginController {
     /**
      * 校验验证码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private boolean verificationCode(String code) {
         CaptchaVO vo = new CaptchaVO();

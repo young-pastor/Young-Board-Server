@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 日志成功状态
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum LogSuccessStatusEnum {

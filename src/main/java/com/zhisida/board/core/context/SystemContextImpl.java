@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * 系统相关上下文接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class SystemContextImpl implements SystemContext {
@@ -164,7 +164,7 @@ public class SystemContextImpl implements SystemContext {
     /**
      * 几个参数的为空校验
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void paramValidate(UniqueValidateParam uniqueValidateParam) {
         if (StrUtil.isBlank(uniqueValidateParam.getTableName())) {
@@ -181,7 +181,7 @@ public class SystemContextImpl implements SystemContext {
     /**
      * id参数的为空校验
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void paramIdValidate(UniqueValidateParam uniqueValidateParam) {
         if (uniqueValidateParam.getId() == null) {

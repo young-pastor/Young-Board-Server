@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 元事件配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:52:17
  */
 @Service
@@ -97,7 +97,7 @@ public class BoardEventServiceImpl extends ServiceImpl<BoardEventMapper, BoardEv
     /**
      * 获取元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     private BoardEvent queryBoardEvent(BoardEventParam boardEventParam) {

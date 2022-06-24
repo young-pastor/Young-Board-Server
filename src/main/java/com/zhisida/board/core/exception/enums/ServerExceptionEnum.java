@@ -9,7 +9,7 @@ import com.zhisida.board.core.factory.ExpEnumCodeFactory;
 /**
  * 服务器内部相关异常枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = ExpEnumConstant.BOARD_CORE_MODULE_EXP_CODE, kind = ExpEnumConstant.SERVER_EXCEPTION_ENUM)
 public enum ServerExceptionEnum implements AbstractBaseExceptionEnum {

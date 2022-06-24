@@ -44,7 +44,7 @@ import java.util.List;
 /**
  * 全局异常处理器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Order(AopSortConstant.GLOBAL_EXP_HANDLER_AOP)
 @ControllerAdvice
@@ -55,7 +55,7 @@ public class GlobalExceptionHandler {
     /**
      * 腾讯云短信发送异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(TencentSmsException.class)
     @ResponseBody
@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
     /**
      * 阿里云短信发送异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(AliyunSmsException.class)
     @ResponseBody
@@ -79,7 +79,7 @@ public class GlobalExceptionHandler {
     /**
      * 请求参数缺失异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(MissingServletRequestParameterException.class)
     @ResponseBody
@@ -94,7 +94,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截参数格式传递异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseBody
@@ -106,7 +106,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截不支持媒体类型异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
     @ResponseBody
@@ -118,7 +118,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截请求方法的异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     @ResponseBody
@@ -137,7 +137,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截资源找不到的运行时异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -150,7 +150,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截参数校验错误异常,JSON传参
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody
@@ -163,7 +163,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截参数校验错误异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(BindException.class)
     @ResponseBody
@@ -176,7 +176,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截认证失败异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(AuthException.class)
     @ResponseBody
@@ -188,7 +188,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截权限异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(PermissionException.class)
     @ResponseBody
@@ -200,7 +200,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截业务异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(ServiceException.class)
     @ResponseBody
@@ -214,7 +214,7 @@ public class GlobalExceptionHandler {
      * <p>
      * 用在demo模式，拦截DemoException
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(MyBatisSystemException.class)
     @ResponseBody
@@ -234,7 +234,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截未知的运行时异常
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ExceptionHandler(Throwable.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -248,7 +248,7 @@ public class GlobalExceptionHandler {
     /**
      * 渲染异常json
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private ErrorResponseData renderJson(Integer code, String message) {
         return renderJson(code, message, null);
@@ -257,7 +257,7 @@ public class GlobalExceptionHandler {
     /**
      * 渲染异常json
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private ErrorResponseData renderJson(AbstractBaseExceptionEnum baseExceptionEnum) {
         return renderJson(baseExceptionEnum.getCode(), baseExceptionEnum.getMessage(), null);
@@ -266,7 +266,7 @@ public class GlobalExceptionHandler {
     /**
      * 渲染异常json
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private ErrorResponseData renderJson(Throwable throwable) {
         return renderJson(((AbstractBaseExceptionEnum) ServerExceptionEnum.SERVER_ERROR).getCode(),
@@ -278,7 +278,7 @@ public class GlobalExceptionHandler {
      * <p>
      * 根据异常枚举和Throwable异常响应，异常信息响应堆栈第一行
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private ErrorResponseData renderJson(Integer code, String message, Throwable e) {
         if (ObjectUtil.isNotNull(e)) {
@@ -307,7 +307,7 @@ public class GlobalExceptionHandler {
      * <p>
      * 多个信息，拼接成用逗号分隔的形式
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private String getArgNotValidMessage(BindingResult bindingResult) {
         if (bindingResult == null) {

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 系统字典值service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysDictDataService extends IService<SysDictData> {
 
@@ -21,7 +21,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      *
      * @param sysDictDataParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysDictData> page(SysDictDataParam sysDictDataParam);
 
@@ -30,7 +30,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      *
      * @param sysDictDataParam 查询参数
      * @return 系统字典值列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysDictData> list(SysDictDataParam sysDictDataParam);
 
@@ -38,7 +38,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      * 添加系统字典值
      *
      * @param sysDictDataParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysDictDataParam sysDictDataParam);
 
@@ -46,7 +46,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      * 删除系统字典值
      *
      * @param sysDictDataParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysDictDataParam sysDictDataParam);
 
@@ -54,7 +54,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      * 编辑系统字典值
      *
      * @param sysDictDataParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysDictDataParam sysDictDataParam);
 
@@ -63,7 +63,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      *
      * @param sysDictDataParam 查看参数
      * @return 系统字典值
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysDictData detail(SysDictDataParam sysDictDataParam);
 
@@ -72,7 +72,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      *
      * @param dictTypeId 字典类型id
      * @return 增强版hashMap，格式：[{"code:":"1", "value":"正常"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> getDictDataListByDictTypeId(Long dictTypeId);
 
@@ -80,7 +80,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      * 根据typeId删除
      *
      * @param dictTypeId 字典类型id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteByTypeId(Long dictTypeId);
 
@@ -88,7 +88,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      * 修改状态
      *
      * @param sysDictDataParam 修改参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void changeStatus(SysDictDataParam sysDictDataParam);
 
@@ -97,7 +97,7 @@ public interface SysDictDataService extends IService<SysDictData> {
      *
      * @param dictTypeCodes 字典类型编码集合
      * @return 字典编码值列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getDictCodesByDictTypeCode(String... dictTypeCodes);
 }

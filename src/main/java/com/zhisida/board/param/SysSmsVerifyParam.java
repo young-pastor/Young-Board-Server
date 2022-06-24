@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 验证短信的参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysSmsVerifyParam {

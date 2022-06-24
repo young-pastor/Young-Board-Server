@@ -6,7 +6,7 @@ import cn.hutool.extra.spring.SpringUtil;
 /**
  * 当前登录用户信息获取的接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LoginContextHolder {
 

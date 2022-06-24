@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * 代码生成详细配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysCodeGenerateConfigServiceImpl extends ServiceImpl<SysCodeGenerateConfigMapper, SysCodeGenerateConfig> implements SysCodeGenerateConfigService {
@@ -122,7 +122,7 @@ public class SysCodeGenerateConfigServiceImpl extends ServiceImpl<SysCodeGenerat
     /**
      * 获取代码生成详细配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysCodeGenerateConfig querySysCodeGenerateConfig(SysCodeGenerateConfigParam sysCodeGenerateConfigParam) {
         SysCodeGenerateConfig sysCodeGenerateConfig = this.getById(sysCodeGenerateConfigParam.getId());

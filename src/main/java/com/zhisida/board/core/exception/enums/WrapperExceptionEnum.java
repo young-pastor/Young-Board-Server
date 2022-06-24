@@ -9,7 +9,7 @@ import com.zhisida.board.core.factory.ExpEnumCodeFactory;
 /**
  * 对象包装异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = ExpEnumConstant.BOARD_CORE_MODULE_EXP_CODE, kind = ExpEnumConstant.WRAPPER_EXCEPTION_ENUM)
 public enum WrapperExceptionEnum implements AbstractBaseExceptionEnum {

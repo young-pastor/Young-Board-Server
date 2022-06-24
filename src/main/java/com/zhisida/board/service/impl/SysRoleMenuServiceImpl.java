@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 /**
  * 系统角色菜单service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysRoleMenuServiceImpl extends ServiceImpl<SysRoleMenuMapper, SysRoleMenu> implements SysRoleMenuService {

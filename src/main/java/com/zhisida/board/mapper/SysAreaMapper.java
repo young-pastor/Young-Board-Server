@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysArea;
 /**
  * 系统区域mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysAreaMapper extends BaseMapper<SysArea> {
 

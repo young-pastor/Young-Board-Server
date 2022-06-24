@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * Oauth第三方登录配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Data
 public class OauthConfigs {

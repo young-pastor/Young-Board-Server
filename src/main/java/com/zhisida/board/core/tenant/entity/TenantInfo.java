@@ -12,7 +12,7 @@ import java.util.Date;
  * 租户表
  * </p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @since 2019-06-16
  */
 @TableName("sys_tenant_info")

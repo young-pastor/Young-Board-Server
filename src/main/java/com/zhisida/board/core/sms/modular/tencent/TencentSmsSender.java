@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * 腾讯云短信发送
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TencentSmsSender implements SmsSender {
 

@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * 系统短信表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

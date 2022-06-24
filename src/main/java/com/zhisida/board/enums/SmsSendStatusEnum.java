@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 短信发送状态枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum SmsSendStatusEnum {

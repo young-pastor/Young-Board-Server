@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 /**
  * 系统通知公告控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysNoticeController {
@@ -30,7 +30,7 @@ public class SysNoticeController {
     /**
      * 查询系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysNotice/page")
@@ -42,7 +42,7 @@ public class SysNoticeController {
     /**
      * 查询我收到的系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysNotice/received")
@@ -54,7 +54,7 @@ public class SysNoticeController {
     /**
      * 添加系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysNotice/add")
@@ -67,7 +67,7 @@ public class SysNoticeController {
     /**
      * 删除系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysNotice/delete")
@@ -80,7 +80,7 @@ public class SysNoticeController {
     /**
      * 编辑系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysNotice/edit")
@@ -93,7 +93,7 @@ public class SysNoticeController {
     /**
      * 查看系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysNotice/detail")
@@ -105,7 +105,7 @@ public class SysNoticeController {
     /**
      * 修改状态
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysNotice/changeStatus")

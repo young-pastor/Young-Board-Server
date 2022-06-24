@@ -4,7 +4,7 @@ package com.zhisida.board.core.context.requestno;
 /**
  * 临时保存当前请求号
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class RequestNoContext {
 
@@ -13,7 +13,7 @@ public class RequestNoContext {
     /**
      * 保存请求号
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void set(String requestNo) {
         CONTEXT_HOLDER.set(requestNo);
@@ -22,7 +22,7 @@ public class RequestNoContext {
     /**
      * 获取请求号
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String get() {
         return CONTEXT_HOLDER.get();
@@ -31,7 +31,7 @@ public class RequestNoContext {
     /**
      * 清除请求号
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void clear() {
         CONTEXT_HOLDER.remove();

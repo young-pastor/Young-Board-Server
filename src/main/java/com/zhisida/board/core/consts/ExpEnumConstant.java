@@ -10,7 +10,7 @@ package com.zhisida.board.core.consts;
  * <p>
  * 模块编码和分类编码在ExpEnumCodeConstant类中声明
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface ExpEnumConstant {
 

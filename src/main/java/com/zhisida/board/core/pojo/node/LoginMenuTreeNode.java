@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 登录菜单
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class LoginMenuTreeNode {

@@ -4,7 +4,7 @@ package com.zhisida.board.core.tenant.context;
 /**
  * 租户对应的数据库的临时存放
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TenantDbNameHolder {
 

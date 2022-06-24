@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 /**
  * xss针对http请求的包装
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
 

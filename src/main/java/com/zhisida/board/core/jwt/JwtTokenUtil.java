@@ -14,14 +14,14 @@ import java.util.Date;
 /**
  * JwtToken工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class JwtTokenUtil {
 
     /**
      * 生成token
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String generateToken(JwtPayLoad jwtPayLoad) {
 
@@ -44,7 +44,7 @@ public class JwtTokenUtil {
     /**
      * 根据token获取Claims
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private static Claims getClaimsFromToken(String token) {
         SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
@@ -57,7 +57,7 @@ public class JwtTokenUtil {
     /**
      * 获取JwtPayLoad部分
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static JwtPayLoad getJwtPayLoad(String token) {
         Claims claims = getClaimsFromToken(token);
@@ -67,7 +67,7 @@ public class JwtTokenUtil {
     /**
      * 校验token是否正确
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static Boolean checkToken(String token) {
         try {
@@ -81,7 +81,7 @@ public class JwtTokenUtil {
     /**
      * 校验token是否失效
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static Boolean isTokenExpired(String token) {
         try {

@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 短信验证相关美剧
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum SmsVerifyEnum {

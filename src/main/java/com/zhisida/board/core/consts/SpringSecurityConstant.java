@@ -4,7 +4,7 @@ package com.zhisida.board.core.consts;
 /**
  * SpringSecurity相关常量
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SpringSecurityConstant {
 

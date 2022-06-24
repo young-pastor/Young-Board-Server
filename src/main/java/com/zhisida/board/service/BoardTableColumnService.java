@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 数据字段配置service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:27:41
  */
 public interface BoardTableColumnService extends IService<BoardTableColumn> {
@@ -18,7 +18,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 查询数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     PageResult<BoardTableColumn> page(BoardTableColumnParam boardTableColumnParam);
@@ -26,7 +26,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 数据字段配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     List<BoardTableColumn> list(BoardTableColumnParam boardTableColumnParam);
@@ -34,7 +34,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 添加数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     void add(BoardTableColumnParam boardTableColumnParam);
@@ -42,7 +42,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 删除数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     void delete(List<BoardTableColumnParam> boardTableColumnParamList);
@@ -50,7 +50,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 编辑数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
     void edit(BoardTableColumnParam boardTableColumnParam);
@@ -58,7 +58,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 查看数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
      BoardTableColumn detail(BoardTableColumnParam boardTableColumnParam);
@@ -66,7 +66,7 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     /**
      * 导出数据字段配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:27:41
      */
      void export(BoardTableColumnParam boardTableColumnParam);

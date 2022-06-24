@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysVisLog;
 /**
  * 系统访问日志mapper
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysVisLogMapper extends BaseMapper<SysVisLog> {
 }

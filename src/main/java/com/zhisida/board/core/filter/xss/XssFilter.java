@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * xss过滤器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class XssFilter implements Filter {
 

@@ -19,7 +19,7 @@ import java.util.Set;
  * <p>
  * key为用户的唯一id，value为LoginUser对象
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class SysUserCache {

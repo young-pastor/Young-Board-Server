@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 数据表配置service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:17:36
  */
 public interface BoardTableService extends IService<BoardTable> {
@@ -18,7 +18,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 查询数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     PageResult<BoardTable> page(BoardTableParam boardTableParam);
@@ -26,7 +26,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 数据表配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     List<BoardTable> list(BoardTableParam boardTableParam);
@@ -34,7 +34,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 添加数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     void add(BoardTableParam boardTableParam);
@@ -42,7 +42,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 删除数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     void delete(List<BoardTableParam> boardTableParamList);
@@ -50,7 +50,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 编辑数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     void edit(BoardTableParam boardTableParam);
@@ -58,7 +58,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 查看数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
      BoardTable detail(BoardTableParam boardTableParam);
@@ -66,7 +66,7 @@ public interface BoardTableService extends IService<BoardTable> {
     /**
      * 导出数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
      void export(BoardTableParam boardTableParam);

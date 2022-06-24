@@ -17,7 +17,7 @@ import java.util.TimerTask;
 /**
  * 日志操作任务创建工厂
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LogTaskFactory {
 
@@ -30,7 +30,7 @@ public class LogTaskFactory {
     /**
      * 登录日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static TimerTask loginLog(SysVisLog sysVisLog, final String account, String success, String failMessage) {
         return new TimerTask() {
@@ -49,7 +49,7 @@ public class LogTaskFactory {
     /**
      * 登出日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static TimerTask exitLog(SysVisLog sysVisLog, String account) {
         return new TimerTask() {
@@ -68,7 +68,7 @@ public class LogTaskFactory {
     /**
      * 操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static TimerTask operationLog(SysOpLog sysOpLog, String account, BusinessLog businessLog, JoinPoint joinPoint, String result) {
         return new TimerTask() {
@@ -87,7 +87,7 @@ public class LogTaskFactory {
     /**
      * 异常日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static TimerTask exceptionLog(SysOpLog sysOpLog, String account, BusinessLog businessLog, JoinPoint joinPoint, Exception exception) {
         return new TimerTask() {

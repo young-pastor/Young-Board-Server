@@ -12,7 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * 验证表的的某个字段值是否在是唯一值
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Documented
 @Constraint(validatedBy = TableUniqueValueValidator.class)

@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 登录用户模型
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysLoginUser implements UserDetails, Serializable {

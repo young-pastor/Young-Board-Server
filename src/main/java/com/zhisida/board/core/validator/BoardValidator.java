@@ -17,7 +17,7 @@ import java.beans.PropertyDescriptor;
  * <p>
  * 因为ConstraintValidator的自定义校验中获取不到当前进行的group
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class BoardValidator extends LocalValidatorFactoryBean {
 
@@ -49,7 +49,7 @@ public class BoardValidator extends LocalValidatorFactoryBean {
     /**
      * 获取参数中的id的值，如果没有id字段就返回null
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private Long getParamIdValue(Object target) {
 

@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 用户管理的包装类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class SysUserWrapper implements BaseWrapper<SysUserResult> {
 

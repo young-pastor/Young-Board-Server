@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * 阿里云短信发送服务
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Slf4j
 public class AliyunSmsSender implements SmsSender {
@@ -70,7 +70,7 @@ public class AliyunSmsSender implements SmsSender {
     /**
      * 初始化短信发送的客户端
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private IAcsClient initClient() {
         final String accessKeyId = aliyunSmsProperties.getAccessKeyId();
@@ -84,7 +84,7 @@ public class AliyunSmsSender implements SmsSender {
     /**
      * 组装请求对象
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private JSONObject createSmsRequest(String phoneNumber, String templateCode, Map<String, Object> params, IAcsClient acsClient) {
         CommonRequest request = new CommonRequest();
@@ -122,7 +122,7 @@ public class AliyunSmsSender implements SmsSender {
     /**
      * 校验发送短信的参数是否正确
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void assertSendSmsParams(String phoneNumber, String templateCode, Map<String, Object> params,
                                      AliyunSmsProperties aliyunSmsProperties) {
@@ -135,7 +135,7 @@ public class AliyunSmsSender implements SmsSender {
     /**
      * 获取sms发送的sign标识，参数phone是发送的手机号码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private String getSmsSign(String phone) {
         String signName = aliyunSmsProperties.getSignName();

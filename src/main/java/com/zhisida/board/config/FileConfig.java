@@ -15,7 +15,7 @@ import com.zhisida.board.core.file.FileOperator;
  * <p>
  * 默认激活本地文件存储
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 public class FileConfig {
@@ -28,7 +28,7 @@ public class FileConfig {
     /**
      * 本地文件操作客户端
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public FileOperator fileOperator(SysConfigCache sysConfigCache) {

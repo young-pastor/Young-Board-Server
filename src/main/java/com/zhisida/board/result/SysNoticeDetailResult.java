@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 系统通知公告详情结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysNoticeDetailResult {

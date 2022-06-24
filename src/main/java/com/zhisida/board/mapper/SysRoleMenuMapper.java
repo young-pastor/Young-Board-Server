@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysRoleMenu;
 /**
  * 系统角色菜单mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenu> {
 }

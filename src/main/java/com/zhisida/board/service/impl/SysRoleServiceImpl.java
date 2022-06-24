@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 /**
  * 系统角色service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
@@ -286,7 +286,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     /**
      * 校验参数，检查是否存在相同的名称和编码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysRoleParam sysRoleParam, boolean isExcludeSelf) {
         Long id = sysRoleParam.getId();
@@ -320,7 +320,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     /**
      * 获取系统角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysRole querySysRole(SysRoleParam sysRoleParam) {
         SysRole sysRole = this.getById(sysRoleParam.getId());

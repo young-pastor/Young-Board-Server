@@ -4,14 +4,14 @@ package com.zhisida.board.core.util;
 /**
  * 命名转换
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class NamingConUtil {
 
     /**
      * 下划线命名转为驼峰命名
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String UnderlineToHump(String para, String prefix){
         StringBuilder result=new StringBuilder();
@@ -30,7 +30,7 @@ public class NamingConUtil {
     /**
      * 驼峰命名转为下划线命名
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String HumpToUnderline(String para){
         StringBuilder sb=new StringBuilder(para);

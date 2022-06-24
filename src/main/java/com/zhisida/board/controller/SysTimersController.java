@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 定时任务 控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysTimersController {
@@ -30,7 +30,7 @@ public class SysTimersController {
     /**
      * 分页查询定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysTimers/page")
     @BusinessLog(title = "定时任务_分页查询", opType = LogAnnotionOpTypeEnum.QUERY)
@@ -41,7 +41,7 @@ public class SysTimersController {
     /**
      * 获取全部定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysTimers/list")
     @BusinessLog(title = "定时任务_查询所有", opType = LogAnnotionOpTypeEnum.QUERY)
@@ -52,7 +52,7 @@ public class SysTimersController {
     /**
      * 查看详情定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysTimers/detail")
     @BusinessLog(title = "定时任务_查看详情", opType = LogAnnotionOpTypeEnum.DETAIL)
@@ -63,7 +63,7 @@ public class SysTimersController {
     /**
      * 添加定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysTimers/add")
     @BusinessLog(title = "定时任务_增加", opType = LogAnnotionOpTypeEnum.ADD)
@@ -75,7 +75,7 @@ public class SysTimersController {
     /**
      * 删除定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysTimers/delete")
     @BusinessLog(title = "定时任务_删除", opType = LogAnnotionOpTypeEnum.DELETE)
@@ -87,7 +87,7 @@ public class SysTimersController {
     /**
      * 编辑定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysTimers/edit")
     @BusinessLog(title = "定时任务_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
@@ -99,7 +99,7 @@ public class SysTimersController {
     /**
      * 获取系统的所有任务列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysTimers/getActionClasses")
     @BusinessLog(title = "定时任务_任务列表", opType = LogAnnotionOpTypeEnum.OTHER)
@@ -111,7 +111,7 @@ public class SysTimersController {
     /**
      * 启动定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysTimers/start")
     @BusinessLog(title = "定时任务_启动", opType = LogAnnotionOpTypeEnum.OTHER)
@@ -123,7 +123,7 @@ public class SysTimersController {
     /**
      * 停止定时任务
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysTimers/stop")
     @BusinessLog(title = "定时任务_关闭", opType = LogAnnotionOpTypeEnum.OTHER)

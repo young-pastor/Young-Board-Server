@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 系统应用service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysAppService extends IService<SysApp> {
 
@@ -22,7 +22,7 @@ public interface SysAppService extends IService<SysApp> {
      * @param userId 用户id
      * @param roleIdList 角色id集合
      * @return 用户拥有的应用信息，格式：[{"code":"system","name":"系统应用","active":true}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> getLoginApps(Long userId, List<Long> roleIdList);
 
@@ -31,7 +31,7 @@ public interface SysAppService extends IService<SysApp> {
      *
      * @param sysAppParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysApp> page(SysAppParam sysAppParam);
 
@@ -39,7 +39,7 @@ public interface SysAppService extends IService<SysApp> {
      * 添加系统应用
      *
      * @param sysAppParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysAppParam sysAppParam);
 
@@ -47,7 +47,7 @@ public interface SysAppService extends IService<SysApp> {
      * 删除系统应用
      *
      * @param sysAppParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysAppParam sysAppParam);
 
@@ -55,7 +55,7 @@ public interface SysAppService extends IService<SysApp> {
      * 编辑系统应用
      *
      * @param sysAppParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysAppParam sysAppParam);
 
@@ -64,7 +64,7 @@ public interface SysAppService extends IService<SysApp> {
      *
      * @param sysAppParam 查看参数
      * @return 系统应用
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysApp detail(SysAppParam sysAppParam);
 
@@ -73,7 +73,7 @@ public interface SysAppService extends IService<SysApp> {
      *
      * @param sysAppParam 查询参数
      * @return 系统应用列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysApp> list(SysAppParam sysAppParam);
 
@@ -81,7 +81,7 @@ public interface SysAppService extends IService<SysApp> {
      * 设为默认应用
      *
      * @param sysAppParam 设为默认应用参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void setAsDefault(SysAppParam sysAppParam);
 }

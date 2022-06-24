@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * 公共状态
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum CommonStatusEnum {
@@ -40,7 +40,7 @@ public enum CommonStatusEnum {
     /**
      * 检查请求参数的状态是否正确
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void validateStatus(Integer code) {
         if (code == null) {

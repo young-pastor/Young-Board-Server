@@ -4,7 +4,7 @@ package com.zhisida.board.core.pojo.response;
 /**
  * 成功响应结果
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class SuccessResponseData extends ResponseData {
 

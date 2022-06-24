@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 定时任务
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

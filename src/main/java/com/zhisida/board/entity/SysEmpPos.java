@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * 员工职位关联表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_emp_pos")

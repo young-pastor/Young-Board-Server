@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 树节点接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface BaseTreeNode {
 
@@ -15,7 +15,7 @@ public interface BaseTreeNode {
      * 获取节点id
      *
      * @return 节点id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Long getId();
 
@@ -23,7 +23,7 @@ public interface BaseTreeNode {
      * 获取节点父id
      *
      * @return 节点父id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Long getPid();
 
@@ -31,7 +31,7 @@ public interface BaseTreeNode {
      * 设置children
      *
      * @param children 子节点集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void setChildren(List children);
 }

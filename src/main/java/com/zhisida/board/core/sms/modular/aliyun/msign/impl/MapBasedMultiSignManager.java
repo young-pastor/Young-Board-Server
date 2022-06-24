@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 获取缓存的map中的签名
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class MapBasedMultiSignManager implements MultiSignManager {
 
@@ -52,7 +52,7 @@ public class MapBasedMultiSignManager implements MultiSignManager {
     /**
      * 每隔一段时间清除下map
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void clearMap() {
         if (cacheMap.size() >= CLEAR_COUNT) {

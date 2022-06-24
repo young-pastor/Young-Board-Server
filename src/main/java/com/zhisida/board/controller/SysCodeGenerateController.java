@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * 代码生成器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysCodeGenerateController {
@@ -35,7 +35,7 @@ public class SysCodeGenerateController {
     /**
      * 代码生成基础数据
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/codeGenerate/page")
@@ -47,7 +47,7 @@ public class SysCodeGenerateController {
     /**
      * 代码生成基础配置保存
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/codeGenerate/add")
@@ -60,7 +60,7 @@ public class SysCodeGenerateController {
     /**
      * 代码生成基础配置编辑
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/codeGenerate/edit")
@@ -73,7 +73,7 @@ public class SysCodeGenerateController {
     /**
      * 删除代码生成基础配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/codeGenerate/delete")
@@ -86,7 +86,7 @@ public class SysCodeGenerateController {
     /**
      * 查询当前数据库用户下的所有表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/codeGenerate/InformationList")
@@ -98,7 +98,7 @@ public class SysCodeGenerateController {
     /**
      * 代码生成基础配置生成
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/codeGenerate/runLocal")
@@ -116,7 +116,7 @@ public class SysCodeGenerateController {
     /**
      * 代码生成基础配置生成
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/codeGenerate/runDown")
@@ -133,7 +133,7 @@ public class SysCodeGenerateController {
     /**
      * 代码生成基础配置生成返回预览
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/codeGenerate/runFileContent")

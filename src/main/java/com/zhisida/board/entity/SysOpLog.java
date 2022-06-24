@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 系统操作日志表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_op_log")

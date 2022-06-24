@@ -11,7 +11,7 @@ import com.zhisida.board.result.SysNoticeReceiveResult;
 /**
  * 系统通知公告service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysNoticeService extends IService<SysNotice> {
 
@@ -20,7 +20,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      *
      * @param sysNoticeParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysNotice> page(SysNoticeParam sysNoticeParam);
 
@@ -28,7 +28,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      * 添加系统通知公告
      *
      * @param sysNoticeParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysNoticeParam sysNoticeParam);
 
@@ -36,7 +36,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      * 删除系统通知公告
      *
      * @param sysNoticeParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysNoticeParam sysNoticeParam);
 
@@ -44,7 +44,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      * 编辑系统通知公告
      *
      * @param sysNoticeParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysNoticeParam sysNoticeParam);
 
@@ -53,7 +53,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      *
      * @param sysNoticeParam 查看参数
      * @return 通知公告详情结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysNoticeDetailResult detail(SysNoticeParam sysNoticeParam);
 
@@ -61,7 +61,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      * 修改状态
      *
      * @param sysNoticeParam 修改参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void changeStatus(SysNoticeParam sysNoticeParam);
 
@@ -70,7 +70,7 @@ public interface SysNoticeService extends IService<SysNotice> {
      *
      * @param sysNoticeParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysNoticeReceiveResult> received(SysNoticeParam sysNoticeParam);
 }

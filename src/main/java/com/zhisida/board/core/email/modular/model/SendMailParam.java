@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 发送邮件的请求参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SendMailParam {

@@ -22,7 +22,7 @@ import java.util.Date;
 /**
  * 阿里云文件操作
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class AliyunFileOperator implements FileOperator {
 

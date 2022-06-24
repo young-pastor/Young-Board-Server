@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * 将系统管理未知错误异常，输出格式重写为我们熟悉的响应格式
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class BoardErrorAttributes extends DefaultErrorAttributes {
 

@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * 简单导入导出工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class PoiUtil {
 
@@ -36,7 +36,7 @@ public class PoiUtil {
      * @param excelName 要导出的文件名称，如Users.xls
      * @param pojoClass Excel实体类
      * @param data      要导出的数据集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void exportExcelWithStream(String excelName, Class<?> pojoClass, Collection<?> data) {
         try {
@@ -60,7 +60,7 @@ public class PoiUtil {
      * @param filePath  文件路径，如 d:/demo/demo.xls
      * @param pojoClass Excel实体类
      * @param data      要导出的数据集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void exportExcelWithFile(String filePath, Class pojoClass, Collection data) {
 
@@ -85,7 +85,7 @@ public class PoiUtil {
      * @param titleRows  表标题的行数
      * @param headerRows 表头行数
      * @param pojoClass  Excel实体类
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static <T> List<T> importExcel(String filePath, Integer titleRows, Integer headerRows, Class<T> pojoClass) {
         //判断文件是否存在
@@ -111,7 +111,7 @@ public class PoiUtil {
      * @param titleRows  表标题的行数
      * @param headerRows 表头行数
      * @param pojoClass  Excel实体类
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static <T> List<T> importExcel(MultipartFile file, Integer titleRows, Integer headerRows, Class<T> pojoClass) {
         if (ObjectUtil.isNull(file)) {

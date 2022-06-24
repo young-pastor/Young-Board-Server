@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 /**
  * 系统属性监控service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysMachineServiceImpl implements SysMachineService {

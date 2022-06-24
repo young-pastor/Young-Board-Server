@@ -4,7 +4,7 @@ package com.zhisida.board.core.tenant.context;
 /**
  * 租户编码的临时存放
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TenantCodeHolder {
 

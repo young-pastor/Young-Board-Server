@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysConfig;
 /**
  * 系统参数配置 Mapper 接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysConfigMapper extends BaseMapper<SysConfig> {
 

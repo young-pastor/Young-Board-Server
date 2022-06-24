@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 任务日志service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-24 17:02:32
  */
 public interface SysTimersLogService extends IService<SysTimersLog> {
@@ -18,7 +18,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 查询任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     PageResult<SysTimersLog> page(SysTimersLogParam sysTimersLogParam);
@@ -26,7 +26,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 任务日志列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     List<SysTimersLog> list(SysTimersLogParam sysTimersLogParam);
@@ -34,7 +34,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 添加任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     void add(SysTimersLogParam sysTimersLogParam);
@@ -42,7 +42,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 删除任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     void delete(List<SysTimersLogParam> sysTimersLogParamList);
@@ -50,7 +50,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 编辑任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     void edit(SysTimersLogParam sysTimersLogParam);
@@ -58,7 +58,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 查看任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
      SysTimersLog detail(SysTimersLogParam sysTimersLogParam);
@@ -66,7 +66,7 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
     /**
      * 导出任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
      void export(SysTimersLogParam sysTimersLogParam);

@@ -9,7 +9,7 @@ import com.zhisida.board.core.factory.ExpEnumCodeFactory;
 /**
  * 状态枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = ExpEnumConstant.BOARD_CORE_MODULE_EXP_CODE, kind = ExpEnumConstant.STATUS_EXCEPTION_ENUM)
 public enum StatusExceptionEnum implements AbstractBaseExceptionEnum {

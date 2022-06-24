@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 /**
  * 标记需要做业务日志的方法
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)

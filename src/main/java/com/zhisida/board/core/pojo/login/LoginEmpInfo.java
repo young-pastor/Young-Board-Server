@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 登录用户员工信息
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class LoginEmpInfo implements Serializable {

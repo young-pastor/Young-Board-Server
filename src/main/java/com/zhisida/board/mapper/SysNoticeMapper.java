@@ -11,7 +11,7 @@ import com.zhisida.board.result.SysNoticeReceiveResult;
 /**
  * 系统通知公告mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysNoticeMapper extends BaseMapper<SysNotice> {
 
@@ -21,7 +21,7 @@ public interface SysNoticeMapper extends BaseMapper<SysNotice> {
      * @param page         分页参数
      * @param queryWrapper 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Page<SysNoticeReceiveResult> page(@Param("page") Page page, @Param("ew") QueryWrapper queryWrapper);
 }

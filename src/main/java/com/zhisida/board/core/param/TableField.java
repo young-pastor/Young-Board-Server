@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 数据库表字段实体
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class TableField {

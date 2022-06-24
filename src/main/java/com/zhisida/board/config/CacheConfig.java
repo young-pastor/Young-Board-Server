@@ -19,7 +19,7 @@ import java.time.Duration;
 /**
  * 缓存的配置，默认使用基于内存的缓存，如果分布式部署请更换为redis
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 @EnableCaching

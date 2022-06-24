@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * 存放本系统所有@RequestMapping的Url
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class ApiResourceContext {
 
@@ -21,7 +21,7 @@ public class ApiResourceContext {
     /**
      * 添加一批url
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void addBatchUrls(Set<String> urls) {
         if (ObjectUtil.isEmpty(urls)) {
@@ -33,7 +33,7 @@ public class ApiResourceContext {
     /**
      * 添加url
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void addUrl(String url) {
         if (ObjectUtil.isEmpty(url)) {
@@ -45,7 +45,7 @@ public class ApiResourceContext {
     /**
      * 删除url
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void deleteUrl(String url) {
         if (ObjectUtil.isEmpty(url)) {
@@ -57,7 +57,7 @@ public class ApiResourceContext {
     /**
      * 获取系统的所有url
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static Set<String> getApiUrls() {
         return API_URLS;

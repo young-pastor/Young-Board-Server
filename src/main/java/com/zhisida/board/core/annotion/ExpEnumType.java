@@ -12,7 +12,7 @@ import java.lang.annotation.*;
  * <p>
  * 模块编码和分类编码在ExpEnumCodeConstant类中声明
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)

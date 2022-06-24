@@ -18,7 +18,7 @@ import java.io.OutputStream;
 /**
  * LibreOffice工具类，用于将word,excel,ppt等格式文件转为pdf预览
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LibreOfficeUtil {
 
@@ -41,7 +41,7 @@ public class LibreOfficeUtil {
      * @param outputStream：输入pdf流
      * @param fileSuffix：源文件后缀
      * @return 目标类型的contentType
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void convertToPdf(InputStream inputStream, OutputStream outputStream, String fileSuffix) {
         if(!MediaTypeConstant.DOC_PDF.equals(fileSuffix)) {
@@ -64,7 +64,7 @@ public class LibreOfficeUtil {
     /**
      * 根据文件后缀判断是否图片
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static boolean isPic(String fileSuffix) {
         return MediaTypeConstant.IMG_JPG.equals(fileSuffix)
@@ -78,7 +78,7 @@ public class LibreOfficeUtil {
     /**
      * 根据文件后缀判断是否文档
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static boolean isDoc(String fileSuffix) {
         return MediaTypeConstant.DOC_TXT.equals(fileSuffix)
@@ -94,7 +94,7 @@ public class LibreOfficeUtil {
     /**
      * 根据文件后缀获取转换目标类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getTargetContentTypeBySuffix(String fileSuffix) {
         //如果目标类型是pdf

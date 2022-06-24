@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 定时任务
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 请求方法异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class RequestMethodException extends RuntimeException {

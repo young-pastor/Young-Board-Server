@@ -7,21 +7,21 @@ import com.zhisida.board.core.email.modular.model.SendMailParam;
 /**
  * 邮件收发统一接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface MailSender {
 
     /**
      * 发送普通邮件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void sendMail(SendMailParam sendMailParam);
 
     /**
      * 发送html的邮件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void sendMailHtml(SendMailParam sendMailParam);
 

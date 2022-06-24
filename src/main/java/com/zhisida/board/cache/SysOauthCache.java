@@ -12,7 +12,7 @@ import java.util.Iterator;
 /**
  * Oauth登录的缓存
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Component
 public class SysOauthCache implements AuthStateCache {

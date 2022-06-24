@@ -22,7 +22,7 @@ import java.util.Set;
 /**
  * 资源扫描器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class ApiResourceScanner implements BeanPostProcessor {
 
@@ -61,7 +61,7 @@ public class ApiResourceScanner implements BeanPostProcessor {
     /**
      * 判断一个类是否是控制器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private boolean getControllerFlag(Class<?> clazz) {
         Annotation[] annotations = clazz.getAnnotations();
@@ -77,7 +77,7 @@ public class ApiResourceScanner implements BeanPostProcessor {
     /**
      * 扫描整个类中包含的所有控制器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private Set<String> doScan(Class<?> clazz) {
 
@@ -99,7 +99,7 @@ public class ApiResourceScanner implements BeanPostProcessor {
     /**
      * 存储扫描到的api资源
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void persistApiResources(Set<String> apiResources) {
         ApiResourceContext.addBatchUrls(apiResources);
@@ -108,7 +108,7 @@ public class ApiResourceScanner implements BeanPostProcessor {
     /**
      * 获取@RequestMapping注解的url信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private String getRequestMappingUrl(AnnotatedElement annotatedElement) {
 
@@ -149,7 +149,7 @@ public class ApiResourceScanner implements BeanPostProcessor {
     /**
      * 获取数组第一个字符串
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private String getRequestMappingPath(String[] strings) {
         if (strings.length == 0) {

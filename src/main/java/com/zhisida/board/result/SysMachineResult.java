@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * 系统属性结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysMachineResult implements Serializable {
@@ -34,7 +34,7 @@ public class SysMachineResult implements Serializable {
     /**
      * 系统信息内部类
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @NoArgsConstructor
     @Data
@@ -70,7 +70,7 @@ public class SysMachineResult implements Serializable {
     /**
      * JVM信息内部类
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @NoArgsConstructor
     @Data
@@ -106,7 +106,7 @@ public class SysMachineResult implements Serializable {
     /**
      * JVM内存信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @NoArgsConstructor
     @Data

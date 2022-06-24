@@ -6,7 +6,7 @@ import com.zhisida.board.core.annotion.ExpEnumType;
 /**
  * 异常枚举code值快速创建
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class ExpEnumCodeFactory {
 

@@ -14,7 +14,7 @@ import com.zhisida.board.core.factory.ExpEnumCodeFactory;
  * 认证可以证明你能登录系统，认证的过程是校验token的过程
  * 鉴权可以证明你有系统的哪些权限，鉴权的过程是校验角色是否包含某些接口的权限
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @ExpEnumType(module = ExpEnumConstant.BOARD_CORE_MODULE_EXP_CODE, kind = ExpEnumConstant.AUTH_EXCEPTION_ENUM)
 public enum AuthExceptionEnum implements AbstractBaseExceptionEnum {

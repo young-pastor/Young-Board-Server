@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 /**
  * 系统区域控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysAreaController {
@@ -27,7 +27,7 @@ public class SysAreaController {
     /**
      * 系统区域列表（树）
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysArea/list")

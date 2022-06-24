@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 发送短信的参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysSmsSendParam {

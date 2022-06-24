@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * HttpServlet工具类，获取当前request和response
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class HttpServletUtil {
 
     /**
      * 获取当前请求的request对象
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static HttpServletRequest getRequest() {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -33,7 +33,7 @@ public class HttpServletUtil {
     /**
      * 获取当前请求的response对象
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static HttpServletResponse getResponse() {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

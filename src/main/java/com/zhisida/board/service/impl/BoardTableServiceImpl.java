@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 数据表配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:17:36
  */
 @Service
@@ -93,7 +93,7 @@ public class BoardTableServiceImpl extends ServiceImpl<BoardTableMapper, BoardTa
     /**
      * 获取数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     private BoardTable queryBoardTable(BoardTableParam boardTableParam) {

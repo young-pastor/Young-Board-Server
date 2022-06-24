@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  * 租户表
  * </p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @since 2019-06-16
  */
 @EqualsAndHashCode(callSuper = true)

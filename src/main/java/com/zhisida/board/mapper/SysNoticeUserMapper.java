@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysNoticeUser;
 /**
  * 系统通知公告用户mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysNoticeUserMapper extends BaseMapper<SysNoticeUser> {
 }

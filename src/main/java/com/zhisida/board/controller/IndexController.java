@@ -8,7 +8,7 @@ import com.zhisida.board.core.consts.CommonConstant;
 /**
  * 首页控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class IndexController {
@@ -16,7 +16,7 @@ public class IndexController {
     /**
      * 访问首页，提示语
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @RequestMapping("/")
     public String index() {

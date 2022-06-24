@@ -10,7 +10,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * 校验日期格式 yyyy-MM
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class MonthValueValidator implements ConstraintValidator<MonthValue, String> {
 

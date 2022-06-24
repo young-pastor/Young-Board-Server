@@ -23,7 +23,7 @@ import java.sql.Connection;
 /**
  * 演示环境的sql过滤器，只放开select语句，其他语句都不放过
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class})})
 public class DemoProfileSqlInterceptor implements Interceptor {

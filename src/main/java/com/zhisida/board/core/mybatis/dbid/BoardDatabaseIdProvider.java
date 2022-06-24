@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * 数据库id选择器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class BoardDatabaseIdProvider implements DatabaseIdProvider {
 

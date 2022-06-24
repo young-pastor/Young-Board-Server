@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 通用树节点
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class CommonBaseTreeNode implements BaseTreeNode {

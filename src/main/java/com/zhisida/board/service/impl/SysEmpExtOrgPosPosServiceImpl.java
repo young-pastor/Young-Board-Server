@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 员工附属机构service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysEmpExtOrgPosPosServiceImpl extends ServiceImpl<SysEmpExtOrgPosMapper, SysEmpExtOrgPos> implements SysEmpExtOrgPosService {

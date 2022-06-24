@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 系统职位控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysPosController {
@@ -31,7 +31,7 @@ public class SysPosController {
     /**
      * 查询系统职位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysPos/page")
@@ -43,7 +43,7 @@ public class SysPosController {
     /**
      * 系统职位列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysPos/list")
@@ -55,7 +55,7 @@ public class SysPosController {
     /**
      * 添加系统职位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysPos/add")
@@ -68,7 +68,7 @@ public class SysPosController {
     /**
      * 删除系统职位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysPos/delete")
@@ -81,7 +81,7 @@ public class SysPosController {
     /**
      * 编辑系统职位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysPos/edit")
@@ -94,7 +94,7 @@ public class SysPosController {
     /**
      * 查看系统职位
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysPos/detail")
@@ -106,7 +106,7 @@ public class SysPosController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysPos/export")

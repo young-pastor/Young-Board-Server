@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 /**
  * 用来包装一下角色名称
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @AllArgsConstructor

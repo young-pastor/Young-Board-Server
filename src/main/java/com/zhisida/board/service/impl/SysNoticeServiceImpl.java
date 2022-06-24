@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * 系统通知公告service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice> implements SysNoticeService {
@@ -194,7 +194,7 @@ public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice
     /**
      * 校验参数，判断状态是否正确
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysNoticeParam sysNoticeParam, boolean isAddOrEdit) {
         //保存或编辑时，传递的状态参数应为草稿，或发布
@@ -218,7 +218,7 @@ public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice
     /**
      * 获取系统通知公告
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysNotice querySysNotice(SysNoticeParam sysNoticeParam) {
         SysNotice sysNotice = this.getById(sysNoticeParam.getId());

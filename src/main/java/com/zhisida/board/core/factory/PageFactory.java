@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 默认分页参数构建
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class PageFactory {
 
@@ -28,7 +28,7 @@ public class PageFactory {
     /**
      * 默认分页，在使用时PageFactory.defaultPage会自动获取pageSize和pageNo参数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static <T> Page<T> defaultPage() {
 

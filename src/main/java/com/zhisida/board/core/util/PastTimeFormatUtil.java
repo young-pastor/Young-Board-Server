@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * 过去时间格式化工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 public class PastTimeFormatUtil {
 
@@ -32,7 +32,7 @@ public class PastTimeFormatUtil {
      *
      * @param date 要格式化的日期
      * @return 格式化结果
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public static String formatPastTime(Date date) {
         if (DateUtil.between(date, DateUtil.date(), DateUnit.SECOND, false) < 0) {
@@ -107,7 +107,7 @@ public class PastTimeFormatUtil {
      *
      * @param date 要判断的日期
      * @return boolean
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     private static boolean isThisWeek(Date date) {
         //获取本周开始时间
@@ -121,7 +121,7 @@ public class PastTimeFormatUtil {
     /**
      * 根据今天日期获取早中晚
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     private static String getTodayHour(Date date) {
         String result = "";

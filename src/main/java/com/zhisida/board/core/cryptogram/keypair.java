@@ -5,7 +5,7 @@ package com.zhisida.board.core.cryptogram;
  * 基于SM2的秘钥对
  * （本项目中配置的，自己使用可根据自己的需求进行更换）
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class keypair {
 

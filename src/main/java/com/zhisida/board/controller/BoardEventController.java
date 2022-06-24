@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 元事件配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:52:17
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardEventController {
     /**
      * 查询元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardEventController {
     /**
      * 添加元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardEventController {
     /**
      * 删除元事件配置，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardEventController {
     /**
      * 编辑元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardEventController {
     /**
      * 查看元事件配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardEventController {
     /**
      * 元事件配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardEventController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:17
      */
     @Permission

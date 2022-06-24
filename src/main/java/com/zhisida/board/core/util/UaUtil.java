@@ -14,14 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 用户代理工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class UaUtil {
 
     /**
      * 获取客户端浏览器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getBrowser(HttpServletRequest request) {
         UserAgent userAgent = getUserAgent(request);
@@ -36,7 +36,7 @@ public class UaUtil {
     /**
      * 获取客户端操作系统
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getOs(HttpServletRequest request) {
         UserAgent userAgent = getUserAgent(request);
@@ -51,7 +51,7 @@ public class UaUtil {
     /**
      * 获取请求代理头
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private static UserAgent getUserAgent(HttpServletRequest request) {
         String userAgentStr = ServletUtil.getHeaderIgnoreCase(request, CommonConstant.USER_AGENT);

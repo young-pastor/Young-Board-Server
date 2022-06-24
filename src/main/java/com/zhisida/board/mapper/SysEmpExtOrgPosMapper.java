@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysEmpExtOrgPos;
 /**
  * 员工附属机构mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysEmpExtOrgPosMapper extends BaseMapper<SysEmpExtOrgPos> {
 }

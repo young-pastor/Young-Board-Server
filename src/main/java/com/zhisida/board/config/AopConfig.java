@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 切面配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 public class AopConfig {
@@ -19,7 +19,7 @@ public class AopConfig {
     /**
      * 日志切面
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public BusinessLogAop businessLogAop() {
@@ -29,7 +29,7 @@ public class AopConfig {
     /**
      * 权限切面
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public PermissionAop permissionAop() {
@@ -39,7 +39,7 @@ public class AopConfig {
     /**
      * 数据范围切面
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public DataScopeAop dataScopeAop() {
@@ -49,7 +49,7 @@ public class AopConfig {
     /**
      * 结果包装的aop
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public WrapperAop wrapperAop() {

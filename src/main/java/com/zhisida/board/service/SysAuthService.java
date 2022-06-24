@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 认证相关service
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysAuthService {
 
@@ -20,7 +20,7 @@ public interface SysAuthService {
      * @param account  账号
      * @param password 密码
      * @return token
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String login(String account, String password);
 
@@ -29,7 +29,7 @@ public interface SysAuthService {
      *
      * @param sysUser 用户信息
      * @return token
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     String doLogin(SysUser sysUser);
 
@@ -38,7 +38,7 @@ public interface SysAuthService {
      *
      * @param request request
      * @return token
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getTokenFromRequest(HttpServletRequest request);
 
@@ -47,14 +47,14 @@ public interface SysAuthService {
      *
      * @param token token
      * @return 当前登陆的用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysLoginUser getLoginUserByToken(String token);
 
     /**
      * 退出登录
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void logout();
 
@@ -62,7 +62,7 @@ public interface SysAuthService {
      * 设置SpringSecurityContext上下文，方便获取用户
      *
      * @param sysLoginUser 当前登录用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void setSpringSecurityContextAuthentication(SysLoginUser sysLoginUser);
 
@@ -70,7 +70,7 @@ public interface SysAuthService {
      * 获取SpringSecurityContext中认证信息
      *
      * @return 认证信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Authentication getAuthentication();
 
@@ -78,7 +78,7 @@ public interface SysAuthService {
      * 校验token是否正确
      *
      * @param token token
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void checkToken(String token);
 
@@ -86,7 +86,7 @@ public interface SysAuthService {
      * 临时缓存租户信息
      *
      * @param tenantCode 多租户编码
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void cacheTenantInfo(String tenantCode);
 
@@ -95,14 +95,14 @@ public interface SysAuthService {
      *
      * @param sysUser 系统用户
      * @return 用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     SysLoginUser genSysLoginUser(SysUser sysUser);
 
     /**
      * 新增用户的数据授权范围
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void refreshUserDataScope(Long orgId);
 

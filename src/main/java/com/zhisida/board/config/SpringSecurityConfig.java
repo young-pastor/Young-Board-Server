@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * SpringSecurity配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -37,7 +37,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * 开启跨域访问拦截器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public CorsFilter corsFilter() {

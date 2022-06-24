@@ -9,7 +9,7 @@ import com.zhisida.board.core.tenant.params.TenantInfoParam;
 /**
  * 租户表 服务类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface TenantInfoService extends IService<TenantInfo> {
 
@@ -17,7 +17,7 @@ public interface TenantInfoService extends IService<TenantInfo> {
      * 新增租户
      *
      * @param param 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(TenantInfoParam param);
 
@@ -25,7 +25,7 @@ public interface TenantInfoService extends IService<TenantInfo> {
      * 删除租户
      *
      * @param param 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(TenantInfoParam param);
 
@@ -33,7 +33,7 @@ public interface TenantInfoService extends IService<TenantInfo> {
      * 更新租户
      *
      * @param param 更新参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void update(TenantInfoParam param);
 
@@ -42,7 +42,7 @@ public interface TenantInfoService extends IService<TenantInfo> {
      *
      * @param param 查询参数
      * @return 查询结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<TenantInfo> page(TenantInfoParam param);
 
@@ -51,7 +51,7 @@ public interface TenantInfoService extends IService<TenantInfo> {
      *
      * @param code 租户编码
      * @return 租户信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     TenantInfo getByCode(String code);
 

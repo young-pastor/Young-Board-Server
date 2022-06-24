@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 系统菜单service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysMenuService extends IService<SysMenu> {
 
@@ -22,7 +22,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param userId 用户id
      * @param menuIdList 菜单id集合
      * @return 权限集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getLoginPermissions(Long userId, List<Long> menuIdList);
 
@@ -33,7 +33,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param appCode 应用编码
      * @param menuIdList 菜单id集合
      * @return AntDesign菜单信息结果集
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysMenu> getLoginMenus(Long userId, String appCode, List<Long> menuIdList);
 
@@ -43,7 +43,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param userId 用户id
      * @param roleIdList 角色id集合
      * @return 用户菜单所属的应用编码集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getUserMenuAppCodeList(Long userId, List<Long> roleIdList);
 
@@ -52,7 +52,7 @@ public interface SysMenuService extends IService<SysMenu> {
      *
      * @param sysMenuParam 查询参数
      * @return 菜单树表列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<SysMenu> list(SysMenuParam sysMenuParam);
 
@@ -60,7 +60,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * 添加系统菜单
      *
      * @param sysMenuParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysMenuParam sysMenuParam);
 
@@ -68,7 +68,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * 删除系统菜单
      *
      * @param sysMenuParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysMenuParam sysMenuParam);
 
@@ -76,7 +76,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * 编辑系统菜单
      *
      * @param sysMenuParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysMenuParam sysMenuParam);
 
@@ -85,7 +85,7 @@ public interface SysMenuService extends IService<SysMenu> {
      *
      * @param sysMenuParam 查看参数
      * @return 系统菜单
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysMenu detail(SysMenuParam sysMenuParam);
 
@@ -94,7 +94,7 @@ public interface SysMenuService extends IService<SysMenu> {
      *
      * @param sysMenuParam 查询参数
      * @return 菜单树列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<MenuBaseTreeNode> tree(SysMenuParam sysMenuParam);
 
@@ -103,7 +103,7 @@ public interface SysMenuService extends IService<SysMenu> {
      *
      * @param sysMenuParam 查询参数
      * @return 菜单树列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<MenuBaseTreeNode> treeForGrant(SysMenuParam sysMenuParam);
 
@@ -112,14 +112,14 @@ public interface SysMenuService extends IService<SysMenu> {
      *
      * @param appCode 应用编码
      * @return 该应用下是否有正常菜单，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasMenu(String appCode);
 
     /**
      * 将SysMenu格式菜单转换为LoginMenuTreeNode菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param sysMenuList 原始菜单集合
      * @return LoginMenuTreeNode菜单集合
      */

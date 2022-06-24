@@ -23,7 +23,7 @@ import java.util.HashMap;
 /**
  * 短信发送控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 @RequestMapping
@@ -38,7 +38,7 @@ public class SysSmsSenderController {
     /**
      * 发送记录查询
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sms/page")
@@ -50,7 +50,7 @@ public class SysSmsSenderController {
     /**
      * 发送验证码短信
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sms/sendLoginMessage")
@@ -68,7 +68,7 @@ public class SysSmsSenderController {
     /**
      * 验证短信验证码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sms/validateMessage")

@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * 系统参数配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig> implements SysConfigService {
@@ -141,7 +141,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
     /**
      * 校验参数，是否有重复的名称和编码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkRepeatParam(SysConfigParam sysConfigParam, boolean isExcludeSelf) {
         Long id = sysConfigParam.getId();
@@ -175,7 +175,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
     /**
      * 获取系统参数配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysConfig querySysConfig(SysConfigParam sysConfigParam) {
         SysConfig sysConfig = this.getById(sysConfigParam.getId());

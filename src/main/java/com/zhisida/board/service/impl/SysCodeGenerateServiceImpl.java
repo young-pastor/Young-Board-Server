@@ -46,7 +46,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * 代码生成基础配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMapper, SysCodeGenerate> implements SysCodeGenerateService {
@@ -131,7 +131,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 获取代码生成基础配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysCodeGenerate queryCodeGenerate(CodeGenerateParam codeGenerateParam) {
         SysCodeGenerate sysCodeGenerate = this.getById(codeGenerateParam.getId());
@@ -168,7 +168,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 校验表中是否包含主键
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private boolean vldTablePri(String tableName) {
         List<InforMationColumnsResult> inforMationColumnsResultList = this.baseMapper.selectInformationColumns(Util.getDataBasename(), tableName);
@@ -184,7 +184,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 下载方式组装代码基础
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void downloadCode(XnCodeGenParam xnCodeGenParam, HttpServletResponse response) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -202,7 +202,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 文件内容化代码基础
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<FileContentResult> fileContentCode(XnCodeGenParam xnCodeGenParam) {
         Util.initVelocity();
@@ -231,7 +231,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 获取表中所有字段集合
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private List<InforMationColumnsResult> getInforMationColumnsResultList(CodeGenerateParam codeGenerateParam) {
         SysCodeGenerate sysCodeGenerate = this.queryCodeGenerate(codeGenerateParam);

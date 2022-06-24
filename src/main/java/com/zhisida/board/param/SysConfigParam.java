@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 系统参数配置参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

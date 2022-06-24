@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 代码生成详细配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysCodeGenerateConfigController {
@@ -31,7 +31,7 @@ public class SysCodeGenerateConfigController {
     /**
      * 编辑代码生成详细配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysCodeGenerateConfig/edit")
@@ -44,7 +44,7 @@ public class SysCodeGenerateConfigController {
     /**
      * 查看代码生成详细配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysCodeGenerateConfig/detail")
@@ -56,7 +56,7 @@ public class SysCodeGenerateConfigController {
     /**
      * 代码生成详细配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysCodeGenerateConfig/list")

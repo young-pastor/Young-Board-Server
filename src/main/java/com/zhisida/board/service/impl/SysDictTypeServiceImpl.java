@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 系统字典类型service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDictType> implements SysDictTypeService {
@@ -191,7 +191,7 @@ public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDi
     /**
      * 校验参数，检查是否存在重复的编码或者名称
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void checkParam(SysDictTypeParam sysDictTypeParam, boolean isExcludeSelf) {
         Long id = sysDictTypeParam.getId();
@@ -229,7 +229,7 @@ public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDi
     /**
      * 获取系统字典类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysDictType querySysDictType(SysDictTypeParam sysDictTypeParam) {
         SysDictType sysDictType = this.getById(sysDictTypeParam.getId());

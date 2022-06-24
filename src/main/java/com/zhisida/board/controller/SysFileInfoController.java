@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 文件信息表 控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysFileInfoController {
@@ -39,7 +39,7 @@ public class SysFileInfoController {
     /**
      * 在线文档配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysFileInfo/getOnlineFileConfig")
     public ResponseData getOnlineFileConfig(SysFileInfoParam sysFileInfoParam) {
@@ -55,7 +55,7 @@ public class SysFileInfoController {
     /**
      * 上传文件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysFileInfo/upload")
     @BusinessLog(title = "文件信息表_上传文件", opType = LogAnnotionOpTypeEnum.OTHER)
@@ -67,7 +67,7 @@ public class SysFileInfoController {
     /**
      * 下载文件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysFileInfo/download")
     @BusinessLog(title = "文件信息表_下载文件", opType = LogAnnotionOpTypeEnum.OTHER)
@@ -78,7 +78,7 @@ public class SysFileInfoController {
     /**
      * 文件预览
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @GetMapping("/sysFileInfo/preview")
     public void preview(@Validated(BaseParam.detail.class) SysFileInfoParam sysFileInfoParam, HttpServletResponse response) {
@@ -88,7 +88,7 @@ public class SysFileInfoController {
     /**
      * 分页查询文件信息表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysFileInfo/page")
@@ -100,7 +100,7 @@ public class SysFileInfoController {
     /**
      * 获取全部文件信息表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysFileInfo/list")
@@ -112,7 +112,7 @@ public class SysFileInfoController {
     /**
      * 查看详情文件信息表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysFileInfo/detail")
@@ -124,7 +124,7 @@ public class SysFileInfoController {
     /**
      * 删除文件信息表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysFileInfo/delete")
@@ -137,7 +137,7 @@ public class SysFileInfoController {
     /**
      * 在线文档编辑回调
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @ResponseBody
     @PostMapping("/sysFileInfo/track")

@@ -36,7 +36,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Oauth登录相关service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Service
 public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUser> implements SysOauthService {
@@ -80,7 +80,7 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
      *
      * @param authUser 用户授权信息
      * @return token
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     @Transactional(rollbackFor = Exception.class)
     public String doLogin(AuthUser authUser) {
@@ -107,7 +107,7 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
      *
      * @param authUser 用户授权信息
      * @return void
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     @Transactional(rollbackFor = Exception.class)
     public void saveByAuthUser(AuthUser authUser) {
@@ -130,7 +130,7 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
      *
      * @param source 授权平台来源
      * @return 授权请求
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     private AuthRequest getAuthRequest(String source) {
         AuthRequest authRequest;
@@ -161,7 +161,7 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
      * @param oauthUser 系统授权用户信息
      * @param authUser  平台授权用户信息
      * @return void
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     private void fillOauthUserInfo(SysOauthUser oauthUser, AuthUser authUser) {
         oauthUser.setUuid(authUser.getUuid());

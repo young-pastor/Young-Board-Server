@@ -8,7 +8,7 @@ import com.zhisida.board.entity.SysTimers;
  * <p>
  * 目前用hutool，不排除以后用别的
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface TimerExeService {
 
@@ -22,7 +22,7 @@ public interface TimerExeService {
      * @param taskId    任务id
      * @param cron      cron表达式
      * @param className 类的全名，必须是TimerTaskRunner的子类
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void startTimer(SysTimers sysTimers);
 
@@ -30,7 +30,7 @@ public interface TimerExeService {
      * 停止一个定时器
      *
      * @param taskId 定时任务Id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void stopTimer(String taskId);
 

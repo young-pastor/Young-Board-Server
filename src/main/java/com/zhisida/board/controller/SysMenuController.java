@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * 系统菜单控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysMenuController {
@@ -42,7 +42,7 @@ public class SysMenuController {
     /**
      * 系统菜单列表（树）
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysMenu/list")
@@ -54,7 +54,7 @@ public class SysMenuController {
     /**
      * 添加系统菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysMenu/add")
@@ -67,7 +67,7 @@ public class SysMenuController {
     /**
      * 删除系统菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysMenu/delete")
@@ -80,7 +80,7 @@ public class SysMenuController {
     /**
      * 编辑系统菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysMenu/edit")
@@ -93,7 +93,7 @@ public class SysMenuController {
     /**
      * 查看系统菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysMenu/detail")
@@ -105,7 +105,7 @@ public class SysMenuController {
     /**
      * 获取系统菜单树，用于新增，编辑时选择上级节点
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysMenu/tree")
@@ -117,7 +117,7 @@ public class SysMenuController {
     /**
      * 获取系统菜单树，用于给角色授权时选择
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysMenu/treeForGrant")
@@ -129,7 +129,7 @@ public class SysMenuController {
     /**
      * 根据系统切换菜单
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysMenu/change")
     @BusinessLog(title = "系统菜单_切换", opType = LogAnnotionOpTypeEnum.TREE)

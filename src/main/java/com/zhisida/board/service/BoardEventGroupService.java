@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 元事件分组service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:52:21
  */
 public interface BoardEventGroupService extends IService<BoardEventGroup> {
@@ -19,7 +19,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 查询元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     PageResult<BoardEventGroup> page(BoardEventGroupParam boardEventGroupParam);
@@ -27,7 +27,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 元事件分组列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     List<BoardEventGroup> list(BoardEventGroupParam boardEventGroupParam);
@@ -35,7 +35,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 添加元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     void add(BoardEventGroupParam boardEventGroupParam);
@@ -43,7 +43,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 删除元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     void delete(List<BoardEventGroupParam> boardEventGroupParamList);
@@ -51,7 +51,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 编辑元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     void edit(BoardEventGroupParam boardEventGroupParam);
@@ -59,7 +59,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 查看元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
      BoardEventGroup detail(BoardEventGroupParam boardEventGroupParam);
@@ -67,7 +67,7 @@ public interface BoardEventGroupService extends IService<BoardEventGroup> {
     /**
      * 导出元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
      void export(BoardEventGroupParam boardEventGroupParam);

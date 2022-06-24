@@ -4,14 +4,14 @@ package com.zhisida.board.core.util;
 /**
  * java与sql工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class JavaSqlUtil {
 
     /**
      * 数据类型转化JAVA
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String sqlToJava (String sqlType) {
         if( sqlType == null || sqlType.trim().length() == 0 ) return sqlType;

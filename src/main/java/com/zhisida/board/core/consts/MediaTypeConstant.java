@@ -4,7 +4,7 @@ package com.zhisida.board.core.consts;
 /**
  * 常用媒体类型常量
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface MediaTypeConstant {
 

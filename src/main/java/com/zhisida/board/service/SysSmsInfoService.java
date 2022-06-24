@@ -13,7 +13,7 @@ import com.zhisida.board.param.SysSmsVerifyParam;
 /**
  * 系统短信service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysSmsInfoService extends IService<SysSms> {
 
@@ -23,7 +23,7 @@ public interface SysSmsInfoService extends IService<SysSms> {
      * @param sysSmsSendParam 发送参数
      * @param validateCode    验证码
      * @return 短信记录id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Long saveSmsInfo(SysSmsSendParam sysSmsSendParam, String validateCode);
 
@@ -32,7 +32,7 @@ public interface SysSmsInfoService extends IService<SysSms> {
      *
      * @param smsId             短信记录id
      * @param smsSendStatusEnum 发送状态枚举
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void updateSmsInfo(Long smsId, SmsSendStatusEnum smsSendStatusEnum);
 
@@ -41,7 +41,7 @@ public interface SysSmsInfoService extends IService<SysSms> {
      *
      * @param sysSmsVerifyParam 短信校验参数
      * @return 短信校验结果枚举
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SmsVerifyEnum validateSmsInfo(SysSmsVerifyParam sysSmsVerifyParam);
 
@@ -50,7 +50,7 @@ public interface SysSmsInfoService extends IService<SysSms> {
      *
      * @param sysSmsInfoParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysSms> page(SysSmsInfoParam sysSmsInfoParam);
 }

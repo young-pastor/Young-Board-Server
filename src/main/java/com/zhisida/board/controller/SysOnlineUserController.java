@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 /**
  * 在线用户控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysOnlineUserController {
@@ -30,7 +30,7 @@ public class SysOnlineUserController {
     /**
      * 在线用户列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysOnlineUser/list")
@@ -42,7 +42,7 @@ public class SysOnlineUserController {
     /**
      * 在线用户强退
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysOnlineUser/forceExist")

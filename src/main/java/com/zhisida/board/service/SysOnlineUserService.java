@@ -8,7 +8,7 @@ import com.zhisida.board.result.SysOnlineUserResult;
 /**
  * 系统在线用户service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysOnlineUserService {
 
@@ -17,7 +17,7 @@ public interface SysOnlineUserService {
      *
      * @param sysOnlineUserParam 查询参数
      * @return 在线用户列表
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysOnlineUserResult> list(SysOnlineUserParam sysOnlineUserParam);
 
@@ -25,7 +25,7 @@ public interface SysOnlineUserService {
      * 系统在线用户强退
      *
      * @param sysOnlineUserParam 操作参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void forceExist(SysOnlineUserParam sysOnlineUserParam);
 }

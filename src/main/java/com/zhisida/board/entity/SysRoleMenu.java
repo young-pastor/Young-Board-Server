@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * 系统角色菜单表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 @TableName("sys_role_menu")

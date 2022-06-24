@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 员工职位service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysEmpPosService extends IService<SysEmpPos> {
 
@@ -19,7 +19,7 @@ public interface SysEmpPosService extends IService<SysEmpPos> {
      *
      * @param empId     员工id（用户id）
      * @param posIdList 职位id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void addOrEdit(Long empId, List<Long> posIdList);
 
@@ -29,7 +29,7 @@ public interface SysEmpPosService extends IService<SysEmpPos> {
      * @param empId    员工id（用户id）
      * @param isFillId 是否需要返回id信息
      * @return 增强版hashMap，格式：[{"posId":456, "posCode":"zjl", "posName":"总经理"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> getEmpPosDictList(Long empId, boolean isFillId);
 
@@ -38,7 +38,7 @@ public interface SysEmpPosService extends IService<SysEmpPos> {
      *
      * @param posId 职位id
      * @return 该职位下是否有员工，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasPosEmp(Long posId);
 
@@ -46,7 +46,7 @@ public interface SysEmpPosService extends IService<SysEmpPos> {
      * 根据员工id删除对用的员工-职位信息
      *
      * @param empId 员工id（用户id）
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteEmpPosInfoByUserId(Long empId);
 }

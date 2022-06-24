@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 数据源配置表
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-17 15:08:24
  */
 @EqualsAndHashCode(callSuper = true)

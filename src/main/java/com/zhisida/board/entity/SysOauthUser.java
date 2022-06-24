@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Oauth登录用户表
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @EqualsAndHashCode(callSuper = true)
 @Data

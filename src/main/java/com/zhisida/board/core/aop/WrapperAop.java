@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * controller结果包装的aop
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Aspect
 @Order(AopSortConstant.WRAPPER_AOP)
@@ -40,7 +40,7 @@ public class WrapperAop {
     /**
      * 切入点
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Pointcut("@annotation(com.zhisida.board.core.annotion.Wrapper)")
     private void wrapperPointcut() {
@@ -49,7 +49,7 @@ public class WrapperAop {
     /**
      * 执行具体的包装过程
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Around("wrapperPointcut()")
     public Object doWrapper(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
@@ -63,7 +63,7 @@ public class WrapperAop {
     /**
      * 具体包装过程
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @SuppressWarnings("all")
     private Object processWrapping(ProceedingJoinPoint proceedingJoinPoint, Object originResult) throws IllegalAccessException, InstantiationException {
@@ -172,7 +172,7 @@ public class WrapperAop {
      * <p>
      * 期间多次根据BaseWrapper接口方法执行包装过程
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @SuppressWarnings("all")
     private Map<String, Object> wrapPureObject(Object originModel, Class<? extends BaseWrapper<?>>[] baseWrapperClasses) {
@@ -198,7 +198,7 @@ public class WrapperAop {
     /**
      * Object转为一个array，确保object为数组类型
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private Object[] objToArray(Object object) {
         int length = Array.getLength(object);

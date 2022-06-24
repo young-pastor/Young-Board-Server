@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 日志管理器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LogManager {
 
@@ -47,7 +47,7 @@ public class LogManager {
     /**
      * 异步执行日志的方法
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void executeLog(TimerTask task) {
 
@@ -65,7 +65,7 @@ public class LogManager {
     /**
      * 登录日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public void executeLoginLog(final String account, final String success, final String failMessage) {
         SysVisLog sysVisLog = this.genBaseSysVisLog();
@@ -78,7 +78,7 @@ public class LogManager {
     /**
      * 登出日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public void executeExitLog(final String account) {
         SysVisLog sysVisLog = this.genBaseSysVisLog();
@@ -89,7 +89,7 @@ public class LogManager {
     /**
      * 操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public void executeOperationLog(BusinessLog businessLog, final String account, JoinPoint joinPoint, final String result) {
         SysOpLog sysOpLog = this.genBaseSysOpLog();
@@ -100,7 +100,7 @@ public class LogManager {
     /**
      * 异常日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public void executeExceptionLog(BusinessLog businessLog, final String account, JoinPoint joinPoint, Exception exception) {
         SysOpLog sysOpLog = this.genBaseSysOpLog();
@@ -111,7 +111,7 @@ public class LogManager {
     /**
      * 构建基础访问日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysVisLog genBaseSysVisLog() {
         HttpServletRequest request = HttpServletUtil.getRequest();
@@ -129,7 +129,7 @@ public class LogManager {
     /**
      * 构建基础操作日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private SysOpLog genBaseSysOpLog() {
         HttpServletRequest request = HttpServletUtil.getRequest();

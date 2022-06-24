@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 定时任务的状态
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum TimerJobStatusEnum {

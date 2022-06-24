@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 属性配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:25
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardPropertyController {
     /**
      * 查询属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardPropertyController {
     /**
      * 添加属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardPropertyController {
     /**
      * 删除属性配置，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardPropertyController {
     /**
      * 编辑属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardPropertyController {
     /**
      * 查看属性配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardPropertyController {
     /**
      * 属性配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardPropertyController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:25
      */
     @Permission

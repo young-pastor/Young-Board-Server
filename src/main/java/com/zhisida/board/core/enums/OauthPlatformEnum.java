@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * Oauth登录授权平台的枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Getter
 public enum OauthPlatformEnum {

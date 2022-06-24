@@ -7,7 +7,7 @@ import com.zhisida.board.core.exception.ServiceException;
 /**
  * 多租户的异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TenantException extends ServiceException {
 

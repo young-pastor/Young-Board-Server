@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 日志注解操作类型枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum LogAnnotionOpTypeEnum {

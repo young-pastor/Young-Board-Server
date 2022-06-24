@@ -14,7 +14,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * 验证表的的某个字段值是否在是唯一值
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class TableUniqueValueValidator implements ConstraintValidator<TableUniqueValue, String> {
 
@@ -63,7 +63,7 @@ public class TableUniqueValueValidator implements ConstraintValidator<TableUniqu
     /**
      * 创建校验新增的参数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private UniqueValidateParam createAddParam(String fieldValue) {
         return UniqueValidateParam.builder()
@@ -79,7 +79,7 @@ public class TableUniqueValueValidator implements ConstraintValidator<TableUniqu
     /**
      * 创建修改的参数校验
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private UniqueValidateParam createEditParam(String fieldValue) {
         return UniqueValidateParam.builder()

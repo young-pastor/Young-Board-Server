@@ -17,7 +17,7 @@ import com.zhisida.board.core.sms.SmsSender;
  * <p>
  * 默认开启了阿里云的短信配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 public class SmsSenderConfig {
@@ -25,7 +25,7 @@ public class SmsSenderConfig {
     /**
      * 短信发送器（阿里云）
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public SmsSender aliyunSmsSender(SysConfigCache sysConfigCache) {

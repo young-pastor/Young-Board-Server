@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysRole;
 /**
  * 系统角色mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysRoleMapper extends BaseMapper<SysRole> {
 }

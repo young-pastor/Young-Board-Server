@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统相关上下文接口，在system模块实现，用于某些模块不能引用system模块时，通过此方式调用system相关功能
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SystemContext {
 
@@ -19,7 +19,7 @@ public interface SystemContext {
      *
      * @param userId 用户id
      * @return 用户姓名
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getNameByUserId(Long userId);
 
@@ -28,7 +28,7 @@ public interface SystemContext {
      *
      * @param roleId 角色id
      * @return 角色名称
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getNameByRoleId(Long roleId);
 
@@ -37,7 +37,7 @@ public interface SystemContext {
      *
      * @param token token
      * @return 登录用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysLoginUser getLoginUserByToken(String token);
 
@@ -46,7 +46,7 @@ public interface SystemContext {
      *
      * @param account 账号
      * @return 增强版hashMap，格式：[{"id:":123, "firstName":"张三"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> listUser(String account);
 
@@ -55,7 +55,7 @@ public interface SystemContext {
      *
      * @param name 角色名
      * @return 增强版hashMap，格式：[{"id:":123, "name":"总经理"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> listRole(String name);
 
@@ -64,7 +64,7 @@ public interface SystemContext {
      *
      * @param userOrRoleId 用户或角色id
      * @return true是 false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean isUser(Long userOrRoleId);
 
@@ -73,7 +73,7 @@ public interface SystemContext {
      *
      * @param userOrRoleId 用户或角色id
      * @return true是 false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean isRole(Long userOrRoleId);
 
@@ -82,7 +82,7 @@ public interface SystemContext {
      *
      * @param dictTypeCodes 字典类型编码值
      * @return 字典的code值
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getDictCodesByDictTypeCode(String... dictTypeCodes);
 
@@ -93,7 +93,7 @@ public interface SystemContext {
      *
      * @param uniqueValidateParam 被校验的参数
      * @return true-是唯一的值，false-不是唯一的
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean tableUniValueFlag(UniqueValidateParam uniqueValidateParam);
 
@@ -101,7 +101,7 @@ public interface SystemContext {
      * 获取系统用户id集合
      *
      * @return 用户id集合
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     List<Long> getAllUserIdList();
 

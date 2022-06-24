@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * <p>
  * dictType值来自数据库中sys_dict_type表的code值
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Documented
 @Constraint(validatedBy = DictValueValidator.class)

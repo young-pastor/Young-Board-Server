@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 字段关联配置service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:45:42
  */
 @Service
@@ -85,7 +85,7 @@ public class BoardTableConnectServiceImpl extends ServiceImpl<BoardTableConnectM
     /**
      * 获取字段关联配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:45:42
      */
     private BoardTableConnect queryBoardTableConnect(BoardTableConnectParam boardTableConnectParam) {

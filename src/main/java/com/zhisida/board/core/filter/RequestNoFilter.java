@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * 对请求生成唯一编码
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class RequestNoFilter implements Filter {
 

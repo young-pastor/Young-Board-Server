@@ -7,7 +7,7 @@ import com.zhisida.board.entity.SysDictType;
 /**
  * 系统字典类型mapper接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysDictTypeMapper extends BaseMapper<SysDictType> {
 }

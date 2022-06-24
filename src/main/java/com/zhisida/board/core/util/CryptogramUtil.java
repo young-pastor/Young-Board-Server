@@ -12,7 +12,7 @@ import com.zhisida.board.core.cryptogram.keypair;
  * 加密工具类，本框架目前使用 https://github.com/antherd/sm-crypto 项目中一些加解密方式
  * 使用小伙伴需要过等保密评相关，请在此处更改为自己的加密方法，或加密机，使用加密机同时需要替换公钥，私钥在内部无法导出，提供加密的方法
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class CryptogramUtil {
 
@@ -21,7 +21,7 @@ public class CryptogramUtil {
     /**
      * 加密方法（Sm2 的专门针对前后端分离，非对称秘钥对的方式，暴露出去的公钥，对传输过程中的密码加个密）
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param str 待加密数据
      * @return 加密后的密文
      */
@@ -33,7 +33,7 @@ public class CryptogramUtil {
      * 解密方法
      * 如果采用加密机的方法，用try catch 捕捉异常，返回原文值即可
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param str 密文
      * @return 解密后的明文
      */
@@ -45,7 +45,7 @@ public class CryptogramUtil {
     /**
      * 加密方法
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param str 待加密数据
      * @return 加密后的密文
      */
@@ -61,7 +61,7 @@ public class CryptogramUtil {
      * 解密方法
      * 如果采用加密机的方法，用try catch 捕捉异常，返回原文值即可
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param str 密文
      * @return 解密后的明文
      */
@@ -82,7 +82,7 @@ public class CryptogramUtil {
     /**
      * 纯签名
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param str 待签名数据
      * @return 签名结果
      */
@@ -93,7 +93,7 @@ public class CryptogramUtil {
     /**
      * 验证签名结果
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param originalStr 签名原文数据
      * @param str 签名结果
      * @return 是否通过
@@ -105,7 +105,7 @@ public class CryptogramUtil {
     /**
      * 通过杂凑算法取得hash值，用于做数据完整性保护
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param str 字符串
      * @return hash 值
      */

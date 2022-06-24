@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * 系统用户表
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -9,7 +9,7 @@ import com.zhisida.board.param.SysSmsVerifyParam;
 /**
  * 短信通知接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysSmsSenderService {
 
@@ -18,7 +18,7 @@ public interface SysSmsSenderService {
      *
      * @param sysSmsSendParam 短信发送参数
      * @return 是否成功
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean sendShortMessage(SysSmsSendParam sysSmsSendParam);
 
@@ -27,7 +27,7 @@ public interface SysSmsSenderService {
      *
      * @param sysSmsVerifyParam 短信验证参数
      * @return 校验结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SmsVerifyEnum verifyShortMessage(SysSmsVerifyParam sysSmsVerifyParam);
 
@@ -36,7 +36,7 @@ public interface SysSmsSenderService {
      *
      * @param smsId 短信发送记录id
      * @return 发送状态
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SmsSendStatusEnum getMessageSendStatus(Integer smsId);
 

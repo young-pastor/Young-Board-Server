@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统角色菜单service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysRoleMenuService extends IService<SysRoleMenu> {
 
@@ -19,7 +19,7 @@ public interface SysRoleMenuService extends IService<SysRoleMenu> {
      *
      * @param roleIdList 角色id集合
      * @return 菜单id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getRoleMenuIdList(List<Long> roleIdList);
 
@@ -27,7 +27,7 @@ public interface SysRoleMenuService extends IService<SysRoleMenu> {
      * 授权菜单
      *
      * @param sysRoleParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantMenu(SysRoleParam sysRoleParam);
 
@@ -35,7 +35,7 @@ public interface SysRoleMenuService extends IService<SysRoleMenu> {
      * 根据菜单id集合删除对应的角色-菜单表信息
      *
      * @param menuIdList 菜单id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteRoleMenuListByMenuIdList(List<Long> menuIdList);
 
@@ -43,7 +43,7 @@ public interface SysRoleMenuService extends IService<SysRoleMenu> {
      * 根据角色id删除对应的角色-菜单表关联信息
      *
      * @param roleId 角色id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteRoleMenuListByRoleId(Long roleId);
 }

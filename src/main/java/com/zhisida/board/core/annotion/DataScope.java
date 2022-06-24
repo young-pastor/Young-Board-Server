@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 /**
  * 数据权限注解
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)

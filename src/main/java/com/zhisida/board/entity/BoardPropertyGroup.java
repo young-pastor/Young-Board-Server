@@ -9,7 +9,7 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 /**
  * 属性分组
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:37
  */
 @EqualsAndHashCode(callSuper = true)

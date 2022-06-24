@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 时间与String转换工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class StringDateUtil {
 
@@ -15,7 +15,7 @@ public class StringDateUtil {
     /**
      * 获取现在时间
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getStringDate() {
         Date currentTime = new Date();

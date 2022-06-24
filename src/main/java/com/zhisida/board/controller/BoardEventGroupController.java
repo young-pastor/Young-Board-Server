@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 元事件分组控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:52:21
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardEventGroupController {
     /**
      * 查询元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardEventGroupController {
     /**
      * 添加元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardEventGroupController {
     /**
      * 删除元事件分组，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardEventGroupController {
     /**
      * 编辑元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardEventGroupController {
     /**
      * 查看元事件分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardEventGroupController {
     /**
      * 元事件分组列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardEventGroupController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:52:21
      */
     @Permission

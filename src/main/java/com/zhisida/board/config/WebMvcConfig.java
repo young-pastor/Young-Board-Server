@@ -26,7 +26,7 @@ import java.util.Objects;
 /**
  * web配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Configuration
 @Import({cn.hutool.extra.spring.SpringUtil.class})
@@ -35,7 +35,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * 错误信息提示重写
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public BoardErrorAttributes boardErrorAttributes() {
@@ -45,7 +45,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * 静态资源映射
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -59,7 +59,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * xss过滤器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public FilterRegistrationBean<XssFilter> xssFilterFilterRegistrationBean() {
@@ -71,7 +71,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * 请求唯一编号生成器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public FilterRegistrationBean<RequestNoFilter> requestNoFilterFilterRegistrationBean() {
@@ -83,7 +83,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * json自定义序列化工具,long转string
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
@@ -96,7 +96,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * 自定义的spring参数校验器，重写主要为了保存一些在自定义validator中读不到的属性
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Bean
     public BoardValidator boardValidator() {
@@ -107,7 +107,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     /**
      * 自定义的RequestResponseBodyMethodProcessor，放在所有resolvers之前
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Configuration
     public static class MethodArgumentResolver {

@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 菜单类型枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum MenuTypeEnum {

@@ -27,7 +27,7 @@ import java.io.IOException;
  * <p>
  * 因为现在没有用session了，只能token来校验当前的登录人的身份，所以在进业务之前要给当前登录人设置登录状态
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {

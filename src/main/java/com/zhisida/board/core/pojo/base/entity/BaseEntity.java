@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * 通用基础字段，需要此通用字段的实体可继承此类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class BaseEntity implements Serializable {

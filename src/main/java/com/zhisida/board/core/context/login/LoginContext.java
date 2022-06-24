@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 登录用户上下文
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface LoginContext {
 
@@ -16,7 +16,7 @@ public interface LoginContext {
      * 获取当前登录用户
      *
      * @return 当前登录用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysLoginUser getSysLoginUser();
 
@@ -24,7 +24,7 @@ public interface LoginContext {
      * 获取当前登录用户，如未登录，则返回null，不抛异常
      *
      * @return 当前登录用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysLoginUser getSysLoginUserWithoutException();
 
@@ -32,7 +32,7 @@ public interface LoginContext {
      * 获取当前登录用户的id
      *
      * @return 当前登录用户的id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Long getSysLoginUserId();
 
@@ -40,7 +40,7 @@ public interface LoginContext {
      * 判断用户是否登录
      *
      * @return 是否登录，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasLogin();
 
@@ -48,7 +48,7 @@ public interface LoginContext {
      * 获取当前登录用户的账户
      *
      * @return 当前登陆用户的账户account
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getSysLoginUserAccount();
 
@@ -57,7 +57,7 @@ public interface LoginContext {
      *
      * @param requestUri 请求的url
      * @return 是否有访问权限，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasPermission(String requestUri);
 
@@ -66,7 +66,7 @@ public interface LoginContext {
      *
      * @param roleCode 角色编码
      * @return 是否包含该角色，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasRole(String roleCode);
 
@@ -75,7 +75,7 @@ public interface LoginContext {
      *
      * @param roleCodes 角色集合，逗号拼接
      * @return 是否包含任一角色，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasAnyRole(String roleCodes);
 
@@ -83,7 +83,7 @@ public interface LoginContext {
      * 判断当前登录用户是否是超级管理员
      *
      * @return 当前登录用户是否是超级管理员
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean isSuperAdmin();
 
@@ -92,7 +92,7 @@ public interface LoginContext {
      *
      * @param roleCodes 角色集合，逗号拼接
      * @return 是否包含所有角色，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasAllRole(String roleCodes);
 
@@ -100,7 +100,7 @@ public interface LoginContext {
      * 获取当前登录用户的数据范围集合（组织机构id集合）
      *
      * @return 数据范围集合（组织机构id集合）
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getLoginUserDataScopeIdList();
 
@@ -108,7 +108,7 @@ public interface LoginContext {
      * 获取当前登录用户的组织机构id
      *
      * @return 当前登录用户的组织机构id
-     * @author young-pastor
+     * @author Young-Pastor
      */
     Long getSysLoginUserOrgId();
 
@@ -116,7 +116,7 @@ public interface LoginContext {
      * 获取当前登录用户的角色id集合
      *
      * @return 当前登录用户角色id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<String> getLoginUserRoleIds();
 
@@ -124,7 +124,7 @@ public interface LoginContext {
      * 获取最新的用户信息，用于修改之后前端获取
      *
      * @return 最新的用户信息
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     SysLoginUser getSysLoginUserUpToDate();
 }

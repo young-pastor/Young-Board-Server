@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 属性分组service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:37
  */
 public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> {
@@ -19,7 +19,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 查询属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     PageResult<BoardPropertyGroup> page(BoardPropertyGroupParam boardPropertyGroupParam);
@@ -27,7 +27,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 属性分组列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     List<BoardPropertyGroup> list(BoardPropertyGroupParam boardPropertyGroupParam);
@@ -35,7 +35,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 添加属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     void add(BoardPropertyGroupParam boardPropertyGroupParam);
@@ -43,7 +43,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 删除属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     void delete(List<BoardPropertyGroupParam> boardPropertyGroupParamList);
@@ -51,7 +51,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 编辑属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
     void edit(BoardPropertyGroupParam boardPropertyGroupParam);
@@ -59,7 +59,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 查看属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
      BoardPropertyGroup detail(BoardPropertyGroupParam boardPropertyGroupParam);
@@ -67,7 +67,7 @@ public interface BoardPropertyGroupService extends IService<BoardPropertyGroup> 
     /**
      * 导出属性分组
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:37
      */
      void export(BoardPropertyGroupParam boardPropertyGroupParam);

@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 属性值service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:45
  */
 @Service
@@ -73,7 +73,7 @@ public class BoardPropertyValueServiceImpl extends ServiceImpl<BoardPropertyValu
     /**
      * 获取属性值
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:57:45
      */
     private BoardPropertyValue queryBoardPropertyValue(BoardPropertyValueParam boardPropertyValueParam) {

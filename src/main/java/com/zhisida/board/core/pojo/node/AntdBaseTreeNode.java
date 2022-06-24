@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * antd通用前端树节点
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class AntdBaseTreeNode implements BaseTreeNode {

@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 系统用户控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysUserController {
@@ -33,7 +33,7 @@ public class SysUserController {
     /**
      * 查询系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -47,7 +47,7 @@ public class SysUserController {
     /**
      * 增加系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -61,7 +61,7 @@ public class SysUserController {
     /**
      * 删除系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -75,7 +75,7 @@ public class SysUserController {
     /**
      * 编辑系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -89,7 +89,7 @@ public class SysUserController {
     /**
      * 查看系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysUser/detail")
@@ -102,7 +102,7 @@ public class SysUserController {
     /**
      * 修改状态
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysUser/changeStatus")
@@ -115,7 +115,7 @@ public class SysUserController {
     /**
      * 授权角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -129,7 +129,7 @@ public class SysUserController {
     /**
      * 授权数据
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @DataScope
@@ -143,7 +143,7 @@ public class SysUserController {
     /**
      * 更新信息
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysUser/updateInfo")
     @BusinessLog(title = "系统用户_更新信息", opType = LogAnnotionOpTypeEnum.UPDATE)
@@ -155,7 +155,7 @@ public class SysUserController {
     /**
      * 修改密码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysUser/updatePwd")
     @BusinessLog(title = "系统用户_修改密码", opType = LogAnnotionOpTypeEnum.UPDATE)
@@ -167,7 +167,7 @@ public class SysUserController {
     /**
      * 拥有角色
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysUser/ownRole")
@@ -179,7 +179,7 @@ public class SysUserController {
     /**
      * 拥有数据
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysUser/ownData")
@@ -191,7 +191,7 @@ public class SysUserController {
     /**
      * 重置密码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysUser/resetPwd")
@@ -204,7 +204,7 @@ public class SysUserController {
     /**
      * 修改头像
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @PostMapping("/sysUser/updateAvatar")
     @BusinessLog(title = "系统用户_修改头像", opType = LogAnnotionOpTypeEnum.UPDATE)
@@ -216,7 +216,7 @@ public class SysUserController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysUser/export")
@@ -229,7 +229,7 @@ public class SysUserController {
     /**
      * 用户选择器
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysUser/selector")

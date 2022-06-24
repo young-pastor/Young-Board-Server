@@ -22,12 +22,12 @@ import java.util.List;
 /**
  * swagger配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  * 加入分组功能(默认注释掉)
  * <p>
  * https://doc.xiaominfo.com/knife4j/changelog/2017-12-18-swagger-bootstrap-ui-1.7-issue.html
  * </p>
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Configuration
 @EnableSwagger2WebMvc

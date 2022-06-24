@@ -10,7 +10,7 @@ import com.zhisida.board.param.SysEmpParam;
 /**
  * 员工service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysEmpService extends IService<SysEmp> {
 
@@ -19,7 +19,7 @@ public interface SysEmpService extends IService<SysEmp> {
      *
      * @param empId 员工id（用户id）
      * @return 登录用户员工相关信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     LoginEmpInfo getLoginEmpInfo(Long empId);
 
@@ -28,7 +28,7 @@ public interface SysEmpService extends IService<SysEmp> {
      *
      * @param empId 员工id（用户id）
      * @return 用户员工相关信息
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysEmpInfo getSysEmpInfo(Long empId);
 
@@ -36,7 +36,7 @@ public interface SysEmpService extends IService<SysEmp> {
      * 增加或编辑员工相关信息
      *
      * @param sysEmpParam 增加或编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void addOrUpdate(SysEmpParam sysEmpParam);
 
@@ -45,7 +45,7 @@ public interface SysEmpService extends IService<SysEmp> {
      *
      * @param orgId   机构id
      * @param orgName 机构名称
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void updateEmpOrgInfo(Long orgId, String orgName);
 
@@ -54,7 +54,7 @@ public interface SysEmpService extends IService<SysEmp> {
      *
      * @param orgId 机构id
      * @return 该机构下是否有员工，true是，false否
-     * @author young-pastor
+     * @author Young-Pastor
      */
     boolean hasOrgEmp(Long orgId);
 
@@ -62,7 +62,7 @@ public interface SysEmpService extends IService<SysEmp> {
      * 根据员工id删除对应的员工表信息
      *
      * @param empId 员工id（用户id）
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void deleteEmpInfoByUserId(Long empId);
 }

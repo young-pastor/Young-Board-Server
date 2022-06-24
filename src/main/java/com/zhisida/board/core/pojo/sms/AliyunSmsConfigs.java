@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 阿里云oss相关配置
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class AliyunSmsConfigs {

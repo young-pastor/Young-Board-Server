@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 /**
  * 系统组织机构service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Service
 public class SysOnlineUserServiceImpl implements SysOnlineUserService {

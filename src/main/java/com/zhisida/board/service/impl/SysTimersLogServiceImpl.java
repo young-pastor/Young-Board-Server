@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 任务日志service接口实现类
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-24 17:02:32
  */
 @Service
@@ -97,7 +97,7 @@ public class SysTimersLogServiceImpl extends ServiceImpl<SysTimersLogMapper, Sys
     /**
      * 获取任务日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-24 17:02:32
      */
     private SysTimersLog querySysTimersLog(SysTimersLogParam sysTimersLogParam) {

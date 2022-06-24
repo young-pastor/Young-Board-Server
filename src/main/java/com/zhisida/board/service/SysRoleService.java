@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 系统角色service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysRoleService extends IService<SysRole> {
 
@@ -21,7 +21,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param userId 用户id
      * @return 增强版hashMap，格式：[{"id":456, "code":"zjl", "name":"总经理"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> getLoginRoles(Long userId);
 
@@ -30,7 +30,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param sysRoleParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysRole> page(SysRoleParam sysRoleParam);
 
@@ -39,7 +39,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param sysRoleParam 查询参数
      * @return 增强版hashMap，格式：[{"id":456, "name":"总经理(zjl)"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> list(SysRoleParam sysRoleParam);
 
@@ -47,7 +47,7 @@ public interface SysRoleService extends IService<SysRole> {
      * 系统角色下拉（用于授权角色时选择）
      *
      * @return 增强版hashMap，格式：[{"id":456, "code":"zjl", "name":"总经理"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> dropDown();
 
@@ -55,7 +55,7 @@ public interface SysRoleService extends IService<SysRole> {
      * 添加系统角色
      *
      * @param sysRoleParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysRoleParam sysRoleParam);
 
@@ -63,7 +63,7 @@ public interface SysRoleService extends IService<SysRole> {
      * 删除系统角色
      *
      * @param sysRoleParam 删除参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(SysRoleParam sysRoleParam);
 
@@ -71,7 +71,7 @@ public interface SysRoleService extends IService<SysRole> {
      * 编辑系统角色
      *
      * @param sysRoleParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysRoleParam sysRoleParam);
 
@@ -80,7 +80,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param sysRoleParam 查看参数
      * @return 系统角色
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysRole detail(SysRoleParam sysRoleParam);
 
@@ -88,7 +88,7 @@ public interface SysRoleService extends IService<SysRole> {
      * 授权菜单
      *
      * @param sysRoleParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantMenu(SysRoleParam sysRoleParam);
 
@@ -96,7 +96,7 @@ public interface SysRoleService extends IService<SysRole> {
      * 授权数据
      *
      * @param sysRoleParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantData(SysRoleParam sysRoleParam);
 
@@ -106,7 +106,7 @@ public interface SysRoleService extends IService<SysRole> {
      * @param roleIdList 角色id集合
      * @param orgId      机构id
      * @return 数据范围id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getUserDataScopeIdList(List<Long> roleIdList, Long orgId);
 
@@ -115,7 +115,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param roleId 角色id
      * @return 角色名称
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getNameByRoleId(Long roleId);
 
@@ -124,7 +124,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param sysRoleParam 查询参数
      * @return 菜单id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> ownMenu(SysRoleParam sysRoleParam);
 
@@ -133,7 +133,7 @@ public interface SysRoleService extends IService<SysRole> {
      *
      * @param sysRoleParam 查询参数
      * @return 数据范围id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> ownData(SysRoleParam sysRoleParam);
 }

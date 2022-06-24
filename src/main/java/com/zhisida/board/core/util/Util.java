@@ -16,14 +16,14 @@ import java.util.regex.Pattern;
 /**
  * 代码生成工具类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class Util {
 
     /**
      * 初始化vm
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void initVelocity() {
         Properties properties = new Properties();
@@ -40,7 +40,7 @@ public class Util {
     /**
      * 生成压缩包文件
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static void DownloadGen(HttpServletResponse response, byte[] bytes) throws IOException {
         response.reset();
@@ -56,7 +56,7 @@ public class Util {
      * @param string 字符串
      * @param i      第i次出现
      * @param str    子字符串
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private static int getIndex(String string, int i, String str) {
         Matcher slashMatcher = Pattern.compile(str).matcher(string);
@@ -74,7 +74,7 @@ public class Util {
     /**
      * 获取数据库用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public static String getDataBasename() {
         Environment environment = SpringUtil.getBean(Environment.class);

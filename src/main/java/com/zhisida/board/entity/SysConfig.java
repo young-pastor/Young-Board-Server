@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * 参数配置
  * </p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

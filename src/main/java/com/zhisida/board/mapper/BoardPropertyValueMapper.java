@@ -7,7 +7,7 @@ import com.zhisida.board.entity.BoardPropertyValue;
 /**
  * 属性值
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:57:45
  */
 public interface BoardPropertyValueMapper extends BaseMapper<BoardPropertyValue> {

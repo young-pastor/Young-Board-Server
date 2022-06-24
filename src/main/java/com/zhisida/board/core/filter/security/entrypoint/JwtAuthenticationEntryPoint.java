@@ -23,7 +23,7 @@ import java.util.Collection;
 /**
  * 未认证用户访问须授权资源端点
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
@@ -36,7 +36,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
     /**
      * 访问未经授权的接口时执行此方法，未经授权的接口包含系统中存在和不存在的接口，分别处理
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException {

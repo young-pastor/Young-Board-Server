@@ -9,7 +9,7 @@ import java.lang.annotation.*;
  * 权限注解，用于检查权限
  * 使用方式：@Permission表示检查是否有权限访问该资源
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)

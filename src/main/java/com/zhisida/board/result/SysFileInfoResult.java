@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 文件信息结果集
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Data
 public class SysFileInfoResult {

@@ -10,7 +10,7 @@ import java.io.InputStream;
 /**
  * 文档类型枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public enum DocumentFormatEnum {
 

@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 /**
  * 业务日志aop切面
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Aspect
 @Order(AopSortConstant.BUSINESS_LOG_AOP)
@@ -31,7 +31,7 @@ public class BusinessLogAop {
     /**
      * 日志切入点
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Pointcut("@annotation(com.zhisida.board.core.annotion.BusinessLog)")
     private void getLogPointCut() {
@@ -40,7 +40,7 @@ public class BusinessLogAop {
     /**
      * 操作成功返回结果记录日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @AfterReturning(pointcut = "getLogPointCut()", returning = "result")
     public void doAfterReturning(JoinPoint joinPoint, Object result) {
@@ -60,7 +60,7 @@ public class BusinessLogAop {
     /**
      * 操作发生异常记录日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @AfterThrowing(pointcut = "getLogPointCut()", throwing = "exception")
     public void doAfterThrowing(JoinPoint joinPoint, Exception exception) {

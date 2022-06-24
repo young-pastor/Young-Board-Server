@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * 腾讯文件操作异常
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public class AliyunFileServiceException extends RuntimeException {

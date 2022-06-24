@@ -32,7 +32,7 @@ import static com.zhisida.board.core.exception.enums.ServerExceptionEnum.CONSTAN
 /**
  * 系统参数配置获取
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Component
 @Log4j2
@@ -61,7 +61,7 @@ public class SysConfigCache {
      * @param configCode   变量名称，对应sys_config表中的code
      * @param clazz        返回变量值的类型
      * @param nullThrowExp 若为空是否抛出异常
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public <T> T getSysConfig(String configCode, Class<T> clazz, Boolean nullThrowExp) {
         SysConfig sysConfig = sysConfigCache.get(configCode);
@@ -101,7 +101,7 @@ public class SysConfigCache {
      * @param configCode   变量名称，对应sys_config表中的code
      * @param clazz        返回变量值的类型
      * @param defaultValue 如果结果为空返回此默认值
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public <T> T getWithDefault(String configCode, Class<T> clazz, T defaultValue) {
         SysConfig sysConfig = sysConfigCache.get(configCode);
@@ -119,7 +119,7 @@ public class SysConfigCache {
     /**
      * 获取租户功能是否开启
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public Boolean getTenantOpenFlag() {
         return getWithDefault("TENANT_OPEN", Boolean.class, false);
@@ -128,7 +128,7 @@ public class SysConfigCache {
     /**
      * 获取放开xss过滤的接口
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public List<String> getUnXssFilterUrl() {
         String boardUnXssFilterUrl = getWithDefault("UN_XSS_FILTER_URL", String.class, null);
@@ -142,7 +142,7 @@ public class SysConfigCache {
     /**
      * 获取演示环境开关是否开启，默认为false
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public Boolean getDemoEnvFlag() {
         return getWithDefault("DEMO_ENV_FLAG", Boolean.class, false);
@@ -151,7 +151,7 @@ public class SysConfigCache {
     /**
      * 邮件的配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public EmailConfigs getEmailConfigs() {
         String host = getSysConfig("EMAIL_HOST", String.class, true);
@@ -174,7 +174,7 @@ public class SysConfigCache {
     /**
      * 获取腾讯云短信的配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public TencentSmsConfigs getTencentSmsConfigs() {
         String boardTencentSmsSecretId = getSysConfig("TENCENT_SMS_SECRET_ID", String.class, true);
@@ -193,7 +193,7 @@ public class SysConfigCache {
     /**
      * 获取Druid默认用户名密码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public DruidProperties getDruidLoginConfigs() {
         String boardDruidLoginUsername = getWithDefault("DRUID_LOGIN_USERNAME", String.class, RandomUtil.randomString(10));
@@ -208,7 +208,7 @@ public class SysConfigCache {
     /**
      * 获取阿里云短信的配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public AliyunSmsConfigs getAliyunSmsConfigs() {
         String boardSmsAccesskeyId = getSysConfig("ALIYUN_SMS_ACCESSKEY_ID", String.class, true);
@@ -229,7 +229,7 @@ public class SysConfigCache {
     /**
      * 获取jwt密钥，默认是32位随机字符串
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public String getJwtSecret() {
         return getWithDefault("JWT_SECRET", String.class, RandomUtil.randomString(32));
@@ -238,7 +238,7 @@ public class SysConfigCache {
     /**
      * 获取默认密码
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public String getDefaultPassWord() {
         return getWithDefault("DEFAULT_PASSWORD", String.class, CommonConstant.DEFAULT_PASSWORD);
@@ -247,7 +247,7 @@ public class SysConfigCache {
     /**
      * 获取会话过期时间，默认2小时
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public Long getSessionTokenExpireSec() {
         return getWithDefault("SESSION_EXPIRE", Long.class, 2 * 60 * 60L);
@@ -258,7 +258,7 @@ public class SysConfigCache {
      * <p>
      * 默认时间1天
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public Long getTokenExpireSec() {
         return getWithDefault("TOKEN_EXPIRE", Long.class, 86400L);
@@ -267,7 +267,7 @@ public class SysConfigCache {
     /**
      * 获取自定义的windows环境本地文件上传路径
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public String getDefaultFileUploadPathForWindows() {
         return getWithDefault("FILE_UPLOAD_PATH_FOR_WINDOWS", String.class, "");
@@ -276,7 +276,7 @@ public class SysConfigCache {
     /**
      * 获取自定义的linux环境本地文件上传路径
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public String getDefaultFileUploadPathForLinux() {
         return getWithDefault("FILE_UPLOAD_PATH_FOR_LINUX", String.class, "");
@@ -285,7 +285,7 @@ public class SysConfigCache {
     /**
      * 获取是否允许单用户登陆的开关， 默认为false
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public Boolean getEnableSingleLogin() {
         return getWithDefault("ENABLE_SINGLE_LOGIN", Boolean.class, false);
@@ -294,7 +294,7 @@ public class SysConfigCache {
     /**
      * 获取阿里云定位接口
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public String getIpGeoApi() {
         return getSysConfig("IP_GEO_API", String.class, false);
@@ -303,7 +303,7 @@ public class SysConfigCache {
     /**
      * 获取阿里云定位appCode
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public String getIpGeoAppCode() {
         return getSysConfig("IP_GEO_APP_CODE", String.class, false);
@@ -312,7 +312,7 @@ public class SysConfigCache {
     /**
      * 获取Oauth码云第三方登录的配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public OauthConfigs getGiteeOauthConfigs() {
         String clientId = getSysConfig("OAUTH_GITEE_CLIENT_ID", String.class, true);
@@ -329,7 +329,7 @@ public class SysConfigCache {
     /**
      * 获取OauthGithub第三方登录的配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public OauthConfigs getGithubOauthConfigs() {
         String clientId = getSysConfig("OAUTH_GITHUB_CLIENT_ID", String.class, true);
@@ -346,7 +346,7 @@ public class SysConfigCache {
     /**
      * 获取是否允许Oauth用户登陆的开关， 默认为false
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public Boolean getEnableOauthLogin() {
         return getWithDefault("ENABLE_OAUTH_LOGIN", Boolean.class, false);
@@ -355,7 +355,7 @@ public class SysConfigCache {
     /**
      * 获取前端项目的地址
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public String getWebUrl() {
         return getSysConfig("WEB_URL", String.class, true);
@@ -364,7 +364,7 @@ public class SysConfigCache {
     /**
      * 获取支付宝支付成功转发地址
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public String getAlipayReturnUrl() {
         return getSysConfig("ALIPAY_RETURN_URL", String.class, true);
@@ -373,7 +373,7 @@ public class SysConfigCache {
     /**
      * 获取OnlyOffice地址
      *
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     public String getOnlyOfficeUrl() {
         return getSysConfig("ONLY_OFFICE_SERVICE_URL", String.class, true);
@@ -383,7 +383,7 @@ public class SysConfigCache {
     /**
      * 获取验证码 开关标识
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public Boolean getCaptchaOpenFlag() {
         return getWithDefault("CAPTCHA_OPEN", Boolean.class, true);
@@ -392,7 +392,7 @@ public class SysConfigCache {
     /**
      * 获取加解密的配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     public CryptogramConfigs getCryptogramConfigs() {
         boolean tokenEncDec = getWithDefault("TOKEN_ENCRYPTION_OPEN", Boolean.class, true);

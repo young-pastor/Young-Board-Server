@@ -12,7 +12,7 @@ import com.zhisida.board.core.email.MailSender;
 /**
  * 邮件发送器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class SimpleMailSender implements MailSender {
 
@@ -48,7 +48,7 @@ public class SimpleMailSender implements MailSender {
     /**
      * 校验发送邮件的请求参数
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void assertSendMailParams(SendMailParam sendMailParam) {
         if (sendMailParam == null) {

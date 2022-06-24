@@ -26,7 +26,7 @@ import java.lang.reflect.Method;
 /**
  * 权限过滤Aop切面
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Aspect
 @Order(AopSortConstant.PERMISSION_AOP)
@@ -37,7 +37,7 @@ public class PermissionAop {
     /**
      * 权限切入点
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Pointcut("@annotation(com.zhisida.board.core.annotion.Permission)")
     private void getPermissionPointCut() {
@@ -46,7 +46,7 @@ public class PermissionAop {
     /**
      * 执行权限过滤
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Before("getPermissionPointCut()")
     public void doPermission(JoinPoint joinPoint) {
@@ -96,7 +96,7 @@ public class PermissionAop {
     /**
      * 记录无权限异常日志
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     private void executeNoPermissionExceptionLog(JoinPoint joinPoint, Exception exception) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();

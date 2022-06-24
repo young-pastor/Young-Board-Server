@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * SpringBoot方式启动类
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @SpringBootApplication
 public class BoardApplication {

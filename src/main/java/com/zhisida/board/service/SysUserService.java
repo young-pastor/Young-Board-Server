@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * 系统用户service接口
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysUserService extends IService<SysUser> {
 
@@ -24,7 +24,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param account 账号
      * @return 用户
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysUser getUserByCount(String account);
 
@@ -33,7 +33,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param sysUserParam 查询参数
      * @return 查询分页结果
-     * @author young-pastor
+     * @author Young-Pastor
      */
     PageResult<SysUserResult> page(SysUserParam sysUserParam);
 
@@ -42,7 +42,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param sysUserParam 查询参数
      * @return 增强版hashMap 格式：[{"id:":123, "firstName":"张三"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> list(SysUserParam sysUserParam);
 
@@ -50,7 +50,7 @@ public interface SysUserService extends IService<SysUser> {
      * 增加系统用户
      *
      * @param sysUserParam 添加参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void add(SysUserParam sysUserParam);
 
@@ -58,7 +58,7 @@ public interface SysUserService extends IService<SysUser> {
      * 删除系统用户
      *
      * @param sysUserParamList 删除集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void delete(List<SysUserParam> sysUserParamList);
 
@@ -66,7 +66,7 @@ public interface SysUserService extends IService<SysUser> {
      * 编辑系统用户
      *
      * @param sysUserParam 编辑参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void edit(SysUserParam sysUserParam);
 
@@ -75,7 +75,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param sysUserParam 查看参数
      * @return 用户结果集
-     * @author young-pastor
+     * @author Young-Pastor
      */
     SysUserResult detail(SysUserParam sysUserParam);
 
@@ -83,7 +83,7 @@ public interface SysUserService extends IService<SysUser> {
      * 修改状态
      *
      * @param sysUserParam 修改参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void changeStatus(SysUserParam sysUserParam);
 
@@ -91,7 +91,7 @@ public interface SysUserService extends IService<SysUser> {
      * 授权角色
      *
      * @param sysUserParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantRole(SysUserParam sysUserParam);
 
@@ -99,7 +99,7 @@ public interface SysUserService extends IService<SysUser> {
      * 授权数据
      *
      * @param sysUserParam 授权参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void grantData(SysUserParam sysUserParam);
 
@@ -107,7 +107,7 @@ public interface SysUserService extends IService<SysUser> {
      * 更新信息
      *
      * @param sysUserParam 更新参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void updateInfo(SysUserParam sysUserParam);
 
@@ -115,7 +115,7 @@ public interface SysUserService extends IService<SysUser> {
      * 修改密码
      *
      * @param sysUserParam 修改密码参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void updatePwd(SysUserParam sysUserParam);
 
@@ -125,7 +125,7 @@ public interface SysUserService extends IService<SysUser> {
      * @param userId 用户id
      * @param orgId  组织机构id
      * @return 数据范围id集合（组织机构id集合）
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> getUserDataScopeIdList(Long userId, Long orgId);
 
@@ -134,7 +134,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param userId 用户id
      * @return 用户姓名
-     * @author young-pastor
+     * @author Young-Pastor
      */
     String getNameByUserId(Long userId);
 
@@ -143,7 +143,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param sysUserParam 查询参数
      * @return 角色id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> ownRole(SysUserParam sysUserParam);
 
@@ -152,7 +152,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param sysUserParam 查询参数
      * @return 数据范围id集合
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Long> ownData(SysUserParam sysUserParam);
 
@@ -160,7 +160,7 @@ public interface SysUserService extends IService<SysUser> {
      * 重置密码
      *
      * @param sysUserParam 重置参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void resetPwd(SysUserParam sysUserParam);
 
@@ -168,7 +168,7 @@ public interface SysUserService extends IService<SysUser> {
      * 修改头像
      *
      * @param sysUserParam 修改头像参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void updateAvatar(SysUserParam sysUserParam);
 
@@ -176,7 +176,7 @@ public interface SysUserService extends IService<SysUser> {
      * 导出用户
      *
      * @param sysUserParam 导出参数
-     * @author young-pastor
+     * @author Young-Pastor
      */
     void export(SysUserParam sysUserParam);
 
@@ -185,7 +185,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param sysUserParam 查询参数
      * @return 用户列表集合，格式[{"id":123,"name":"张三"},{"id":456,"name":"李四"}]
-     * @author young-pastor
+     * @author Young-Pastor
      */
     List<Dict> selector(SysUserParam sysUserParam);
 
@@ -194,7 +194,7 @@ public interface SysUserService extends IService<SysUser> {
      *
      * @param userId 用户id
      * @return 用户实体
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     SysUser getUserById(Long userId);
 
@@ -204,7 +204,7 @@ public interface SysUserService extends IService<SysUser> {
      * @param authUser 授权的用户信息
      * @param sysUser  用户表信息
      * @return void
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     void saveAuthUserToUser(AuthUser authUser, SysUser sysUser);
 
@@ -212,14 +212,14 @@ public interface SysUserService extends IService<SysUser> {
      * 获取用户id集合
      *
      * @return 用户id集合
-     * @author young-pastor
+     * @author Young-Pastor
      **/
     List<Long> getAllUserIdList();
 
     /**
      * 判断集合内用户是否均已删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @param userIdSet 用户id集合
      * @return boolean
      **/

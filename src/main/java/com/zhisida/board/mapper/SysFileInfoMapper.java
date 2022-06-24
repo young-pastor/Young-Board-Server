@@ -9,7 +9,7 @@ import com.zhisida.board.entity.SysFileInfo;
  * 文件信息表 Mapper 接口
  * </p>
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public interface SysFileInfoMapper extends BaseMapper<SysFileInfo> {
 

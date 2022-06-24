@@ -16,7 +16,7 @@ import java.io.InputStream;
 /**
  * 阿里云文件操作
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 public class LocalFileOperator implements FileOperator {
 

@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 失败响应结果
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

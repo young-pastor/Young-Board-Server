@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * Oauth用户性别枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  **/
 @Getter
 public enum OauthSexEnum {

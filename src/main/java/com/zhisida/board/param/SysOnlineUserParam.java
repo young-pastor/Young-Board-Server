@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 /**
  * 系统在线用户参数
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

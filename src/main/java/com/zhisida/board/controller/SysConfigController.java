@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 参数配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @RestController
 public class SysConfigController {
@@ -31,7 +31,7 @@ public class SysConfigController {
     /**
      * 分页查询配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysConfig/page")
@@ -43,7 +43,7 @@ public class SysConfigController {
     /**
      * 系统参数配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysConfig/list")
@@ -55,7 +55,7 @@ public class SysConfigController {
     /**
      * 查看系统参数配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @GetMapping("/sysConfig/detail")
@@ -67,7 +67,7 @@ public class SysConfigController {
     /**
      * 添加系统参数配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysConfig/add")
@@ -80,7 +80,7 @@ public class SysConfigController {
     /**
      * 删除系统参数配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysConfig/delete")
@@ -93,7 +93,7 @@ public class SysConfigController {
     /**
      * 编辑系统参数配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      */
     @Permission
     @PostMapping("/sysConfig/edit")

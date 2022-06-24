@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 是或否的枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum YesOrNotEnum {

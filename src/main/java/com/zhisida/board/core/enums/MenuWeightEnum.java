@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 菜单权重枚举
  *
- * @author young-pastor
+ * @author Young-Pastor
  */
 @Getter
 public enum MenuWeightEnum {

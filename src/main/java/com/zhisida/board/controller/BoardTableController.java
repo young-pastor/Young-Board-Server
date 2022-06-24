@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 数据表配置控制器
  *
- * @author young-pastor
+ * @author Young-Pastor
  * @date 2022-06-20 11:17:36
  */
 @RestController
@@ -31,7 +31,7 @@ public class BoardTableController {
     /**
      * 查询数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
@@ -44,7 +44,7 @@ public class BoardTableController {
     /**
      * 添加数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
@@ -58,7 +58,7 @@ public class BoardTableController {
     /**
      * 删除数据表配置，可批量删除
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
@@ -72,7 +72,7 @@ public class BoardTableController {
     /**
      * 编辑数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
@@ -86,7 +86,7 @@ public class BoardTableController {
     /**
      * 查看数据表配置
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
@@ -99,7 +99,7 @@ public class BoardTableController {
     /**
      * 数据表配置列表
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
@@ -112,7 +112,7 @@ public class BoardTableController {
     /**
      * 导出系统用户
      *
-     * @author young-pastor
+     * @author Young-Pastor
      * @date 2022-06-20 11:17:36
      */
     @Permission
