@@ -71,4 +71,5 @@ public interface SysTimersLogService extends IService<SysTimersLog> {
      */
      void export(SysTimersLogParam sysTimersLogParam);
 
+    void delete(SysTimersLogParam sysTimersLogParam);
 }

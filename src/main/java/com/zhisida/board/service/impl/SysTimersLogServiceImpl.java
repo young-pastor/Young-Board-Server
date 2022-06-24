@@ -1,10 +1,10 @@
 
 package com.zhisida.board.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
 import com.zhisida.board.core.pojo.page.PageResult;
@@ -112,6 +112,13 @@ public class SysTimersLogServiceImpl extends ServiceImpl<SysTimersLogMapper, Sys
     public void export(SysTimersLogParam sysTimersLogParam) {
         List<SysTimersLog> list = this.list(sysTimersLogParam);
         PoiUtil.exportExcelWithStream("Young-BoardSysTimersLog.xls", SysTimersLog.class, list);
+    }
+
+    @Override
+    public void delete(SysTimersLogParam sysTimersLogParam) {
+        QueryWrapper<SysTimersLog> queryWrapper = new QueryWrapper();
+        queryWrapper.lambda().eq(SysTimersLog::getTimerId, sysTimersLogParam.getTimerId());
+        this.remove(queryWrapper);
     }
 
 }
