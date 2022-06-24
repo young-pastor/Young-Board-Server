@@ -19,8 +19,10 @@ import com.zhisida.board.enums.SysDictDataExceptionEnum;
 import com.zhisida.board.mapper.SysDictDataMapper;
 import com.zhisida.board.param.SysDictDataParam;
 import com.zhisida.board.service.SysDictDataService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -184,6 +186,7 @@ public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDi
     public List<String> getDictCodesByDictTypeCode(String... dictTypeCodes) {
         return this.baseMapper.getDictCodesByDictTypeCode(dictTypeCodes);
     }
+
 
     /**
      * 校验参数，校验是否存在相同的编码

@@ -21,7 +21,7 @@
         <oracle.version>11.2.0.3</oracle.version>
         <mssql.version>9.3.0.jre8-preview</mssql.version>
         <postgresql.version>42.2.19</postgresql.version>
-        <druid.version>1.1.21</druid.version>
+        <druid.version>1.2.8</druid.version>
         <mp.version>3.4.2</mp.version>
         <jwt.version>0.9.1</jwt.version>
         <hutool.version>5.5.8</hutool.version>
@@ -36,6 +36,7 @@
         <aliyun.sms.esc.version>4.17.6</aliyun.sms.esc.version>
         <qcloud.sms.sdk.version>3.1.57</qcloud.sms.sdk.version>
         <knife4j.version>2.0.8</knife4j.version>
+        <fastjson.version>1.2.78</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -146,12 +147,6 @@
                 <groupId>me.zhyd.oauth</groupId>
                 <artifactId>JustAuth</artifactId>
                 <version>${justauth.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.alibaba</groupId>
-                        <artifactId>fastjson</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <dependency>
@@ -383,7 +378,6 @@
             <artifactId>spring-boot-starter-captcha</artifactId>
             <version>1.2.8</version>
         </dependency>
-
     </dependencies>
 
     <build>

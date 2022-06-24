@@ -7,6 +7,7 @@ import com.zhisida.board.core.cache.MappingCache;
 import com.zhisida.board.core.cache.ResourceCache;
 import com.zhisida.board.core.cache.UserCache;
 import com.zhisida.board.core.redis.FastJson2JsonRedisSerializer;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -22,6 +23,7 @@ import java.util.Map;
  * @author young-pastor
  */
 @Configuration
+@EnableCaching
 public class CacheConfig {
 
     /**
