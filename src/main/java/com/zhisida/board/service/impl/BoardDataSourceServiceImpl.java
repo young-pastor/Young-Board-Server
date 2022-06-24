@@ -32,26 +32,13 @@ public class BoardDataSourceServiceImpl extends ServiceImpl<BoardDataSourceMappe
     public PageResult<BoardDataSource> page(BoardDataSourceParam boardDataSourceParam) {
         QueryWrapper<BoardDataSource> queryWrapper = new QueryWrapper<>();
         if (ObjectUtil.isNotNull(boardDataSourceParam)) {
-
             // 根据数据源名称 查询
             if (ObjectUtil.isNotEmpty(boardDataSourceParam.getDisplayName())) {
                 queryWrapper.lambda().eq(BoardDataSource::getDisplayName, boardDataSourceParam.getDisplayName());
             }
-            // 根据分组 查询
-            if (ObjectUtil.isNotEmpty(boardDataSourceParam.getGroup())) {
-                queryWrapper.lambda().eq(BoardDataSource::getGroup, boardDataSourceParam.getGroup());
-            }
-            // 根据数据库配置 查询
-            if (ObjectUtil.isNotEmpty(boardDataSourceParam.getConfig())) {
-                queryWrapper.lambda().eq(BoardDataSource::getConfig, boardDataSourceParam.getConfig());
-            }
             // 根据数据库类型 查询
             if (ObjectUtil.isNotEmpty(boardDataSourceParam.getType())) {
                 queryWrapper.lambda().eq(BoardDataSource::getType, boardDataSourceParam.getType());
-            }
-            // 根据备注 查询
-            if (ObjectUtil.isNotEmpty(boardDataSourceParam.getRemark())) {
-                queryWrapper.lambda().eq(BoardDataSource::getRemark, boardDataSourceParam.getRemark());
             }
         }
         return new PageResult<>(this.page(PageFactory.defaultPage(), queryWrapper));

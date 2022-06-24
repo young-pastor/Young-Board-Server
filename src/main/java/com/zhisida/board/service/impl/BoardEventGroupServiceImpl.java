@@ -116,7 +116,7 @@ public class BoardEventGroupServiceImpl extends ServiceImpl<BoardEventGroupMappe
     @Override
     public void export(BoardEventGroupParam boardEventGroupParam) {
         List<BoardEventGroup> list = this.list(boardEventGroupParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardEventGroup.xls", BoardEventGroup.class, list);
+        PoiUtil.exportExcelWithStream("BoardEventGroup.xls", BoardEventGroup.class, list);
     }
 
     private void fillPids(BoardEventGroup boardEventGroup) {

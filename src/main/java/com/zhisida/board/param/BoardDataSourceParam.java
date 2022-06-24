@@ -28,12 +28,6 @@ public class BoardDataSourceParam extends BaseParam {
     private String displayName;
 
     /**
-     * 分组
-     */
-    @NotBlank(message = "分组不能为空，请检查group参数", groups = {add.class, edit.class})
-    private String group;
-
-    /**
      * 数据库配置
      */
     @NotBlank(message = "数据库配置不能为空，请检查config参数", groups = {add.class, edit.class})
@@ -48,7 +42,6 @@ public class BoardDataSourceParam extends BaseParam {
     /**
      * 备注
      */
-    @NotBlank(message = "备注不能为空，请检查remark参数", groups = {add.class, edit.class})
     private String remark;
 
 }

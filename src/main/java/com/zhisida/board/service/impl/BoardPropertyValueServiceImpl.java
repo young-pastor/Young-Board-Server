@@ -87,7 +87,7 @@ public class BoardPropertyValueServiceImpl extends ServiceImpl<BoardPropertyValu
     @Override
     public void export(BoardPropertyValueParam boardPropertyValueParam) {
         List<BoardPropertyValue> list = this.list(boardPropertyValueParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardPropertyValue.xls", BoardPropertyValue.class, list);
+        PoiUtil.exportExcelWithStream("BoardPropertyValue.xls", BoardPropertyValue.class, list);
     }
 
 }

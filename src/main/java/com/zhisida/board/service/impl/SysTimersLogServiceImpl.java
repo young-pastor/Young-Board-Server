@@ -111,7 +111,7 @@ public class SysTimersLogServiceImpl extends ServiceImpl<SysTimersLogMapper, Sys
     @Override
     public void export(SysTimersLogParam sysTimersLogParam) {
         List<SysTimersLog> list = this.list(sysTimersLogParam);
-        PoiUtil.exportExcelWithStream("Young-BoardSysTimersLog.xls", SysTimersLog.class, list);
+        PoiUtil.exportExcelWithStream("SysTimersLog.xls", SysTimersLog.class, list);
     }
 
     @Override

@@ -171,6 +171,6 @@ public class SysPosServiceImpl extends ServiceImpl<SysPosMapper, SysPos> impleme
     @Override
     public void export(SysPosParam sysPosParam) {
         List<SysPos> list = this.list(sysPosParam);
-        PoiUtil.exportExcelWithStream("YoungBoardPos.xls", SysPos.class, list);
+        PoiUtil.exportExcelWithStream("SysPos.xls", SysPos.class, list);
     }
 }

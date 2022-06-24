@@ -428,7 +428,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         queryWrapper.eq(SysUser::getStatus, CommonStatusEnum.ENABLE.getCode());
         // 其他的条件正常来说导出也只能是自己权限范围内看到的用户，改天我们再优化
         List<SysUser> list = this.list(queryWrapper);
-        PoiUtil.exportExcelWithStream("SonwyUsers.xls", SysUser.class, list);
+        PoiUtil.exportExcelWithStream("SysUsers.xls", SysUser.class, list);
     }
 
     @Override

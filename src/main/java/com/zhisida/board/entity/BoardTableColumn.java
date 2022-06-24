@@ -7,16 +7,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 
+import java.io.Serializable;
+
 /**
  * 数据字段配置
  *
  * @author Young-Pastor
  * @date 2022-06-20 11:27:41
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("tbl_board_table_column")
-public class BoardTableColumn extends BaseEntity {
+public class BoardTableColumn implements Serializable {
 
     /**
      * 主键ID

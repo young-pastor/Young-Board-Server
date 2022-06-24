@@ -6,6 +6,7 @@ import com.zhisida.board.core.annotion.Permission;
 import com.zhisida.board.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.board.core.pojo.response.ResponseData;
 import com.zhisida.board.core.pojo.response.SuccessResponseData;
+import com.zhisida.board.param.BoardEventGroupParam;
 import com.zhisida.board.param.BoardPropertyGroupParam;
 import com.zhisida.board.service.BoardPropertyGroupService;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,13 @@ public class BoardPropertyGroupController {
 
     @Resource
     private BoardPropertyGroupService boardPropertyGroupService;
+
+    @Permission
+    @GetMapping("/boardPropertyGroup/tree")
+    @BusinessLog(title = "数据源配置表_查询", opType = LogAnnotionOpTypeEnum.QUERY)
+    public ResponseData tree(BoardEventGroupParam boardEventGroupParam) {
+        return new SuccessResponseData(boardPropertyGroupService.tree(boardEventGroupParam));
+    }
 
     /**
      * 查询属性分组

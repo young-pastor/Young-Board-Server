@@ -22,6 +22,16 @@ public class BoardPropertyGroupParam extends BaseParam {
     private Long id;
 
     /**
+     * 父id
+     */
+    private Long pid;
+
+    /**
+     * 父ids
+     */
+    private String pids;
+
+    /**
      * 分组名称
      */
     @NotBlank(message = "分组名称不能为空，请检查displayName参数", groups = {add.class, edit.class})

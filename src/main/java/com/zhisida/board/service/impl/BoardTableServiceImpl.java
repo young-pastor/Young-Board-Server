@@ -5,18 +5,28 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zhisida.board.analysis.DataProviderManager;
+import com.zhisida.board.analysis.provider.DataProvider;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PoiUtil;
+import com.zhisida.board.entity.BoardDataSource;
 import com.zhisida.board.entity.BoardTable;
+import com.zhisida.board.entity.BoardTableColumn;
 import com.zhisida.board.enums.BoardTableExceptionEnum;
 import com.zhisida.board.mapper.BoardTableMapper;
 import com.zhisida.board.param.BoardTableParam;
+import com.zhisida.board.service.BoardDataSourceService;
+import com.zhisida.board.service.BoardTableColumnService;
 import com.zhisida.board.service.BoardTableService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,6 +37,12 @@ import java.util.List;
  */
 @Service
 public class BoardTableServiceImpl extends ServiceImpl<BoardTableMapper, BoardTable> implements BoardTableService {
+
+    @Resource
+    private BoardDataSourceService boardDataSourceService;
+
+    @Resource
+    private BoardTableColumnService boardTableColumnService;
 
     @Override
     public PageResult<BoardTable> page(BoardTableParam boardTableParam) {
@@ -107,7 +123,58 @@ public class BoardTableServiceImpl extends ServiceImpl<BoardTableMapper, BoardTa
     @Override
     public void export(BoardTableParam boardTableParam) {
         List<BoardTable> list = this.list(boardTableParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardTable.xls", BoardTable.class, list);
+        PoiUtil.exportExcelWithStream("BoardTable.xls", BoardTable.class, list);
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void sync(List<BoardTableParam> boardTableParams) {
+        List<BoardDataSource> boardDataSources = null;
+        QueryWrapper<BoardTable> queryWrapper = new QueryWrapper<>();
+        if (!CollectionUtils.isEmpty(boardTableParams)) {
+            List<Long> boardDataSourceIds = new ArrayList<>();
+            for (BoardTableParam boardTableParam : boardTableParams) {
+                if (!StringUtils.isEmpty(boardTableParam.getDataSourceId())) {
+                    boardDataSourceIds.add(boardTableParam.getDataSourceId());
+                }
+            }
+            if (!CollectionUtils.isEmpty(boardDataSourceIds)) {
+                boardDataSources = boardDataSourceService.listByIds(boardDataSourceIds);
+                queryWrapper.lambda().in(BoardTable::getDataSourceId, boardDataSourceIds);
+            }
+        }
+        if (CollectionUtils.isEmpty(boardDataSources)) {
+            boardDataSources = boardDataSourceService.list();
+        }
+        if (!CollectionUtils.isEmpty(boardDataSources)) {
+            List<BoardTable> oldTables = this.list(queryWrapper);
+            if (!CollectionUtils.isEmpty(oldTables)) {
+                List<Long> oldTableIds = new ArrayList<>();
+                for (BoardTable boardTable : oldTables) {
+                    oldTableIds.add(boardTable.getId());
+                }
+                boardTableColumnService.deleteByBoardTableIds(oldTableIds);
+                this.removeByIds(oldTableIds);
+            }
+
+            for (BoardDataSource boardDataSource : boardDataSources) {
+                DataProvider dataProvider = DataProviderManager.getDataProviderByType(boardDataSource);
+                List<BoardTable> boardTables = dataProvider.queryTables();
+
+                if (!CollectionUtils.isEmpty(boardTables)) {
+                    boardTables.forEach((e) -> {
+                        e.setDataSourceId(boardDataSource.getId());
+                        this.save(e);
+                        List<BoardTableColumn> boardTableColumns = dataProvider.queryColumns(e.getTableName());
+                        if (!CollectionUtils.isEmpty(boardTableColumns)) {
+                            boardTableColumns.forEach((c)->{
+                                c.setTableId(e.getId());
+                            });
+                            boardTableColumnService.saveBatch(boardTableColumns);
+                        }
+                    });
+                }
+            }
+        }
+    }
 }

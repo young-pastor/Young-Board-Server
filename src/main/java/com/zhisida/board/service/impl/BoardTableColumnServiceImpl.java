@@ -115,7 +115,14 @@ public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMap
     @Override
     public void export(BoardTableColumnParam boardTableColumnParam) {
         List<BoardTableColumn> list = this.list(boardTableColumnParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardTableColumn.xls", BoardTableColumn.class, list);
+        PoiUtil.exportExcelWithStream("BoardTableColumn.xls", BoardTableColumn.class, list);
+    }
+
+    @Override
+    public void deleteByBoardTableIds(List<Long> oldTableIds) {
+        QueryWrapper<BoardTableColumn> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().in(BoardTableColumn::getTableId, oldTableIds);
+        this.remove(queryWrapper);
     }
 
 }

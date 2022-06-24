@@ -1,10 +1,12 @@
 package com.zhisida.board.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
-import com.zhisida.board.core.pojo.base.entity.BaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * 属性分组
@@ -12,10 +14,9 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
  * @author Young-Pastor
  * @date 2022-06-20 11:57:37
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("tbl_board_property_group")
-public class BoardPropertyGroup extends BaseEntity {
+public class BoardPropertyGroup implements Serializable {
 
     /**
      * 主键ID

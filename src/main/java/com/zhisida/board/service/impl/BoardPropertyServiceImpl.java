@@ -38,8 +38,8 @@ public class BoardPropertyServiceImpl extends ServiceImpl<BoardPropertyMapper, B
                 queryWrapper.lambda().eq(BoardProperty::getDisplayName, boardPropertyParam.getDisplayName());
             }
             // 根据属性分组 查询
-            if (ObjectUtil.isNotEmpty(boardPropertyParam.getPropertyGorupId())) {
-                queryWrapper.lambda().eq(BoardProperty::getPropertyGorupId, boardPropertyParam.getPropertyGorupId());
+            if (ObjectUtil.isNotEmpty(boardPropertyParam.getPropertyGroupId())) {
+                queryWrapper.lambda().eq(BoardProperty::getPropertyGroupId, boardPropertyParam.getPropertyGroupId());
             }
             // 根据表字段ID 查询
             if (ObjectUtil.isNotEmpty(boardPropertyParam.getTableColumnId())) {
@@ -127,7 +127,7 @@ public class BoardPropertyServiceImpl extends ServiceImpl<BoardPropertyMapper, B
     @Override
     public void export(BoardPropertyParam boardPropertyParam) {
         List<BoardProperty> list = this.list(boardPropertyParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardProperty.xls", BoardProperty.class, list);
+        PoiUtil.exportExcelWithStream("BoardProperty.xls", BoardProperty.class, list);
     }
 
 }

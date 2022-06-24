@@ -1,5 +1,6 @@
-package com.zhisida.board.analysis.dataProvider;
+package com.zhisida.board.analysis.provider;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONUtil;
 import com.alibaba.druid.DbType;
 import com.alibaba.druid.pool.DruidDataSource;
@@ -7,24 +8,28 @@ import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import com.alibaba.druid.sql.ast.statement.SQLSelectStatement;
 import com.alibaba.druid.util.JdbcUtils;
+import com.zhisida.board.entity.BoardTable;
+import com.zhisida.board.entity.BoardTableColumn;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Component("jdbcDataProvider")
-public class JdbcDataProvider extends AbstractDataProvider {
+public class JdbcDataProvider implements DataProvider {
+
+    private static final ThreadLocal<TreeMap> dataSourceConfig = new ThreadLocal<TreeMap>();
+
     private static Map<String, DruidDataSource> dataSourceMap = new HashMap<>();
 
     private DruidPooledConnection getConnection() {
-        String sourceKey = JSONUtil.toJsonStr(getDataSource());
+        String sourceKey = JSONUtil.toJsonStr(getConfig());
         DruidDataSource druidDataSource = dataSourceMap.get(sourceKey);
         if (Objects.isNull(druidDataSource)) {
             try {
-                druidDataSource = (DruidDataSource) DruidDataSourceFactory.createDataSource(getDataSource());
+                druidDataSource = (DruidDataSource) DruidDataSourceFactory.createDataSource(getConfig());
                 dataSourceMap.put(sourceKey, druidDataSource);
             } catch (Exception e) {
             }
@@ -37,6 +42,20 @@ public class JdbcDataProvider extends AbstractDataProvider {
     }
 
     @Override
+    public void setConfig(Map dataSource) {
+        dataSourceConfig.set(new TreeMap(dataSource));
+    }
+
+    @Override
+    public void setConfig(String dataSource) {
+        setConfig(JSONUtil.toBean(dataSource, Map.class));
+    }
+
+    public TreeMap getConfig() {
+        return dataSourceConfig.get();
+    }
+
+    @Override
     public List<Map<String, Object>> queryAggData(SQLSelectStatement sqlSelectStatement) {
         return queryBuySql(sqlSelectStatement.toString());
     }
@@ -44,12 +63,12 @@ public class JdbcDataProvider extends AbstractDataProvider {
     @Override
     public List<Map<String, Object>> queryBuySql(String sql) {
         DruidPooledConnection connection = null;
-        Statement statement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             connection = getConnection();
             statement = connection.prepareStatement(sql);
-            resultSet = statement.getResultSet();
+            resultSet = statement.executeQuery();
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
             List<Map<String, Object>> resList = new ArrayList<>();
@@ -69,9 +88,9 @@ public class JdbcDataProvider extends AbstractDataProvider {
     }
 
     @Override
-    public List<Map<String, Object>> queryTables() {
+    public List<BoardTable> queryTables() {
         String queryTablesSql = null;
-        DbType dbType = JdbcUtils.getDbTypeRaw((String) getDataSource().get("url"), null);
+        DbType dbType = JdbcUtils.getDbTypeRaw((String) getConfig().get("url"), null);
         switch (dbType) {
             case mysql:
                 queryTablesSql = "SELECT `TABLE_NAME`, `TABLE_COMMENT` DISPLAY_NAME FROM `information_schema`.`tables` WHERE `table_schema` = database() AND `TABLE_COMMENT` IS NOT NULL";
@@ -86,13 +105,28 @@ public class JdbcDataProvider extends AbstractDataProvider {
                 queryTablesSql = "SELECT `NAME` TABLE_NAME, '' DISPLAY_NAME FROM `system`.`tables` ";
                 break;
         }
-        return queryBuySql(queryTablesSql);
+        List<Map<String, Object>> data = queryBuySql(queryTablesSql);
+        if (CollectionUtils.isEmpty(data)) {
+            return null;
+        }
+        return data.stream().map(item -> BeanUtil.toBeanIgnoreCase(item, BoardTable.class, true)).collect(Collectors.toList());
     }
 
     @Override
-    public List<Map<String, Object>> queryColumns(String table) {
+    public List<BoardTableColumn> queryColumns(String table) {
         String queryColumnsSql = null;
-        return queryBuySql(queryColumnsSql);
+        DbType dbType = JdbcUtils.getDbTypeRaw((String) getConfig().get("url"), null);
+        switch (dbType) {
+            case mysql:
+                queryColumnsSql = "SELECT `COLUMN_NAME`,`COLUMN_COMMENT` DISPLAY_NAME,DATA_TYPE  FROM `information_schema`.`columns` WHERE `table_schema` = DATABASE() AND TABLE_NAME = '" + table + "'";
+                break;
+        }
+        List<Map<String, Object>> data = queryBuySql(queryColumnsSql);
+        if (CollectionUtils.isEmpty(data)) {
+            return null;
+        }
+        return data.stream().map(item -> BeanUtil.toBeanIgnoreCase(item, BoardTableColumn.class, true)).collect(Collectors.toList());
+
     }
 
     private void close(DruidPooledConnection connection, Statement statement, ResultSet resultSet) {

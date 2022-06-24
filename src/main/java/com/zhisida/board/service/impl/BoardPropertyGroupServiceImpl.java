@@ -1,18 +1,24 @@
 package com.zhisida.board.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zhisida.board.core.consts.SymbolConstant;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
+import com.zhisida.board.core.factory.TreeBuildFactory;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PoiUtil;
+import com.zhisida.board.entity.BoardPropertyGroup;
 import com.zhisida.board.enums.BoardPropertyGroupExceptionEnum;
 import com.zhisida.board.mapper.BoardPropertyGroupMapper;
+import com.zhisida.board.param.BoardEventGroupParam;
 import com.zhisida.board.param.BoardPropertyGroupParam;
 import com.zhisida.board.service.BoardPropertyGroupService;
-import com.zhisida.board.entity.BoardPropertyGroup;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +32,21 @@ import java.util.List;
  */
 @Service
 public class BoardPropertyGroupServiceImpl extends ServiceImpl<BoardPropertyGroupMapper, BoardPropertyGroup> implements BoardPropertyGroupService {
+
+    @Override
+    public List<AntdBaseTreeNode> tree(BoardEventGroupParam boardEventGroupParam) {
+        List<AntdBaseTreeNode> treeNodeList = CollectionUtil.newArrayList();
+        LambdaQueryWrapper<BoardPropertyGroup> queryWrapper = new LambdaQueryWrapper<>();
+        this.list(queryWrapper).forEach(sysOrg -> {
+            AntdBaseTreeNode orgTreeNode = new AntdBaseTreeNode();
+            orgTreeNode.setId(sysOrg.getId());
+            orgTreeNode.setParentId(sysOrg.getPid());
+            orgTreeNode.setTitle(sysOrg.getDisplayName());
+            orgTreeNode.setValue(String.valueOf(sysOrg.getId()));
+            treeNodeList.add(orgTreeNode);
+        });
+        return new TreeBuildFactory<AntdBaseTreeNode>().doTreeBuild(treeNodeList);
+    }
 
     @Override
     public PageResult<BoardPropertyGroup> page(BoardPropertyGroupParam boardPropertyGroupParam) {
@@ -49,8 +70,10 @@ public class BoardPropertyGroupServiceImpl extends ServiceImpl<BoardPropertyGrou
     public void add(BoardPropertyGroupParam boardPropertyGroupParam) {
         BoardPropertyGroup boardPropertyGroup = new BoardPropertyGroup();
         BeanUtil.copyProperties(boardPropertyGroupParam, boardPropertyGroup);
+        this.fillPids(boardPropertyGroup);
         this.save(boardPropertyGroup);
     }
+
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -90,7 +113,22 @@ public class BoardPropertyGroupServiceImpl extends ServiceImpl<BoardPropertyGrou
     @Override
     public void export(BoardPropertyGroupParam boardPropertyGroupParam) {
         List<BoardPropertyGroup> list = this.list(boardPropertyGroupParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardPropertyGroup.xls", BoardPropertyGroup.class, list);
+        PoiUtil.exportExcelWithStream("BoardPropertyGroup.xls", BoardPropertyGroup.class, list);
     }
 
+    private void fillPids(BoardPropertyGroup boardPropertyGroup) {
+        if (boardPropertyGroup.getPid().equals(0L)) {
+            boardPropertyGroup.setPids(SymbolConstant.LEFT_SQUARE_BRACKETS +
+                    0 +
+                    SymbolConstant.RIGHT_SQUARE_BRACKETS +
+                    SymbolConstant.COMMA);
+        } else {
+            //获取父组织机构
+            BoardPropertyGroup pBoardPropertyGroup = this.getById(boardPropertyGroup.getPid());
+            boardPropertyGroup.setPids(pBoardPropertyGroup.getPids() +
+                    SymbolConstant.LEFT_SQUARE_BRACKETS + pBoardPropertyGroup.getId() +
+                    SymbolConstant.RIGHT_SQUARE_BRACKETS +
+                    SymbolConstant.COMMA);
+        }
+    }
 }

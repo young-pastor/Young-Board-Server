@@ -168,7 +168,7 @@ INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `jav
 	(1537702183212896258, 1537702183149981697, 'DISPLAY_NAME', 'displayName', 'varchar', '事件名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:42:24', 1265476890672672808, NULL, NULL),
 	(1537702828053581827, 1537702828053581826, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
 	(1537702828133273602, 1537702828053581826, 'DISPLAY_NAME', 'displayName', 'varchar', '属性名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
-	(1537702828158439426, 1537702828053581826, 'PROPERTY_GORUP_ID', 'propertyGorupId', 'bigint', '属性分组', 'Long', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'PropertyGorupId', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
+	(1537702828158439426, 1537702828053581826, 'PROPERTY_GROUP_ID', 'propertyGroupId', 'bigint', '属性分组', 'Long', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'PropertyGorupId', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
 	(1537702828179410945, 1537702828053581826, 'TABLE_COLUMN_ID', 'tableColumnId', 'bigint', '表字段ID', 'Long', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'TableColumnId', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
 	(1537702828204576770, 1537702828053581826, 'MEASURE', 'measure', 'varchar', '计算方式', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Measure', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
 	(1537702828221353986, 1537702828053581826, 'VALUE', 'value', 'text', '属性值', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Value', 'N', '2022-06-17 15:44:58', 1265476890672672808, NULL, NULL),
@@ -667,35 +667,28 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 	(1465892187004215298, 1264622039642255961, '[0],[1264622039642255961],', 'rwerwqrwqr', 'rwrqwrwqrq', 1, NULL, '/fsfasfasfa', '', '', 'system', 3, 'Y', 'https://snowy.xiaonuo.vip/timers', '', 1, 100, NULL, 2, '2021-12-01 11:55:07', 1265476890672672808, NULL, NULL),
 	(1537693069254561793, 0, '[0],', '数据管理', 'board_metadata', 0, 'pic-left', '/board_metadata', 'PageView', '', 'system', 1, 'Y', NULL, '', 1, 3, NULL, 0, '2022-06-17 15:06:11', 1265476890672672808, '2022-06-22 18:04:08', 1265476890672672808),
 	(1539187940297420802, 0, '[0],', '实时分析', 'board_analysis', 0, 'bar-chart', '/board_analysis', 'PageView', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:06:16', 1265476890672672808, '2022-06-22 18:03:44', 1265476890672672808),
-	(1539188385652813825, 1539187940297420802, '[0],[1539187940297420802],', '事件分析', 'evnentAn', 1, NULL, '/evnentAn', 'evnentAn', '', 'system', 1, 'Y', NULL, '', 1, 1, NULL, 0, '2022-06-21 18:08:02', 1265476890672672808, '2022-06-22 18:01:46', 1265476890672672808),
-	(1539188990165266434, 1539187940297420802, '[0],[1539187940297420802],', '漏洞分析', 'funll', 1, NULL, '/funll', 'funll', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:10:26', 1265476890672672808, '2022-06-22 18:02:34', 1265476890672672808),
+	(1539188385652813825, 1539187940297420802, '[0],[1539187940297420802],', '事件分析', 'evnent_analysis', 1, NULL, '/evnent_analysis', 'evnent_analysis', '', 'system', 1, 'Y', NULL, '', 1, 1, NULL, 0, '2022-06-21 18:08:02', 1265476890672672808, '2022-06-24 18:23:32', 1265476890672672808),
+	(1539188990165266434, 1539187940297420802, '[0],[1539187940297420802],', '漏斗分析', 'funnel_analysis', 1, NULL, '/funnel_analysis', 'funnel_analysis', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:10:26', 1265476890672672808, '2022-06-24 18:23:20', 1265476890672672808),
 	(1539863115309432833, 1264622039642256351, '[0],[1264622039642256351],', '缓存管理', 'sys_cache_mgr', 1, NULL, '/cache', 'system/cache/index', '', 'system', 1, 'Y', NULL, '', 1, 100, NULL, 0, '2022-06-23 14:49:10', 1265476890672672808, NULL, NULL),
-	(4629717631863884805, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组导出', 'boardEventGroup_index_export', 2, NULL, NULL, NULL, 'boardEventGroup:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
+	(4629717631863884805, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组导出', 'boardEventGroup_index_export', 2, NULL, NULL, NULL, 'boardEventGroup:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(4727346430688865203, 1537693069254561793, '[0],[1537693069254561793],', '属性分组', 'boardpropertygroup_index', 1, NULL, '/boardPropertyGroup', 'board/boardPropertyGroup/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
-	(4728784097108591224, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置新增', 'boardTable_index_add', 2, NULL, NULL, NULL, 'boardTable:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(4747020348341702558, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置编辑', 'boardDatasource_index_edit', 2, NULL, NULL, NULL, 'boardDataSource:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:27', 1265476890672672808),
 	(4988880395349552904, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置导出', 'boardTable_index_export', 2, NULL, NULL, NULL, 'boardTable:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
 	(4995513235449904549, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置导出', 'boardDatasource_index_export', 2, NULL, NULL, NULL, 'boardDataSource:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:32', 1265476890672672808),
-	(5002079288066584799, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组新增', 'boardEventGroup_index_add', 2, NULL, NULL, NULL, 'boardEventGroup:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(5016596720486006082, 6992554996570524470, '[0],[1537693069254561793],[6992554996570524470],', '属性值查询', 'boardpropertyvalue_index_page', 2, NULL, NULL, NULL, 'boardPropertyValue:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
 	(5053247396277601701, 1537693069254561793, '[0],[1537693069254561793],', '数据表配置', 'boardTable_index', 1, NULL, '/boardTable', 'board/boardTable/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
 	(5200192712383772429, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置删除', 'boardDatasource_index_delete', 2, NULL, NULL, NULL, 'boardDataSource:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:03', 1265476890672672808),
-	(5200700902710591809, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组编辑', 'boardEventGroup_index_edit', 2, NULL, NULL, NULL, 'boardEventGroup:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(5203283721685123391, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置列表', 'boardTable_index_list', 2, NULL, NULL, NULL, 'boardTable:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
 	(5313593924281569270, 7288598652824964708, '[0],[1537693069254561793],[7288598652824964708],', '数据字段配置编辑', 'boardTableColumn_index_edit', 2, NULL, NULL, NULL, 'boardTableColumn:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
-	(5387964758282119974, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置删除', 'boardTable_index_delete', 2, NULL, NULL, NULL, 'boardTable:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(5594503419553217943, 4727346430688865203, '[0],[1537693069254561793],[4727346430688865203],', '属性分组列表', 'boardpropertygroup_index_list', 2, NULL, NULL, NULL, 'boardPropertyGroup:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
 	(5655055115260975611, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置新增', 'boardDatasource_index_add', 2, NULL, NULL, NULL, 'boardDataSource:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:38', 1265476890672672808),
 	(5666654336429911593, 6073322290452106986, '[0],[1537693069254561793],[6073322290452106986],', '属性配置查询', 'boardproperty_index_page', 2, NULL, NULL, NULL, 'boardProperty:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808),
 	(5793876116800796479, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置删除', 'boardTable_index_delete', 2, NULL, NULL, NULL, 'boardTable:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
 	(5899839195785429194, 7288598652824964708, '[0],[1537693069254561793],[7288598652824964708],', '数据字段配置删除', 'boardTableColumn_index_delete', 2, NULL, NULL, NULL, 'boardTableColumn:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
 	(5927497977552449011, 7288598652824964708, '[0],[1537693069254561793],[7288598652824964708],', '数据字段配置新增', 'boardTableColumn_index_add', 2, NULL, NULL, NULL, 'boardTableColumn:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
-	(5942110261687775007, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置查看', 'boardTable_index_detail', 2, NULL, NULL, NULL, 'boardTable:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(6006143604125572910, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置查看', 'boardDatasource_index_detail', 2, NULL, NULL, NULL, 'boardDataSource:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:14', 1265476890672672808),
 	(6016712028173822537, 8992713839397752339, '[0],[1537693069254561793],[8992713839397752339],', '字段关联配置导出', 'boardTableConnect_index_export', 2, NULL, NULL, NULL, 'boardTableConnect:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
-	(6017065010786391086, 0, '[0],[1537693069254561793],', '数据表配置', 'boardTable_index', 1, NULL, '/boardTable', 'main/boardTable/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(6073322290452106986, 1537693069254561793, '[0],[1537693069254561793],', '属性配置', 'boardproperty_index', 1, NULL, '/boardProperty', 'board/boardProperty/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808),
-	(6093689921092135590, 0, '[0],[1537693069254561793],', '数据源配置表', 'boardDatasource_index', 1, NULL, '/boardDataSource', 'main/boardDatasource/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(6100576935942237220, 6992554996570524470, '[0],[1537693069254561793],[6992554996570524470],', '属性值列表', 'boardpropertyvalue_index_list', 2, NULL, NULL, NULL, 'boardPropertyValue:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
 	(6296180891581916017, 4727346430688865203, '[0],[1537693069254561793],[4727346430688865203],', '属性分组编辑', 'boardpropertygroup_index_edit', 2, NULL, NULL, NULL, 'boardPropertyGroup:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
 	(6363777537537460804, 8992713839397752339, '[0],[1537693069254561793],[8992713839397752339],', '字段关联配置删除', 'boardTableConnect_index_delete', 2, NULL, NULL, NULL, 'boardTableConnect:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
@@ -704,25 +697,17 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 	(6449913311131032987, 7288598652824964708, '[0],[1537693069254561793],[7288598652824964708],', '数据字段配置查看', 'boardTableColumn_index_detail', 2, NULL, NULL, NULL, 'boardTableColumn:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
 	(6472178080029648869, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置导出', 'boardEvent_index_export', 2, NULL, NULL, NULL, 'boardEvent:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(6524320009635818047, 1537693069254561793, '[0],[1537693069254561793],', '数据源配置', 'boardDatasource_index', 1, NULL, '/boardDataSource', 'board/boardDatasource/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:34:52', 1265476890672672808),
-	(6541159092268892436, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组列表', 'boardEventGroup_index_list', 2, NULL, NULL, NULL, 'boardEventGroup:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(6598540399746212373, 6992554996570524470, '[0],[1537693069254561793],[6992554996570524470],', '属性值删除', 'boardpropertyvalue_index_delete', 2, NULL, NULL, NULL, 'boardPropertyValue:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
 	(6601676838629653641, 7288598652824964708, '[0],[1537693069254561793],[7288598652824964708],', '数据字段配置列表', 'boardTableColumn_index_list', 2, NULL, NULL, NULL, 'boardTableColumn:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
 	(6663073402820268833, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置查询', 'boardDatasource_index_page', 2, NULL, NULL, NULL, 'boardDataSource:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:09', 1265476890672672808),
-	(6676685300528336280, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置导出', 'boardTable_index_export', 2, NULL, NULL, NULL, 'boardTable:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(6694311656187858919, 1537693069254561793, '[0],[1537693069254561793],', '元事件配置', 'boardEvent_index', 1, NULL, '/boardEvent', 'board/boardEvent/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(6968354221220822111, 8992713839397752339, '[0],[1537693069254561793],[8992713839397752339],', '字段关联配置查看', 'boardTableConnect_index_detail', 2, NULL, NULL, NULL, 'boardTableConnect:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
 	(6992554996570524470, 1537693069254561793, '[0],[1537693069254561793],', '属性值', 'boardpropertyvalue_index', 1, NULL, '/boardPropertyValue', 'board/boardPropertyValue/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
-	(7071221793545538721, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置列表', 'boardTable_index_list', 2, NULL, NULL, NULL, 'boardTable:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
-	(7105578676054393305, 6093689921092135590, '[0],[1537693069254561793],[6093689921092135590],', '数据源配置表删除', 'boardDatasource_index_delete', 2, NULL, NULL, NULL, 'boardDataSource:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(7211086211602463135, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置编辑', 'boardEvent_index_edit', 2, NULL, NULL, NULL, 'boardEvent:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(7216605245852275096, 6073322290452106986, '[0],[1537693069254561793],[6073322290452106986],', '属性配置列表', 'boardproperty_index_list', 2, NULL, NULL, NULL, 'boardProperty:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808),
-	(7224026441006660886, 6093689921092135590, '[0],[1537693069254561793],[6093689921092135590],', '数据源配置表查看', 'boardDatasource_index_detail', 2, NULL, NULL, NULL, 'boardDataSource:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(7288598652824964708, 1537693069254561793, '[0],[1537693069254561793],', '数据字段配置', 'boardTableColumn_index', 1, NULL, '/boardTableColumn', 'board/boardTableColumn/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
 	(7349757853101670456, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置查看', 'boardTable_index_detail', 2, NULL, NULL, NULL, 'boardTable:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
-	(7388374877219006932, 6093689921092135590, '[0],[1537693069254561793],[6093689921092135590],', '数据源配置表新增', 'boardDatasource_index_add', 2, NULL, NULL, NULL, 'boardDataSource:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
-	(7496395082984338095, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置查询', 'boardTable_index_page', 2, NULL, NULL, NULL, 'boardTable:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(7560313153387079270, 4727346430688865203, '[0],[1537693069254561793],[4727346430688865203],', '属性分组查询', 'boardpropertygroup_index_page', 2, NULL, NULL, NULL, 'boardPropertyGroup:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
-	(7787165728592690450, 6093689921092135590, '[0],[1537693069254561793],[6093689921092135590],', '数据源配置表查询', 'boardDatasource_index_page', 2, NULL, NULL, NULL, 'boardDataSource:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
 	(7794104508022256665, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置新增', 'boardTable_index_add', 2, NULL, NULL, NULL, 'boardTable:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
 	(7811673076363145925, 4727346430688865203, '[0],[1537693069254561793],[4727346430688865203],', '属性分组删除', 'boardpropertygroup_index_delete', 2, NULL, NULL, NULL, 'boardPropertyGroup:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
 	(7893549368352027983, 6992554996570524470, '[0],[1537693069254561793],[6992554996570524470],', '属性值导出', 'boardpropertyvalue_index_export', 2, NULL, NULL, NULL, 'boardPropertyValue:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
@@ -736,14 +721,11 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 	(8374229387129070322, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置查询', 'boardEvent_index_page', 2, NULL, NULL, NULL, 'boardEvent:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(8482509809215326469, 6992554996570524470, '[0],[1537693069254561793],[6992554996570524470],', '属性值新增', 'boardpropertyvalue_index_add', 2, NULL, NULL, NULL, 'boardPropertyValue:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
 	(8627415153233558083, 7288598652824964708, '[0],[1537693069254561793],[7288598652824964708],', '数据字段配置导出', 'boardTableColumn_index_export', 2, NULL, NULL, NULL, 'boardTableColumn:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:48', 1265476890672672808),
-	(8666540192821291960, 6017065010786391086, '[0],[1537693069254561793],[6017065010786391086],', '数据表配置编辑', 'boardTable_index_edit', 2, NULL, NULL, NULL, 'boardTable:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
-	(8689873607296341450, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组查看', 'boardEventGroup_index_detail', 2, NULL, NULL, NULL, 'boardEventGroup:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(8701495433161575054, 6073322290452106986, '[0],[1537693069254561793],[6073322290452106986],', '属性配置新增', 'boardproperty_index_add', 2, NULL, NULL, NULL, 'boardProperty:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808),
 	(8730195498123373797, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置列表', 'boardEvent_index_list', 2, NULL, NULL, NULL, 'boardEvent:list', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(8732275111633295394, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置删除', 'boardEvent_index_delete', 2, NULL, NULL, NULL, 'boardEvent:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(8752506390782894449, 8992713839397752339, '[0],[1537693069254561793],[8992713839397752339],', '字段关联配置查询', 'boardTableConnect_index_page', 2, NULL, NULL, NULL, 'boardTableConnect:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
 	(8756553564016389873, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置新增', 'boardEvent_index_add', 2, NULL, NULL, NULL, 'boardEvent:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
-	(8763216765860704340, 1537693069254561793, '[0],[1537693069254561793],', '元事件分组', 'boardEventGroup_index', 1, NULL, '/boardEventGroup', 'board/boardEventGroup/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(8770509580005161942, 6694311656187858919, '[0],[1537693069254561793],[6694311656187858919],', '元事件配置查看', 'boardEvent_index_detail', 2, NULL, NULL, NULL, 'boardEvent:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:43', 1265476890672672808),
 	(8782915495673254119, 4727346430688865203, '[0],[1537693069254561793],[4727346430688865203],', '属性分组新增', 'boardpropertygroup_index_add', 2, NULL, NULL, NULL, 'boardPropertyGroup:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
 	(8832785072890142851, 6992554996570524470, '[0],[1537693069254561793],[6992554996570524470],', '属性值查看', 'boardpropertyvalue_index_detail', 2, NULL, NULL, NULL, 'boardPropertyValue:detail', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:10:05', 1265476890672672808),
@@ -751,13 +733,9 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 	(8874942882696474821, 8992713839397752339, '[0],[1537693069254561793],[8992713839397752339],', '字段关联配置新增', 'boardTableConnect_index_add', 2, NULL, NULL, NULL, 'boardTableConnect:add', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
 	(8876572993673459477, 4727346430688865203, '[0],[1537693069254561793],[4727346430688865203],', '属性分组导出', 'boardpropertygroup_index_export', 2, NULL, NULL, NULL, 'boardPropertyGroup:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:27', 1265476890672672808),
 	(8904191812964444523, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置编辑', 'boardTable_index_edit', 2, NULL, NULL, NULL, 'boardTable:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
-	(8909111825831703057, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组查询', 'boardEventGroup_index_page', 2, NULL, NULL, NULL, 'boardEventGroup:page', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(8992713839397752339, 1537693069254561793, '[0],[1537693069254561793],', '字段关联配置', 'boardTableConnect_index', 1, NULL, '/boardTableConnect', 'board/boardTableConnect/index', NULL, 'system', 1, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
-	(9002629709591538474, 8763216765860704340, '[0],[1537693069254561793],[8763216765860704340],', '元事件分组删除', 'boardEventGroup_index_delete', 2, NULL, NULL, NULL, 'boardEventGroup:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:08:54', 1265476890672672808),
 	(9050468609605436835, 8992713839397752339, '[0],[1537693069254561793],[8992713839397752339],', '字段关联配置编辑', 'boardTableConnect_index_edit', 2, NULL, NULL, NULL, 'boardTableConnect:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:09:38', 1265476890672672808),
-	(9116501195565509393, 6073322290452106986, '[0],[1537693069254561793],[6073322290452106986],', '属性配置删除', 'boardproperty_index_delete', 2, NULL, NULL, NULL, 'boardProperty:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808),
-	(9186011042022728881, 6093689921092135590, '[0],[1537693069254561793],[6093689921092135590],', '数据源配置表导出', 'boardDatasource_index_export', 2, NULL, NULL, NULL, 'boardDataSource:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL),
-	(9219358828212462743, 6093689921092135590, '[0],[1537693069254561793],[6093689921092135590],', '数据源配置表编辑', 'boardDatasource_index_edit', 2, NULL, NULL, NULL, 'boardDataSource:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 2, NULL, NULL, NULL, NULL);
+	(9116501195565509393, 6073322290452106986, '[0],[1537693069254561793],[6073322290452106986],', '属性配置删除', 'boardproperty_index_delete', 2, NULL, NULL, NULL, 'boardProperty:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_menu` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_notice
@@ -853,7 +831,7 @@ CREATE TABLE IF NOT EXISTS `sys_op_log` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统操作日志表';
 
--- Dumping data for table young-board.sys_op_log: ~0 rows (approximately)
+-- Dumping data for table young-board.sys_op_log: ~212 rows (approximately)
 DELETE FROM `sys_op_log`;
 /*!40000 ALTER TABLE `sys_op_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_op_log` ENABLE KEYS */;
@@ -1047,7 +1025,7 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
 DELETE FROM `sys_user`;
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
 INSERT INTO `sys_user` (`id`, `account`, `pwd_hash_value`, `nick_name`, `name`, `avatar`, `birthday`, `sex`, `email`, `phone`, `tel`, `last_login_ip`, `last_login_time`, `admin_type`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-	(1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '127.0.0.1', '2022-06-24 16:59:11', 1, 0, '2020-05-29 16:39:28', -1, '2022-06-24 16:59:11', -1);
+	(1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '127.0.0.1', '2022-06-24 23:09:30', 1, 0, '2020-05-29 16:39:28', -1, '2022-06-24 23:09:30', -1);
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_user_data_scope
@@ -1096,7 +1074,7 @@ CREATE TABLE IF NOT EXISTS `sys_vis_log` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统访问日志表';
 
--- Dumping data for table young-board.sys_vis_log: ~0 rows (approximately)
+-- Dumping data for table young-board.sys_vis_log: ~10 rows (approximately)
 DELETE FROM `sys_vis_log`;
 /*!40000 ALTER TABLE `sys_vis_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_vis_log` ENABLE KEYS */;
@@ -1279,6 +1257,8 @@ DELETE FROM `tbl_board_event`;
 DROP TABLE IF EXISTS `tbl_board_event_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
+  `PID` bigint(20) DEFAULT NULL,
+  `PIDS` text DEFAULT NULL,
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '事件名称',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='元事件分组表';
@@ -1286,6 +1266,8 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
 -- Dumping data for table young-board.tbl_board_event_group: ~0 rows (approximately)
 DELETE FROM `tbl_board_event_group`;
 /*!40000 ALTER TABLE `tbl_board_event_group` DISABLE KEYS */;
+INSERT INTO `tbl_board_event_group` (`ID`, `PID`, `PIDS`, `DISPLAY_NAME`) VALUES
+	(1540349516362821633, 0, '[0],', '测试');
 /*!40000 ALTER TABLE `tbl_board_event_group` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.tbl_board_event_property
@@ -1319,7 +1301,7 @@ DROP TABLE IF EXISTS `tbl_board_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(128) DEFAULT NULL COMMENT '属性名称',
-  `PROPERTY_GORUP_ID` bigint(20) DEFAULT NULL COMMENT '属性分组',
+  `PROPERTY_GROUP_ID` bigint(20) DEFAULT NULL COMMENT '属性分组',
   `TABLE_COLUMN_ID` bigint(20) DEFAULT NULL COMMENT '表字段ID',
   `MEASURE` varchar(128) DEFAULT NULL COMMENT '计算方式',
   `VALUE` text DEFAULT NULL COMMENT '属性值',

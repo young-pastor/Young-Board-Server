@@ -8,11 +8,12 @@ import com.zhisida.board.core.pojo.response.ResponseData;
 import com.zhisida.board.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardTableParam;
 import com.zhisida.board.service.BoardTableService;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class BoardTableController {
     @PostMapping("/boardTable/add")
     @BusinessLog(title = "数据表配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardTableParam.add.class) BoardTableParam boardTableParam) {
-            boardTableService.add(boardTableParam);
+        boardTableService.add(boardTableParam);
         return new SuccessResponseData();
     }
 
@@ -65,7 +66,7 @@ public class BoardTableController {
     @PostMapping("/boardTable/delete")
     @BusinessLog(title = "数据表配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardTableParam.delete.class) List<BoardTableParam> boardTableParamList) {
-            boardTableService.delete(boardTableParamList);
+        boardTableService.delete(boardTableParamList);
         return new SuccessResponseData();
     }
 
@@ -79,7 +80,7 @@ public class BoardTableController {
     @PostMapping("/boardTable/edit")
     @BusinessLog(title = "数据表配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardTableParam.edit.class) BoardTableParam boardTableParam) {
-            boardTableService.edit(boardTableParam);
+        boardTableService.edit(boardTableParam);
         return new SuccessResponseData();
     }
 
@@ -120,6 +121,20 @@ public class BoardTableController {
     @BusinessLog(title = "数据表配置_导出", opType = LogAnnotionOpTypeEnum.EXPORT)
     public void export(BoardTableParam boardTableParam) {
         boardTableService.export(boardTableParam);
+    }
+
+    /**
+     * 导出系统用户
+     *
+     * @author Young-Pastor
+     * @date 2022-06-20 11:17:36
+     */
+    @Permission
+    @PostMapping("/boardTable/sync")
+    @BusinessLog(title = "数据表配置_同步", opType = LogAnnotionOpTypeEnum.EDIT)
+    public ResponseData sync(@RequestBody List<BoardTableParam> boardTableParams) {
+        boardTableService.sync(boardTableParams);
+        return new SuccessResponseData();
     }
 
 }

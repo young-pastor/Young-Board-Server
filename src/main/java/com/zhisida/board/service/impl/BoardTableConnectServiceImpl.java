@@ -99,7 +99,7 @@ public class BoardTableConnectServiceImpl extends ServiceImpl<BoardTableConnectM
     @Override
     public void export(BoardTableConnectParam boardTableConnectParam) {
         List<BoardTableConnect> list = this.list(boardTableConnectParam);
-        PoiUtil.exportExcelWithStream("Young-BoardBoardTableConnect.xls", BoardTableConnect.class, list);
+        PoiUtil.exportExcelWithStream("BoardTableConnect.xls", BoardTableConnect.class, list);
     }
 
 }

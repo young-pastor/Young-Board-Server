@@ -34,7 +34,7 @@ public class BoardProperty extends BaseEntity {
      * 属性分组
      */
     @Excel(name = "属性分组")
-    private Long propertyGorupId;
+    private Long propertyGroupId;
 
     /**
      * 表字段ID

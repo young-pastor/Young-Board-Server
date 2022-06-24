@@ -5,9 +5,9 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.zhisida.board.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * 数据源配置表
@@ -15,10 +15,9 @@ import lombok.EqualsAndHashCode;
  * @author Young-Pastor
  * @date 2022-06-17 15:08:24
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("tbl_board_data_source")
-public class BoardDataSource extends BaseEntity {
+public class BoardDataSource implements Serializable {
 
     /**
      * 主键ID
@@ -31,12 +30,6 @@ public class BoardDataSource extends BaseEntity {
      */
     @Excel(name = "数据源名称")
     private String displayName;
-
-    /**
-     * 分组
-     */
-    @Excel(name = "分组")
-    private String group;
 
     /**
      * 数据库配置

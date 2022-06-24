@@ -9,16 +9,17 @@ import com.zhisida.board.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
  * 数据表配置
  *
  * @author Young-Pastor
  * @date 2022-06-20 11:17:36
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("tbl_board_table")
-public class BoardTable extends BaseEntity {
+public class BoardTable implements Serializable {
 
     /**
      * 主键ID

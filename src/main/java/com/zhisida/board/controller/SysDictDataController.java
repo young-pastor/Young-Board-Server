@@ -8,12 +8,12 @@ import com.zhisida.board.core.pojo.base.param.BaseParam;
 import com.zhisida.board.core.pojo.response.ResponseData;
 import com.zhisida.board.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.SysDictDataParam;
+import com.zhisida.board.service.SysDictDataService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.zhisida.board.service.SysDictDataService;
 
 import javax.annotation.Resource;
 

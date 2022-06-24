@@ -3,6 +3,7 @@ package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhisida.board.core.pojo.page.PageResult;
+import com.zhisida.board.entity.BoardTable;
 import com.zhisida.board.entity.BoardTableColumn;
 import com.zhisida.board.param.BoardTableColumnParam;
 import java.util.List;
@@ -71,4 +72,5 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
      */
      void export(BoardTableColumnParam boardTableColumnParam);
 
+    void deleteByBoardTableIds(List<Long> oldTableIds);
 }

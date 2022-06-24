@@ -103,7 +103,7 @@ public class ${ClassName}ServiceImpl extends ServiceImpl<${ClassName}Mapper, ${C
     @Override
     public void export(${ClassName}Param ${className}Param) {
         List<${ClassName}> list = this.list(${className}Param);
-        PoiUtil.exportExcelWithStream("Young-Board${ClassName}.xls", ${ClassName}.class, list);
+        PoiUtil.exportExcelWithStream("${ClassName}.xls", ${ClassName}.class, list);
     }
 
 }

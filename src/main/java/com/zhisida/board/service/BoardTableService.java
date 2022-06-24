@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardTable;
 import com.zhisida.board.param.BoardTableParam;
+
 import java.util.List;
 
 /**
@@ -71,4 +72,5 @@ public interface BoardTableService extends IService<BoardTable> {
      */
      void export(BoardTableParam boardTableParam);
 
+    void sync(List<BoardTableParam> boardTableParams);
 }
