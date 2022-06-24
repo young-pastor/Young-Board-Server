@@ -4,13 +4,14 @@ package com.zhisida.board.core.util;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.extra.servlet.ServletUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.log.Log;
 import com.alibaba.fastjson.JSONPath;
 import com.zhisida.board.core.consts.CommonConstant;
 import com.zhisida.board.core.consts.SymbolConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -61,9 +62,10 @@ public class IpAddressUtil {
 
         try {
             //获取阿里云定位api接口
-            String api = ConstantContextHolder.getIpGeoApi();
+            SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+            String api = sysConfigCache.getIpGeoApi();
             //获取阿里云定位appCode
-            String appCode = ConstantContextHolder.getIpGeoAppCode();
+            String appCode = sysConfigCache.getIpGeoAppCode();
             if (ObjectUtil.isAllNotEmpty(api, appCode)) {
                 String path = "$['data']['country','region','city','isp']";
                 String appCodeSymbol = "APPCODE";

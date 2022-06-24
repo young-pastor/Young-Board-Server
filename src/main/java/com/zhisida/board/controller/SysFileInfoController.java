@@ -2,9 +2,10 @@
 package com.zhisida.board.controller;
 
 import cn.hutool.core.lang.Dict;
+import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.annotion.BusinessLog;
 import com.zhisida.board.core.annotion.Permission;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.board.core.pojo.base.param.BaseParam;
 import com.zhisida.board.core.pojo.response.ResponseData;
@@ -45,7 +46,8 @@ public class SysFileInfoController {
         //生成在线文档的model
         SysOnlineFileInfoResult sysOnlineFileInfoResult = sysFileInfoService.onlineAddOrUpdate(sysFileInfoParam);
         Dict dict = Dict.create();
-        dict.put("docServiceApiUrl",  ConstantContextHolder.getOnlyOfficeUrl() + ONLY_OFFICE_APP_JS_SUFFIX);
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        dict.put("docServiceApiUrl",  sysConfigCache.getOnlyOfficeUrl() + ONLY_OFFICE_APP_JS_SUFFIX);
         dict.put("sysOnlineFileInfoResult", sysOnlineFileInfoResult);
         return new SuccessResponseData(dict);
     }

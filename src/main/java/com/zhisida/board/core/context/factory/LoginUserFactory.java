@@ -9,7 +9,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.consts.CommonConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.exception.enums.ServerExceptionEnum;
 import com.zhisida.board.core.pojo.login.LoginEmpInfo;
@@ -107,8 +107,9 @@ public class LoginUserFactory {
                 sysLoginUser.setMenus(loginMenuTreeNodes);
             }
 
+            SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
             //如果开启了多租户功能，则设置当前登录用户的租户标识
-            if (ConstantContextHolder.getTenantOpenFlag()) {
+            if (sysConfigCache.getTenantOpenFlag()) {
                 String tenantCode = TenantCodeHolder.get();
                 String dataBaseName = TenantDbNameHolder.get();
                 if (StrUtil.isNotBlank(tenantCode) && StrUtil.isNotBlank(dataBaseName)) {

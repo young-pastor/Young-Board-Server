@@ -2,7 +2,8 @@
 package com.zhisida.board.core.context.factory;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import cn.hutool.extra.spring.SpringUtil;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.enums.CommonStatusEnum;
 import com.zhisida.board.core.util.CryptogramUtil;
 import com.zhisida.board.core.enums.AdminTypeEnum;
@@ -36,7 +37,8 @@ public class SysUserFactory {
         //密码为空则设置密码（密码都为哈希值哦）
         if (ObjectUtil.isEmpty(sysUser.getPwdHashValue())) {
             //没有密码则设置默认密码
-            String password = ConstantContextHolder.getDefaultPassWord();
+            SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+            String password = sysConfigCache.getDefaultPassWord();
             //设置密码为Sm3的哈希值，这里代表保护密码的完整性
             sysUser.setPwdHashValue(CryptogramUtil.doHashValue(password));
         }

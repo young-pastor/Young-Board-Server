@@ -4,15 +4,16 @@ package com.zhisida.board.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.context.login.LoginContextHolder;
 import com.zhisida.board.core.exception.DemoException;
 import com.zhisida.board.core.factory.PageFactory;
 import com.zhisida.board.core.pojo.login.SysLoginUser;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PageUtil;
-import com.zhisida.board.core.cache.UserCache;
+import com.zhisida.board.cache.SysUserCache;
 import com.zhisida.board.core.log.LogManager;
 import com.zhisida.board.param.SysOnlineUserParam;
 import com.zhisida.board.result.SysOnlineUserResult;
@@ -34,7 +35,7 @@ import java.util.stream.Collectors;
 public class SysOnlineUserServiceImpl implements SysOnlineUserService {
 
     @Resource
-    private UserCache userCache;
+    private SysUserCache userCache;
 
     @Override
     public PageResult<SysOnlineUserResult> list(SysOnlineUserParam sysOnlineUserParam) {
@@ -58,7 +59,8 @@ public class SysOnlineUserServiceImpl implements SysOnlineUserService {
 
     @Override
     public void forceExist(SysOnlineUserParam sysOnlineUserParam) {
-        Boolean demoEnvFlag = ConstantContextHolder.getDemoEnvFlag();
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        Boolean demoEnvFlag = sysConfigCache.getDemoEnvFlag();
         if (demoEnvFlag) {
             throw new DemoException();
         }

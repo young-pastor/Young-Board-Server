@@ -22,6 +22,7 @@ import com.zhisida.board.param.SysDictTypeParam;
 import com.zhisida.board.result.SysDictTreeNode;
 import com.zhisida.board.service.SysDictDataService;
 import com.zhisida.board.service.SysDictTypeService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

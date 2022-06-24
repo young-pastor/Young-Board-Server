@@ -1,9 +1,10 @@
 
 package com.zhisida.board.controller;
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.consts.CommonConstant;
 import com.zhisida.board.core.consts.SymbolConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import me.zhyd.oauth.model.AuthCallback;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,7 +46,8 @@ public class SysOauthController {
     @GetMapping("/oauth/callback/{source}")
     public void callback(@PathVariable("source") String source, AuthCallback callback, HttpServletRequest request, HttpServletResponse response) throws IOException {
         String token = sysOauthService.callback(source, callback, request);
-        String webUrl = ConstantContextHolder.getWebUrl();
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        String webUrl = sysConfigCache.getWebUrl();
         response.sendRedirect(webUrl + SymbolConstant.QUESTION_MARK + CommonConstant.TOKEN_NAME + SymbolConstant.EQUAL + token);
     }
 }

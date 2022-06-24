@@ -5,19 +5,20 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhisida.board.core.context.constant.ConstantContext;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.enums.CommonStatusEnum;
 import com.zhisida.board.core.enums.YesOrNotEnum;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
 import com.zhisida.board.core.pojo.page.PageResult;
-import org.springframework.stereotype.Service;
 import com.zhisida.board.entity.SysConfig;
 import com.zhisida.board.enums.SysConfigExceptionEnum;
 import com.zhisida.board.mapper.SysConfigMapper;
 import com.zhisida.board.param.SysConfigParam;
 import com.zhisida.board.service.SysConfigService;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -28,6 +29,8 @@ import java.util.List;
  */
 @Service
 public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig> implements SysConfigService {
+    @Resource
+    SysConfigCache sysConfigCache;
 
     @Override
     public PageResult<SysConfig> page(SysConfigParam sysConfigParam) {
@@ -92,7 +95,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
         this.save(sysConfig);
 
         //4.添加对应context
-        ConstantContext.putConstant(sysConfigParam.getCode(), sysConfigParam.getValue());
+        sysConfigCache.remove(sysConfigParam.getCode());
     }
 
     @Override
@@ -111,7 +114,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
         this.updateById(sysConfig);
 
         //4.删除对应context
-        ConstantContext.deleteConstant(sysConfigParam.getCode());
+        sysConfigCache.remove(sysConfigParam.getCode());
     }
 
     @Override
@@ -132,7 +135,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
         this.updateById(sysConfig);
 
         //4.更新对应常量context
-        ConstantContext.putConstant(sysConfigParam.getCode(), sysConfigParam.getValue());
+        sysConfigCache.remove(sysConfigParam.getCode());
     }
 
     /**
@@ -181,4 +184,5 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
         }
         return sysConfig;
     }
+
 }

@@ -2,9 +2,10 @@
 package com.zhisida.board.core.log.factory;
 
 import cn.hutool.core.date.DateTime;
+import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.annotion.BusinessLog;
 import com.zhisida.board.core.consts.SymbolConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.enums.LogSuccessStatusEnum;
 import com.zhisida.board.core.enums.VisLogTypeEnum;
 import com.zhisida.board.core.util.CryptogramUtil;
@@ -42,7 +43,8 @@ public class LogFactory {
             sysVisLog.setMessage(VisLogTypeEnum.LOGIN.getMessage() +
                     LogSuccessStatusEnum.FAIL.getMessage() + SymbolConstant.COLON + failMessage);
         }
-        if (ConstantContextHolder.getCryptogramConfigs().getVisLogEnc()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getCryptogramConfigs().getVisLogEnc()) {
             SysVisLogSign(sysVisLog);
         }
     }
@@ -59,7 +61,8 @@ public class LogFactory {
         sysVisLog.setVisType(VisLogTypeEnum.EXIT.getCode());
         sysVisLog.setVisTime(DateTime.now());
         sysVisLog.setAccount(account);
-        if (ConstantContextHolder.getCryptogramConfigs().getVisLogEnc()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getCryptogramConfigs().getVisLogEnc()) {
             SysVisLogSign(sysVisLog);
         }
     }
@@ -74,7 +77,8 @@ public class LogFactory {
         sysOpLog.setSuccess(LogSuccessStatusEnum.SUCCESS.getCode());
         sysOpLog.setResult(result);
         sysOpLog.setMessage(LogSuccessStatusEnum.SUCCESS.getMessage());
-        if (ConstantContextHolder.getCryptogramConfigs().getOpLogEnc()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getCryptogramConfigs().getOpLogEnc()) {
             SysOpLogSign(sysOpLog);
         }
     }
@@ -88,7 +92,8 @@ public class LogFactory {
         fillCommonSysOpLog(sysOpLog, account, businessLog, joinPoint);
         sysOpLog.setSuccess(LogSuccessStatusEnum.FAIL.getCode());
         sysOpLog.setMessage(Arrays.toString(exception.getStackTrace()));
-        if (ConstantContextHolder.getCryptogramConfigs().getOpLogEnc()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getCryptogramConfigs().getOpLogEnc()) {
             SysOpLogSign(sysOpLog);
         }
     }

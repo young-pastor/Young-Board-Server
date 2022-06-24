@@ -3,12 +3,12 @@ package com.zhisida.board.tasks;
 
 import cn.hutool.log.Log;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.zhisida.board.core.context.constant.ConstantContext;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.enums.CommonStatusEnum;
 import com.zhisida.board.core.timer.TimerTaskRunner;
+import com.zhisida.board.entity.SysConfig;
 import com.zhisida.board.service.SysConfigService;
 import org.springframework.stereotype.Component;
-import com.zhisida.board.entity.SysConfig;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,20 +28,11 @@ public class RefreshConstantsTaskRunner implements TimerTaskRunner {
     @Resource
     private SysConfigService sysConfigService;
 
+    @Resource
+    private SysConfigCache sysConfigCache;
+
     @Override
     public void action() {
-
-        // 查询库中的所有配置
-        LambdaQueryWrapper<SysConfig> sysConfigLambdaQueryWrapper = new LambdaQueryWrapper<>();
-
-        sysConfigLambdaQueryWrapper.eq(SysConfig::getStatus, CommonStatusEnum.ENABLE.getCode());
-        sysConfigLambdaQueryWrapper.select(SysConfig::getCode, SysConfig::getValue);
-
-        List<SysConfig> list = sysConfigService.list(sysConfigLambdaQueryWrapper);
-
-        // 所有配置添加到缓存中，覆盖已有配置
-        list.forEach(sysConfig -> ConstantContext.putConstant(sysConfig.getCode(), sysConfig.getValue()));
-
     }
 
 }

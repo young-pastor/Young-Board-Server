@@ -2,11 +2,12 @@
 package com.zhisida.board.config;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.file.modular.local.LocalFileOperator;
 import com.zhisida.board.core.file.modular.local.prop.LocalFileProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.file.FileOperator;
 
 /**
@@ -30,14 +31,14 @@ public class FileConfig {
      * @author young-pastor
      */
     @Bean
-    public FileOperator fileOperator() {
+    public FileOperator fileOperator(SysConfigCache sysConfigCache) {
         LocalFileProperties localFileProperties = new LocalFileProperties();
-        String fileUploadPathForWindows = ConstantContextHolder.getDefaultFileUploadPathForWindows();
+        String fileUploadPathForWindows = sysConfigCache.getDefaultFileUploadPathForWindows();
         if (ObjectUtil.isNotEmpty(fileUploadPathForWindows)) {
             localFileProperties.setLocalFileSavePathWin(fileUploadPathForWindows);
         }
 
-        String fileUploadPathForLinux = ConstantContextHolder.getDefaultFileUploadPathForLinux();
+        String fileUploadPathForLinux = sysConfigCache.getDefaultFileUploadPathForLinux();
         if (ObjectUtil.isNotEmpty(fileUploadPathForLinux)) {
             localFileProperties.setLocalFileSavePathLinux(fileUploadPathForLinux);
         }

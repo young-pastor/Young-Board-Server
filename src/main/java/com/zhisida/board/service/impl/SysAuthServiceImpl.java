@@ -8,7 +8,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.consts.CommonConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.dbs.CurrentDataSourceContext;
 import com.zhisida.board.core.enums.CommonStatusEnum;
 import com.zhisida.board.core.exception.AuthException;
@@ -25,7 +25,7 @@ import com.zhisida.board.core.tenant.service.TenantInfoService;
 import com.zhisida.board.core.util.CryptogramUtil;
 import com.zhisida.board.core.util.HttpServletUtil;
 import com.zhisida.board.core.util.IpAddressUtil;
-import com.zhisida.board.core.cache.UserCache;
+import com.zhisida.board.cache.SysUserCache;
 import com.zhisida.board.core.enums.LogSuccessStatusEnum;
 import com.zhisida.board.core.jwt.JwtPayLoad;
 import com.zhisida.board.core.jwt.JwtTokenUtil;
@@ -59,7 +59,7 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
     private SysUserService sysUserService;
 
     @Resource
-    private UserCache userCache;
+    private SysUserCache userCache;
 
     @Override
     public String login(String account, String password) {
@@ -128,16 +128,14 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
         this.setSpringSecurityContextAuthentication(sysLoginUser);
 
         //如果开启限制单用户登陆，则踢掉原来的用户
-        Boolean enableSingleLogin = ConstantContextHolder.getEnableSingleLogin();
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        Boolean enableSingleLogin = sysConfigCache.getEnableSingleLogin();
         if (enableSingleLogin) {
-
             //获取所有的登陆用户
             Map<String, SysLoginUser> allLoginUsers = userCache.getAllKeyValues();
             for (Map.Entry<String, SysLoginUser> loginedUserEntry : allLoginUsers.entrySet()) {
-
                 String loginedUserKey = loginedUserEntry.getKey();
                 SysLoginUser loginedUser = loginedUserEntry.getValue();
-
                 //如果账号名称相同，并且redis缓存key和刚刚生成的用户的uuid不一样，则清除以前登录的
                 if (loginedUser.getName().equals(sysUser.getName())
                         && !loginedUserKey.equals(jwtPayLoad.getUuid())) {
@@ -166,7 +164,8 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
                 throw new AuthException(AuthExceptionEnum.NOT_VALID_TOKEN_TYPE);
             }
             // 判断是否开启了加密
-            if (ConstantContextHolder.getCryptogramConfigs().getTokenEncDec()) {
+            SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+            if (sysConfigCache.getCryptogramConfigs().getTokenEncDec()) {
                 // 解密token
                 authToken = CryptogramUtil.doDecrypt(authToken);
             }
@@ -339,8 +338,9 @@ public class SysAuthServiceImpl implements SysAuthService, UserDetailsService {
      * @author young-pastor
      */
     private void cacheLoginUser(JwtPayLoad jwtPayLoad, SysLoginUser sysLoginUser) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
         String redisLoginUserKey = jwtPayLoad.getUuid();
-        userCache.put(redisLoginUserKey, sysLoginUser, Convert.toLong(ConstantContextHolder.getSessionTokenExpireSec()));
+        userCache.put(redisLoginUserKey, sysLoginUser, Convert.toLong(sysConfigCache.getSessionTokenExpireSec()));
     }
 
     @Override

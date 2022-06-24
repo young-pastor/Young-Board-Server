@@ -8,6 +8,7 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zhisida.board.cache.SysResourcesCache;
 import com.zhisida.board.core.consts.SymbolConstant;
 import com.zhisida.board.core.context.login.LoginContextHolder;
 import com.zhisida.board.core.enums.CommonStatusEnum;
@@ -15,7 +16,6 @@ import com.zhisida.board.core.enums.YesOrNotEnum;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.TreeBuildFactory;
 import com.zhisida.board.core.pojo.node.LoginMenuTreeNode;
-import com.zhisida.board.core.cache.ResourceCache;
 import com.zhisida.board.core.enums.AdminTypeEnum;
 import com.zhisida.board.core.enums.MenuOpenTypeEnum;
 import com.zhisida.board.core.enums.MenuTypeEnum;
@@ -57,7 +57,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     private SysRoleMenuService sysRoleMenuService;
 
     @Resource
-    private ResourceCache resourceCache;
+    private SysResourcesCache sysResourcesCache;
 
     @Override
     public List<String> getLoginPermissions(Long userId, List<Long> menuIdList) {
@@ -422,7 +422,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             if (ObjectUtil.isEmpty(permission)) {
                 throw new ServiceException(SysMenuExceptionEnum.MENU_PERMISSION_EMPTY);
             } else {
-                Set<String> urlSet = resourceCache.getAllResources();
+                Set<String> urlSet = sysResourcesCache.getAllResources();
 
                 if (!permission.contains(SymbolConstant.COLON)) {
                     throw new ServiceException(SysMenuExceptionEnum.MENU_PERMISSION_ERROR);

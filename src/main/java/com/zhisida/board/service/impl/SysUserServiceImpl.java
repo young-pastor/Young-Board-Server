@@ -6,6 +6,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
@@ -13,7 +14,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhisida.board.core.consts.CommonConstant;
 import com.zhisida.board.core.consts.SymbolConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.context.login.LoginContextHolder;
 import com.zhisida.board.core.enums.CommonStatusEnum;
 import com.zhisida.board.core.exception.PermissionException;
@@ -165,7 +166,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             sysUser.setPwdHashValue(CryptogramUtil.doHashValue(sysUserParam.getPassword()));
         }
         // 对铭感字段（手机号进行加密保护）
-        if (ConstantContextHolder.getCryptogramConfigs().getFieldEncDec()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getCryptogramConfigs().getFieldEncDec()) {
             sysUser.setPhone(CryptogramUtil.doEncrypt(sysUserParam.getPhone()));
         }
         this.save(sysUser);
@@ -245,7 +247,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
 
         // 对铭感字段（手机号进行加密保护）
-        if (ConstantContextHolder.getCryptogramConfigs().getFieldEncDec()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getCryptogramConfigs().getFieldEncDec()) {
             sysUser.setPhone(CryptogramUtil.doEncrypt(sysUserParam.getPhone()));
         }
 
@@ -402,8 +405,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public void resetPwd(SysUserParam sysUserParam) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
         SysUser sysUser = this.querySysUser(sysUserParam);
-        String password = ConstantContextHolder.getDefaultPassWord();
+        String password = sysConfigCache.getDefaultPassWord();
         sysUser.setPwdHashValue(CryptogramUtil.doHashValue(password));
         this.updateById(sysUser);
     }

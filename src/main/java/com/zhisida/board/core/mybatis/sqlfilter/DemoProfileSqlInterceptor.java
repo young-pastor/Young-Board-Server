@@ -1,9 +1,10 @@
 
 package com.zhisida.board.core.mybatis.sqlfilter;
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
 import com.zhisida.board.core.consts.SpringSecurityConstant;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.exception.DemoException;
 import com.zhisida.board.core.util.HttpServletUtil;
 import org.apache.ibatis.executor.statement.StatementHandler;
@@ -30,8 +31,10 @@ public class DemoProfileSqlInterceptor implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
 
-        // 演示环境没开，直接跳过此过滤器
-        if (!ConstantContextHolder.getDemoEnvFlag()) {
+//        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+//        // 演示环境没开，直接跳过此过滤器
+//        if (!sysConfigCache.getDemoEnvFlag()) {
+        if(true){
             return invocation.proceed();
         }
 

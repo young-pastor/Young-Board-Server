@@ -3,12 +3,12 @@ package com.zhisida.board.core.filter.security.entrypoint;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.log.Log;
+import com.zhisida.board.cache.SysResourcesCache;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.exception.enums.AuthExceptionEnum;
 import com.zhisida.board.core.exception.enums.PermissionExceptionEnum;
 import com.zhisida.board.core.exception.enums.ServerExceptionEnum;
 import com.zhisida.board.core.util.ResponseUtil;
-import com.zhisida.board.core.cache.ResourceCache;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -31,7 +31,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
     private static final Log log = Log.get();
 
     @Resource
-    private ResourceCache resourceCache;
+    private SysResourcesCache sysResourcesCache;
 
     /**
      * 访问未经授权的接口时执行此方法，未经授权的接口包含系统中存在和不存在的接口，分别处理
@@ -44,7 +44,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
         String requestUri = request.getRequestURI();
 
         //1.检查redis中RESOURCE缓存是否为空，如果为空，直接抛出系统异常，缓存url作用详见ResourceCollectListener
-        Collection<String> urlCollections = resourceCache.getAllResources();
+        Collection<String> urlCollections = sysResourcesCache.getAllResources();
         if (ObjectUtil.isEmpty(urlCollections)) {
             log.error(">>> 获取缓存的Resource Url为空，请检查缓存中是否被误删，requestUri={}", requestUri);
             ResponseUtil.responseExceptionError(response,

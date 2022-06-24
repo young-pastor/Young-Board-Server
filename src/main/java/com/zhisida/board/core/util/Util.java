@@ -1,11 +1,11 @@
 
 package com.zhisida.board.core.util;
 
+import cn.hutool.extra.spring.SpringUtil;
+import com.zhisida.board.core.enums.DbIdEnum;
 import org.apache.commons.io.IOUtils;
 import org.apache.velocity.app.Velocity;
-import com.zhisida.board.core.consts.CommonConstant;
-import com.zhisida.board.core.context.constant.ConstantContext;
-import com.zhisida.board.core.enums.DbIdEnum;
+import org.springframework.core.env.Environment;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -76,16 +76,16 @@ public class Util {
      *
      * @author young-pastor
      */
-    public static String getDataBasename () {
-        String dataUrl = ConstantContext.me().getStr(CommonConstant.DATABASE_URL_NAME);
-        String driverName = ConstantContext.me().getStr(CommonConstant.DATABASE_DRIVER_NAME);
+    public static String getDataBasename() {
+        Environment environment = SpringUtil.getBean(Environment.class);
+        String dataUrl = environment.getProperty("spring.datasource.url");
+        String driverName = environment.getProperty("spring.datasource.driver-class-name");
         if (driverName.contains(DbIdEnum.MYSQL.getCode())) {
             return dataUrl.substring(getIndex(dataUrl, 3, "/") + 1, dataUrl.indexOf("?"));
         } else if (driverName.contains(DbIdEnum.ORACLE.getCode())) {
-            return ConstantContext.me().getStr(CommonConstant.DATABASE_USER_NAME);
-        } else {
-            return "";
+            return environment.getProperty("spring.datasource.username");
         }
+        return "";
     }
 
 }

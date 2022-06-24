@@ -2,7 +2,8 @@
 package com.zhisida.board.core.filter.xss;
 
 
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import cn.hutool.extra.spring.SpringUtil;
+import com.zhisida.board.cache.SysConfigCache;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,8 @@ public class XssFilter implements Filter {
         String servletPath = httpServletRequest.getServletPath();
 
         // 获取不进行url过滤的接口
-        List<String> unXssFilterUrl = ConstantContextHolder.getUnXssFilterUrl();
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        List<String> unXssFilterUrl = sysConfigCache.getUnXssFilterUrl();
         if (unXssFilterUrl != null && unXssFilterUrl.contains(servletPath)) {
             chain.doFilter(request, response);
         } else {

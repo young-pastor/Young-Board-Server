@@ -1,5 +1,5 @@
 
-package com.zhisida.board.core.cache;
+package com.zhisida.board.cache;
 
 import cn.hutool.cache.impl.CacheObj;
 import cn.hutool.cache.impl.TimedCache;
@@ -15,7 +15,7 @@ import java.util.Iterator;
  * @author young-pastor
  **/
 @Component
-public class OauthCache implements AuthStateCache {
+public class SysOauthCache implements AuthStateCache {
 
     private final TimedCache<String, String> timedCache = new TimedCache<>(AuthCacheConfig.timeout);
 

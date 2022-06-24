@@ -2,13 +2,14 @@
 package com.zhisida.board.config;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.pojo.druid.DruidProperties;
 
 import java.util.HashMap;
@@ -50,15 +51,15 @@ public class DataSourceConfig {
      * @author young-pastor
      */
     @Bean
-    public ServletRegistrationBean<StatViewServlet> druidServletRegistration() {
+    public ServletRegistrationBean<StatViewServlet> druidServletRegistration(SysConfigCache sysConfigCache) {
 
         // 设置servlet的参数
         HashMap<String, String> statViewServletParams = CollectionUtil.newHashMap();
         statViewServletParams.put("resetEnable", "true");
         ServletRegistrationBean<StatViewServlet> registration = new ServletRegistrationBean<>(new StatViewServlet());
         registration.addUrlMappings("/druid/*");
-        statViewServletParams.put("loginUsername", ConstantContextHolder.getDruidLoginConfigs().getLoginUsername());
-        statViewServletParams.put("loginPassword", ConstantContextHolder.getDruidLoginConfigs().getLoginPassword());
+        statViewServletParams.put("loginUsername", sysConfigCache.getDruidLoginConfigs().getLoginUsername());
+        statViewServletParams.put("loginPassword", sysConfigCache.getDruidLoginConfigs().getLoginPassword());
         registration.setInitParameters(statViewServletParams);
         return registration;
     }

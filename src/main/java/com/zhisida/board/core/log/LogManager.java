@@ -2,10 +2,11 @@
 package com.zhisida.board.core.log;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import org.aspectj.lang.JoinPoint;
 import org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean;
 import com.zhisida.board.core.annotion.BusinessLog;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.exception.enums.ServerExceptionEnum;
 import com.zhisida.board.core.util.HttpServletUtil;
@@ -51,7 +52,8 @@ public class LogManager {
     private void executeLog(TimerTask task) {
 
         //如果演示模式开启，则不记录日志
-        if (ConstantContextHolder.getDemoEnvFlag()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getDemoEnvFlag()) {
             return;
         }
 

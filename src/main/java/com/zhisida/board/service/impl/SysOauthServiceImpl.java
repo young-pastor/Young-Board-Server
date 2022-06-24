@@ -2,13 +2,14 @@
 package com.zhisida.board.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.pojo.oauth.OauthConfigs;
-import com.zhisida.board.core.cache.OauthCache;
+import com.zhisida.board.cache.SysOauthCache;
 import com.zhisida.board.core.enums.OauthPlatformEnum;
 import com.zhisida.board.enums.SysOauthExceptionEnum;
 import me.zhyd.oauth.config.AuthConfig;
@@ -41,7 +42,7 @@ import javax.servlet.http.HttpServletRequest;
 public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUser> implements SysOauthService {
 
     @Resource
-    private OauthCache oauthCache;
+    private SysOauthCache oauthCache;
 
     @Resource
     private SysAuthService sysAuthService;
@@ -52,7 +53,8 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
 
     @Override
     public String getAuthorizeUrl(String source) {
-        Boolean enableOauthLogin = ConstantContextHolder.getEnableOauthLogin();
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        Boolean enableOauthLogin = sysConfigCache.getEnableOauthLogin();
         if (!enableOauthLogin) {
             throw new ServiceException(SysOauthExceptionEnum.OAUTH_DISABLED);
         }
@@ -132,15 +134,16 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
      **/
     private AuthRequest getAuthRequest(String source) {
         AuthRequest authRequest;
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
         if (source.toLowerCase().equals(OauthPlatformEnum.GITEE.getCode())) {
-            OauthConfigs giteeOauthConfigs = ConstantContextHolder.getGiteeOauthConfigs();
+            OauthConfigs giteeOauthConfigs = sysConfigCache.getGiteeOauthConfigs();
             authRequest = new AuthGiteeRequest(AuthConfig.builder()
                     .clientId(giteeOauthConfigs.getClientId())
                     .clientSecret(giteeOauthConfigs.getClientSecret())
                     .redirectUri(giteeOauthConfigs.getRedirectUri())
                     .build(), oauthCache);
         } else if (source.toLowerCase().equals(OauthPlatformEnum.GITHUB.getCode())) {
-            OauthConfigs githubOauthConfigs = ConstantContextHolder.getGithubOauthConfigs();
+            OauthConfigs githubOauthConfigs = sysConfigCache.getGithubOauthConfigs();
             authRequest = new AuthGithubRequest(AuthConfig.builder()
                     .clientId(githubOauthConfigs.getClientId())
                     .clientSecret(githubOauthConfigs.getClientSecret())

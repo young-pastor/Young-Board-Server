@@ -2,11 +2,12 @@
 package com.zhisida.board.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.log.Log;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
 import com.zhisida.board.core.pojo.page.PageResult;
@@ -54,7 +55,8 @@ public class SysSmsInfoServiceImpl extends ServiceImpl<SysSmsMapper, SysSms> imp
         Date nowDate = new Date();
 
         //短信失效时间
-        AliyunSmsConfigs aliyunSmsProperties = ConstantContextHolder.getAliyunSmsConfigs();
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        AliyunSmsConfigs aliyunSmsProperties = sysConfigCache.getAliyunSmsConfigs();
         long invalidateTime = nowDate.getTime() + aliyunSmsProperties.getInvalidateMinutes() * 60 * 1000;
         Date invalidate = new Date(invalidateTime);
 

@@ -6,34 +6,35 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.toolkit.SqlRunner;
+import com.zhisida.board.core.consts.GenConstant;
+import com.zhisida.board.core.context.XnVelocityContext;
+import com.zhisida.board.core.exception.ServiceException;
+import com.zhisida.board.core.factory.PageFactory;
+import com.zhisida.board.core.param.XnCodeGenParam;
+import com.zhisida.board.core.pojo.page.PageResult;
+import com.zhisida.board.core.util.StringDateUtil;
+import com.zhisida.board.core.util.Util;
 import com.zhisida.board.entity.SysCodeGenerate;
 import com.zhisida.board.entity.SysCodeGenerateConfig;
 import com.zhisida.board.enums.CodeGenerateExceptionEnum;
-import com.zhisida.board.result.FileContentResult;
-import com.zhisida.board.result.InforMationColumnsResult;
-import com.zhisida.board.result.InformationResult;
-import com.zhisida.board.service.SysCodeGenerateService;
-import com.zhisida.board.service.SysCodeGenerateConfigService;
 import com.zhisida.board.mapper.SysCodeGenerateMapper;
 import com.zhisida.board.param.CodeGenerateParam;
 import com.zhisida.board.param.SysCodeGenerateConfigParam;
+import com.zhisida.board.result.FileContentResult;
+import com.zhisida.board.result.InforMationColumnsResult;
+import com.zhisida.board.result.InformationResult;
+import com.zhisida.board.service.SysCodeGenerateConfigService;
+import com.zhisida.board.service.SysCodeGenerateService;
 import org.apache.commons.io.IOUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.stereotype.Service;
-import com.zhisida.board.core.exception.ServiceException;
-import com.zhisida.board.core.factory.PageFactory;
-import com.zhisida.board.core.pojo.page.PageResult;
-import com.zhisida.board.core.consts.GenConstant;
-import com.zhisida.board.core.context.XnVelocityContext;
-import com.zhisida.board.core.param.XnCodeGenParam;
-import com.zhisida.board.core.util.StringDateUtil;
-import com.zhisida.board.core.util.Util;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -140,8 +141,9 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
         return sysCodeGenerate;
     }
 
+
     @Override
-    public List<InformationResult> InformationTableList () {
+    public List<InformationResult> InformationTableList() {
         return this.baseMapper.selectInformationTable(Util.getDataBasename());
     }
 
@@ -168,8 +170,8 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
      *
      * @author young-pastor
      */
-    private boolean vldTablePri (String tableName) {
-        List<InforMationColumnsResult> inforMationColumnsResultList =  this.baseMapper.selectInformationColumns(Util.getDataBasename(), tableName);
+    private boolean vldTablePri(String tableName) {
+        List<InforMationColumnsResult> inforMationColumnsResultList = this.baseMapper.selectInformationColumns(Util.getDataBasename(), tableName);
         for (int a = 0; a < inforMationColumnsResultList.size(); a++) {
             if (ObjectUtil.isNotNull(inforMationColumnsResultList.get(a).columnKey)
                     && inforMationColumnsResultList.get(a).columnKey.equals(GenConstant.DB_TABLE_COM_KRY)) {
@@ -231,12 +233,12 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
      *
      * @author young-pastor
      */
-    private List<InforMationColumnsResult> getInforMationColumnsResultList (CodeGenerateParam codeGenerateParam) {
+    private List<InforMationColumnsResult> getInforMationColumnsResultList(CodeGenerateParam codeGenerateParam) {
         SysCodeGenerate sysCodeGenerate = this.queryCodeGenerate(codeGenerateParam);
         return this.baseMapper.selectInformationColumns(Util.getDataBasename(), sysCodeGenerate.getTableName());
     }
 
-    private XnCodeGenParam copyParams (CodeGenerateParam codeGenerateParam) {
+    private XnCodeGenParam copyParams(CodeGenerateParam codeGenerateParam) {
         SysCodeGenerate sysCodeGenerate = this.queryCodeGenerate(codeGenerateParam);
         SysCodeGenerateConfigParam sysCodeGenerateConfigParam = new SysCodeGenerateConfigParam();
         sysCodeGenerateConfigParam.setCodeGenId(codeGenerateParam.getId());
@@ -257,16 +259,16 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 本地项目生成
      */
-    private void codeGenLocal (XnCodeGenParam xnCodeGenParam) {
+    private void codeGenLocal(XnCodeGenParam xnCodeGenParam) {
         XnVelocityContext context = new XnVelocityContext();
         //初始化参数
-        Properties properties=new Properties();
+        Properties properties = new Properties();
         //设置velocity资源加载方式为class
         properties.setProperty("resource.loader", "class");
         //设置velocity资源加载方式为file时的处理类
         properties.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
         //实例化一个VelocityEngine对象
-        VelocityEngine velocityEngine=new VelocityEngine(properties);
+        VelocityEngine velocityEngine = new VelocityEngine(properties);
 
         String[] filePath = GenConstant.xnCodeGenFilePath(xnCodeGenParam.getBusName(), xnCodeGenParam.getPackageName());
         for (int i = 0; i < filePath.length; i++) {
@@ -274,29 +276,29 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
 
             String fileBaseName = ResetFileBaseName(xnCodeGenParam.getClassName(),
                     templateName.substring(templateName.indexOf(GenConstant.FILE_SEP) + 1, templateName.lastIndexOf(TEMP_SUFFIX)));
-            String path = GenConstant.getLocalPath ();
+            String path = GenConstant.getLocalPath();
             // 前端VUE位置有所变化, sql同样根目录
             if (fileBaseName.contains(INDEX_PAGE_NAME) || fileBaseName.contains(ADD_FORM_PAGE_NAME) ||
-                    fileBaseName.contains(EDIT_FORM_PAGE_NAME) ||fileBaseName.contains(MANAGE_JS_NAME) ||
-            fileBaseName.contains(SQL_NAME)) {
+                    fileBaseName.contains(EDIT_FORM_PAGE_NAME) || fileBaseName.contains(MANAGE_JS_NAME) ||
+                    fileBaseName.contains(SQL_NAME)) {
                 path = GenConstant.getLocalFrontPath();
             }
 
             File file = new File(path + filePath[i] + fileBaseName);
 
             //判断是否覆盖存在的文件
-            if(file.exists() && !GenConstant.FLAG){
+            if (file.exists() && !GenConstant.FLAG) {
                 continue;
             }
 
             //获取父目录
             File parentFile = file.getParentFile();
-            if(!parentFile.exists()){
+            if (!parentFile.exists()) {
                 parentFile.mkdirs();
             }
             try {
                 Writer writer = new FileWriter(file);
-                velocityEngine.mergeTemplate(GenConstant.templatePath + templateName,ENCODED,context.createVelContext(xnCodeGenParam),writer);
+                velocityEngine.mergeTemplate(GenConstant.templatePath + templateName, ENCODED, context.createVelContext(xnCodeGenParam), writer);
                 writer.close();
             } catch (Exception e) {
                 throw new ServiceException(CodeGenerateExceptionEnum.CODE_GEN_NOT_PATH);
@@ -307,7 +309,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 下载ZIP方式
      */
-    private void codeGenDown (XnCodeGenParam xnCodeGenParam,ZipOutputStream zipOutputStream) {
+    private void codeGenDown(XnCodeGenParam xnCodeGenParam, ZipOutputStream zipOutputStream) {
         Util.initVelocity();
         XnVelocityContext context = new XnVelocityContext();
 
@@ -327,7 +329,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 重置文件名称
      */
-    private static String ResetFileBaseName (String className,String fileName) {
+    private static String ResetFileBaseName(String className, String fileName) {
         String fileBaseName = className + fileName;
         // 实体类名称单独处理
         if (fileBaseName.contains(TEMP_ENTITY_NAME)) {
@@ -346,7 +348,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
         }
         // js名称
         if (fileBaseName.contains(MANAGE_JS_NAME)) {
-            return className.substring(0,1).toLowerCase() + className.substring(1) + MANAGE_JS_NAME;
+            return className.substring(0, 1).toLowerCase() + className.substring(1) + MANAGE_JS_NAME;
         }
         return fileBaseName;
     }
@@ -354,7 +356,7 @@ public class SysCodeGenerateServiceImpl extends ServiceImpl<SysCodeGenerateMappe
     /**
      * 生成ZIP
      */
-    private void XnZipOutputStream (VelocityContext velContext,String tempName, String fileBaseName, ZipOutputStream zipOutputStream) {
+    private void XnZipOutputStream(VelocityContext velContext, String tempName, String fileBaseName, ZipOutputStream zipOutputStream) {
         StringWriter sw = new StringWriter();
         Template tpl = Velocity.getTemplate(tempName, ENCODED);
         tpl.merge(velContext, sw);

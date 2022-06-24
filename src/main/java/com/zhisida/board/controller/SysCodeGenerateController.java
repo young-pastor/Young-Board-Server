@@ -1,6 +1,7 @@
 
 package com.zhisida.board.controller;
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.param.CodeGenerateParam;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.zhisida.board.core.annotion.BusinessLog;
 import com.zhisida.board.core.annotion.Permission;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.board.core.exception.DemoException;
 import com.zhisida.board.core.pojo.response.ResponseData;
@@ -104,7 +105,8 @@ public class SysCodeGenerateController {
     @BusinessLog(title = "代码生成_本地项目", opType = LogAnnotionOpTypeEnum.OTHER)
     public ResponseData runLocal(@RequestBody @Validated(CodeGenerateParam.detail.class) CodeGenerateParam codeGenerateParam) {
         // 演示环境开启，则不允许操作
-        if (ConstantContextHolder.getDemoEnvFlag()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getDemoEnvFlag()) {
             throw new DemoException();
         }
         this.sysCodeGenerateService.runLocal(codeGenerateParam);
@@ -121,7 +123,8 @@ public class SysCodeGenerateController {
     @BusinessLog(title = "代码生成_下载方式", opType = LogAnnotionOpTypeEnum.OTHER)
     public void runDown(@Validated(CodeGenerateParam.detail.class) CodeGenerateParam codeGenerateParam, HttpServletResponse response) {
         // 演示环境开启，则不允许操作
-        if (ConstantContextHolder.getDemoEnvFlag()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getDemoEnvFlag()) {
             throw new DemoException();
         }
         this.sysCodeGenerateService.runDown(codeGenerateParam, response);
@@ -138,7 +141,8 @@ public class SysCodeGenerateController {
     public ResponseData runFileContent(@Validated(CodeGenerateParam.detail.class) CodeGenerateParam codeGenerateParam) {
 
         // 演示环境开启，则不允许操作
-        if (ConstantContextHolder.getDemoEnvFlag()) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        if (sysConfigCache.getDemoEnvFlag()) {
             throw new DemoException();
         }
 

@@ -1,21 +1,20 @@
 
 package com.zhisida.board.config;
 
-import cn.hutool.cache.CacheUtil;
-import cn.hutool.cache.impl.TimedCache;
-import com.zhisida.board.core.cache.MappingCache;
-import com.zhisida.board.core.cache.ResourceCache;
-import com.zhisida.board.core.cache.UserCache;
+import com.zhisida.board.cache.SysUserCache;
 import com.zhisida.board.core.redis.FastJson2JsonRedisSerializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
+import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import com.zhisida.board.core.pojo.login.SysLoginUser;
 
-import java.util.Map;
+import java.time.Duration;
 
 /**
  * 缓存的配置，默认使用基于内存的缓存，如果分布式部署请更换为redis
@@ -26,55 +25,31 @@ import java.util.Map;
 @EnableCaching
 public class CacheConfig {
 
-    /**
-     * url资源的缓存，默认不过期
-     *
-     * @author young-pastor
-     */
-    @Bean
-    public ResourceCache resourceCache() {
-        return new ResourceCache();
-    }
-
-    /**
-     * 登录用户的缓存，redis缓存
-     *
-     * @author young-pastor
-     */
-    @Bean
-    public UserCache userCache(RedisTemplate<String, SysLoginUser> redisTemplate) {
-        return new UserCache(redisTemplate);
-    }
 
     /**
      * redis缓存类
      *
-     * @author young-pastor
+     * @auther zhisida
+     * @date 2020/4/19 17:53
      */
     @Bean
-    public RedisTemplate<String, SysLoginUser> redisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<String, SysLoginUser> userRedisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate<String, Object> userRedisTemplate = new RedisTemplate<>();
         userRedisTemplate.setConnectionFactory(factory);
         userRedisTemplate.setKeySerializer(new StringRedisSerializer());
-        userRedisTemplate.setValueSerializer(new FastJson2JsonRedisSerializer<>(SysLoginUser.class));
+        userRedisTemplate.setValueSerializer(new FastJson2JsonRedisSerializer<>(Object.class));
         userRedisTemplate.afterPropertiesSet();
         return userRedisTemplate;
     }
 
-    /**
-     * mapping映射缓存
-     *
-     * @author young-pastor
-     */
     @Bean
-    public MappingCache mappingCache() {
-        TimedCache<String, Map<String, Object>> timedCache =
-                CacheUtil.newTimedCache(2 * 60 * 1000);
-
-        // 定时清理缓存，间隔1秒
-        timedCache.schedulePrune(1000);
-
-        return new MappingCache(timedCache);
+    public RedisCacheManager redisCacheManager(RedisTemplate redisTemplate) {
+        RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisTemplate.getConnectionFactory());
+        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
+                .computePrefixWith(cacheName -> cacheName.concat(":"))
+//                .disableCachingNullValues()
+                .entryTtl(Duration.ofMinutes(30))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getValueSerializer()));
+        return new RedisCacheManager(redisCacheWriter, redisCacheConfiguration);
     }
-
 }

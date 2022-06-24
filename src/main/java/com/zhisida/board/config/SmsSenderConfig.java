@@ -2,12 +2,13 @@
 package com.zhisida.board.config;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import com.zhisida.board.core.sms.modular.aliyun.AliyunSmsSender;
 import com.zhisida.board.core.sms.modular.aliyun.msign.impl.MapBasedMultiSignManager;
 import com.zhisida.board.core.sms.modular.aliyun.prop.AliyunSmsProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.pojo.sms.AliyunSmsConfigs;
 import com.zhisida.board.core.sms.SmsSender;
 
@@ -27,10 +28,10 @@ public class SmsSenderConfig {
      * @author young-pastor
      */
     @Bean
-    public SmsSender aliyunSmsSender() {
+    public SmsSender aliyunSmsSender(SysConfigCache sysConfigCache) {
 
         // 从数据库配置读取阿里云配置
-        AliyunSmsConfigs aliyunSmsConfigs = ConstantContextHolder.getAliyunSmsConfigs();
+        AliyunSmsConfigs aliyunSmsConfigs = sysConfigCache.getAliyunSmsConfigs();
         AliyunSmsProperties aliyunSmsProperties = new AliyunSmsProperties();
         BeanUtil.copyProperties(aliyunSmsConfigs, aliyunSmsProperties);
 

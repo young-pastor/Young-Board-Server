@@ -6,9 +6,10 @@ import cn.hutool.db.DbUtil;
 import cn.hutool.db.Entity;
 import cn.hutool.db.handler.EntityListHandler;
 import cn.hutool.db.sql.SqlExecutor;
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.log.Log;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.consts.CommonConstant;
-import com.zhisida.board.core.context.constant.ConstantContext;
 import com.zhisida.board.core.enums.CommonStatusEnum;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.enums.SysConfigExceptionEnum;
@@ -57,10 +58,10 @@ public class ConstantsInitListener implements ApplicationListener<ApplicationCon
         String dataSourceUsername = environment.getProperty("spring.datasource.username");
         String dataSourcePassword = environment.getProperty("spring.datasource.password");
 
+        //sysConfigCache.put(CommonConstant.DATABASE_URL_NAME, dataSourceUrl);
         // 缓存中放入datasource链接，代码生成时候使用
-        ConstantContext.putConstant(CommonConstant.DATABASE_URL_NAME, dataSourceUrl);
-        ConstantContext.putConstant(CommonConstant.DATABASE_DRIVER_NAME, environment.getProperty("spring.datasource.driver-class-name"));
-        ConstantContext.putConstant(CommonConstant.DATABASE_USER_NAME, dataSourceUsername);
+        //sysConfigCache.put(CommonConstant.DATABASE_DRIVER_NAME, environment.getProperty("spring.datasource.driver-class-name"));
+        //sysConfigCache.put(CommonConstant.DATABASE_USER_NAME, dataSourceUsername);
 
         // 如果有为空的配置，终止执行
         if (ObjectUtil.hasEmpty(dataSourceUrl, dataSourceUsername)) {
@@ -78,12 +79,12 @@ public class ConstantsInitListener implements ApplicationListener<ApplicationCon
 
             // 将查询到的参数配置添加到缓存
             if (ObjectUtil.isNotEmpty(entityList)) {
-                entityList.forEach(sysConfig ->
-                        ConstantContext.putConstant(
-                                sysConfig.getStr(CODE) == null ? sysConfig.getStr(CAPITAL_CODE) : sysConfig.getStr(CODE),
-                                sysConfig.getStr(VALUE) == null ? sysConfig.getStr(CAPITAL_VALUE) : sysConfig.getStr(VALUE)
-                        )
-                );
+                //entityList.forEach(sysConfig ->
+                        //sysConfigCache.put(
+                        //        sysConfig.getStr(CODE) == null ? sysConfig.getStr(CAPITAL_CODE) : sysConfig.getStr(CODE),
+                        //        sysConfig.getStr(VALUE) == null ? sysConfig.getStr(CAPITAL_VALUE) : sysConfig.getStr(VALUE)
+                        //)
+                //);
             }
         } catch (SQLException | ClassNotFoundException e) {
             log.error(">>> 读取数据库constants配置信息出错：");

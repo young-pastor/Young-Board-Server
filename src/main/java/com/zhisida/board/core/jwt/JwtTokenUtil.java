@@ -5,8 +5,9 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import io.jsonwebtoken.*;
-import com.zhisida.board.core.context.constant.ConstantContextHolder;
+import com.zhisida.board.cache.SysConfigCache;
 import com.zhisida.board.core.util.CryptogramUtil;
 import java.util.Date;
 
@@ -24,15 +25,16 @@ public class JwtTokenUtil {
      */
     public static String generateToken(JwtPayLoad jwtPayLoad) {
 
-        DateTime expirationDate = DateUtil.offsetSecond(new Date(), Convert.toInt(ConstantContextHolder.getTokenExpireSec()));
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
+        DateTime expirationDate = DateUtil.offsetSecond(new Date(), Convert.toInt(sysConfigCache.getTokenExpireSec()));
         String jwtToken =  Jwts.builder()
                 .setClaims(BeanUtil.beanToMap(jwtPayLoad))
                 .setSubject(jwtPayLoad.getUserId().toString())
                 .setIssuedAt(new Date())
                 .setExpiration(expirationDate)
-                .signWith(SignatureAlgorithm.HS512, ConstantContextHolder.getJwtSecret())
+                .signWith(SignatureAlgorithm.HS512, sysConfigCache.getJwtSecret())
                 .compact();
-        if (ConstantContextHolder.getCryptogramConfigs().getTokenEncDec()) {
+        if (sysConfigCache.getCryptogramConfigs().getTokenEncDec()) {
             // 加密token
             return CryptogramUtil.doEncrypt(jwtToken);
         }
@@ -45,8 +47,9 @@ public class JwtTokenUtil {
      * @author young-pastor
      */
     private static Claims getClaimsFromToken(String token) {
+        SysConfigCache sysConfigCache = SpringUtil.getBean(SysConfigCache.class);
         return Jwts.parser()
-                .setSigningKey(ConstantContextHolder.getJwtSecret())
+                .setSigningKey(sysConfigCache.getJwtSecret())
                 .parseClaimsJws(token)
                 .getBody();
     }
