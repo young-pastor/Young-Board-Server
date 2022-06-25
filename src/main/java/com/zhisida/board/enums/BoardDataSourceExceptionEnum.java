@@ -18,7 +18,8 @@ public enum BoardDataSourceExceptionEnum implements AbstractBaseExceptionEnum {
     /**
      * 数据不存在
      */
-    NOT_EXIST(1, "此数据不存在");
+    NOT_EXIST(1, "此数据不存在"),
+    QUERY_DATA_ERR(2, "数据查询异常");
 
     private final Integer code;
 

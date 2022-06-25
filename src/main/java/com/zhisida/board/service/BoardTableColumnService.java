@@ -73,4 +73,6 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
      void export(BoardTableColumnParam boardTableColumnParam);
 
     void deleteByBoardTableIds(List<Long> oldTableIds);
+
+    void sync(BoardTableColumnParam boardTableColumnParam);
 }

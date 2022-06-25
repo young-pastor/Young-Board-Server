@@ -6,10 +6,12 @@ import com.alibaba.druid.DbType;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.alibaba.druid.pool.DruidPooledConnection;
-import com.alibaba.druid.sql.ast.statement.SQLSelectStatement;
 import com.alibaba.druid.util.JdbcUtils;
+import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.entity.BoardTable;
 import com.zhisida.board.entity.BoardTableColumn;
+import com.zhisida.board.enums.BoardDataSourceExceptionEnum;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -17,9 +19,9 @@ import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Log4j2
 @Component("jdbcDataProvider")
 public class JdbcDataProvider implements DataProvider {
-
     private static final ThreadLocal<TreeMap> dataSourceConfig = new ThreadLocal<TreeMap>();
 
     private static Map<String, DruidDataSource> dataSourceMap = new HashMap<>();
@@ -56,18 +58,14 @@ public class JdbcDataProvider implements DataProvider {
     }
 
     @Override
-    public List<Map<String, Object>> queryAggData(SQLSelectStatement sqlSelectStatement) {
-        return queryBuySql(sqlSelectStatement.toString());
-    }
-
-    @Override
-    public List<Map<String, Object>> queryBuySql(String sql) {
+    public List<Map<String, Object>> queryBuyOriginQuery(String queryStr) {
+        log.info("查询Sql语句：{}", queryStr);
         DruidPooledConnection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             connection = getConnection();
-            statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(queryStr);
             resultSet = statement.executeQuery();
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
@@ -81,7 +79,8 @@ public class JdbcDataProvider implements DataProvider {
             }
             return resList;
         } catch (Exception e) {
-            throw new RuntimeException();
+            log.error("使用Sql查询失败！",e);
+            throw new ServiceException(BoardDataSourceExceptionEnum.QUERY_DATA_ERR);
         } finally {
             close(connection, statement, resultSet);
         }
@@ -105,7 +104,7 @@ public class JdbcDataProvider implements DataProvider {
                 queryTablesSql = "SELECT `NAME` TABLE_NAME, '' DISPLAY_NAME FROM `system`.`tables` ";
                 break;
         }
-        List<Map<String, Object>> data = queryBuySql(queryTablesSql);
+        List<Map<String, Object>> data = queryBuyOriginQuery(queryTablesSql);
         if (CollectionUtils.isEmpty(data)) {
             return null;
         }
@@ -121,7 +120,7 @@ public class JdbcDataProvider implements DataProvider {
                 queryColumnsSql = "SELECT `COLUMN_NAME`,`COLUMN_COMMENT` DISPLAY_NAME,DATA_TYPE  FROM `information_schema`.`columns` WHERE `table_schema` = DATABASE() AND TABLE_NAME = '" + table + "'";
                 break;
         }
-        List<Map<String, Object>> data = queryBuySql(queryColumnsSql);
+        List<Map<String, Object>> data = queryBuyOriginQuery(queryColumnsSql);
         if (CollectionUtils.isEmpty(data)) {
             return null;
         }

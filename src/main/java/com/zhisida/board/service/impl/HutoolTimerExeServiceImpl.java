@@ -10,7 +10,7 @@ import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.timer.TimerTaskRunner;
 import com.zhisida.board.entity.SysTimers;
 import com.zhisida.board.entity.SysTimersLog;
-import com.zhisida.board.enums.exp.SysTimersExceptionEnum;
+import com.zhisida.board.enums.SysTimersExceptionEnum;
 import com.zhisida.board.service.SysTimersLogService;
 import com.zhisida.board.service.TimerExeService;
 import org.springframework.stereotype.Service;

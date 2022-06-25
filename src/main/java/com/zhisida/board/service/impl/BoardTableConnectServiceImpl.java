@@ -9,15 +9,19 @@ import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PoiUtil;
+import com.zhisida.board.entity.BoardTableColumn;
 import com.zhisida.board.entity.BoardTableConnect;
 import com.zhisida.board.enums.BoardTableConnectExceptionEnum;
 import com.zhisida.board.mapper.BoardTableConnectMapper;
 import com.zhisida.board.param.BoardTableConnectParam;
+import com.zhisida.board.service.BoardTableColumnService;
 import com.zhisida.board.service.BoardTableConnectService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 字段关联配置service接口实现类
@@ -27,15 +31,36 @@ import java.util.List;
  */
 @Service
 public class BoardTableConnectServiceImpl extends ServiceImpl<BoardTableConnectMapper, BoardTableConnect> implements BoardTableConnectService {
+    @Resource
+    BoardTableColumnService boardTableColumnService;
 
     @Override
     public PageResult<BoardTableConnect> page(BoardTableConnectParam boardTableConnectParam) {
         QueryWrapper<BoardTableConnect> queryWrapper = new QueryWrapper<>();
         if (ObjectUtil.isNotNull(boardTableConnectParam)) {
 
+            // 根据关联字段ID 查询
+            if (ObjectUtil.isNotEmpty(boardTableConnectParam.getTableId())) {
+                QueryWrapper<BoardTableColumn> tableColumnQueryWrapper = new QueryWrapper<>();
+                tableColumnQueryWrapper.lambda().eq(BoardTableColumn::getTableId,boardTableConnectParam.getTableId());
+                List<BoardTableColumn> columns= boardTableColumnService.list(tableColumnQueryWrapper);
+                List<Long> columnIds = columns.stream().map(e -> e.getId()).collect(Collectors.toList());
+                queryWrapper.lambda().in(BoardTableConnect::getColumnId, columnIds)
+                        .or().in(BoardTableConnect::getConnectColumnId, columnIds);
+            }
             // 根据字段ID 查询
             if (ObjectUtil.isNotEmpty(boardTableConnectParam.getColumnId())) {
                 queryWrapper.lambda().eq(BoardTableConnect::getColumnId, boardTableConnectParam.getColumnId());
+            }
+
+            // 根据关联字段ID 查询
+            if (ObjectUtil.isNotEmpty(boardTableConnectParam.getConnectTableId())) {
+                QueryWrapper<BoardTableColumn> tableColumnQueryWrapper = new QueryWrapper<>();
+                tableColumnQueryWrapper.lambda().eq(BoardTableColumn::getTableId,boardTableConnectParam.getConnectTableId());
+                List<BoardTableColumn> columns= boardTableColumnService.list(tableColumnQueryWrapper);
+                List<Long> columnIds = columns.stream().map(e -> e.getId()).collect(Collectors.toList());
+                queryWrapper.lambda().in(BoardTableConnect::getColumnId, columnIds)
+                        .or().in(BoardTableConnect::getConnectColumnId, columnIds);
             }
             // 根据关联字段ID 查询
             if (ObjectUtil.isNotEmpty(boardTableConnectParam.getConnectColumnId())) {

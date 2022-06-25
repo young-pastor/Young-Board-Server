@@ -8,11 +8,12 @@ import com.zhisida.board.core.pojo.response.ResponseData;
 import com.zhisida.board.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardTableColumnParam;
 import com.zhisida.board.service.BoardTableColumnService;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class BoardTableColumnController {
     @PostMapping("/boardTableColumn/add")
     @BusinessLog(title = "数据字段配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardTableColumnParam.add.class) BoardTableColumnParam boardTableColumnParam) {
-            boardTableColumnService.add(boardTableColumnParam);
+        boardTableColumnService.add(boardTableColumnParam);
         return new SuccessResponseData();
     }
 
@@ -65,7 +66,7 @@ public class BoardTableColumnController {
     @PostMapping("/boardTableColumn/delete")
     @BusinessLog(title = "数据字段配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardTableColumnParam.delete.class) List<BoardTableColumnParam> boardTableColumnParamList) {
-            boardTableColumnService.delete(boardTableColumnParamList);
+        boardTableColumnService.delete(boardTableColumnParamList);
         return new SuccessResponseData();
     }
 
@@ -79,7 +80,7 @@ public class BoardTableColumnController {
     @PostMapping("/boardTableColumn/edit")
     @BusinessLog(title = "数据字段配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardTableColumnParam.edit.class) BoardTableColumnParam boardTableColumnParam) {
-            boardTableColumnService.edit(boardTableColumnParam);
+        boardTableColumnService.edit(boardTableColumnParam);
         return new SuccessResponseData();
     }
 
@@ -122,4 +123,17 @@ public class BoardTableColumnController {
         boardTableColumnService.export(boardTableColumnParam);
     }
 
+    /**
+     * 同步数据表字段
+     *
+     * @author Young-Pastor
+     * @date 2022-06-20 11:27:41
+     */
+    @Permission
+    @PostMapping("/boardTableColumn/sync")
+    @BusinessLog(title = "数据表字段_同步", opType = LogAnnotionOpTypeEnum.QUERY)
+    public ResponseData sync(@RequestBody BoardTableColumnParam boardTableColumnParam) {
+        boardTableColumnService.sync(boardTableColumnParam);
+        return new SuccessResponseData();
+    }
 }

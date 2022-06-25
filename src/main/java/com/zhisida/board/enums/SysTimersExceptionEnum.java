@@ -1,5 +1,5 @@
 
-package com.zhisida.board.enums.exp;
+package com.zhisida.board.enums;
 
 import com.zhisida.board.core.annotion.ExpEnumType;
 import com.zhisida.board.core.exception.enums.abs.AbstractBaseExceptionEnum;
