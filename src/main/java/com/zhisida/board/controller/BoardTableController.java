@@ -132,7 +132,7 @@ public class BoardTableController {
     @Permission
     @PostMapping("/boardTable/sync")
     @BusinessLog(title = "数据表配置_同步", opType = LogAnnotionOpTypeEnum.EDIT)
-    public ResponseData sync(@RequestBody List<BoardTableParam> boardTableParams) {
+    public ResponseData sync(@RequestBody BoardTableParam boardTableParams) {
         boardTableService.sync(boardTableParams);
         return new SuccessResponseData();
     }

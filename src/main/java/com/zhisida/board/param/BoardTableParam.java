@@ -3,15 +3,16 @@ package com.zhisida.board.param;
 
 import com.zhisida.board.core.pojo.base.param.BaseParam;
 import lombok.Data;
-import javax.validation.constraints.NotNull;
+
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
-* 数据表配置参数类
+ * 数据表配置参数类
  *
  * @author Young-Pastor
  * @date 2022-06-20 11:17:36
-*/
+ */
 @Data
 public class BoardTableParam extends BaseParam {
 
@@ -51,4 +52,7 @@ public class BoardTableParam extends BaseParam {
     @NotBlank(message = "备注不能为空，请检查remark参数", groups = {add.class, edit.class})
     private String remark;
 
+    private Boolean syncTable;
+    private Boolean syncColumn;
+    private Boolean syncConnect;
 }

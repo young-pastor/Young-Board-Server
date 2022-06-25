@@ -19,6 +19,7 @@ import com.zhisida.board.mapper.BoardTableMapper;
 import com.zhisida.board.param.BoardTableParam;
 import com.zhisida.board.service.BoardDataSourceService;
 import com.zhisida.board.service.BoardTableColumnService;
+import com.zhisida.board.service.BoardTableConnectService;
 import com.zhisida.board.service.BoardTableService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +29,7 @@ import org.springframework.util.StringUtils;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 数据表配置service接口实现类
@@ -43,6 +45,9 @@ public class BoardTableServiceImpl extends ServiceImpl<BoardTableMapper, BoardTa
 
     @Resource
     private BoardTableColumnService boardTableColumnService;
+
+    @Resource
+    private BoardTableConnectService boardTableConnectService;
 
     @Override
     public PageResult<BoardTable> page(BoardTableParam boardTableParam) {
@@ -128,16 +133,18 @@ public class BoardTableServiceImpl extends ServiceImpl<BoardTableMapper, BoardTa
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void sync(List<BoardTableParam> boardTableParams) {
+    public void sync(BoardTableParam boardTableParam) {
+        if (!Boolean.TRUE.equals(boardTableParam.getSyncTable())
+                && !Boolean.TRUE.equals(boardTableParam.getSyncColumn())
+                && !Boolean.TRUE.equals(boardTableParam.getSyncConnect())) {
+            return;
+        }
+
         List<BoardDataSource> boardDataSources = null;
+        List<Long> boardDataSourceIds = new ArrayList<>();
         QueryWrapper<BoardTable> queryWrapper = new QueryWrapper<>();
-        if (!CollectionUtils.isEmpty(boardTableParams)) {
-            List<Long> boardDataSourceIds = new ArrayList<>();
-            for (BoardTableParam boardTableParam : boardTableParams) {
-                if (!StringUtils.isEmpty(boardTableParam.getDataSourceId())) {
-                    boardDataSourceIds.add(boardTableParam.getDataSourceId());
-                }
-            }
+        if (!StringUtils.isEmpty(boardTableParam.getDataSourceId())) {
+            boardDataSourceIds.add(boardTableParam.getDataSourceId());
             if (!CollectionUtils.isEmpty(boardDataSourceIds)) {
                 boardDataSources = boardDataSourceService.listByIds(boardDataSourceIds);
                 queryWrapper.lambda().in(BoardTable::getDataSourceId, boardDataSourceIds);
@@ -153,26 +160,48 @@ public class BoardTableServiceImpl extends ServiceImpl<BoardTableMapper, BoardTa
                 for (BoardTable boardTable : oldTables) {
                     oldTableIds.add(boardTable.getId());
                 }
-                boardTableColumnService.deleteByBoardTableIds(oldTableIds);
-                this.removeByIds(oldTableIds);
             }
 
             for (BoardDataSource boardDataSource : boardDataSources) {
                 DataProvider dataProvider = DataProviderManager.getDataProviderByType(boardDataSource);
                 List<BoardTable> boardTables = dataProvider.queryTables();
-
                 if (!CollectionUtils.isEmpty(boardTables)) {
-                    boardTables.forEach((e) -> {
-                        e.setDataSourceId(boardDataSource.getId());
-                        this.save(e);
-                        List<BoardTableColumn> boardTableColumns = dataProvider.queryColumns(e.getTableName());
-                        if (!CollectionUtils.isEmpty(boardTableColumns)) {
-                            boardTableColumns.forEach((c)->{
-                                c.setTableId(e.getId());
-                            });
-                            boardTableColumnService.saveBatch(boardTableColumns);
-                        }
-                    });
+                    if (Boolean.TRUE.equals(boardTableParam.getSyncTable())
+                            || Boolean.TRUE.equals(boardTableParam.getSyncColumn())) {
+                        boardTables.forEach((e) -> {
+                            e.setDataSourceId(boardDataSource.getId());
+                            QueryWrapper<BoardTable> existTableWrapper = new QueryWrapper<>();
+                            existTableWrapper.lambda().eq(BoardTable::getDataSourceId, e.getDataSourceId());
+                            existTableWrapper.lambda().eq(BoardTable::getTableName, e.getTableName());
+                            BoardTable historyTable = this.getOne(existTableWrapper);
+                            if (!Objects.isNull(historyTable)) {
+                                e.setId(historyTable.getId());
+                            }
+                            if (Boolean.TRUE.equals(boardTableParam.getSyncTable())) {
+                                this.saveOrUpdate(e);
+                            }
+                            if (Boolean.TRUE.equals(boardTableParam.getSyncColumn())) {
+                                List<BoardTableColumn> boardTableColumns = dataProvider.queryColumns(e.getTableName());
+                                if (!CollectionUtils.isEmpty(boardTableColumns)) {
+                                    for (BoardTableColumn boardTableColumn : boardTableColumns) {
+                                        boardTableColumn.setTableId(e.getId());
+                                        QueryWrapper<BoardTableColumn> existColumnWrapper = new QueryWrapper<>();
+                                        existColumnWrapper.lambda().eq(BoardTableColumn::getTableId, e.getId());
+                                        existColumnWrapper.lambda().eq(BoardTableColumn::getColumnName, boardTableColumn.getColumnName());
+                                        BoardTableColumn historyColumn = boardTableColumnService.getOne(existColumnWrapper);
+                                        if (!Objects.isNull(historyColumn)) {
+                                            boardTableColumn.setId(historyColumn.getId());
+                                        }
+                                        boardTableColumnService.saveOrUpdate(boardTableColumn);
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    if (Boolean.TRUE.equals(boardTableParam.getSyncConnect())
+                            && boardTables.size() > 1) {
+                        boardTableConnectService.sync(boardDataSource, boardTables);
+                    }
                 }
             }
         }

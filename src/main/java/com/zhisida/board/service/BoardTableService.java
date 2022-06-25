@@ -72,5 +72,5 @@ public interface BoardTableService extends IService<BoardTable> {
      */
      void export(BoardTableParam boardTableParam);
 
-    void sync(List<BoardTableParam> boardTableParams);
+    void sync(BoardTableParam boardTableParams);
 }
