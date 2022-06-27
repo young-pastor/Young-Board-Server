@@ -21,6 +21,7 @@ public class BoardTableColumnParam extends BaseParam {
     @NotNull(message = "主键ID不能为空，请检查id参数", groups = {edit.class, delete.class, detail.class})
     private Long id;
 
+    private Long dataSourceId;
     /**
      * 数据表ID
      */

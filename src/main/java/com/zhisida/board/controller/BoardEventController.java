@@ -28,6 +28,12 @@ public class BoardEventController {
     @Resource
     private BoardEventService boardEventService;
 
+    @Permission
+    @GetMapping("/boardEvent/tree")
+    @BusinessLog(title = "元事件配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
+    public ResponseData tree(BoardEventParam boardEventParam) {
+        return new SuccessResponseData(boardEventService.tree(boardEventParam));
+    }
     /**
      * 查询元事件配置
      *

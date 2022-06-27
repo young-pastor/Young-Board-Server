@@ -25,7 +25,7 @@ public class BoardEventParam extends BaseParam {
      * 事件分组
      */
     @NotBlank(message = "事件分组不能为空，请检查eventGorupId参数", groups = {add.class, edit.class})
-    private String eventGorupId;
+    private String eventGroupId;
 
     /**
      * 事件名称

@@ -29,6 +29,13 @@ public class BoardTableColumnController {
     @Resource
     private BoardTableColumnService boardTableColumnService;
 
+    @Permission
+    @GetMapping("/boardTableColumn/tree")
+    @BusinessLog(title = "数据字段配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
+    public ResponseData tree(BoardTableColumnParam boardTableColumnParam) {
+        return new SuccessResponseData(boardTableColumnService.tree(boardTableColumnParam));
+    }
+
     /**
      * 查询数据字段配置
      *

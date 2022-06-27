@@ -2,21 +2,26 @@
 package com.zhisida.board.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
+import com.zhisida.board.core.factory.TreeBuildFactory;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PoiUtil;
 import com.zhisida.board.entity.BoardEvent;
 import com.zhisida.board.enums.BoardEventExceptionEnum;
 import com.zhisida.board.mapper.BoardEventMapper;
 import com.zhisida.board.param.BoardEventParam;
+import com.zhisida.board.service.BoardEventGroupService;
 import com.zhisida.board.service.BoardEventService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -27,6 +32,30 @@ import java.util.List;
  */
 @Service
 public class BoardEventServiceImpl extends ServiceImpl<BoardEventMapper, BoardEvent> implements BoardEventService {
+    @Resource
+    BoardEventGroupService eventGroupService;
+
+    @Override
+    public List<AntdBaseTreeNode> tree(BoardEventParam boardEventParam) {
+        List<AntdBaseTreeNode> treeNodeList = CollectionUtil.newArrayList();
+        eventGroupService.list().forEach(sysOrg -> {
+            AntdBaseTreeNode orgTreeNode = new AntdBaseTreeNode();
+            orgTreeNode.setId(sysOrg.getId());
+            orgTreeNode.setParentId(sysOrg.getPid());
+            orgTreeNode.setTitle(sysOrg.getDisplayName());
+            orgTreeNode.setValue(String.valueOf(sysOrg.getId()));
+            treeNodeList.add(orgTreeNode);
+        });
+        this.list().forEach(sysOrg -> {
+            AntdBaseTreeNode orgTreeNode = new AntdBaseTreeNode();
+            orgTreeNode.setId(sysOrg.getId());
+            orgTreeNode.setParentId(sysOrg.getEventGroupId());
+            orgTreeNode.setTitle(sysOrg.getDisplayName());
+            orgTreeNode.setValue(String.valueOf(sysOrg.getId()));
+            treeNodeList.add(orgTreeNode);
+        });
+        return new TreeBuildFactory<AntdBaseTreeNode>().doTreeBuild(treeNodeList);
+    }
 
     @Override
     public PageResult<BoardEvent> page(BoardEventParam boardEventParam) {
@@ -34,8 +63,8 @@ public class BoardEventServiceImpl extends ServiceImpl<BoardEventMapper, BoardEv
         if (ObjectUtil.isNotNull(boardEventParam)) {
 
             // 根据事件分组 查询
-            if (ObjectUtil.isNotEmpty(boardEventParam.getEventGorupId())) {
-                queryWrapper.lambda().eq(BoardEvent::getEventGorupId, boardEventParam.getEventGorupId());
+            if (ObjectUtil.isNotEmpty(boardEventParam.getEventGroupId())) {
+                queryWrapper.lambda().eq(BoardEvent::getEventGroupId, boardEventParam.getEventGroupId());
             }
             // 根据事件名称 查询
             if (ObjectUtil.isNotEmpty(boardEventParam.getDisplayName())) {
@@ -113,5 +142,6 @@ public class BoardEventServiceImpl extends ServiceImpl<BoardEventMapper, BoardEv
         List<BoardEvent> list = this.list(boardEventParam);
         PoiUtil.exportExcelWithStream("BoardEvent.xls", BoardEvent.class, list);
     }
+
 
 }

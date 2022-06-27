@@ -1,6 +1,5 @@
 package com.zhisida.board.analysis.provider;
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONUtil;
 import com.alibaba.druid.DbType;
 import com.alibaba.druid.pool.DruidDataSource;
@@ -12,23 +11,26 @@ import com.zhisida.board.entity.BoardTable;
 import com.zhisida.board.entity.BoardTableColumn;
 import com.zhisida.board.enums.BoardDataSourceExceptionEnum;
 import lombok.extern.log4j.Log4j2;
+import org.apache.commons.dbutils.BasicRowProcessor;
+import org.apache.commons.dbutils.GenerousBeanProcessor;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Log4j2
 @Component("jdbcDataProvider")
 public class JdbcDataProvider implements DataProvider {
     private static final ThreadLocal<TreeMap> dataSourceConfig = new ThreadLocal<TreeMap>();
-
     private static Map<String, DruidDataSource> dataSourceMap = new HashMap<>();
+    private static Map<Class, BeanListHandler> beanListHandlerMap = new HashMap<>();
 
     private DruidPooledConnection getConnection() {
         String sourceKey = JSONUtil.toJsonStr(getConfig());
         DruidDataSource druidDataSource = dataSourceMap.get(sourceKey);
+        System.out.println(druidDataSource.getActiveCount());
         if (Objects.isNull(druidDataSource)) {
             try {
                 druidDataSource = (DruidDataSource) DruidDataSourceFactory.createDataSource(getConfig());
@@ -39,7 +41,7 @@ public class JdbcDataProvider implements DataProvider {
         try {
             return druidDataSource.getConnection();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new ServiceException(BoardDataSourceExceptionEnum.GET_CONN_ERR);
         }
     }
 
@@ -58,32 +60,34 @@ public class JdbcDataProvider implements DataProvider {
     }
 
     @Override
-    public List<Map<String, Object>> queryBuyOriginQuery(String queryStr) {
+    public <T> List<T> queryBuyOriginQuery(String queryStr, Class clazz) {
+        BeanListHandler blHandler = beanListHandlerMap.get(clazz);
+        if (Objects.isNull(blHandler)) {
+            blHandler = new BeanListHandler<T>(clazz, new BasicRowProcessor(new GenerousBeanProcessor()));
+            beanListHandlerMap.put(clazz, blHandler);
+        }
         log.info("查询Sql语句：{}", queryStr);
-        DruidPooledConnection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
+        DruidPooledConnection connection = getConnection();
         try {
-            connection = getConnection();
-            statement = connection.prepareStatement(queryStr);
-            resultSet = statement.executeQuery();
-            ResultSetMetaData metaData = resultSet.getMetaData();
-            int columnCount = metaData.getColumnCount();
-            List<Map<String, Object>> resList = new ArrayList<>();
-            while (resultSet.next()) {
-                Map<String, Object> resRow = new HashMap<>();
-                for (int i = 1; i <= columnCount; i++) {
-                    resRow.put(metaData.getColumnLabel(i), resultSet.getObject(i));
-                }
-                resList.add(resRow);
-            }
-            return resList;
+            QueryRunner qr = new QueryRunner();
+            return (List<T>) qr.query(connection, queryStr, blHandler);
         } catch (Exception e) {
-            log.error("使用Sql查询失败！",e);
+            log.error("使用Sql查询失败！", e);
             throw new ServiceException(BoardDataSourceExceptionEnum.QUERY_DATA_ERR);
         } finally {
-            close(connection, statement, resultSet);
+            if (!Objects.isNull(connection)) {
+                try {
+                    connection.recycle();
+                } catch (Exception e) {
+                    log.error("连接回收失败！", e);
+                }
+            }
         }
+    }
+
+    @Override
+    public List<Map> queryBuyOriginQuery(String queryStr) {
+        return queryBuyOriginQuery(queryStr, Map.class);
     }
 
     @Override
@@ -104,11 +108,8 @@ public class JdbcDataProvider implements DataProvider {
                 queryTablesSql = "SELECT `NAME` TABLE_NAME, '' DISPLAY_NAME FROM `system`.`tables` ";
                 break;
         }
-        List<Map<String, Object>> data = queryBuyOriginQuery(queryTablesSql);
-        if (CollectionUtils.isEmpty(data)) {
-            return null;
-        }
-        return data.stream().map(item -> BeanUtil.toBeanIgnoreCase(item, BoardTable.class, true)).collect(Collectors.toList());
+        List<BoardTable> tables = queryBuyOriginQuery(queryTablesSql, BoardTable.class);
+        return tables;
     }
 
     @Override
@@ -117,38 +118,10 @@ public class JdbcDataProvider implements DataProvider {
         DbType dbType = JdbcUtils.getDbTypeRaw((String) getConfig().get("url"), null);
         switch (dbType) {
             case mysql:
-                queryColumnsSql = "SELECT `COLUMN_NAME`,`COLUMN_COMMENT` DISPLAY_NAME,DATA_TYPE  FROM `information_schema`.`columns` WHERE `table_schema` = DATABASE() AND TABLE_NAME = '" + table + "'";
+                queryColumnsSql = "SELECT `COLUMN_NAME`,`COLUMN_COMMENT` DISPLAY_NAME, DATA_TYPE  FROM `information_schema`.`columns` WHERE `table_schema` = DATABASE() AND TABLE_NAME = '" + table + "'";
                 break;
         }
-        List<Map<String, Object>> data = queryBuyOriginQuery(queryColumnsSql);
-        if (CollectionUtils.isEmpty(data)) {
-            return null;
-        }
-        return data.stream().map(item -> BeanUtil.toBeanIgnoreCase(item, BoardTableColumn.class, true)).collect(Collectors.toList());
-
-    }
-
-    private void close(DruidPooledConnection connection, Statement statement, ResultSet resultSet) {
-        if (!Objects.isNull(connection)) {
-            try {
-                connection.recycle();
-            } catch (Exception e) {
-
-            }
-        }
-        if (!Objects.isNull(statement)) {
-            try {
-                statement.close();
-            } catch (Exception e) {
-
-            }
-        }
-        if (!Objects.isNull(resultSet)) {
-            try {
-                resultSet.close();
-            } catch (Exception e) {
-
-            }
-        }
+        List<BoardTableColumn> tableColumns = queryBuyOriginQuery(queryColumnsSql, BoardTableColumn.class);
+        return tableColumns;
     }
 }

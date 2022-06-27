@@ -2,6 +2,7 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardProperty;
 import com.zhisida.board.param.BoardPropertyParam;
@@ -72,4 +73,5 @@ public interface BoardPropertyService extends IService<BoardProperty> {
      */
      void export(BoardPropertyParam boardPropertyParam);
 
+    List<AntdBaseTreeNode> tree(BoardPropertyParam boardPropertyParam);
 }

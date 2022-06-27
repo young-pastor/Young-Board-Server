@@ -28,7 +28,7 @@ public class BoardEvent extends BaseEntity {
      * 事件分组
      */
     @Excel(name = "事件分组")
-    private String eventGorupId;
+    private Long eventGroupId;
 
     /**
      * 事件名称

@@ -2,6 +2,7 @@
 package com.zhisida.board.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -9,6 +10,8 @@ import com.zhisida.board.analysis.DataProviderManager;
 import com.zhisida.board.analysis.provider.DataProvider;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
+import com.zhisida.board.core.factory.TreeBuildFactory;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PoiUtil;
 import com.zhisida.board.entity.BoardDataSource;
@@ -23,8 +26,10 @@ import com.zhisida.board.service.BoardTableService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,6 +40,63 @@ import java.util.List;
  */
 @Service
 public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMapper, BoardTableColumn> implements BoardTableColumnService {
+    @Resource
+    BoardDataSourceService boardDataSourceService;
+    @Resource
+    BoardTableService boardTableService;
+
+    @Override
+    public List<AntdBaseTreeNode> tree(BoardTableColumnParam boardTableColumnParam) {
+        List<AntdBaseTreeNode> treeNodeList = CollectionUtil.newArrayList();
+        QueryWrapper<BoardDataSource> dataSourceQueryWrapper = new QueryWrapper();
+        List<BoardTable> tables = new ArrayList<>();
+        if (!StringUtils.isEmpty(boardTableColumnParam.getTableId())) {
+            QueryWrapper<BoardTable> tableQueryWrapper = new QueryWrapper();
+            tableQueryWrapper.lambda().eq(BoardTable::getId, boardTableColumnParam.getTableId());
+            BoardTable boardTable = boardTableService.getOne(tableQueryWrapper);
+            if (!ObjectUtil.isEmpty(boardTable)) {
+                tables.add(boardTable);
+                dataSourceQueryWrapper.lambda().eq(BoardDataSource::getId, boardTable.getDataSourceId());
+            }
+       } else if (!StringUtils.isEmpty(boardTableColumnParam.getDataSourceId())) {
+            dataSourceQueryWrapper.lambda().eq(BoardDataSource::getId, boardTableColumnParam.getDataSourceId());
+        }
+        List<BoardDataSource> dataSources = boardDataSourceService.list(dataSourceQueryWrapper);
+        for (BoardDataSource dataSource : dataSources) {
+            AntdBaseTreeNode dataSourceNode = new AntdBaseTreeNode();
+            dataSourceNode.setId(dataSource.getId());
+            dataSourceNode.setParentId(0l);
+            dataSourceNode.setTitle(dataSource.getDisplayName());
+            dataSourceNode.setValue(String.valueOf(dataSource.getId()));
+            treeNodeList.add(dataSourceNode);
+            if (ObjectUtil.isEmpty(tables)) {
+                QueryWrapper<BoardTable> tableQueryWrapper = new QueryWrapper();
+                tableQueryWrapper.lambda().eq(BoardTable::getDataSourceId, dataSource.getId());
+                tables = boardTableService.list(tableQueryWrapper);
+            }
+            for (BoardTable table : tables){
+                AntdBaseTreeNode tableNode = new AntdBaseTreeNode();
+                tableNode.setId(table.getId());
+                tableNode.setParentId(dataSource.getId());
+                tableNode.setTitle(table.getDisplayName());
+                tableNode.setValue(String.valueOf(table.getId()));
+                treeNodeList.add(tableNode);
+                QueryWrapper<BoardTableColumn> tableColumnQueryWrapper = new QueryWrapper();
+                tableColumnQueryWrapper.lambda().eq(BoardTableColumn::getTableId, table.getId());
+                List<BoardTableColumn> columns = this.list(tableColumnQueryWrapper);
+                for (BoardTableColumn column : columns){
+                    AntdBaseTreeNode columnNode = new AntdBaseTreeNode();
+                    columnNode.setId(column.getId());
+                    columnNode.setParentId(table.getId());
+                    columnNode.setTitle(column.getDisplayName());
+                    columnNode.setValue(String.valueOf(column.getId()));
+                    treeNodeList.add(columnNode);
+                }
+            }
+        }
+
+        return new TreeBuildFactory<AntdBaseTreeNode>().doTreeBuild(treeNodeList);
+    }
 
     @Override
     public PageResult<BoardTableColumn> page(BoardTableColumnParam boardTableColumnParam) {
@@ -165,12 +227,6 @@ public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMap
         this.remove(queryWrapper);
     }
 
-    @Resource
-    BoardDataSourceService boardDataSourceService;
-
-    @Resource
-    BoardTableService boardTableService;
-
     @Override
     public void sync(BoardTableColumnParam boardTableColumnParam) {
         Long tableId = boardTableColumnParam.getTableId();
@@ -178,9 +234,9 @@ public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMap
         BoardDataSource boardDataSource = boardDataSourceService.getById(boardTable.getDataSourceId());
         DataProvider dataProvider = DataProviderManager.getDataProviderByType(boardDataSource);
         List<BoardTableColumn> boardTableColumns = dataProvider.queryColumns(boardTable.getTableName());
-        if(!CollectionUtils.isEmpty(boardTableColumns)){
+        if (!CollectionUtils.isEmpty(boardTableColumns)) {
             QueryWrapper<BoardTableColumn> queryWrapper = new QueryWrapper<>();
-            queryWrapper.lambda().eq(BoardTableColumn::getTableId,tableId);
+            queryWrapper.lambda().eq(BoardTableColumn::getTableId, tableId);
             this.remove(queryWrapper);
         }
         boardTableColumns.forEach(e -> {
@@ -188,5 +244,6 @@ public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMap
         });
         this.saveBatch(boardTableColumns);
     }
+
 
 }

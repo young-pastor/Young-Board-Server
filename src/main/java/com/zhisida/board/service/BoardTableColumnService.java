@@ -2,6 +2,7 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardTable;
 import com.zhisida.board.entity.BoardTableColumn;
@@ -75,4 +76,6 @@ public interface BoardTableColumnService extends IService<BoardTableColumn> {
     void deleteByBoardTableIds(List<Long> oldTableIds);
 
     void sync(BoardTableColumnParam boardTableColumnParam);
+
+    List<AntdBaseTreeNode> tree(BoardTableColumnParam boardTableColumnParam);
 }

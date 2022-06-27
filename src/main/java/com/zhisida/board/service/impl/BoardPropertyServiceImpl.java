@@ -2,21 +2,27 @@
 package com.zhisida.board.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhisida.board.core.exception.ServiceException;
 import com.zhisida.board.core.factory.PageFactory;
+import com.zhisida.board.core.factory.TreeBuildFactory;
+import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.board.core.pojo.page.PageResult;
 import com.zhisida.board.core.util.PoiUtil;
 import com.zhisida.board.entity.BoardProperty;
 import com.zhisida.board.enums.BoardPropertyExceptionEnum;
 import com.zhisida.board.mapper.BoardPropertyMapper;
 import com.zhisida.board.param.BoardPropertyParam;
+import com.zhisida.board.service.BoardEventGroupService;
+import com.zhisida.board.service.BoardPropertyGroupService;
 import com.zhisida.board.service.BoardPropertyService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -27,7 +33,29 @@ import java.util.List;
  */
 @Service
 public class BoardPropertyServiceImpl extends ServiceImpl<BoardPropertyMapper, BoardProperty> implements BoardPropertyService {
-
+    @Resource
+    BoardPropertyGroupService propertyGroupService;
+    @Override
+    public List<AntdBaseTreeNode> tree(BoardPropertyParam boardPropertyParam) {
+        List<AntdBaseTreeNode> treeNodeList = CollectionUtil.newArrayList();
+        propertyGroupService.list().forEach(sysOrg -> {
+            AntdBaseTreeNode orgTreeNode = new AntdBaseTreeNode();
+            orgTreeNode.setId(sysOrg.getId());
+            orgTreeNode.setParentId(sysOrg.getPid());
+            orgTreeNode.setTitle(sysOrg.getDisplayName());
+            orgTreeNode.setValue(String.valueOf(sysOrg.getId()));
+            treeNodeList.add(orgTreeNode);
+        });
+        this.list().forEach(sysOrg -> {
+            AntdBaseTreeNode orgTreeNode = new AntdBaseTreeNode();
+            orgTreeNode.setId(sysOrg.getId());
+            orgTreeNode.setParentId(sysOrg.getPropertyGroupId());
+            orgTreeNode.setTitle(sysOrg.getDisplayName());
+            orgTreeNode.setValue(String.valueOf(sysOrg.getId()));
+            treeNodeList.add(orgTreeNode);
+        });
+        return new TreeBuildFactory<AntdBaseTreeNode>().doTreeBuild(treeNodeList);
+    }
     @Override
     public PageResult<BoardProperty> page(BoardPropertyParam boardPropertyParam) {
         QueryWrapper<BoardProperty> queryWrapper = new QueryWrapper<>();
@@ -129,5 +157,6 @@ public class BoardPropertyServiceImpl extends ServiceImpl<BoardPropertyMapper, B
         List<BoardProperty> list = this.list(boardPropertyParam);
         PoiUtil.exportExcelWithStream("BoardProperty.xls", BoardProperty.class, list);
     }
+
 
 }

@@ -28,6 +28,12 @@ public class BoardPropertyController {
     @Resource
     private BoardPropertyService boardPropertyService;
 
+    @Permission
+    @GetMapping("/boardProperty/tree")
+    @BusinessLog(title = "属性配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
+    public ResponseData tree(BoardPropertyParam boardPropertyParam) {
+        return new SuccessResponseData(boardPropertyService.tree(boardPropertyParam));
+    }
     /**
      * 查询属性配置
      *
