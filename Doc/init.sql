@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `sys_app` (
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统应用表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统应用表';
 
 -- Dumping data for table young-board.sys_app: ~0 rows (approximately)
 DELETE FROM `sys_app`;
@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `sys_config` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统参数配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统参数配置表';
 
 -- Dumping data for table young-board.sys_config: ~37 rows (approximately)
 DELETE FROM `sys_config`;
@@ -265,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_data` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统字典值表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统字典值表';
 
 -- Dumping data for table young-board.sys_dict_data: ~103 rows (approximately)
 DELETE FROM `sys_dict_data`;
@@ -391,7 +391,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_type` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统字典类型表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统字典类型表';
 
 -- Dumping data for table young-board.sys_dict_type: ~22 rows (approximately)
 DELETE FROM `sys_dict_type`;
@@ -431,7 +431,7 @@ CREATE TABLE IF NOT EXISTS `sys_emp` (
   `org_id` bigint(20) NOT NULL COMMENT '所属机构id',
   `org_name` varchar(100) NOT NULL COMMENT '所属机构名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='员工表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='员工表';
 
 -- Dumping data for table young-board.sys_emp: ~0 rows (approximately)
 DELETE FROM `sys_emp`;
@@ -446,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `sys_emp_ext_org_pos` (
   `org_id` bigint(20) NOT NULL COMMENT '机构id',
   `pos_id` bigint(20) NOT NULL COMMENT '岗位id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='员工附属机构岗位表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='员工附属机构岗位表';
 
 -- Dumping data for table young-board.sys_emp_ext_org_pos: ~0 rows (approximately)
 DELETE FROM `sys_emp_ext_org_pos`;
@@ -460,7 +460,7 @@ CREATE TABLE IF NOT EXISTS `sys_emp_pos` (
   `emp_id` bigint(20) NOT NULL COMMENT '员工id',
   `pos_id` bigint(20) NOT NULL COMMENT '职位id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='员工职位关联表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='员工职位关联表';
 
 -- Dumping data for table young-board.sys_emp_pos: ~0 rows (approximately)
 DELETE FROM `sys_emp_pos`;
@@ -484,7 +484,7 @@ CREATE TABLE IF NOT EXISTS `sys_file_info` (
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '修改用户',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='文件信息表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='文件信息表';
 
 -- Dumping data for table young-board.sys_file_info: ~0 rows (approximately)
 DELETE FROM `sys_file_info`;
@@ -518,7 +518,7 @@ CREATE TABLE IF NOT EXISTS `sys_menu` (
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统菜单表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统菜单表';
 
 -- Dumping data for table young-board.sys_menu: ~183 rows (approximately)
 DELETE FROM `sys_menu`;
@@ -728,7 +728,7 @@ CREATE TABLE IF NOT EXISTS `sys_notice` (
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='通知表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='通知表';
 
 -- Dumping data for table young-board.sys_notice: ~0 rows (approximately)
 DELETE FROM `sys_notice`;
@@ -744,7 +744,7 @@ CREATE TABLE IF NOT EXISTS `sys_notice_user` (
   `status` tinyint(4) NOT NULL COMMENT '状态（字典 0未读 1已读）',
   `read_time` datetime DEFAULT NULL COMMENT '阅读时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统用户数据范围表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户数据范围表';
 
 -- Dumping data for table young-board.sys_notice_user: ~0 rows (approximately)
 DELETE FROM `sys_notice_user`;
@@ -771,7 +771,7 @@ CREATE TABLE IF NOT EXISTS `sys_oauth_user` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新用户',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='第三方认证用户信息表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='第三方认证用户信息表';
 
 -- Dumping data for table young-board.sys_oauth_user: ~0 rows (approximately)
 DELETE FROM `sys_oauth_user`;
@@ -800,7 +800,7 @@ CREATE TABLE IF NOT EXISTS `sys_op_log` (
   `account` varchar(50) DEFAULT NULL COMMENT '操作账号',
   `sign_value` varchar(500) DEFAULT NULL COMMENT '签名数据（除ID外）',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统操作日志表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统操作日志表';
 
 -- Dumping data for table young-board.sys_op_log: ~0 rows (approximately)
 DELETE FROM `sys_op_log`;
@@ -823,7 +823,7 @@ CREATE TABLE IF NOT EXISTS `sys_org` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统组织机构表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统组织机构表';
 
 -- Dumping data for table young-board.sys_org: ~0 rows (approximately)
 DELETE FROM `sys_org`;
@@ -845,7 +845,7 @@ CREATE TABLE IF NOT EXISTS `sys_pos` (
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `CODE_UNI` (`code`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统职位表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统职位表';
 
 -- Dumping data for table young-board.sys_pos: ~0 rows (approximately)
 DELETE FROM `sys_pos`;
@@ -867,7 +867,7 @@ CREATE TABLE IF NOT EXISTS `sys_role` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统角色表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统角色表';
 
 -- Dumping data for table young-board.sys_role: ~0 rows (approximately)
 DELETE FROM `sys_role`;
@@ -881,7 +881,7 @@ CREATE TABLE IF NOT EXISTS `sys_role_data_scope` (
   `role_id` bigint(20) NOT NULL COMMENT '角色id',
   `org_id` bigint(20) NOT NULL COMMENT '机构id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统角色数据范围表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统角色数据范围表';
 
 -- Dumping data for table young-board.sys_role_data_scope: ~0 rows (approximately)
 DELETE FROM `sys_role_data_scope`;
@@ -895,7 +895,7 @@ CREATE TABLE IF NOT EXISTS `sys_role_menu` (
   `role_id` bigint(20) NOT NULL COMMENT '角色id',
   `menu_id` bigint(20) NOT NULL COMMENT '菜单id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统角色菜单表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统角色菜单表';
 
 -- Dumping data for table young-board.sys_role_menu: ~0 rows (approximately)
 DELETE FROM `sys_role_menu`;
@@ -918,7 +918,7 @@ CREATE TABLE IF NOT EXISTS `sys_sms` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='短信信息发送表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='短信信息发送表';
 
 -- Dumping data for table young-board.sys_sms: ~0 rows (approximately)
 DELETE FROM `sys_sms`;
@@ -940,7 +940,7 @@ CREATE TABLE IF NOT EXISTS `sys_timers` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='定时任务';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='定时任务';
 
 -- Dumping data for table young-board.sys_timers: ~1 rows (approximately)
 DELETE FROM `sys_timers`;
@@ -990,7 +990,7 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_user` bigint(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统用户表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户表';
 
 -- Dumping data for table young-board.sys_user: ~0 rows (approximately)
 DELETE FROM `sys_user`;
@@ -1006,7 +1006,7 @@ CREATE TABLE IF NOT EXISTS `sys_user_data_scope` (
   `user_id` bigint(20) NOT NULL COMMENT '用户id',
   `org_id` bigint(20) NOT NULL COMMENT '机构id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统用户数据范围表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户数据范围表';
 
 -- Dumping data for table young-board.sys_user_data_scope: ~0 rows (approximately)
 DELETE FROM `sys_user_data_scope`;
@@ -1020,7 +1020,7 @@ CREATE TABLE IF NOT EXISTS `sys_user_role` (
   `user_id` bigint(20) NOT NULL COMMENT '用户id',
   `role_id` bigint(20) NOT NULL COMMENT '角色id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统用户角色表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户角色表';
 
 -- Dumping data for table young-board.sys_user_role: ~0 rows (approximately)
 DELETE FROM `sys_user_role`;
@@ -1043,7 +1043,7 @@ CREATE TABLE IF NOT EXISTS `sys_vis_log` (
   `account` varchar(50) DEFAULT NULL COMMENT '访问账号',
   `sign_value` varchar(500) DEFAULT NULL COMMENT '签名数据（除ID外）',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='系统访问日志表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问日志表';
 
 -- Dumping data for table young-board.sys_vis_log: ~0 rows (approximately)
 DELETE FROM `sys_vis_log`;
@@ -1061,7 +1061,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis` (
   `END_TIME` datetime DEFAULT NULL COMMENT '结束时间',
   `FILTER_LOGIC` varchar(20) DEFAULT NULL COMMENT '条件逻辑',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='实时分析表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析表';
 
 -- Dumping data for table young-board.tbl_board_analysis: ~0 rows (approximately)
 DELETE FROM `tbl_board_analysis`;
@@ -1076,7 +1076,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event` (
   `EVENT_ID` bigint(20) NOT NULL COMMENT '事件ID',
   `SORT` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='实时分析事件表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件表';
 
 -- Dumping data for table young-board.tbl_board_analysis_event: ~0 rows (approximately)
 DELETE FROM `tbl_board_analysis_event`;
@@ -1094,7 +1094,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_filter` (
   `MEASURE` varchar(128) DEFAULT NULL COMMENT '计算方式',
   `VALUE` text DEFAULT NULL COMMENT '条件值',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='实时分析事件条件表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件条件表';
 
 -- Dumping data for table young-board.tbl_board_analysis_event_filter: ~0 rows (approximately)
 DELETE FROM `tbl_board_analysis_event_filter`;
@@ -1109,7 +1109,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_property` (
   `property_Id` bigint(20) NOT NULL COMMENT '事件ID',
   `measure` varchar(11) DEFAULT NULL COMMENT '计算方式',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='实时分析事件计算属性表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件计算属性表';
 
 -- Dumping data for table young-board.tbl_board_analysis_event_property: ~0 rows (approximately)
 DELETE FROM `tbl_board_analysis_event_property`;
@@ -1127,7 +1127,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_filter` (
   `MEASURE` varchar(128) DEFAULT NULL COMMENT '计算方式',
   `VALUE` text DEFAULT NULL COMMENT '条件值',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='实时分析条件表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析条件表';
 
 -- Dumping data for table young-board.tbl_board_analysis_filter: ~0 rows (approximately)
 DELETE FROM `tbl_board_analysis_filter`;
@@ -1144,7 +1144,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_group` (
   `unit` varchar(128) DEFAULT NULL COMMENT '分组单位',
   `unit_Type` text DEFAULT NULL COMMENT '分组单位类型',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='实时分析分组表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析分组表';
 
 -- Dumping data for table young-board.tbl_board_analysis_group: ~0 rows (approximately)
 DELETE FROM `tbl_board_analysis_group`;
@@ -1156,7 +1156,7 @@ DROP TABLE IF EXISTS `tbl_board_dash`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='数据面板表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板表';
 
 -- Dumping data for table young-board.tbl_board_dash: ~0 rows (approximately)
 DELETE FROM `tbl_board_dash`;
@@ -1169,7 +1169,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_dash_analysis` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='数据面板实时分析表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板实时分析表';
 
 -- Dumping data for table young-board.tbl_board_dash_analysis: ~0 rows (approximately)
 DELETE FROM `tbl_board_dash_analysis`;
@@ -1182,7 +1182,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_dash_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '分组描述',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='数据面板分组表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板分组表';
 
 -- Dumping data for table young-board.tbl_board_dash_group: ~0 rows (approximately)
 DELETE FROM `tbl_board_dash_group`;
@@ -1198,7 +1198,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_data_source` (
   `TYPE` varchar(128) DEFAULT NULL COMMENT '数据库类型',
   `REMARK` varchar(512) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='数据源配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据源配置表';
 
 -- Dumping data for table young-board.tbl_board_data_source: ~1 rows (approximately)
 DELETE FROM `tbl_board_data_source`;
@@ -1219,7 +1219,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event` (
   `VALUE` varchar(512) NOT NULL COMMENT '事件值',
   `VALUE_TYPE` varchar(512) NOT NULL COMMENT '事件值类型',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='元事件配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件配置表';
 
 -- Dumping data for table young-board.tbl_board_event: ~0 rows (approximately)
 DELETE FROM `tbl_board_event`;
@@ -1234,7 +1234,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
   `PIDS` text DEFAULT NULL,
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '事件名称',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='元事件分组表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件分组表';
 
 -- Dumping data for table young-board.tbl_board_event_group: ~2 rows (approximately)
 DELETE FROM `tbl_board_event_group`;
@@ -1250,7 +1250,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event_property` (
   `EVENT_ID` bigint(20) NOT NULL COMMENT '事件编号',
   `PROPERTY_ID` bigint(20) NOT NULL COMMENT '属性编号',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='元事件属性关联表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件属性关联表';
 
 -- Dumping data for table young-board.tbl_board_event_property: ~0 rows (approximately)
 DELETE FROM `tbl_board_event_property`;
@@ -1262,7 +1262,7 @@ DROP TABLE IF EXISTS `tbl_board_indicator`;
 CREATE TABLE IF NOT EXISTS `tbl_board_indicator` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='指标数据';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='指标数据';
 
 -- Dumping data for table young-board.tbl_board_indicator: ~0 rows (approximately)
 DELETE FROM `tbl_board_indicator`;
@@ -1284,7 +1284,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_property` (
   `IS_DEFAULT` varchar(128) DEFAULT NULL COMMENT '属性值类型',
   `REMARK` varchar(512) DEFAULT NULL COMMENT '属性值类型',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='属性配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性配置表';
 
 -- Dumping data for table young-board.tbl_board_property: ~0 rows (approximately)
 DELETE FROM `tbl_board_property`;
@@ -1299,7 +1299,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_property_group` (
   `PIDS` text DEFAULT NULL,
   `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '分组名称',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='属性分组表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性分组表';
 
 -- Dumping data for table young-board.tbl_board_property_group: ~1 rows (approximately)
 DELETE FROM `tbl_board_property_group`;
@@ -1313,7 +1313,7 @@ DROP TABLE IF EXISTS `tbl_board_property_value`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property_value` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='属性值表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性值表';
 
 -- Dumping data for table young-board.tbl_board_property_value: ~0 rows (approximately)
 DELETE FROM `tbl_board_property_value`;
@@ -1325,7 +1325,7 @@ DROP TABLE IF EXISTS `tbl_board_report`;
 CREATE TABLE IF NOT EXISTS `tbl_board_report` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='报表配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='报表配置表';
 
 -- Dumping data for table young-board.tbl_board_report: ~0 rows (approximately)
 DELETE FROM `tbl_board_report`;
@@ -1339,7 +1339,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_report_indicator` (
   `REPORT_ID` bigint(20) DEFAULT NULL COMMENT '报表ID',
   `INDICATOR_ID` bigint(20) DEFAULT NULL COMMENT '指标ID',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='报表指标表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='报表指标表';
 
 -- Dumping data for table young-board.tbl_board_report_indicator: ~0 rows (approximately)
 DELETE FROM `tbl_board_report_indicator`;
@@ -1356,7 +1356,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_table` (
   `REFRESH_TYPE` varchar(128) DEFAULT NULL COMMENT '刷新方式',
   `REMARK` varchar(512) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='数据表配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据表配置表';
 
 -- Dumping data for table young-board.tbl_board_table: ~50 rows (approximately)
 DELETE FROM `tbl_board_table`;
@@ -1426,7 +1426,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_table_column` (
   `DATA_TYPE` varchar(128) DEFAULT NULL COMMENT '数据类型',
   `REMARK` varchar(512) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='数据字段配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据字段配置表';
 
 -- Dumping data for table young-board.tbl_board_table_column: ~396 rows (approximately)
 DELETE FROM `tbl_board_table_column`;
@@ -1840,7 +1840,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_table_connect` (
   `connect_table_id` bigint(20) DEFAULT NULL,
   `connect_Type` varchar(128) DEFAULT NULL COMMENT '关联类型',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='字段关联配置表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='字段关联配置表';
 
 -- Dumping data for table young-board.tbl_board_table_connect: ~0 rows (approximately)
 DELETE FROM `tbl_board_table_connect`;

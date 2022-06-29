@@ -99,10 +99,10 @@ public class JdbcDataProvider implements DataProvider {
                 queryTablesSql = "SELECT `TABLE_NAME`, `TABLE_COMMENT` DISPLAY_NAME FROM `information_schema`.`tables` WHERE `table_schema` = database() AND `TABLE_COMMENT` IS NOT NULL";
                 break;
             case oracle:
-                queryTablesSql = "select * from user_tables;";
+                queryTablesSql = "SELECT * FROM user_tables;";
                 break;
             case presto:
-                queryTablesSql = "select * from user_tables;";
+                queryTablesSql = "SELECT * FROM user_tables;";
                 break;
             case clickhouse:
                 queryTablesSql = "SELECT `NAME` TABLE_NAME, '' DISPLAY_NAME FROM `system`.`tables` ";
