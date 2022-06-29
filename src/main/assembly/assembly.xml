@@ -2,7 +2,7 @@
 <assembly>
     <!-- 可自定义，这里指定的是项目环境 -->
     <!-- spring-boot-assembly-local-1.0.RELEASE.tar.gz  -->
-    <id>${profileActive}-${project.version}</id>
+    <id>${spring.active}-${project.version}</id>
 
     <!-- 打包的类型，如果有N个，将会打N个类型的包 -->
     <formats>
@@ -35,7 +35,7 @@
             <fileMode>0644</fileMode>
             <includes>
                 <include>application.yml</include>
-                <include>application-${profileActive}.yml</include>
+                <include>application-${spring.active}.yml</include>
                 <include>mapper/**/*.xml</include>
                 <include>static/**</include>
                 <include>templates/**</include>
