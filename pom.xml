@@ -406,7 +406,7 @@
                 <filtering>true</filtering>
                 <includes>
                     <include>application.yml</include>
-                    <include>application-${profileActive}.yml</include>
+                    <include>application-${spring.active}.yml</include>
                     <include>mapper/**/*.xml</include>
                     <include>static/**</include>
                     <include>templates/**</include>
@@ -528,7 +528,7 @@
         <profile>
             <id>local</id>
             <properties>
-                <profileActive>local</profileActive>
+                <spring.active>local</spring.active>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -537,7 +537,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <profileActive>dev</profileActive>
+                <spring.active>dev</spring.active>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -546,7 +546,7 @@
         <profile>
             <id>test</id>
             <properties>
-                <profileActive>test</profileActive>
+                <spring.active>test</spring.active>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -555,7 +555,7 @@
         <profile>
             <id>uat</id>
             <properties>
-                <profileActive>uat</profileActive>
+                <spring.active>uat</spring.active>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -564,7 +564,7 @@
         <profile>
             <id>prod</id>
             <properties>
-                <profileActive>prod</profileActive>
+                <spring.active>prod</spring.active>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>

@@ -41,9 +41,6 @@ STARTUP_LOG="================================================ ${NOW_PRETTY} ====
 if [[ ! -d "${LOG_DIR}" ]]; then
   mkdir "${LOG_DIR}"
 fi
-if [[ ! -n "${BOARD_ENVIRONMENT}" ]]; then
-  BOARD_ENVIRONMENT = "local"
-fi
 
 # 如果logs/back文件夹不存在,则创建文件夹
 if [[ ! -d "${LOG_BACK_DIR}" ]]; then
@@ -99,7 +96,7 @@ STARTUP_LOG="${STARTUP_LOG}application background startup command: nohup java ${
 #======================================================================
 # 执行启动命令：后台启动项目,并将日志输出到项目根目录下的logs文件夹下
 #======================================================================
-nohup java ${JAVA_OPT} -jar ${BASE_PATH}/boot/${APPLICATION_JAR} --spring.config.location=${CONFIG_DIR} --spring.active=${BOARD_ENVIRONMENT} > ${LOG_PATH} 2>&1 &
+nohup java ${JAVA_OPT} -jar ${BASE_PATH}/boot/${APPLICATION_JAR} --spring.config.location=${CONFIG_DIR}  > ${LOG_PATH} 2>&1 &
 
 
 # 进程ID
