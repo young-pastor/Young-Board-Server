@@ -1,16 +1,8 @@
-#! /bin/shell
+#! /bin/bash
 
-#======================================================================
-# 项目停服shell脚本
-# 通过项目名称查找到PID
-# 然后kill -9 pid
-#
-# author: geekidea
-# date: 2018-12-2
-#======================================================================
 
 # 项目名称
-APPLICATION="spring-boot-assembly"
+APPLICATION="Young-Board"
 
 # 项目启动jar包名称
 APPLICATION_JAR="${APPLICATION}.jar"

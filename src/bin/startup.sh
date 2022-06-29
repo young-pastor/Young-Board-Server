@@ -1,20 +1,7 @@
-#! /bin/shell
-
-#======================================================================
-# 项目启动shell脚本
-# boot目录: spring boot jar包
-# config目录: 配置文件目录
-# logs目录: 项目运行日志目录
-# logs/spring-boot-assembly_startup.log: 记录启动日志
-# logs/back目录: 项目运行日志备份目录
-# nohup后台运行
-#
-# author: geekidea
-# date: 2018-12-2
-#======================================================================
+#! /bin/bash
 
 # 项目名称
-APPLICATION="spring-boot-assembly"
+APPLICATION="Young-Board"
 
 # 项目启动jar包名称
 APPLICATION_JAR="${APPLICATION}.jar"
