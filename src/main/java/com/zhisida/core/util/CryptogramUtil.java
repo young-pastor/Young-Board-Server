@@ -42,6 +42,9 @@ public class CryptogramUtil {
         return Sm2.doDecrypt(str, keypair.PRIVATE_KEY);
     }
 
+    public static void main(String[] args) {
+        System.out.printf(doSm2Decrypt(doSm2Encrypt("123")));
+    }
     /**
      * 加密方法
      *

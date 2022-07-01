@@ -30,7 +30,6 @@ public class JdbcDataProvider implements DataProvider {
     private DruidPooledConnection getConnection() {
         String sourceKey = JSONUtil.toJsonStr(getConfig());
         DruidDataSource druidDataSource = dataSourceMap.get(sourceKey);
-        System.out.println(druidDataSource.getActiveCount());
         if (Objects.isNull(druidDataSource)) {
             try {
                 druidDataSource = (DruidDataSource) DruidDataSourceFactory.createDataSource(getConfig());

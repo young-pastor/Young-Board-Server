@@ -441,7 +441,7 @@
                     </archive>
                     <includes>
                         <!-- 只打包指定目录的文件 -->
-                        <include>com/zhisida/board/**</include>
+                        <include>com/zhisida/**</include>
                     </includes>
                 </configuration>
             </plugin>

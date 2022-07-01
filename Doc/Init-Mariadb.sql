@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- 主机:                           127.0.0.1
--- Server version:               10.3.10-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win64
--- HeidiSQL 版本:                  9.5.0.5338
+-- 服务器版本:                        10.8.3-MariaDB - mariadb.org binary distribution
+-- 服务器操作系统:                      Win64
+-- HeidiSQL 版本:                  11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,14 +10,15 @@
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for young-board
+-- 导出 young-board 的数据库结构
 DROP DATABASE IF EXISTS `young-board`;
-CREATE DATABASE IF NOT EXISTS `young-board` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE IF NOT EXISTS `young-board` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
 USE `young-board`;
 
--- Dumping structure for table young-board.sys_app
+-- 导出  表 young-board.sys_app 结构
 DROP TABLE IF EXISTS `sys_app`;
 CREATE TABLE IF NOT EXISTS `sys_app` (
     `id` bigint(20) NOT NULL COMMENT '主键id',
@@ -32,14 +33,14 @@ CREATE TABLE IF NOT EXISTS `sys_app` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统应用表';
 
--- Dumping data for table young-board.sys_app: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_app 的数据：~0 rows (大约)
 DELETE FROM `sys_app`;
 /*!40000 ALTER TABLE `sys_app` DISABLE KEYS */;
 INSERT INTO `sys_app` (`id`, `name`, `code`, `active`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
     (1265476890672672821, '系统应用', 'system', 'Y', 0, '2020-03-25 19:07:00', 1265476890672672808, '2020-08-15 15:23:05', 1280709549107552257);
 /*!40000 ALTER TABLE `sys_app` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_area
+-- 导出  表 young-board.sys_area 结构
 DROP TABLE IF EXISTS `sys_area`;
 CREATE TABLE IF NOT EXISTS `sys_area` (
     `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -59,12 +60,12 @@ CREATE TABLE IF NOT EXISTS `sys_area` (
     KEY `idx_parent_code` (`parent_code`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='中国行政地区表';
 
--- Dumping data for table young-board.sys_area: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_area 的数据：~0 rows (大约)
 DELETE FROM `sys_area`;
 /*!40000 ALTER TABLE `sys_area` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_area` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_code_generate
+-- 导出  表 young-board.sys_code_generate 结构
 DROP TABLE IF EXISTS `sys_code_generate`;
 CREATE TABLE IF NOT EXISTS `sys_code_generate` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -85,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `sys_code_generate` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成基础配置';
 
--- Dumping data for table young-board.sys_code_generate: ~8 rows (approximately)
+-- 正在导出表  young-board.sys_code_generate 的数据：~10 rows (大约)
 DELETE FROM `sys_code_generate`;
 /*!40000 ALTER TABLE `sys_code_generate` DISABLE KEYS */;
 INSERT INTO `sys_code_generate` (`id`, `author_name`, `class_name`, `table_prefix`, `generate_type`, `table_name`, `package_name`, `bus_name`, `table_comment`, `app_code`, `menu_pid`, `create_user`, `create_time`, `update_user`, `update_time`) VALUES
@@ -101,7 +102,7 @@ INSERT INTO `sys_code_generate` (`id`, `author_name`, `class_name`, `table_prefi
                                                                                                                                                                                                                                                         (1540259046307590146, 'young-pastor', 'SysTimersLog', 'N', '2', 'sys_timers_log', 'com.zhisida.board', 'sysTimersLog', '任务日志', 'system', '1264622039642256611', 1265476890672672808, '2022-06-24 17:02:27', NULL, NULL);
 /*!40000 ALTER TABLE `sys_code_generate` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_code_generate_config
+-- 导出  表 young-board.sys_code_generate_config 结构
 DROP TABLE IF EXISTS `sys_code_generate_config`;
 CREATE TABLE IF NOT EXISTS `sys_code_generate_config` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -129,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `sys_code_generate_config` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成详细配置';
 
--- Dumping data for table young-board.sys_code_generate_config: ~54 rows (approximately)
+-- 正在导出表  young-board.sys_code_generate_config 的数据：~54 rows (大约)
 DELETE FROM `sys_code_generate_config`;
 /*!40000 ALTER TABLE `sys_code_generate_config` DISABLE KEYS */;
 INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `java_name`, `data_type`, `column_comment`, `java_type`, `effect_type`, `dict_type_code`, `whether_table`, `whether_add_update`, `whether_retract`, `whether_required`, `query_whether`, `query_type`, `column_key`, `column_key_name`, `whether_common`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -189,7 +190,7 @@ INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `jav
                                                                                                                                                                                                                                                                                                                                                                                                       (1540259046534082562, 1540259046307590146, 'EXECUTE_PARAM', 'executeParam', 'text', '执行参数', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteParam', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_code_generate_config` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_config
+-- 导出  表 young-board.sys_config 结构
 DROP TABLE IF EXISTS `sys_config`;
 CREATE TABLE IF NOT EXISTS `sys_config` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -207,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `sys_config` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统参数配置表';
 
--- Dumping data for table young-board.sys_config: ~37 rows (approximately)
+-- 正在导出表  young-board.sys_config 的数据：~37 rows (大约)
 DELETE FROM `sys_config`;
 /*!40000 ALTER TABLE `sys_config` DISABLE KEYS */;
 INSERT INTO `sys_config` (`id`, `name`, `code`, `value`, `sys_flag`, `remark`, `status`, `group_code`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -250,7 +251,7 @@ INSERT INTO `sys_config` (`id`, `name`, `code`, `value`, `sys_flag`, `remark`, `
                                                                                                                                                                        (1471109091222482946, '是否开启租户功能', 'TENANT_OPEN', 'false', 'Y', '是否开启租户功能，默认关闭', 0, 'DEFAULT', '2021-12-15 21:25:14', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_config` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_dict_data
+-- 导出  表 young-board.sys_dict_data 结构
 DROP TABLE IF EXISTS `sys_dict_data`;
 CREATE TABLE IF NOT EXISTS `sys_dict_data` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -267,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_data` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统字典值表';
 
--- Dumping data for table young-board.sys_dict_data: ~103 rows (approximately)
+-- 正在导出表  young-board.sys_dict_data 的数据：~104 rows (大约)
 DELETE FROM `sys_dict_data`;
 /*!40000 ALTER TABLE `sys_dict_data` DISABLE KEYS */;
 INSERT INTO `sys_dict_data` (`id`, `type_id`, `value`, `code`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -377,7 +378,7 @@ INSERT INTO `sys_dict_data` (`id`, `type_id`, `value`, `code`, `sort`, `remark`,
                                                                                                                                                            (1540603780159004673, 1540603266612617218, '多对一', 'MANY_TO_ONE', 4, NULL, 0, '2022-06-25 15:52:18', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_dict_data` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_dict_type
+-- 导出  表 young-board.sys_dict_type 结构
 DROP TABLE IF EXISTS `sys_dict_type`;
 CREATE TABLE IF NOT EXISTS `sys_dict_type` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -393,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_type` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统字典类型表';
 
--- Dumping data for table young-board.sys_dict_type: ~22 rows (approximately)
+-- 正在导出表  young-board.sys_dict_type 的数据：~24 rows (大约)
 DELETE FROM `sys_dict_type`;
 /*!40000 ALTER TABLE `sys_dict_type` DISABLE KEYS */;
 INSERT INTO `sys_dict_type` (`id`, `name`, `code`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -423,7 +424,7 @@ INSERT INTO `sys_dict_type` (`id`, `name`, `code`, `sort`, `remark`, `status`, `
                                                                                                                                                (1540603266612617218, '表关联类型', 'board_connect_type', 2, NULL, 0, '2022-06-25 15:50:16', 1265476890672672808, '2022-06-25 15:50:31', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_dict_type` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_emp
+-- 导出  表 young-board.sys_emp 结构
 DROP TABLE IF EXISTS `sys_emp`;
 CREATE TABLE IF NOT EXISTS `sys_emp` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -433,12 +434,12 @@ CREATE TABLE IF NOT EXISTS `sys_emp` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='员工表';
 
--- Dumping data for table young-board.sys_emp: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_emp 的数据：~0 rows (大约)
 DELETE FROM `sys_emp`;
 /*!40000 ALTER TABLE `sys_emp` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_emp` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_emp_ext_org_pos
+-- 导出  表 young-board.sys_emp_ext_org_pos 结构
 DROP TABLE IF EXISTS `sys_emp_ext_org_pos`;
 CREATE TABLE IF NOT EXISTS `sys_emp_ext_org_pos` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -448,12 +449,12 @@ CREATE TABLE IF NOT EXISTS `sys_emp_ext_org_pos` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='员工附属机构岗位表';
 
--- Dumping data for table young-board.sys_emp_ext_org_pos: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_emp_ext_org_pos 的数据：~0 rows (大约)
 DELETE FROM `sys_emp_ext_org_pos`;
 /*!40000 ALTER TABLE `sys_emp_ext_org_pos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_emp_ext_org_pos` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_emp_pos
+-- 导出  表 young-board.sys_emp_pos 结构
 DROP TABLE IF EXISTS `sys_emp_pos`;
 CREATE TABLE IF NOT EXISTS `sys_emp_pos` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -462,12 +463,12 @@ CREATE TABLE IF NOT EXISTS `sys_emp_pos` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='员工职位关联表';
 
--- Dumping data for table young-board.sys_emp_pos: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_emp_pos 的数据：~0 rows (大约)
 DELETE FROM `sys_emp_pos`;
 /*!40000 ALTER TABLE `sys_emp_pos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_emp_pos` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_file_info
+-- 导出  表 young-board.sys_file_info 结构
 DROP TABLE IF EXISTS `sys_file_info`;
 CREATE TABLE IF NOT EXISTS `sys_file_info` (
     `id` bigint(20) NOT NULL COMMENT '主键id',
@@ -486,12 +487,12 @@ CREATE TABLE IF NOT EXISTS `sys_file_info` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='文件信息表';
 
--- Dumping data for table young-board.sys_file_info: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_file_info 的数据：~0 rows (大约)
 DELETE FROM `sys_file_info`;
 /*!40000 ALTER TABLE `sys_file_info` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_file_info` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_menu
+-- 导出  表 young-board.sys_menu 结构
 DROP TABLE IF EXISTS `sys_menu`;
 CREATE TABLE IF NOT EXISTS `sys_menu` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -520,7 +521,7 @@ CREATE TABLE IF NOT EXISTS `sys_menu` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统菜单表';
 
--- Dumping data for table young-board.sys_menu: ~183 rows (approximately)
+-- 正在导出表  young-board.sys_menu 的数据：~183 rows (大约)
 DELETE FROM `sys_menu`;
 /*!40000 ALTER TABLE `sys_menu` DISABLE KEYS */;
 INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `router`, `component`, `permission`, `application`, `open_type`, `visible`, `link`, `redirect`, `weight`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -709,7 +710,7 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
                                                                                                                                                                                                                                                                                    (9116501195565509393, 6073322290452106986, '[0],[1537693069254561793],[6073322290452106986],', '属性配置删除', 'boardproperty_index_delete', 2, NULL, NULL, NULL, 'boardProperty:delete', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 12:07:35', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_menu` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_notice
+-- 导出  表 young-board.sys_notice 结构
 DROP TABLE IF EXISTS `sys_notice`;
 CREATE TABLE IF NOT EXISTS `sys_notice` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -730,12 +731,12 @@ CREATE TABLE IF NOT EXISTS `sys_notice` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='通知表';
 
--- Dumping data for table young-board.sys_notice: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_notice 的数据：~0 rows (大约)
 DELETE FROM `sys_notice`;
 /*!40000 ALTER TABLE `sys_notice` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_notice` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_notice_user
+-- 导出  表 young-board.sys_notice_user 结构
 DROP TABLE IF EXISTS `sys_notice_user`;
 CREATE TABLE IF NOT EXISTS `sys_notice_user` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -746,12 +747,12 @@ CREATE TABLE IF NOT EXISTS `sys_notice_user` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户数据范围表';
 
--- Dumping data for table young-board.sys_notice_user: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_notice_user 的数据：~0 rows (大约)
 DELETE FROM `sys_notice_user`;
 /*!40000 ALTER TABLE `sys_notice_user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_notice_user` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_oauth_user
+-- 导出  表 young-board.sys_oauth_user 结构
 DROP TABLE IF EXISTS `sys_oauth_user`;
 CREATE TABLE IF NOT EXISTS `sys_oauth_user` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -773,12 +774,12 @@ CREATE TABLE IF NOT EXISTS `sys_oauth_user` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='第三方认证用户信息表';
 
--- Dumping data for table young-board.sys_oauth_user: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_oauth_user 的数据：~0 rows (大约)
 DELETE FROM `sys_oauth_user`;
 /*!40000 ALTER TABLE `sys_oauth_user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_oauth_user` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_op_log
+-- 导出  表 young-board.sys_op_log 结构
 DROP TABLE IF EXISTS `sys_op_log`;
 CREATE TABLE IF NOT EXISTS `sys_op_log` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -802,12 +803,12 @@ CREATE TABLE IF NOT EXISTS `sys_op_log` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统操作日志表';
 
--- Dumping data for table young-board.sys_op_log: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_op_log 的数据：~0 rows (大约)
 DELETE FROM `sys_op_log`;
 /*!40000 ALTER TABLE `sys_op_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_op_log` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_org
+-- 导出  表 young-board.sys_org 结构
 DROP TABLE IF EXISTS `sys_org`;
 CREATE TABLE IF NOT EXISTS `sys_org` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -825,12 +826,12 @@ CREATE TABLE IF NOT EXISTS `sys_org` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统组织机构表';
 
--- Dumping data for table young-board.sys_org: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_org 的数据：~0 rows (大约)
 DELETE FROM `sys_org`;
 /*!40000 ALTER TABLE `sys_org` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_org` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_pos
+-- 导出  表 young-board.sys_pos 结构
 DROP TABLE IF EXISTS `sys_pos`;
 CREATE TABLE IF NOT EXISTS `sys_pos` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -847,12 +848,12 @@ CREATE TABLE IF NOT EXISTS `sys_pos` (
     UNIQUE KEY `CODE_UNI` (`code`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统职位表';
 
--- Dumping data for table young-board.sys_pos: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_pos 的数据：~0 rows (大约)
 DELETE FROM `sys_pos`;
 /*!40000 ALTER TABLE `sys_pos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_pos` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_role
+-- 导出  表 young-board.sys_role 结构
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE IF NOT EXISTS `sys_role` (
     `id` bigint(20) NOT NULL COMMENT '主键id',
@@ -869,12 +870,12 @@ CREATE TABLE IF NOT EXISTS `sys_role` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统角色表';
 
--- Dumping data for table young-board.sys_role: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_role 的数据：~0 rows (大约)
 DELETE FROM `sys_role`;
 /*!40000 ALTER TABLE `sys_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_role` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_role_data_scope
+-- 导出  表 young-board.sys_role_data_scope 结构
 DROP TABLE IF EXISTS `sys_role_data_scope`;
 CREATE TABLE IF NOT EXISTS `sys_role_data_scope` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -883,12 +884,12 @@ CREATE TABLE IF NOT EXISTS `sys_role_data_scope` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统角色数据范围表';
 
--- Dumping data for table young-board.sys_role_data_scope: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_role_data_scope 的数据：~0 rows (大约)
 DELETE FROM `sys_role_data_scope`;
 /*!40000 ALTER TABLE `sys_role_data_scope` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_role_data_scope` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_role_menu
+-- 导出  表 young-board.sys_role_menu 结构
 DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE IF NOT EXISTS `sys_role_menu` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -897,12 +898,12 @@ CREATE TABLE IF NOT EXISTS `sys_role_menu` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统角色菜单表';
 
--- Dumping data for table young-board.sys_role_menu: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_role_menu 的数据：~0 rows (大约)
 DELETE FROM `sys_role_menu`;
 /*!40000 ALTER TABLE `sys_role_menu` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_role_menu` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_sms
+-- 导出  表 young-board.sys_sms 结构
 DROP TABLE IF EXISTS `sys_sms`;
 CREATE TABLE IF NOT EXISTS `sys_sms` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -920,12 +921,12 @@ CREATE TABLE IF NOT EXISTS `sys_sms` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='短信信息发送表';
 
--- Dumping data for table young-board.sys_sms: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_sms 的数据：~0 rows (大约)
 DELETE FROM `sys_sms`;
 /*!40000 ALTER TABLE `sys_sms` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_sms` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_timers
+-- 导出  表 young-board.sys_timers 结构
 DROP TABLE IF EXISTS `sys_timers`;
 CREATE TABLE IF NOT EXISTS `sys_timers` (
     `id` bigint(20) NOT NULL COMMENT '定时器id',
@@ -942,14 +943,14 @@ CREATE TABLE IF NOT EXISTS `sys_timers` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='定时任务';
 
--- Dumping data for table young-board.sys_timers: ~1 rows (approximately)
+-- 正在导出表  young-board.sys_timers 的数据：~0 rows (大约)
 DELETE FROM `sys_timers`;
 /*!40000 ALTER TABLE `sys_timers` DISABLE KEYS */;
 INSERT INTO `sys_timers` (`id`, `timer_name`, `action_class`, `cron`, `job_status`, `param`, `remark`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-    (1288760324837851137, '定时同步缓存常量', 'com.zhisida.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 2, NULL, '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', 1265476890672672808, '2022-06-17 11:09:22', 1265476890672672808);
+    (1288760324837851137, '定时同步缓存常量', 'com.zhisida.board.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 2, NULL, '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', 1265476890672672808, '2022-06-17 11:09:22', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_timers` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_timers_log
+-- 导出  表 young-board.sys_timers_log 结构
 DROP TABLE IF EXISTS `sys_timers_log`;
 CREATE TABLE IF NOT EXISTS `sys_timers_log` (
     `ID` bigint(64) NOT NULL COMMENT '主键ID',
@@ -960,14 +961,14 @@ CREATE TABLE IF NOT EXISTS `sys_timers_log` (
     `EXECUTE_MSG` text DEFAULT NULL COMMENT '执行信息',
     `EXECUTE_PARAM` text DEFAULT NULL COMMENT '执行参数',
     PRIMARY KEY (`ID`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='定时任务日志表';
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='定时任务日志表';
 
--- Dumping data for table young-board.sys_timers_log: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_timers_log 的数据：~0 rows (大约)
 DELETE FROM `sys_timers_log`;
 /*!40000 ALTER TABLE `sys_timers_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_timers_log` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_user
+-- 导出  表 young-board.sys_user 结构
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE IF NOT EXISTS `sys_user` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -992,14 +993,14 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户表';
 
--- Dumping data for table young-board.sys_user: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_user 的数据：~0 rows (大约)
 DELETE FROM `sys_user`;
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
 INSERT INTO `sys_user` (`id`, `account`, `pwd_hash_value`, `nick_name`, `name`, `avatar`, `birthday`, `sex`, `email`, `phone`, `tel`, `last_login_ip`, `last_login_time`, `admin_type`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-    (1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '127.0.0.1', '2022-06-25 15:58:50', 1, 0, '2020-05-29 16:39:28', -1, '2022-06-25 15:58:50', -1);
+    (1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '111.196.185.94', '2022-07-01 22:22:44', 1, 0, '2020-05-29 16:39:28', -1, '2022-07-01 22:22:44', -1);
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_user_data_scope
+-- 导出  表 young-board.sys_user_data_scope 结构
 DROP TABLE IF EXISTS `sys_user_data_scope`;
 CREATE TABLE IF NOT EXISTS `sys_user_data_scope` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -1008,12 +1009,12 @@ CREATE TABLE IF NOT EXISTS `sys_user_data_scope` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户数据范围表';
 
--- Dumping data for table young-board.sys_user_data_scope: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_user_data_scope 的数据：~0 rows (大约)
 DELETE FROM `sys_user_data_scope`;
 /*!40000 ALTER TABLE `sys_user_data_scope` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_user_data_scope` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_user_role
+-- 导出  表 young-board.sys_user_role 结构
 DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE IF NOT EXISTS `sys_user_role` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -1022,12 +1023,12 @@ CREATE TABLE IF NOT EXISTS `sys_user_role` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户角色表';
 
--- Dumping data for table young-board.sys_user_role: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_user_role 的数据：~0 rows (大约)
 DELETE FROM `sys_user_role`;
 /*!40000 ALTER TABLE `sys_user_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_user_role` ENABLE KEYS */;
 
--- Dumping structure for table young-board.sys_vis_log
+-- 导出  表 young-board.sys_vis_log 结构
 DROP TABLE IF EXISTS `sys_vis_log`;
 CREATE TABLE IF NOT EXISTS `sys_vis_log` (
     `id` bigint(20) NOT NULL COMMENT '主键',
@@ -1045,12 +1046,12 @@ CREATE TABLE IF NOT EXISTS `sys_vis_log` (
     PRIMARY KEY (`id`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问日志表';
 
--- Dumping data for table young-board.sys_vis_log: ~0 rows (approximately)
+-- 正在导出表  young-board.sys_vis_log 的数据：~0 rows (大约)
 DELETE FROM `sys_vis_log`;
 /*!40000 ALTER TABLE `sys_vis_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_vis_log` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_analysis
+-- 导出  表 young-board.tbl_board_analysis 结构
 DROP TABLE IF EXISTS `tbl_board_analysis`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1063,12 +1064,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析表';
 
--- Dumping data for table young-board.tbl_board_analysis: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_analysis 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis`;
 /*!40000 ALTER TABLE `tbl_board_analysis` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_analysis_event
+-- 导出  表 young-board.tbl_board_analysis_event 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_event`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1078,12 +1079,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件表';
 
--- Dumping data for table young-board.tbl_board_analysis_event: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_analysis_event 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis_event`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis_event` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_analysis_event_filter
+-- 导出  表 young-board.tbl_board_analysis_event_filter 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_event_filter`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_filter` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1096,12 +1097,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_filter` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件条件表';
 
--- Dumping data for table young-board.tbl_board_analysis_event_filter: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_analysis_event_filter 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis_event_filter`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis_event_filter` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_analysis_event_property
+-- 导出  表 young-board.tbl_board_analysis_event_property 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_event_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_property` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1111,12 +1112,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_property` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件计算属性表';
 
--- Dumping data for table young-board.tbl_board_analysis_event_property: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_analysis_event_property 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis_event_property`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event_property` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis_event_property` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_analysis_filter
+-- 导出  表 young-board.tbl_board_analysis_filter 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_filter`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_filter` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1129,12 +1130,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_filter` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析条件表';
 
--- Dumping data for table young-board.tbl_board_analysis_filter: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_analysis_filter 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis_filter`;
 /*!40000 ALTER TABLE `tbl_board_analysis_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis_filter` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_analysis_group
+-- 导出  表 young-board.tbl_board_analysis_group 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_group` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1146,24 +1147,24 @@ CREATE TABLE IF NOT EXISTS `tbl_board_analysis_group` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析分组表';
 
--- Dumping data for table young-board.tbl_board_analysis_group: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_analysis_group 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis_group`;
 /*!40000 ALTER TABLE `tbl_board_analysis_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis_group` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_dash
+-- 导出  表 young-board.tbl_board_dash 结构
 DROP TABLE IF EXISTS `tbl_board_dash`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板表';
 
--- Dumping data for table young-board.tbl_board_dash: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_dash 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_dash`;
 /*!40000 ALTER TABLE `tbl_board_dash` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_dash` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_dash_analysis
+-- 导出  表 young-board.tbl_board_dash_analysis 结构
 DROP TABLE IF EXISTS `tbl_board_dash_analysis`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash_analysis` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1171,12 +1172,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_dash_analysis` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板实时分析表';
 
--- Dumping data for table young-board.tbl_board_dash_analysis: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_dash_analysis 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_dash_analysis`;
 /*!40000 ALTER TABLE `tbl_board_dash_analysis` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_dash_analysis` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_dash_group
+-- 导出  表 young-board.tbl_board_dash_group 结构
 DROP TABLE IF EXISTS `tbl_board_dash_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash_group` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1184,31 +1185,34 @@ CREATE TABLE IF NOT EXISTS `tbl_board_dash_group` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板分组表';
 
--- Dumping data for table young-board.tbl_board_dash_group: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_dash_group 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_dash_group`;
 /*!40000 ALTER TABLE `tbl_board_dash_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_dash_group` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_data_source
+-- 导出  表 young-board.tbl_board_data_source 结构
 DROP TABLE IF EXISTS `tbl_board_data_source`;
 CREATE TABLE IF NOT EXISTS `tbl_board_data_source` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
     `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '数据源名称',
+    `TABLE_PREFIX` varchar(50) DEFAULT NULL COMMENT '表前缀',
+    `TABLE_SUBFIX` varchar(50) DEFAULT NULL COMMENT '表后缀',
+    `PRIMARY_KEYS` varchar(50) DEFAULT NULL,
     `CONFIG` text DEFAULT NULL COMMENT '数据库配置',
     `TYPE` varchar(128) DEFAULT NULL COMMENT '数据库类型',
     `REMARK` varchar(512) DEFAULT NULL COMMENT '备注',
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据源配置表';
 
--- Dumping data for table young-board.tbl_board_data_source: ~1 rows (approximately)
+-- 正在导出表  young-board.tbl_board_data_source 的数据：~2 rows (大约)
 DELETE FROM `tbl_board_data_source`;
 /*!40000 ALTER TABLE `tbl_board_data_source` DISABLE KEYS */;
-INSERT INTO `tbl_board_data_source` (`ID`, `DISPLAY_NAME`, `CONFIG`, `TYPE`, `REMARK`) VALUES
-                                                                                           (1540375348154290178, '基础数据库', '{"url":"jdbc:mysql://localhost:3306/young-board?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&nullCatalogMeansCurrent=true",             "username":"root",             "password":"123456"         }', 'JDBC', '1'),
-                                                                                           (1540521032094408705, '我的', '{}', 'FILE', NULL);
+INSERT INTO `tbl_board_data_source` (`ID`, `DISPLAY_NAME`, `TABLE_PREFIX`, `TABLE_SUBFIX`, `PRIMARY_KEYS`, `CONFIG`, `TYPE`, `REMARK`) VALUES
+                                                                                                                                           (1540375348154290178, '基础数据库', NULL, NULL, NULL, '{"url":"jdbc:mysql://localhost:3306/young-board?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&nullCatalogMeansCurrent=true",             "username":"root",             "password":"123456"         }', 'JDBC', '1'),
+                                                                                                                                           (1540521032094408705, '我的', NULL, NULL, NULL, '{}', 'FILE', NULL);
 /*!40000 ALTER TABLE `tbl_board_data_source` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_event
+-- 导出  表 young-board.tbl_board_event 结构
 DROP TABLE IF EXISTS `tbl_board_event`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1221,12 +1225,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件配置表';
 
--- Dumping data for table young-board.tbl_board_event: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_event 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_event`;
 /*!40000 ALTER TABLE `tbl_board_event` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_event` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_event_group
+-- 导出  表 young-board.tbl_board_event_group 结构
 DROP TABLE IF EXISTS `tbl_board_event_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1236,14 +1240,14 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件分组表';
 
--- Dumping data for table young-board.tbl_board_event_group: ~2 rows (approximately)
+-- 正在导出表  young-board.tbl_board_event_group 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_event_group`;
 /*!40000 ALTER TABLE `tbl_board_event_group` DISABLE KEYS */;
 INSERT INTO `tbl_board_event_group` (`ID`, `PID`, `PIDS`, `DISPLAY_NAME`) VALUES
     (1540523165199982593, 0, '[0],', '默认分组');
 /*!40000 ALTER TABLE `tbl_board_event_group` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_event_property
+-- 导出  表 young-board.tbl_board_event_property 结构
 DROP TABLE IF EXISTS `tbl_board_event_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_property` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1252,24 +1256,24 @@ CREATE TABLE IF NOT EXISTS `tbl_board_event_property` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件属性关联表';
 
--- Dumping data for table young-board.tbl_board_event_property: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_event_property 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_event_property`;
 /*!40000 ALTER TABLE `tbl_board_event_property` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_event_property` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_indicator
+-- 导出  表 young-board.tbl_board_indicator 结构
 DROP TABLE IF EXISTS `tbl_board_indicator`;
 CREATE TABLE IF NOT EXISTS `tbl_board_indicator` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='指标数据';
 
--- Dumping data for table young-board.tbl_board_indicator: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_indicator 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_indicator`;
 /*!40000 ALTER TABLE `tbl_board_indicator` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_indicator` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_property
+-- 导出  表 young-board.tbl_board_property 结构
 DROP TABLE IF EXISTS `tbl_board_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1286,12 +1290,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_property` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性配置表';
 
--- Dumping data for table young-board.tbl_board_property: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_property 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_property`;
 /*!40000 ALTER TABLE `tbl_board_property` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_property` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_property_group
+-- 导出  表 young-board.tbl_board_property_group 结构
 DROP TABLE IF EXISTS `tbl_board_property_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property_group` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1301,38 +1305,38 @@ CREATE TABLE IF NOT EXISTS `tbl_board_property_group` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性分组表';
 
--- Dumping data for table young-board.tbl_board_property_group: ~1 rows (approximately)
+-- 正在导出表  young-board.tbl_board_property_group 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_property_group`;
 /*!40000 ALTER TABLE `tbl_board_property_group` DISABLE KEYS */;
 INSERT INTO `tbl_board_property_group` (`ID`, `PID`, `PIDS`, `DISPLAY_NAME`) VALUES
     (1540524362824769537, 0, '[0],', '默认分组');
 /*!40000 ALTER TABLE `tbl_board_property_group` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_property_value
+-- 导出  表 young-board.tbl_board_property_value 结构
 DROP TABLE IF EXISTS `tbl_board_property_value`;
 CREATE TABLE IF NOT EXISTS `tbl_board_property_value` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性值表';
 
--- Dumping data for table young-board.tbl_board_property_value: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_property_value 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_property_value`;
 /*!40000 ALTER TABLE `tbl_board_property_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_property_value` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_report
+-- 导出  表 young-board.tbl_board_report 结构
 DROP TABLE IF EXISTS `tbl_board_report`;
 CREATE TABLE IF NOT EXISTS `tbl_board_report` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='报表配置表';
 
--- Dumping data for table young-board.tbl_board_report: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_report 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_report`;
 /*!40000 ALTER TABLE `tbl_board_report` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_report` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_report_indicator
+-- 导出  表 young-board.tbl_board_report_indicator 结构
 DROP TABLE IF EXISTS `tbl_board_report_indicator`;
 CREATE TABLE IF NOT EXISTS `tbl_board_report_indicator` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1341,12 +1345,12 @@ CREATE TABLE IF NOT EXISTS `tbl_board_report_indicator` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='报表指标表';
 
--- Dumping data for table young-board.tbl_board_report_indicator: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_report_indicator 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_report_indicator`;
 /*!40000 ALTER TABLE `tbl_board_report_indicator` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_report_indicator` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_table
+-- 导出  表 young-board.tbl_board_table 结构
 DROP TABLE IF EXISTS `tbl_board_table`;
 CREATE TABLE IF NOT EXISTS `tbl_board_table` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1358,7 +1362,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_table` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据表配置表';
 
--- Dumping data for table young-board.tbl_board_table: ~50 rows (approximately)
+-- 正在导出表  young-board.tbl_board_table 的数据：~50 rows (大约)
 DELETE FROM `tbl_board_table`;
 /*!40000 ALTER TABLE `tbl_board_table` DISABLE KEYS */;
 INSERT INTO `tbl_board_table` (`ID`, `DATA_SOURCE_ID`, `TABLE_NAME`, `DISPLAY_NAME`, `REFRESH_TYPE`, `REMARK`) VALUES
@@ -1414,7 +1418,7 @@ INSERT INTO `tbl_board_table` (`ID`, `DATA_SOURCE_ID`, `TABLE_NAME`, `DISPLAY_NA
                                                                                                                    (1540526437000372233, 1540375348154290178, 'tbl_board_table_connect', '字段关联配置表', NULL, NULL);
 /*!40000 ALTER TABLE `tbl_board_table` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_table_column
+-- 导出  表 young-board.tbl_board_table_column 结构
 DROP TABLE IF EXISTS `tbl_board_table_column`;
 CREATE TABLE IF NOT EXISTS `tbl_board_table_column` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
@@ -1428,7 +1432,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_table_column` (
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据字段配置表';
 
--- Dumping data for table young-board.tbl_board_table_column: ~396 rows (approximately)
+-- 正在导出表  young-board.tbl_board_table_column 的数据：~344 rows (大约)
 DELETE FROM `tbl_board_table_column`;
 /*!40000 ALTER TABLE `tbl_board_table_column` DISABLE KEYS */;
 INSERT INTO `tbl_board_table_column` (`ID`, `TABLE_ID`, `COLUMN_NAME`, `DISPLAY_NAME`, `REFRESH_TYPE`, `COLUMN_TYPE`, `DATA_TYPE`, `REMARK`) VALUES
@@ -1830,23 +1834,24 @@ INSERT INTO `tbl_board_table_column` (`ID`, `TABLE_ID`, `COLUMN_NAME`, `DISPLAY_
                                                                                                                                                  (1540556831468941320, 1540526435444285441, 'update_user', '修改人', NULL, NULL, 'bigint', NULL);
 /*!40000 ALTER TABLE `tbl_board_table_column` ENABLE KEYS */;
 
--- Dumping structure for table young-board.tbl_board_table_connect
+-- 导出  表 young-board.tbl_board_table_connect 结构
 DROP TABLE IF EXISTS `tbl_board_table_connect`;
 CREATE TABLE IF NOT EXISTS `tbl_board_table_connect` (
     `ID` bigint(20) NOT NULL COMMENT '主键ID',
+    `table_id` bigint(20) DEFAULT NULL COMMENT '表ID',
     `column_Id` bigint(20) DEFAULT NULL COMMENT '字段ID',
-    `table_id` bigint(20) DEFAULT NULL,
+    `connect_table_id` bigint(20) DEFAULT NULL COMMENT '关联表ID',
     `connect_Column_Id` bigint(20) DEFAULT NULL COMMENT '关联字段ID',
-    `connect_table_id` bigint(20) DEFAULT NULL,
     `connect_Type` varchar(128) DEFAULT NULL COMMENT '关联类型',
     PRIMARY KEY (`ID`) USING BTREE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='字段关联配置表';
 
--- Dumping data for table young-board.tbl_board_table_connect: ~0 rows (approximately)
+-- 正在导出表  young-board.tbl_board_table_connect 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_table_connect`;
 /*!40000 ALTER TABLE `tbl_board_table_connect` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_table_connect` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
