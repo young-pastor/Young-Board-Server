@@ -415,6 +415,15 @@
                     <include>*.jks</include>
                 </includes>
             </resource>
+
+            <resource>
+                <directory>src/main/java</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>com/zhisida/board/mapper/**/*.xml</include>
+                </includes>
+            </resource>
+
         </resources>
 
         <plugins>
