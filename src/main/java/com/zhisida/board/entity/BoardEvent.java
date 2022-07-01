@@ -7,16 +7,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 
+import java.io.Serializable;
+
 /**
  * 元事件配置
  *
  * @author Young-Pastor
  * @date 2022-06-20 11:52:17
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("tbl_board_event")
-public class BoardEvent extends BaseEntity {
+public class BoardEvent implements Serializable {
 
     /**
      * 主键ID
@@ -36,6 +37,9 @@ public class BoardEvent extends BaseEntity {
     @Excel(name = "事件名称")
     private String displayName;
 
+    private Long dataSourceId;
+
+    private Long tableId;
     /**
      * 表字段ID
      */

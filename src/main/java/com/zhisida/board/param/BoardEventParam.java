@@ -33,6 +33,9 @@ public class BoardEventParam extends BaseParam {
     @NotBlank(message = "事件名称不能为空，请检查displayName参数", groups = {add.class, edit.class})
     private String displayName;
 
+    private Long dataSourceId;
+
+    private Long tableId;
     /**
      * 表字段ID
      */

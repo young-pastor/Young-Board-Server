@@ -7,16 +7,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 
+import java.io.Serializable;
+
 /**
  * 属性配置
  *
  * @author Young-Pastor
  * @date 2022-06-20 11:57:25
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("tbl_board_property")
-public class BoardProperty extends BaseEntity {
+public class BoardProperty implements Serializable {
 
     /**
      * 主键ID
@@ -36,6 +37,9 @@ public class BoardProperty extends BaseEntity {
     @Excel(name = "属性分组")
     private Long propertyGroupId;
 
+    private Long dataSourceId;
+
+    private Long tableId;
     /**
      * 表字段ID
      */

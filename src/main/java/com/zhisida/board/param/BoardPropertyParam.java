@@ -33,6 +33,9 @@ public class BoardPropertyParam extends BaseParam {
     @NotNull(message = "属性分组不能为空，请检查propertyGroupId参数", groups = {add.class, edit.class})
     private Long propertyGroupId;
 
+    private Long dataSourceId;
+
+    private Long tableId;
     /**
      * 表字段ID
      */
