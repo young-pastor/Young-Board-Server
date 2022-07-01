@@ -1,13 +1,12 @@
 
 package com.zhisida.board.controller;
 
-import com.zhisida.board.core.annotion.BusinessLog;
-import com.zhisida.board.core.annotion.Permission;
-import com.zhisida.board.core.enums.LogAnnotionOpTypeEnum;
-import com.zhisida.board.core.pojo.response.ResponseData;
-import com.zhisida.board.core.pojo.response.SuccessResponseData;
+import com.zhisida.core.annotion.BusinessLog;
+import com.zhisida.core.annotion.Permission;
+import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
+import com.zhisida.core.pojo.response.ResponseData;
+import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardDataSourceParam;
-import com.zhisida.board.param.BoardEventGroupParam;
 import com.zhisida.board.service.BoardDataSourceService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;

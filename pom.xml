@@ -420,7 +420,7 @@
                 <directory>src/main/java</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>com/zhisida/board/mapper/**/*.xml</include>
+                    <include>com/zhisida/**/mapper/**/*.xml</include>
                 </includes>
             </resource>
 
@@ -434,7 +434,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.zhisida.board.BoardApplication</mainClass>
+                            <mainClass>com.zhisida.YoungBoardApplication</mainClass>
                             <classpathPrefix>../lib</classpathPrefix>
                             <addClasspath>true</addClasspath>
                         </manifest>

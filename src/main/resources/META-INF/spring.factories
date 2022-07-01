@@ -1,4 +1,4 @@
 org.springframework.context.ApplicationListener=\
-com.zhisida.board.core.listener.ConstantsInitListener,\
-com.zhisida.board.core.listener.TimerTaskRunListener,\
-com.zhisida.board.core.listener.RemoveRequestParamListener
+com.zhisida.core.listener.ConstantsInitListener,\
+com.zhisida.core.listener.TimerTaskRunListener,\
+com.zhisida.core.listener.RemoveRequestParamListener

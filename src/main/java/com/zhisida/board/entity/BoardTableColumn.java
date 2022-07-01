@@ -2,9 +2,7 @@
 package com.zhisida.board.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.zhisida.board.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 
 import java.io.Serializable;

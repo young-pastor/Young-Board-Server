@@ -2,8 +2,8 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
-import com.zhisida.board.core.pojo.page.PageResult;
+import com.zhisida.core.pojo.node.AntdBaseTreeNode;
+import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardEventGroup;
 import com.zhisida.board.param.BoardEventGroupParam;
 

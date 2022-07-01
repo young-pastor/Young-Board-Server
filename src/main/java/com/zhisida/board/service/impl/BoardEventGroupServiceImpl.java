@@ -7,27 +7,22 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhisida.board.core.consts.SymbolConstant;
-import com.zhisida.board.core.context.login.LoginContextHolder;
-import com.zhisida.board.core.enums.CommonStatusEnum;
-import com.zhisida.board.core.exception.ServiceException;
-import com.zhisida.board.core.factory.PageFactory;
-import com.zhisida.board.core.factory.TreeBuildFactory;
-import com.zhisida.board.core.pojo.node.AntdBaseTreeNode;
-import com.zhisida.board.core.pojo.page.PageResult;
-import com.zhisida.board.core.util.PoiUtil;
+import com.zhisida.core.consts.SymbolConstant;
+import com.zhisida.core.exception.ServiceException;
+import com.zhisida.core.factory.PageFactory;
+import com.zhisida.core.factory.TreeBuildFactory;
+import com.zhisida.core.pojo.node.AntdBaseTreeNode;
+import com.zhisida.core.pojo.page.PageResult;
+import com.zhisida.core.util.PoiUtil;
 import com.zhisida.board.entity.BoardEventGroup;
-import com.zhisida.board.entity.SysOrg;
 import com.zhisida.board.enums.BoardEventGroupExceptionEnum;
 import com.zhisida.board.mapper.BoardEventGroupMapper;
 import com.zhisida.board.param.BoardEventGroupParam;
-import com.zhisida.board.param.SysOrgParam;
 import com.zhisida.board.service.BoardEventGroupService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * 元事件分组service接口实现类

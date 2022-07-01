@@ -2,7 +2,7 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhisida.board.core.pojo.page.PageResult;
+import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardDataSource;
 import com.zhisida.board.param.BoardDataSourceParam;
 import java.util.List;

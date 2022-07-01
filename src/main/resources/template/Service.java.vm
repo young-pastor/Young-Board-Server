@@ -2,7 +2,7 @@
 package ${packageName}.${modularName}.${busName}.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhisida.board.core.pojo.page.PageResult;
+import com.zhisida.core.pojo.page.PageResult;
 import ${packageName}.${modularName}.${busName}.entity.${ClassName};
 import ${packageName}.${modularName}.${busName}.param.${ClassName}Param;
 import java.util.List;

@@ -6,7 +6,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import com.alibaba.druid.util.JdbcUtils;
-import com.zhisida.board.core.exception.ServiceException;
+import com.zhisida.core.exception.ServiceException;
 import com.zhisida.board.entity.BoardTable;
 import com.zhisida.board.entity.BoardTableColumn;
 import com.zhisida.board.enums.BoardDataSourceExceptionEnum;

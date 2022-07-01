@@ -946,7 +946,7 @@ CREATE TABLE IF NOT EXISTS `sys_timers` (
 DELETE FROM `sys_timers`;
 /*!40000 ALTER TABLE `sys_timers` DISABLE KEYS */;
 INSERT INTO `sys_timers` (`id`, `timer_name`, `action_class`, `cron`, `job_status`, `param`, `remark`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-    (1288760324837851137, '定时同步缓存常量', 'com.zhisida.board.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 2, NULL, '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', 1265476890672672808, '2022-06-17 11:09:22', 1265476890672672808);
+    (1288760324837851137, '定时同步缓存常量', 'com.zhisida.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 2, NULL, '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', 1265476890672672808, '2022-06-17 11:09:22', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_timers` ENABLE KEYS */;
 
 -- Dumping structure for table young-board.sys_timers_log

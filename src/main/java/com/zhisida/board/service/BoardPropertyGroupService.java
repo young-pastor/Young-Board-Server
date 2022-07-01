@@ -2,7 +2,7 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhisida.board.core.pojo.page.PageResult;
+import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardPropertyGroup;
 import com.zhisida.board.param.BoardEventGroupParam;
 import com.zhisida.board.param.BoardPropertyGroupParam;

@@ -1,10 +1,10 @@
 
 package com.zhisida.board.enums;
 
-import com.zhisida.board.core.annotion.ExpEnumType;
-import com.zhisida.board.core.exception.enums.abs.AbstractBaseExceptionEnum;
-import com.zhisida.board.core.factory.ExpEnumCodeFactory;
-import com.zhisida.board.core.consts.SysExpEnumConstant;
+import com.zhisida.core.annotion.ExpEnumType;
+import com.zhisida.core.exception.enums.abs.AbstractBaseExceptionEnum;
+import com.zhisida.core.factory.ExpEnumCodeFactory;
+import com.zhisida.core.consts.SysExpEnumConstant;
 
 /**
  * 属性分组
