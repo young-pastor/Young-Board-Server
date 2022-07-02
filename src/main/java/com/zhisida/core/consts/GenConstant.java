@@ -19,7 +19,7 @@ public class GenConstant {
     /**
      * 存放vm模板位置
      */
-    public static String templatePath = "template" + FILE_SEP;
+    public static String templatePath = "templates" + FILE_SEP;
 
     /**
      * 主键标识

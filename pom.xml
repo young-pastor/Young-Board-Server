@@ -407,12 +407,18 @@
                 <includes>
                     <include>application.yml</include>
                     <include>application-${spring.active}.yml</include>
-                    <include>mapper/**/*.xml</include>
-                    <include>static/**</include>
-                    <include>templates/**</include>
                     <include>*.xml</include>
                     <include>*.properties</include>
                     <include>*.jks</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>static/**</include>
+                    <include>templates/**</include>
+                    <include>mapper/**/*.xml</include>
                 </includes>
             </resource>
 
