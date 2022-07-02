@@ -448,6 +448,9 @@
                     <includes>
                         <!-- 只打包指定目录的文件 -->
                         <include>com/zhisida/**</include>
+                        <include>static/**</include>
+                        <include>templates/**</include>
+                        <include>META-INF/**</include>
                     </includes>
                 </configuration>
             </plugin>
