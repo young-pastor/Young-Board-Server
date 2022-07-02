@@ -3,8 +3,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/young-board?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&nullCatalogMeansCurrent=true
-    username: root
-    password: 123456
+    username: young-board
+    password: P@ssw0rd
   redis:
     host: localhost
     port: 6379
