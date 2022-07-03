@@ -107,6 +107,3 @@ STARTUP_LOG="${STARTUP_LOG}application pid: ${PID}\n"
 echo -e ${STARTUP_LOG} >> ${LOG_STARTUP_PATH}
 # 打印启动日志
 echo -e ${STARTUP_LOG}
-
-# 打印项目日志
-tail -f ${LOG_PATH}
