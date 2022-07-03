@@ -73,4 +73,4 @@ aj:
     req-get-minute-limit: 30 # get接口一分钟内请求数限制
     req-check-minute-limit: 60 # check接口一分钟内请求数限制
     req-verify-minute-limit: 60 # verify接口一分钟内请求数限制
-    water-mark:  \u667a\u601d\u8fbe\u79d1\u6280
+    water-mark:  智思达科技
