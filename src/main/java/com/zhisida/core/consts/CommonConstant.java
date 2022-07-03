@@ -61,7 +61,7 @@ public interface CommonConstant {
     /**
      * 首页提示语
      */
-    String INDEX_TIPS = "Welcome To Young Board ";
+    String INDEX_TIPS = "Welcome To Young-Board ";
 
     /**
      * 未知标识
