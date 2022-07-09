@@ -12,7 +12,7 @@ import com.zhisida.core.consts.SysExpEnumConstant;
  * @author Young-Pastor
  * @date 2022-06-20 11:45:42
  */
-@ExpEnumType(module = SysExpEnumConstant.BOARD_SYS_MODULE_EXP_CODE)
+@ExpEnumType(module = SysExpEnumConstant.SYS_MODULE_EXP_CODE)
 public enum BoardTableConnectExceptionEnum implements AbstractBaseExceptionEnum {
 
     /**

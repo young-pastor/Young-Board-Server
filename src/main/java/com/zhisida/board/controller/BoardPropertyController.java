@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardPropertyParam;
 import com.zhisida.board.service.BoardPropertyService;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +31,7 @@ public class BoardPropertyController {
     @GetMapping("/boardProperty/tree")
     @BusinessLog(title = "属性配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData tree(BoardPropertyParam boardPropertyParam) {
-        return new SuccessResponseData(boardPropertyService.tree(boardPropertyParam));
+        return ResponseData.success(boardPropertyService.tree(boardPropertyParam));
     }
     /**
      * 查询属性配置
@@ -44,7 +43,7 @@ public class BoardPropertyController {
     @GetMapping("/boardProperty/page")
     @BusinessLog(title = "属性配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardPropertyParam boardPropertyParam) {
-        return new SuccessResponseData(boardPropertyService.page(boardPropertyParam));
+        return ResponseData.success(boardPropertyService.page(boardPropertyParam));
     }
 
     /**
@@ -58,7 +57,7 @@ public class BoardPropertyController {
     @BusinessLog(title = "属性配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardPropertyParam.add.class) BoardPropertyParam boardPropertyParam) {
             boardPropertyService.add(boardPropertyParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -72,7 +71,7 @@ public class BoardPropertyController {
     @BusinessLog(title = "属性配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardPropertyParam.delete.class) List<BoardPropertyParam> boardPropertyParamList) {
             boardPropertyService.delete(boardPropertyParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -86,7 +85,7 @@ public class BoardPropertyController {
     @BusinessLog(title = "属性配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardPropertyParam.edit.class) BoardPropertyParam boardPropertyParam) {
             boardPropertyService.edit(boardPropertyParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -99,7 +98,7 @@ public class BoardPropertyController {
     @GetMapping("/boardProperty/detail")
     @BusinessLog(title = "属性配置_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardPropertyParam.detail.class) BoardPropertyParam boardPropertyParam) {
-        return new SuccessResponseData(boardPropertyService.detail(boardPropertyParam));
+        return ResponseData.success(boardPropertyService.detail(boardPropertyParam));
     }
 
     /**
@@ -112,7 +111,7 @@ public class BoardPropertyController {
     @GetMapping("/boardProperty/list")
     @BusinessLog(title = "属性配置_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardPropertyParam boardPropertyParam) {
-        return new SuccessResponseData(boardPropertyService.list(boardPropertyParam));
+        return ResponseData.success(boardPropertyService.list(boardPropertyParam));
     }
 
     /**

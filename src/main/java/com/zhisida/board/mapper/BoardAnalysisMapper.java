@@ -1,0 +1,14 @@
+
+package com.zhisida.board.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zhisida.board.entity.BoardAnalysis;
+
+/**
+ * 实时分析
+ *
+ * @author Young-Pastor
+ * @date 2022-07-07 21:06:23
+ */
+public interface BoardAnalysisMapper extends BaseMapper<BoardAnalysis> {
+}

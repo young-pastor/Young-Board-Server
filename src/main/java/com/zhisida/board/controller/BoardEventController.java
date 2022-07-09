@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardEventParam;
 import com.zhisida.board.service.BoardEventService;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +31,7 @@ public class BoardEventController {
     @GetMapping("/boardEvent/tree")
     @BusinessLog(title = "元事件配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData tree(BoardEventParam boardEventParam) {
-        return new SuccessResponseData(boardEventService.tree(boardEventParam));
+        return ResponseData.success(boardEventService.tree(boardEventParam));
     }
     /**
      * 查询元事件配置
@@ -44,7 +43,7 @@ public class BoardEventController {
     @GetMapping("/boardEvent/page")
     @BusinessLog(title = "元事件配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardEventParam boardEventParam) {
-        return new SuccessResponseData(boardEventService.page(boardEventParam));
+        return ResponseData.success(boardEventService.page(boardEventParam));
     }
 
     /**
@@ -58,7 +57,7 @@ public class BoardEventController {
     @BusinessLog(title = "元事件配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardEventParam.add.class) BoardEventParam boardEventParam) {
             boardEventService.add(boardEventParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -72,7 +71,7 @@ public class BoardEventController {
     @BusinessLog(title = "元事件配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardEventParam.delete.class) List<BoardEventParam> boardEventParamList) {
             boardEventService.delete(boardEventParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -86,7 +85,7 @@ public class BoardEventController {
     @BusinessLog(title = "元事件配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardEventParam.edit.class) BoardEventParam boardEventParam) {
             boardEventService.edit(boardEventParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -99,7 +98,7 @@ public class BoardEventController {
     @GetMapping("/boardEvent/detail")
     @BusinessLog(title = "元事件配置_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardEventParam.detail.class) BoardEventParam boardEventParam) {
-        return new SuccessResponseData(boardEventService.detail(boardEventParam));
+        return ResponseData.success(boardEventService.detail(boardEventParam));
     }
 
     /**
@@ -112,7 +111,7 @@ public class BoardEventController {
     @GetMapping("/boardEvent/list")
     @BusinessLog(title = "元事件配置_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardEventParam boardEventParam) {
-        return new SuccessResponseData(boardEventService.list(boardEventParam));
+        return ResponseData.success(boardEventService.list(boardEventParam));
     }
 
     /**

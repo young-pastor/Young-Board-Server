@@ -1,12 +1,11 @@
 
 package com.zhisida.board.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.zhisida.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-import java.io.Serializable;
 
 /**
  * 属性值
@@ -16,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("tbl_board_property_value")
-public class BoardPropertyValue implements Serializable {
+public class BoardPropertyValue extends BaseEntity {
 
     /**
      * 主键ID

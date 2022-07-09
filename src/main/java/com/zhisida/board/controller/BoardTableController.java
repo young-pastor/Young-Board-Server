@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardTableParam;
 import com.zhisida.board.service.BoardTableService;
 import org.springframework.validation.annotation.Validated;
@@ -39,7 +38,7 @@ public class BoardTableController {
     @GetMapping("/boardTable/page")
     @BusinessLog(title = "数据表配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardTableParam boardTableParam) {
-        return new SuccessResponseData(boardTableService.page(boardTableParam));
+        return ResponseData.success(boardTableService.page(boardTableParam));
     }
 
     /**
@@ -53,7 +52,7 @@ public class BoardTableController {
     @BusinessLog(title = "数据表配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardTableParam.add.class) BoardTableParam boardTableParam) {
         boardTableService.add(boardTableParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -67,7 +66,7 @@ public class BoardTableController {
     @BusinessLog(title = "数据表配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardTableParam.delete.class) List<BoardTableParam> boardTableParamList) {
         boardTableService.delete(boardTableParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -81,7 +80,7 @@ public class BoardTableController {
     @BusinessLog(title = "数据表配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardTableParam.edit.class) BoardTableParam boardTableParam) {
         boardTableService.edit(boardTableParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -94,7 +93,7 @@ public class BoardTableController {
     @GetMapping("/boardTable/detail")
     @BusinessLog(title = "数据表配置_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardTableParam.detail.class) BoardTableParam boardTableParam) {
-        return new SuccessResponseData(boardTableService.detail(boardTableParam));
+        return ResponseData.success(boardTableService.detail(boardTableParam));
     }
 
     /**
@@ -107,7 +106,7 @@ public class BoardTableController {
     @GetMapping("/boardTable/list")
     @BusinessLog(title = "数据表配置_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardTableParam boardTableParam) {
-        return new SuccessResponseData(boardTableService.list(boardTableParam));
+        return ResponseData.success(boardTableService.list(boardTableParam));
     }
 
     /**
@@ -134,7 +133,7 @@ public class BoardTableController {
     @BusinessLog(title = "数据表配置_同步", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData sync(@RequestBody BoardTableParam boardTableParams) {
         boardTableService.sync(boardTableParams);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
 }

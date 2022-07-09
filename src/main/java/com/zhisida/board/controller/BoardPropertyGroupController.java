@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardEventGroupParam;
 import com.zhisida.board.param.BoardPropertyGroupParam;
 import com.zhisida.board.service.BoardPropertyGroupService;
@@ -33,7 +32,7 @@ public class BoardPropertyGroupController {
     @GetMapping("/boardPropertyGroup/tree")
     @BusinessLog(title = "数据源配置表_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData tree(BoardEventGroupParam boardEventGroupParam) {
-        return new SuccessResponseData(boardPropertyGroupService.tree(boardEventGroupParam));
+        return ResponseData.success(boardPropertyGroupService.tree(boardEventGroupParam));
     }
 
     /**
@@ -46,7 +45,7 @@ public class BoardPropertyGroupController {
     @GetMapping("/boardPropertyGroup/page")
     @BusinessLog(title = "属性分组_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardPropertyGroupParam boardPropertyGroupParam) {
-        return new SuccessResponseData(boardPropertyGroupService.page(boardPropertyGroupParam));
+        return ResponseData.success(boardPropertyGroupService.page(boardPropertyGroupParam));
     }
 
     /**
@@ -60,7 +59,7 @@ public class BoardPropertyGroupController {
     @BusinessLog(title = "属性分组_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardPropertyGroupParam.add.class) BoardPropertyGroupParam boardPropertyGroupParam) {
             boardPropertyGroupService.add(boardPropertyGroupParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -74,7 +73,7 @@ public class BoardPropertyGroupController {
     @BusinessLog(title = "属性分组_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardPropertyGroupParam.delete.class) List<BoardPropertyGroupParam> boardPropertyGroupParamList) {
             boardPropertyGroupService.delete(boardPropertyGroupParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -88,7 +87,7 @@ public class BoardPropertyGroupController {
     @BusinessLog(title = "属性分组_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardPropertyGroupParam.edit.class) BoardPropertyGroupParam boardPropertyGroupParam) {
             boardPropertyGroupService.edit(boardPropertyGroupParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -101,7 +100,7 @@ public class BoardPropertyGroupController {
     @GetMapping("/boardPropertyGroup/detail")
     @BusinessLog(title = "属性分组_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardPropertyGroupParam.detail.class) BoardPropertyGroupParam boardPropertyGroupParam) {
-        return new SuccessResponseData(boardPropertyGroupService.detail(boardPropertyGroupParam));
+        return ResponseData.success(boardPropertyGroupService.detail(boardPropertyGroupParam));
     }
 
     /**
@@ -114,7 +113,7 @@ public class BoardPropertyGroupController {
     @GetMapping("/boardPropertyGroup/list")
     @BusinessLog(title = "属性分组_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardPropertyGroupParam boardPropertyGroupParam) {
-        return new SuccessResponseData(boardPropertyGroupService.list(boardPropertyGroupParam));
+        return ResponseData.success(boardPropertyGroupService.list(boardPropertyGroupParam));
     }
 
     /**

@@ -3,8 +3,9 @@ package com.zhisida.board.param;
 
 import com.zhisida.core.pojo.base.param.BaseParam;
 import lombok.Data;
-import javax.validation.constraints.NotNull;
+
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
 * 元事件配置参数类
@@ -24,8 +25,8 @@ public class BoardEventParam extends BaseParam {
     /**
      * 事件分组
      */
-    @NotBlank(message = "事件分组不能为空，请检查eventGorupId参数", groups = {add.class, edit.class})
-    private String eventGroupId;
+    @NotBlank(message = "事件分组不能为空，请检查eventGroupId参数", groups = {add.class, edit.class})
+    private Long eventGroupId;
 
     /**
      * 事件名称
@@ -60,4 +61,7 @@ public class BoardEventParam extends BaseParam {
     @NotBlank(message = "事件值类型不能为空，请检查valueType参数", groups = {add.class, edit.class})
     private String valueType;
 
+    private BoardTableParam table;
+
+    private BoardTableColumnParam column;
 }

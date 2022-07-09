@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardTableConnectParam;
 import com.zhisida.board.service.BoardTableConnectService;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,7 +37,7 @@ public class BoardTableConnectController {
     @GetMapping("/boardTableConnect/page")
     @BusinessLog(title = "字段关联配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardTableConnectParam boardTableConnectParam) {
-        return new SuccessResponseData(boardTableConnectService.page(boardTableConnectParam));
+        return ResponseData.success(boardTableConnectService.page(boardTableConnectParam));
     }
 
     /**
@@ -52,7 +51,7 @@ public class BoardTableConnectController {
     @BusinessLog(title = "字段关联配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardTableConnectParam.add.class) BoardTableConnectParam boardTableConnectParam) {
             boardTableConnectService.add(boardTableConnectParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -66,7 +65,7 @@ public class BoardTableConnectController {
     @BusinessLog(title = "字段关联配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardTableConnectParam.delete.class) List<BoardTableConnectParam> boardTableConnectParamList) {
             boardTableConnectService.delete(boardTableConnectParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -80,7 +79,7 @@ public class BoardTableConnectController {
     @BusinessLog(title = "字段关联配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardTableConnectParam.edit.class) BoardTableConnectParam boardTableConnectParam) {
             boardTableConnectService.edit(boardTableConnectParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -93,7 +92,7 @@ public class BoardTableConnectController {
     @GetMapping("/boardTableConnect/detail")
     @BusinessLog(title = "字段关联配置_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardTableConnectParam.detail.class) BoardTableConnectParam boardTableConnectParam) {
-        return new SuccessResponseData(boardTableConnectService.detail(boardTableConnectParam));
+        return ResponseData.success(boardTableConnectService.detail(boardTableConnectParam));
     }
 
     /**
@@ -106,7 +105,7 @@ public class BoardTableConnectController {
     @GetMapping("/boardTableConnect/list")
     @BusinessLog(title = "字段关联配置_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardTableConnectParam boardTableConnectParam) {
-        return new SuccessResponseData(boardTableConnectService.list(boardTableConnectParam));
+        return ResponseData.success(boardTableConnectService.list(boardTableConnectParam));
     }
 
     /**

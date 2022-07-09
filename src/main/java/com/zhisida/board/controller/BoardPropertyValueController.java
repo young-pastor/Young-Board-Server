@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardPropertyValueParam;
 import com.zhisida.board.service.BoardPropertyValueService;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,7 +37,7 @@ public class BoardPropertyValueController {
     @GetMapping("/boardPropertyValue/page")
     @BusinessLog(title = "属性值_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardPropertyValueParam boardPropertyValueParam) {
-        return new SuccessResponseData(boardPropertyValueService.page(boardPropertyValueParam));
+        return ResponseData.success(boardPropertyValueService.page(boardPropertyValueParam));
     }
 
     /**
@@ -52,7 +51,7 @@ public class BoardPropertyValueController {
     @BusinessLog(title = "属性值_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardPropertyValueParam.add.class) BoardPropertyValueParam boardPropertyValueParam) {
             boardPropertyValueService.add(boardPropertyValueParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -66,7 +65,7 @@ public class BoardPropertyValueController {
     @BusinessLog(title = "属性值_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardPropertyValueParam.delete.class) List<BoardPropertyValueParam> boardPropertyValueParamList) {
             boardPropertyValueService.delete(boardPropertyValueParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -80,7 +79,7 @@ public class BoardPropertyValueController {
     @BusinessLog(title = "属性值_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardPropertyValueParam.edit.class) BoardPropertyValueParam boardPropertyValueParam) {
             boardPropertyValueService.edit(boardPropertyValueParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -93,7 +92,7 @@ public class BoardPropertyValueController {
     @GetMapping("/boardPropertyValue/detail")
     @BusinessLog(title = "属性值_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardPropertyValueParam.detail.class) BoardPropertyValueParam boardPropertyValueParam) {
-        return new SuccessResponseData(boardPropertyValueService.detail(boardPropertyValueParam));
+        return ResponseData.success(boardPropertyValueService.detail(boardPropertyValueParam));
     }
 
     /**
@@ -106,7 +105,7 @@ public class BoardPropertyValueController {
     @GetMapping("/boardPropertyValue/list")
     @BusinessLog(title = "属性值_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardPropertyValueParam boardPropertyValueParam) {
-        return new SuccessResponseData(boardPropertyValueService.list(boardPropertyValueParam));
+        return ResponseData.success(boardPropertyValueService.list(boardPropertyValueParam));
     }
 
     /**

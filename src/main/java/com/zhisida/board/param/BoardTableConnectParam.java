@@ -43,4 +43,8 @@ public class BoardTableConnectParam extends BaseParam {
     @NotBlank(message = "关联类型不能为空，请检查connectType参数", groups = {add.class, edit.class})
     private String connectType;
 
+    private BoardTableParam table;
+    private BoardTableColumnParam column;
+    private BoardTableParam connectTable;
+    private BoardTableColumnParam connectColumn;
 }

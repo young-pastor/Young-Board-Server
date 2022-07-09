@@ -6,8 +6,8 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhisida.board.analysis.DataProviderManager;
-import com.zhisida.board.analysis.provider.DataProvider;
+import com.zhisida.board.analysis.DataSourceProviderManager;
+import com.zhisida.board.analysis.provider.DataSourceProvider;
 import com.zhisida.core.exception.ServiceException;
 import com.zhisida.core.factory.PageFactory;
 import com.zhisida.core.factory.TreeBuildFactory;
@@ -232,7 +232,7 @@ public class BoardTableColumnServiceImpl extends ServiceImpl<BoardTableColumnMap
         Long tableId = boardTableColumnParam.getTableId();
         BoardTable boardTable = boardTableService.getById(tableId);
         BoardDataSource boardDataSource = boardDataSourceService.getById(boardTable.getDataSourceId());
-        DataProvider dataProvider = DataProviderManager.getDataProviderByType(boardDataSource);
+        DataSourceProvider dataProvider = DataSourceProviderManager.getDataProvider(boardDataSource);
         List<BoardTableColumn> boardTableColumns = dataProvider.queryColumns(boardTable.getTableName());
         if (!CollectionUtils.isEmpty(boardTableColumns)) {
             QueryWrapper<BoardTableColumn> queryWrapper = new QueryWrapper<>();

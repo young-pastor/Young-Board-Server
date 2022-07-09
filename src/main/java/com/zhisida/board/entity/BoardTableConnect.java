@@ -1,11 +1,12 @@
 
 package com.zhisida.board.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
-import lombok.Data;
 import cn.afterturn.easypoi.excel.annotation.Excel;
-
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.zhisida.core.pojo.base.entity.BaseEntity;
+import lombok.Data;
 
 /**
  * 字段关联配置
@@ -15,7 +16,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("tbl_board_table_connect")
-public class BoardTableConnect implements Serializable {
+public class BoardTableConnect extends BaseEntity {
 
     /**
      * 主键ID

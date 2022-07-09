@@ -4,9 +4,8 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.zhisida.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
-
-import java.io.Serializable;
 
 /**
  * 属性分组
@@ -16,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("tbl_board_property_group")
-public class BoardPropertyGroup implements Serializable {
+public class BoardPropertyGroup extends BaseEntity {
 
     /**
      * 主键ID

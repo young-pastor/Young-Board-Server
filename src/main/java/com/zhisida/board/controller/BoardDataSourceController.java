@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardDataSourceParam;
 import com.zhisida.board.service.BoardDataSourceService;
 import org.springframework.validation.annotation.Validated;
@@ -39,7 +38,7 @@ public class BoardDataSourceController {
     @GetMapping("/boardDataSource/page")
     @BusinessLog(title = "数据源配置表_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardDataSourceParam boardDataSourceParam) {
-        return new SuccessResponseData(boardDataSourceService.page(boardDataSourceParam));
+        return ResponseData.success(boardDataSourceService.page(boardDataSourceParam));
     }
 
     /**
@@ -53,7 +52,7 @@ public class BoardDataSourceController {
     @BusinessLog(title = "数据源配置表_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardDataSourceParam.add.class) BoardDataSourceParam boardDataSourceParam) {
         boardDataSourceService.add(boardDataSourceParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -67,7 +66,7 @@ public class BoardDataSourceController {
     @BusinessLog(title = "数据源配置表_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardDataSourceParam.delete.class) List<BoardDataSourceParam> boardDataSourceParamList) {
         boardDataSourceService.delete(boardDataSourceParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -81,7 +80,7 @@ public class BoardDataSourceController {
     @BusinessLog(title = "数据源配置表_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardDataSourceParam.edit.class) BoardDataSourceParam boardDataSourceParam) {
         boardDataSourceService.edit(boardDataSourceParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -94,7 +93,7 @@ public class BoardDataSourceController {
     @GetMapping("/boardDataSource/detail")
     @BusinessLog(title = "数据源配置表_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardDataSourceParam.detail.class) BoardDataSourceParam boardDataSourceParam) {
-        return new SuccessResponseData(boardDataSourceService.detail(boardDataSourceParam));
+        return ResponseData.success(boardDataSourceService.detail(boardDataSourceParam));
     }
 
     /**
@@ -107,7 +106,7 @@ public class BoardDataSourceController {
     @GetMapping("/boardDataSource/list")
     @BusinessLog(title = "数据源配置表_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardDataSourceParam boardDataSourceParam) {
-        return new SuccessResponseData(boardDataSourceService.list(boardDataSourceParam));
+        return ResponseData.success(boardDataSourceService.list(boardDataSourceParam));
     }
 
     /**

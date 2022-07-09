@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardTableColumnParam;
 import com.zhisida.board.service.BoardTableColumnService;
 import org.springframework.validation.annotation.Validated;
@@ -33,7 +32,7 @@ public class BoardTableColumnController {
     @GetMapping("/boardTableColumn/tree")
     @BusinessLog(title = "数据字段配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData tree(BoardTableColumnParam boardTableColumnParam) {
-        return new SuccessResponseData(boardTableColumnService.tree(boardTableColumnParam));
+        return ResponseData.success(boardTableColumnService.tree(boardTableColumnParam));
     }
 
     /**
@@ -46,7 +45,7 @@ public class BoardTableColumnController {
     @GetMapping("/boardTableColumn/page")
     @BusinessLog(title = "数据字段配置_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardTableColumnParam boardTableColumnParam) {
-        return new SuccessResponseData(boardTableColumnService.page(boardTableColumnParam));
+        return ResponseData.success(boardTableColumnService.page(boardTableColumnParam));
     }
 
     /**
@@ -60,7 +59,7 @@ public class BoardTableColumnController {
     @BusinessLog(title = "数据字段配置_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardTableColumnParam.add.class) BoardTableColumnParam boardTableColumnParam) {
         boardTableColumnService.add(boardTableColumnParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -74,7 +73,7 @@ public class BoardTableColumnController {
     @BusinessLog(title = "数据字段配置_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardTableColumnParam.delete.class) List<BoardTableColumnParam> boardTableColumnParamList) {
         boardTableColumnService.delete(boardTableColumnParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -88,7 +87,7 @@ public class BoardTableColumnController {
     @BusinessLog(title = "数据字段配置_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardTableColumnParam.edit.class) BoardTableColumnParam boardTableColumnParam) {
         boardTableColumnService.edit(boardTableColumnParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -101,7 +100,7 @@ public class BoardTableColumnController {
     @GetMapping("/boardTableColumn/detail")
     @BusinessLog(title = "数据字段配置_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardTableColumnParam.detail.class) BoardTableColumnParam boardTableColumnParam) {
-        return new SuccessResponseData(boardTableColumnService.detail(boardTableColumnParam));
+        return ResponseData.success(boardTableColumnService.detail(boardTableColumnParam));
     }
 
     /**
@@ -114,7 +113,7 @@ public class BoardTableColumnController {
     @GetMapping("/boardTableColumn/list")
     @BusinessLog(title = "数据字段配置_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardTableColumnParam boardTableColumnParam) {
-        return new SuccessResponseData(boardTableColumnService.list(boardTableColumnParam));
+        return ResponseData.success(boardTableColumnService.list(boardTableColumnParam));
     }
 
     /**
@@ -141,6 +140,6 @@ public class BoardTableColumnController {
     @BusinessLog(title = "数据表字段_同步", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData sync(@RequestBody BoardTableColumnParam boardTableColumnParam) {
         boardTableColumnService.sync(boardTableColumnParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 }

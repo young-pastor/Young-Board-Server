@@ -84,4 +84,8 @@ public class BoardPropertyParam extends BaseParam {
     @NotBlank(message = "属性值类型不能为空，请检查remark参数", groups = {add.class, edit.class})
     private String remark;
 
+    private BoardTableParam table;
+
+    private BoardTableColumnParam column;
+
 }

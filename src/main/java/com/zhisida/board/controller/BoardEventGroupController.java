@@ -5,7 +5,6 @@ import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
-import com.zhisida.core.pojo.response.SuccessResponseData;
 import com.zhisida.board.param.BoardEventGroupParam;
 import com.zhisida.board.service.BoardEventGroupService;
 import org.springframework.validation.annotation.Validated;
@@ -33,14 +32,14 @@ public class BoardEventGroupController {
     @GetMapping("/boardEventGroup/tree")
     @BusinessLog(title = "元事件分组_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData tree(BoardEventGroupParam boardEventGroupParam) {
-        return new SuccessResponseData(boardEventGroupService.tree(boardEventGroupParam));
+        return ResponseData.success(boardEventGroupService.tree(boardEventGroupParam));
     }
 
     @Permission
     @GetMapping("/boardEventGroup/page")
     @BusinessLog(title = "元事件分组_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData page(BoardEventGroupParam boardEventGroupParam) {
-        return new SuccessResponseData(boardEventGroupService.page(boardEventGroupParam));
+        return ResponseData.success(boardEventGroupService.page(boardEventGroupParam));
     }
 
     /**
@@ -54,7 +53,7 @@ public class BoardEventGroupController {
     @BusinessLog(title = "元事件分组_增加", opType = LogAnnotionOpTypeEnum.ADD)
     public ResponseData add(@RequestBody @Validated(BoardEventGroupParam.add.class) BoardEventGroupParam boardEventGroupParam) {
         boardEventGroupService.add(boardEventGroupParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -68,7 +67,7 @@ public class BoardEventGroupController {
     @BusinessLog(title = "元事件分组_删除", opType = LogAnnotionOpTypeEnum.DELETE)
     public ResponseData delete(@RequestBody @Validated(BoardEventGroupParam.delete.class) List<BoardEventGroupParam> boardEventGroupParamList) {
         boardEventGroupService.delete(boardEventGroupParamList);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -82,7 +81,7 @@ public class BoardEventGroupController {
     @BusinessLog(title = "元事件分组_编辑", opType = LogAnnotionOpTypeEnum.EDIT)
     public ResponseData edit(@RequestBody @Validated(BoardEventGroupParam.edit.class) BoardEventGroupParam boardEventGroupParam) {
         boardEventGroupService.edit(boardEventGroupParam);
-        return new SuccessResponseData();
+        return ResponseData.success();
     }
 
     /**
@@ -95,7 +94,7 @@ public class BoardEventGroupController {
     @GetMapping("/boardEventGroup/detail")
     @BusinessLog(title = "元事件分组_查看", opType = LogAnnotionOpTypeEnum.DETAIL)
     public ResponseData detail(@Validated(BoardEventGroupParam.detail.class) BoardEventGroupParam boardEventGroupParam) {
-        return new SuccessResponseData(boardEventGroupService.detail(boardEventGroupParam));
+        return ResponseData.success(boardEventGroupService.detail(boardEventGroupParam));
     }
 
     /**
@@ -108,7 +107,7 @@ public class BoardEventGroupController {
     @GetMapping("/boardEventGroup/list")
     @BusinessLog(title = "元事件分组_列表", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData list(BoardEventGroupParam boardEventGroupParam) {
-        return new SuccessResponseData(boardEventGroupService.list(boardEventGroupParam));
+        return ResponseData.success(boardEventGroupService.list(boardEventGroupParam));
     }
 
     /**

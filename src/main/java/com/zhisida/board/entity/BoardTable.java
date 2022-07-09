@@ -5,9 +5,8 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.zhisida.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
-
-import java.io.Serializable;
 
 /**
  * 数据表配置
@@ -17,7 +16,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("tbl_board_table")
-public class BoardTable implements Serializable {
+public class BoardTable extends BaseEntity {
 
     /**
      * 主键ID
