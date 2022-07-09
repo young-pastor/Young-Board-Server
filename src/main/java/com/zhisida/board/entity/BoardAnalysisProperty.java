@@ -1,10 +1,12 @@
 package com.zhisida.board.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.zhisida.core.pojo.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import cn.afterturn.easypoi.excel.annotation.Excel;
-import com.zhisida.core.pojo.base.entity.BaseEntity;
 
 
 /**
@@ -51,4 +53,5 @@ public class BoardAnalysisProperty extends BaseEntity {
     @Excel(name = "")
     private String subLogic;
 
+    private String measure;
 }

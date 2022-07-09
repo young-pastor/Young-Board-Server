@@ -95,7 +95,7 @@ public class EventAnalysis implements Analysis {
             currentEventAnalysisParam.setFilterList(filterList);
             currentEventAnalysisParam.setDimensionList(dimensionList);
 
-            currentEventAnalysisParam.setTableConnectList(boardTableConnectCache.getTableConnectList(tableIdList,aliasNames));
+            currentEventAnalysisParam.setTableConnectList(boardTableConnectCache.getTableConnectList(tableIdList, aliasNames));
 
 
             //查询数据
@@ -116,9 +116,9 @@ public class EventAnalysis implements Analysis {
 
                 resultData.put(analysisEventId, eventData);
             }
-            List displayRow = (List) resultData.get("displayRow");
-            List groupRow = (List) resultData.get("groupRow");
-            List valueCol = (List) resultData.get("valueCol");
+            List displayRow = (List) eventData.get("displayRow");
+            List groupRow = (List) eventData.get("groupRow");
+            List valueCol = (List) eventData.get("valueCol");
             //处理原始统计数据
             BoardAnalysisPropertyParam valProperty = propertyList.get(0);
             for (Map originData : originDataList) {
@@ -141,15 +141,20 @@ public class EventAnalysis implements Analysis {
                 }
                 int posX = displayRow.indexOf(seriesDimValue);
                 int posY = groupRow.indexOf(valueRow);
-                List valY = (List) valueCol.get(posY);
-                if (Objects.isNull(valY)) {
+                List valY = null;
+                if (posY >= valueCol.size()) {
                     valY = new ArrayList();
                     valueCol.add(valY);
+                } else {
+                    valY = (List) valueCol.get(posY);
                 }
-                List valX = (List) valY.get(posX);
-                if (Objects.isNull(valX)) {
+
+                List valX = null;
+                if (posX >= valY.size()) {
                     valX = new ArrayList();
                     valY.add(valX);
+                } else {
+                    valX = (List) valY.get(posX);
                 }
                 valX.add(originData.get(valProperty.getAliasName()));
             }

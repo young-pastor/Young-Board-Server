@@ -3,6 +3,7 @@ package com.zhisida.board.param;
 
 import com.zhisida.core.pojo.base.param.BaseParam;
 import lombok.Data;
+
 import javax.validation.constraints.NotNull;
 
 /**

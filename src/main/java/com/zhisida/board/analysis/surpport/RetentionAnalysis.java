@@ -1,7 +1,7 @@
 package com.zhisida.board.analysis.surpport;
 
-import com.zhisida.board.analysis.BoardAnalysisData;
 import com.zhisida.board.analysis.Analysis;
+import com.zhisida.board.analysis.BoardAnalysisData;
 import com.zhisida.board.param.BoardAnalysisParam;
 import com.zhisida.board.service.BoardDataSourceService;
 import org.springframework.stereotype.Component;

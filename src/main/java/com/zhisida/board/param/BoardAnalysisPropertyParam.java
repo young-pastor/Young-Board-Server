@@ -45,6 +45,8 @@ public class BoardAnalysisPropertyParam extends BaseParam {
     @NotBlank(message = "不能为空，请检查subLogic参数", groups = {add.class, edit.class})
     private String subLogic;
 
+    private String measure;
+
     private BoardPropertyParam property;
 
     private String aliasName;

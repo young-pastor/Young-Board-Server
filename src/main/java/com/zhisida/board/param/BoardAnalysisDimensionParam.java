@@ -2,8 +2,9 @@ package com.zhisida.board.param;
 
 import com.zhisida.core.pojo.base.param.BaseParam;
 import lombok.Data;
-import javax.validation.constraints.NotNull;
+
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
 * 实时分析分组属性参数类

@@ -1,9 +1,10 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardAnalysisDimension;
 import com.zhisida.board.param.BoardAnalysisDimensionParam;
+import com.zhisida.core.pojo.page.PageResult;
+
 import java.util.List;
 
 /**

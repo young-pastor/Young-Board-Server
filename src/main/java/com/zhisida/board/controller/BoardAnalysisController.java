@@ -122,13 +122,15 @@ public class BoardAnalysisController {
         boardAnalysisService.export(boardAnalysisParam);
     }
 
-
+    @Permission
     @GetMapping("/boardAnalysis/analysis")
+    @BusinessLog(title = "实时分析_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData analysis(BoardAnalysisParam boardAnalysisParam) {
         return ResponseData.success(boardAnalysisService.analysis(boardAnalysisParam));
     }
-
+    @Permission
     @GetMapping("/boardAnalysis/analysisById")
+    @BusinessLog(title = "实时分析_查询", opType = LogAnnotionOpTypeEnum.QUERY)
     public ResponseData analysisById(BoardAnalysisParam boardAnalysisParam) {
         return ResponseData.success(boardAnalysisService.analysisById(boardAnalysisParam.getId()));
     }
