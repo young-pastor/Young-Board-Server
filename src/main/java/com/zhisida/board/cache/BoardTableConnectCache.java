@@ -30,15 +30,16 @@ public class BoardTableConnectCache {
 
 
     //@Cacheable(cacheNames = "Young:Board:Table:Connect:ListByTableList", key = "#tableIdList", unless = " #result == null")
-    public List<BoardTableConnectParam> getTableConnectList(TreeSet<Long> tableIdList,Map<String,String> aliasNames) {
+    public List<BoardTableConnectParam> getTableConnectList(Set<Long> tableIdList, Map<String, String> aliasNames) {
         Assert.notEmpty(tableIdList, "表信息不能为空");
 
         List<BoardTableConnectParam> tableConnectList = null;
+        tableIdList = tableIdList.stream().filter(Objects::nonNull).collect(Collectors.toSet());
         //如果只有一张表不许要关联
         if (tableIdList.size() == 1) {
             tableConnectList = new ArrayList<>();
             BoardTableConnectParam boardTableConnectParam = new BoardTableConnectParam();
-            boardTableConnectParam.setTableId(tableIdList.first());
+            boardTableConnectParam.setTableId(tableIdList.iterator().next());
             tableConnectList.add(boardTableConnectParam);
         } else {
             //两张表以上才需要关联
@@ -70,7 +71,7 @@ public class BoardTableConnectCache {
     }
 
 
-    public List<BoardTableConnectParam> getConnectList(TreeSet<Long> tableIdList) {
+    public List<BoardTableConnectParam> getConnectList(Set<Long> tableIdList) {
         List<BoardTableConnectParam> connectAllList = getDistinctList();
         Map<Long, List<BoardTableConnectParam>> nodeMap = new HashMap<>();
         connectAllList.forEach(e -> {
@@ -91,18 +92,18 @@ public class BoardTableConnectCache {
         List<List<BoardTableConnectParam>> resultList = new ArrayList<>();
         //计算路径
         for (Long tableId : tableIdList) {
-            this.caculerPath(nodeMap, resultList, new ArrayList<>(), tableId, Arrays.asList(tableId), tableIdList);
+            this.calculatePath(nodeMap, resultList, new ArrayList<>(), tableId, Arrays.asList(tableId), tableIdList);
         }
         return resultList.stream().sorted(Comparator.comparingInt(List::size)).findFirst().get();
     }
 
-    void caculerPath(
+    void calculatePath(
             Map<Long, List<BoardTableConnectParam>> nodeMap,
             List<List<BoardTableConnectParam>> resultList,
             List<BoardTableConnectParam> curNodeList,
             Long tableId,
             List<Long> curTableIdList,
-            TreeSet<Long> targetTableIdList) {
+            Set<Long> targetTableIdList) {
         for (BoardTableConnectParam tableConnectParam : nodeMap.get(tableId)) {
             List<BoardTableConnectParam> nList = new ArrayList<>(curNodeList);
             nList.add(tableConnectParam);
@@ -119,7 +120,7 @@ public class BoardTableConnectCache {
             if (cIdList.containsAll(targetTableIdList)) {
                 resultList.add(nList);
             } else {
-                this.caculerPath(nodeMap, resultList, nList, curTableId, cIdList, targetTableIdList);
+                this.calculatePath(nodeMap, resultList, nList, curTableId, cIdList, targetTableIdList);
             }
         }
     }

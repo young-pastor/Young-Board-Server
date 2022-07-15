@@ -47,6 +47,8 @@ public class BoardAnalysisPropertyParam extends BaseParam {
 
     private String measure;
 
+    private String displayName;
+
     private BoardPropertyParam property;
 
     private String aliasName;

@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
 * 实时分析事件参数类
@@ -41,11 +42,17 @@ public class BoardAnalysisEventParam extends BaseParam {
     private Integer sort;
 
     /**
-     * 
+     *
      */
     @NotBlank(message = "不能为空，请检查subLogic参数", groups = {add.class, edit.class})
     private String subLogic;
 
+    private String displayName;
+
     private BoardEventParam event;
+
+    private BoardAnalysisPropertyParam property;
+
+    private List<BoardAnalysisFilterParam> filterList;
 
 }

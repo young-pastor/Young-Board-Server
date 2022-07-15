@@ -2,9 +2,9 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.board.entity.BoardPropertyValue;
 import com.zhisida.board.param.BoardPropertyValueParam;
-import com.zhisida.core.pojo.page.PageResult;
 
 import java.util.List;
 

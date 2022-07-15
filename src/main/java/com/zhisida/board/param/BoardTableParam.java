@@ -53,7 +53,9 @@ public class BoardTableParam extends BaseParam {
     private String remark;
 
     private Boolean syncTable;
+
     private Boolean syncColumn;
+
     private Boolean syncConnect;
 
     private String aliasName;

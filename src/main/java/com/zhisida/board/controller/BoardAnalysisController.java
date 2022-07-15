@@ -123,15 +123,15 @@ public class BoardAnalysisController {
     }
 
     @Permission
-    @GetMapping("/boardAnalysis/analysis")
+    @PostMapping("/boardAnalysis/analysis")
     @BusinessLog(title = "实时分析_查询", opType = LogAnnotionOpTypeEnum.QUERY)
-    public ResponseData analysis(BoardAnalysisParam boardAnalysisParam) {
+    public ResponseData analysis(@RequestBody BoardAnalysisParam boardAnalysisParam) {
         return ResponseData.success(boardAnalysisService.analysis(boardAnalysisParam));
     }
     @Permission
-    @GetMapping("/boardAnalysis/analysisById")
+    @PostMapping("/boardAnalysis/analysisById")
     @BusinessLog(title = "实时分析_查询", opType = LogAnnotionOpTypeEnum.QUERY)
-    public ResponseData analysisById(BoardAnalysisParam boardAnalysisParam) {
+    public ResponseData analysisById(@RequestBody BoardAnalysisParam boardAnalysisParam) {
         return ResponseData.success(boardAnalysisService.analysisById(boardAnalysisParam.getId()));
     }
 }

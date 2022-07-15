@@ -2,7 +2,7 @@ package com.zhisida.board.analysis.enums;
 
 public enum IndicatorMeasureEnum {
     COUNT,     //总数 COUNT(*)
-    SUN,       //总和 SUM(*)
+    SUM,       //总和 SUM(*)
     AVG,       //均值 AVG(*)
     MAX,       //最大值 MAX(*)
     MIN,       //最小值 MIN(*)

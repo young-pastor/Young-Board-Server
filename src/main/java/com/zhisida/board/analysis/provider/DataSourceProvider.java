@@ -26,4 +26,6 @@ public interface DataSourceProvider<Q> {
     public List<BoardTable> queryTables();
 
     public List<BoardTableColumn> queryColumns(String table);
+
+    public List<Map> queryColumnValues(String table, String column);
 }

@@ -2,7 +2,11 @@ package com.zhisida.board.analysis;
 
 import cn.hutool.core.util.RandomUtil;
 import com.zhisida.board.analysis.enums.AliasNameEnum;
+import net.sf.jsqlparser.parser.CCJSqlParserManager;
+import net.sf.jsqlparser.parser.JSqlParser;
+import net.sf.jsqlparser.statement.Statement;
 
+import java.io.StringReader;
 import java.util.Map;
 
 public class AliasNameUtil {
@@ -19,5 +23,12 @@ public class AliasNameUtil {
         } while (aliasNames.containsValue(aliasName));
         aliasNames.put(key, aliasName);
         return aliasName;
+    }
+
+    public static void main(String[] args) throws Exception{
+        String str = "Select date_format(a,'%y') from tbl";
+        JSqlParser sqlParser = new CCJSqlParserManager();
+        Statement statement =sqlParser.parse(new StringReader(str));
+        System.out.println(statement);
     }
 }

@@ -1,12 +1,10 @@
 package com.zhisida.board.entity;
 
-import cn.afterturn.easypoi.excel.annotation.Excel;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.zhisida.core.pojo.base.entity.BaseEntity;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.zhisida.core.pojo.base.entity.BaseEntity;
 
 
 /**
@@ -73,5 +71,7 @@ public class BoardAnalysisDimension extends BaseEntity {
      */
     @Excel(name = "类型")
     private String type;
+
+    private String displayName;
 
 }

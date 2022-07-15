@@ -2,9 +2,9 @@
 package com.zhisida.board.enums;
 
 import com.zhisida.core.annotion.ExpEnumType;
-import com.zhisida.core.consts.SysExpEnumConstant;
 import com.zhisida.core.exception.enums.abs.AbstractBaseExceptionEnum;
 import com.zhisida.core.factory.ExpEnumCodeFactory;
+import com.zhisida.core.consts.SysExpEnumConstant;
 
 /**
  * 字段关联配置

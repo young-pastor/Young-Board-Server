@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * 实时分析条件参数类
@@ -71,5 +72,7 @@ public class BoardAnalysisFilterParam extends BaseParam {
     private String value;
 
     private BoardPropertyParam property;
+
+    private List<BoardAnalysisFilterParam> subFilterList;
 
 }

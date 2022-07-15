@@ -40,24 +40,27 @@ public class EventAnalysis implements Analysis {
         List<BoardAnalysisFilterParam> filterTotalList = boardAnalysisParam.getFilterList();
         List<BoardAnalysisDimensionParam> dimensionTotalList = boardAnalysisParam.getDimensionList();
         Assert.notEmpty(dimensionTotalList, "展示属性不能为空");
-        boardAnalysisParam.getEventList().forEach(ae -> {
+        boardAnalysisParam.getEventList().forEach((ae) -> {
             //获取数据源
             Long analysisEventId = ae.getId();
+            String analysisEventName = ae.getDisplayName();
             BoardEventParam event = ae.getEvent();
-            Long eventId = event.getId();
+            if (StringUtils.isEmpty(analysisEventName) && !Objects.isNull(event)) {
+                analysisEventName = event.getDisplayName();
+            }
             Long dataSourceId = event.getDataSourceId();
-            BoardDataSource boardDataSource = boardDataSourceService.getById(dataSourceId);
 
-            TreeSet<Long> tableIdList = new TreeSet<>();
+
+            HashSet<Long> tableIdList = new HashSet<>();
             Map<String, String> aliasNames = new HashMap<>();
             tableIdList.add(event.getTableId());
             //筛选相关事件相关数据
             List<BoardAnalysisPropertyParam> propertyList = null;
             if (!CollectionUtils.isEmpty(propertyTotalList)) {
                 propertyList = propertyTotalList.stream().filter(
-                        ap -> (StringUtils.isEmpty(ap.getPropertyId())
+                        ap -> ( analysisEventId.equals(ap.getAnalysisEventId())
                                 || dataSourceId.equals(ap.getProperty().getDataSourceId()))
-                                && analysisEventId.equals(ap.getAnalysisEventId())
+
                 ).map(e -> {
                     e.setAliasName(AliasNameUtil.getAliasName(e.getId(), AliasNameEnum.PROPERTY, aliasNames));
                     tableIdList.add(e.getProperty().getTableId());
@@ -88,59 +91,61 @@ public class EventAnalysis implements Analysis {
             }).collect(Collectors.toList());
 
             //组装查询
-            DataSourceProvider dataSourceProvider = DataSourceProviderManager.getDataProvider(boardDataSource);
             BoardAnalysisParam currentEventAnalysisParam = new BoardAnalysisParam();
             currentEventAnalysisParam.setEventList(ListUtil.toList(ae));
             currentEventAnalysisParam.setPropertyList(propertyList);
             currentEventAnalysisParam.setFilterList(filterList);
             currentEventAnalysisParam.setDimensionList(dimensionList);
 
-            currentEventAnalysisParam.setTableConnectList(boardTableConnectCache.getTableConnectList(tableIdList, aliasNames));
-
-
             //查询数据
+            BoardDataSource boardDataSource = boardDataSourceService.getById(dataSourceId);
+            DataSourceProvider dataSourceProvider = DataSourceProviderManager.getDataProvider(boardDataSource);
+            currentEventAnalysisParam.setTableConnectList(boardTableConnectCache.getTableConnectList(tableIdList, aliasNames));
             List<Map> originDataList = dataSourceProvider.queryByAnalysisParam(currentEventAnalysisParam);
 
-            Map resultData = boardAnalysisData.getResultData();
-            Map eventData = (Map) resultData.get(analysisEventId);
+            Map eventData = boardAnalysisData.getResultData();
             if (Objects.isNull(eventData)) {
                 eventData = new HashMap();
-
-                List displayRow = new ArrayList();
-                List groupRow = new ArrayList();
-                List valueCol = new ArrayList();
-
-                eventData.put("displayRow", displayRow);
-                eventData.put("groupRow", groupRow);
-                eventData.put("valueCol", valueCol);
-
-                resultData.put(analysisEventId, eventData);
             }
             List displayRow = (List) eventData.get("displayRow");
+            if(Objects.isNull(displayRow)){
+                displayRow = new ArrayList();
+                eventData.put("displayRow", displayRow);
+            }
             List groupRow = (List) eventData.get("groupRow");
+            if(Objects.isNull(groupRow)){
+                groupRow = new ArrayList();
+                eventData.put("groupRow", groupRow);
+            }
             List valueCol = (List) eventData.get("valueCol");
+            if(Objects.isNull(valueCol)){
+                valueCol = new ArrayList();
+                eventData.put("valueCol", valueCol);
+            }
+
             //处理原始统计数据
             BoardAnalysisPropertyParam valProperty = propertyList.get(0);
             for (Map originData : originDataList) {
                 Object seriesDimValue = null;
-                List valueRow = new ArrayList();
+                List groupRows = new ArrayList();
+                groupRows.add(analysisEventId);
                 for (BoardAnalysisDimensionParam dimension : dimensionList) {
                     String dimAliasName = dimension.getAliasName();
                     Object dimValue = originData.get(dimAliasName);
                     if (DimensionTypeEnum.ROW.name().equals(dimension.getType())) {
                         seriesDimValue = dimValue;
                     } else {
-                        valueRow.add(dimValue);
+                        groupRows.add(dimValue);
                     }
                 }
                 if (!displayRow.contains(seriesDimValue)) {
                     displayRow.add(seriesDimValue);
                 }
-                if (!groupRow.contains(valueRow)) {
-                    groupRow.add(valueRow);
+                if (!groupRow.contains(groupRows)) {
+                    groupRow.add(groupRows);
                 }
                 int posX = displayRow.indexOf(seriesDimValue);
-                int posY = groupRow.indexOf(valueRow);
+                int posY = groupRow.indexOf(groupRows);
                 List valY = null;
                 if (posY >= valueCol.size()) {
                     valY = new ArrayList();
@@ -148,15 +153,7 @@ public class EventAnalysis implements Analysis {
                 } else {
                     valY = (List) valueCol.get(posY);
                 }
-
-                List valX = null;
-                if (posX >= valY.size()) {
-                    valX = new ArrayList();
-                    valY.add(valX);
-                } else {
-                    valX = (List) valY.get(posX);
-                }
-                valX.add(originData.get(valProperty.getAliasName()));
+                valY.add(originData.get(valProperty.getAliasName()));
             }
         });
         return boardAnalysisData;

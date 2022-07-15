@@ -1,19 +1,18 @@
 
 package com.zhisida.board.controller;
 
-import com.zhisida.board.param.BoardEventGroupParam;
-import com.zhisida.board.param.BoardPropertyGroupParam;
-import com.zhisida.board.service.BoardPropertyGroupService;
 import com.zhisida.core.annotion.BusinessLog;
 import com.zhisida.core.annotion.Permission;
 import com.zhisida.core.enums.LogAnnotionOpTypeEnum;
 import com.zhisida.core.pojo.response.ResponseData;
+import com.zhisida.board.param.BoardEventGroupParam;
+import com.zhisida.board.param.BoardPropertyGroupParam;
+import com.zhisida.board.service.BoardPropertyGroupService;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
 import java.util.List;
 

@@ -6,12 +6,17 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zhisida.board.analysis.DataSourceProviderManager;
+import com.zhisida.board.analysis.enums.FilterMeasureEnum;
+import com.zhisida.board.analysis.provider.DataSourceProvider;
+import com.zhisida.board.entity.BoardDataSource;
 import com.zhisida.board.entity.BoardEvent;
+import com.zhisida.board.entity.BoardTable;
+import com.zhisida.board.entity.BoardTableColumn;
 import com.zhisida.board.enums.BoardEventExceptionEnum;
 import com.zhisida.board.mapper.BoardEventMapper;
 import com.zhisida.board.param.BoardEventParam;
-import com.zhisida.board.service.BoardEventGroupService;
-import com.zhisida.board.service.BoardEventService;
+import com.zhisida.board.service.*;
 import com.zhisida.core.exception.ServiceException;
 import com.zhisida.core.factory.PageFactory;
 import com.zhisida.core.factory.TreeBuildFactory;
@@ -23,6 +28,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * 元事件配置service接口实现类
@@ -34,6 +41,14 @@ import java.util.List;
 public class BoardEventServiceImpl extends ServiceImpl<BoardEventMapper, BoardEvent> implements BoardEventService {
     @Resource
     BoardEventGroupService eventGroupService;
+
+    @Resource
+    private BoardDataSourceService boardDataSourceService;
+
+    @Resource
+    private BoardTableColumnService boardTableColumnService;
+    @Resource
+    private BoardTableService boardTableService;
 
     @Override
     public List<AntdBaseTreeNode> tree(BoardEventParam boardEventParam) {
@@ -55,6 +70,32 @@ public class BoardEventServiceImpl extends ServiceImpl<BoardEventMapper, BoardEv
             treeNodeList.add(orgTreeNode);
         });
         return new TreeBuildFactory<AntdBaseTreeNode>().doTreeBuild(treeNodeList);
+    }
+
+    @Override
+    public Object autoCreate(BoardEventParam boardEventParam) {
+        BoardDataSource boardDataSource = boardDataSourceService.getById(boardEventParam.getDataSourceId());
+        DataSourceProvider dataSourceProvider = DataSourceProviderManager.getDataProvider(boardDataSource);
+        BoardTable table = boardTableService.getById(boardEventParam.getTableId());
+        BoardTableColumn tableColumn = boardTableColumnService.getById(boardEventParam.getTableColumnId());
+        List<Map> objects = dataSourceProvider.queryColumnValues(
+                table.getTableName() ,
+                tableColumn.getColumnName());
+        objects.stream().filter(e->Objects.nonNull(e)&&CollectionUtil.isNotEmpty(e.values())).map(e -> String.valueOf(e.values().iterator().next())).forEach(e -> {
+            QueryWrapper<BoardEvent> queryWrapper = new QueryWrapper<>();
+            queryWrapper.lambda().eq(BoardEvent::getTableColumnId,boardEventParam.getTableColumnId());
+            queryWrapper.lambda().eq(BoardEvent::getValue,e);
+            if(CollectionUtil.isNotEmpty(this.list(queryWrapper))){
+                return;
+            }
+            BoardEvent boardEvent = new BoardEvent();
+            BeanUtil.copyProperties(boardEventParam, boardEvent);
+            boardEvent.setDisplayName(e);
+            boardEvent.setValue(e);
+            boardEvent.setMeasure(FilterMeasureEnum.EQUAL.name());
+            this.save(boardEvent);
+        });
+        return null;
     }
 
     @Override

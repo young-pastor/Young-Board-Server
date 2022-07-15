@@ -2,6 +2,8 @@ package com.zhisida.board.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.RandomUtil;
+import cn.hutool.log.Log;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhisida.board.analysis.Analysis;
@@ -19,9 +21,11 @@ import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.core.util.PoiUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -169,35 +173,83 @@ public class BoardAnalysisServiceImpl extends ServiceImpl<BoardAnalysisMapper, B
         analysis.check(boardAnalysisParam);
 
         //初始化数据非ID数据初始化
-        List<BoardAnalysisFilterParam> filterList = boardAnalysisParam.getFilterList();
-        List<BoardAnalysisPropertyParam> propertyList = boardAnalysisParam.getPropertyList();
         List<BoardAnalysisEventParam> eventList = boardAnalysisParam.getEventList();
+        List<BoardAnalysisPropertyParam> propertyList = boardAnalysisParam.getPropertyList();
+        List<BoardAnalysisFilterParam> filterList = boardAnalysisParam.getFilterList();
         List<BoardAnalysisDimensionParam> dimensionList = boardAnalysisParam.getDimensionList();
+        //初始化事件
+        if (!CollectionUtils.isEmpty(eventList)) {
+            List<BoardAnalysisPropertyParam> eventPropertyList = new ArrayList<>();
+            List<BoardAnalysisFilterParam> eventFilterList = new ArrayList<>();
+            eventList.stream()
+                    .filter(f -> !StringUtils.isEmpty(f.getEventId()))
+                    .forEach(f -> {
+                        Long analysisEventId = f.getId();
+                        if (Objects.isNull(analysisEventId)) {
+                            analysisEventId = RandomUtil.randomLong(32);
+                            f.setId(analysisEventId);
+                        }
+                        if (Objects.nonNull(f.getProperty())) {
+                            f.getProperty().setAnalysisEventId(f.getId());
+                            eventPropertyList.add(f.getProperty());
+                        }
+                        if (!CollectionUtils.isEmpty(f.getFilterList())) {
+                            f.getFilterList().stream().filter(Objects::nonNull).forEach(e -> {
+                                e.setAnalysisEventId(f.getId());
+                            });
+                            eventFilterList.addAll(f.getFilterList());
+                        }
+                        f.setEvent(this.getEventParamById(f.getEventId()));
+                    });
+            if (!CollectionUtils.isEmpty(eventPropertyList)) {
+                if (Objects.isNull(propertyList)) {
+                    propertyList = new ArrayList<>();
+                }
+                propertyList.addAll(eventPropertyList);
+            }
 
-        filterList.stream()
-                .filter(f -> !StringUtils.isEmpty(f.getPropertyId()))
-                .forEach(f -> {
-                    f.setProperty(this.getPropertyParamById(f.getPropertyId()));
-                });
-        propertyList.stream()
-                .filter(f -> !StringUtils.isEmpty(f.getPropertyId()))
-                .forEach(f -> {
-                    f.setProperty(this.getPropertyParamById(f.getPropertyId()));
-                });
-        dimensionList.stream()
-                .filter(f -> !StringUtils.isEmpty(f.getPropertyId()))
-                .forEach(f -> {
-                    f.setProperty(this.getPropertyParamById(f.getPropertyId()));
-                });
-        eventList.stream()
-                .filter(f -> !StringUtils.isEmpty(f.getEventId()))
-                .forEach(f -> {
-                    f.setEvent(this.getEventParamById(f.getEventId()));
-                });
+            if (!CollectionUtils.isEmpty(eventFilterList)) {
+                if (Objects.isNull(propertyList)) {
+                    filterList = new ArrayList<>();
+                }
+                filterList.addAll(eventFilterList);
+            }
+        }
+        //初始化属性
+        if (!CollectionUtils.isEmpty(propertyList)) {
+            propertyList.stream()
+                    .filter(f -> !StringUtils.isEmpty(f.getPropertyId()))
+                    .forEach(f -> {
+                        f.setProperty(this.getPropertyParamById(f.getPropertyId()));
+                    });
+        }
+        //初始化分组
+        if (!CollectionUtils.isEmpty(dimensionList)) {
+            dimensionList.stream()
+                    .filter(f -> !StringUtils.isEmpty(f.getPropertyId()))
+                    .forEach(f -> {
+                        f.setProperty(this.getPropertyParamById(f.getPropertyId()));
+                    });
+        }
+        //初始化条件
+        if (!CollectionUtils.isEmpty(filterList)) {
+            initAnalysisFilters(filterList);
+        }
         //调用分析实例
         return analysis.analysis(boardAnalysisParam);
     }
 
+    void initAnalysisFilters(List<BoardAnalysisFilterParam> filterList) {
+        filterList.stream()
+                .filter(f -> !StringUtils.isEmpty(f.getPropertyId()))
+                .forEach(f -> {
+                    f.setProperty(this.getPropertyParamById(f.getPropertyId()));
+                    if (!CollectionUtils.isEmpty(f.getSubFilterList())) {
+                        initAnalysisFilters(f.getSubFilterList());
+                    }
+                });
+
+    }
 
     private BoardPropertyParam getPropertyParamById(Long id) {
         BoardPropertyParam boardPropertyParam = boardPropertyCache.getPropertyParamById(id);

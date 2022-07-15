@@ -1,5 +1,6 @@
 package com.zhisida.board.analysis.provider;
 
+import cn.hutool.core.text.StrFormatter;
 import cn.hutool.json.JSONUtil;
 import com.alibaba.druid.DbType;
 import com.alibaba.druid.pool.DruidDataSource;
@@ -59,7 +60,7 @@ public class JdbcDataSourceProvider implements DataSourceProvider<String> {
 
     @Override
     public String convertAnalysisToSql(BoardAnalysisParam analysisParam) {
-        return JdbcConvertOriginQuery.convertAnalysisToSql(analysisParam);
+        return JdbcOriginQueryUtil.convertAnalysisToSql(analysisParam, JdbcUtils.getDbTypeRaw((String) getConfig().get("url"), null));
     }
 
     @Override
@@ -136,6 +137,11 @@ public class JdbcDataSourceProvider implements DataSourceProvider<String> {
         }
         List<BoardTableColumn> tableColumns = this.queryByOriginQuery(queryColumnsSql, BoardTableColumn.class);
         return tableColumns;
+    }
+
+    @Override
+    public List<Map> queryColumnValues(String table, String column) {
+        return this.queryByOriginQuery(StrFormatter.format("SELECT DISTINCT {} FROM {}", column, table));
     }
 
 }

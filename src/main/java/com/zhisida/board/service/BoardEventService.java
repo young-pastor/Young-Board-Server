@@ -2,10 +2,10 @@
 package com.zhisida.board.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhisida.board.entity.BoardEvent;
-import com.zhisida.board.param.BoardEventParam;
 import com.zhisida.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.core.pojo.page.PageResult;
+import com.zhisida.board.entity.BoardEvent;
+import com.zhisida.board.param.BoardEventParam;
 
 import java.util.List;
 
@@ -74,4 +74,6 @@ public interface BoardEventService extends IService<BoardEvent> {
      void export(BoardEventParam boardEventParam);
 
     List<AntdBaseTreeNode> tree(BoardEventParam boardEventParam);
+
+    Object autoCreate(BoardEventParam boardEventParam);
 }

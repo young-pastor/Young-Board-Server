@@ -6,23 +6,25 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zhisida.board.entity.BoardProperty;
-import com.zhisida.board.enums.BoardPropertyExceptionEnum;
-import com.zhisida.board.mapper.BoardPropertyMapper;
-import com.zhisida.board.param.BoardPropertyParam;
-import com.zhisida.board.service.BoardPropertyGroupService;
-import com.zhisida.board.service.BoardPropertyService;
+import com.zhisida.board.analysis.DataSourceProviderManager;
+import com.zhisida.board.analysis.provider.DataSourceProvider;
+import com.zhisida.board.entity.*;
+import com.zhisida.board.service.*;
 import com.zhisida.core.exception.ServiceException;
 import com.zhisida.core.factory.PageFactory;
 import com.zhisida.core.factory.TreeBuildFactory;
 import com.zhisida.core.pojo.node.AntdBaseTreeNode;
 import com.zhisida.core.pojo.page.PageResult;
 import com.zhisida.core.util.PoiUtil;
+import com.zhisida.board.enums.BoardPropertyExceptionEnum;
+import com.zhisida.board.mapper.BoardPropertyMapper;
+import com.zhisida.board.param.BoardPropertyParam;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 属性配置service接口实现类
@@ -34,6 +36,11 @@ import java.util.List;
 public class BoardPropertyServiceImpl extends ServiceImpl<BoardPropertyMapper, BoardProperty> implements BoardPropertyService {
     @Resource
     BoardPropertyGroupService propertyGroupService;
+    @Resource
+    private BoardDataSourceService boardDataSourceService;
+
+    @Resource
+    private BoardTableColumnService boardTableColumnService;
     @Override
     public List<AntdBaseTreeNode> tree(BoardPropertyParam boardPropertyParam) {
         List<AntdBaseTreeNode> treeNodeList = CollectionUtil.newArrayList();
@@ -55,6 +62,28 @@ public class BoardPropertyServiceImpl extends ServiceImpl<BoardPropertyMapper, B
         });
         return new TreeBuildFactory<AntdBaseTreeNode>().doTreeBuild(treeNodeList);
     }
+
+
+    @Override
+    public Object autoCreate(BoardPropertyParam boardPropertyParam) {
+        QueryWrapper<BoardTableColumn> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(BoardTableColumn::getTableId,boardPropertyParam.getTableId());
+        List<BoardTableColumn> columns = boardTableColumnService.list(queryWrapper);
+        columns.stream().filter(Objects::nonNull).forEach(e->{
+            QueryWrapper<BoardProperty> pWrapper = new QueryWrapper<>();
+            pWrapper.lambda().eq(BoardProperty::getTableColumnId,e);
+            if(CollectionUtil.isNotEmpty(this.list(pWrapper))){
+                return;
+            }
+            BoardProperty boardProperty = new BoardProperty();
+            BeanUtil.copyProperties(boardPropertyParam, boardProperty);
+            boardProperty.setTableColumnId(e.getId());
+            boardProperty.setDisplayName(e.getDisplayName());
+            this.save(boardProperty);
+        });
+        return null;
+    }
+
     @Override
     public PageResult<BoardProperty> page(BoardPropertyParam boardPropertyParam) {
         QueryWrapper<BoardProperty> queryWrapper = new QueryWrapper<>();

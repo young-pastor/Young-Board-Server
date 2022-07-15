@@ -45,9 +45,11 @@ public class BoardAnalysisEvent extends BaseEntity {
     private Integer sort;
 
     /**
-     * 
+     *
      */
     @Excel(name = "")
     private String subLogic;
+
+    private String displayName;
 
 }
