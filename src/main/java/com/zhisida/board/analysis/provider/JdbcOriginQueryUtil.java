@@ -1,9 +1,14 @@
 package com.zhisida.board.analysis.provider;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.json.JSONUtil;
 import com.alibaba.druid.DbType;
 import com.zhisida.board.analysis.enums.*;
 import com.zhisida.board.param.*;
 import net.sf.jsqlparser.expression.*;
+import net.sf.jsqlparser.expression.operators.arithmetic.Addition;
+import net.sf.jsqlparser.expression.operators.arithmetic.Modulo;
+import net.sf.jsqlparser.expression.operators.arithmetic.Subtraction;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
 import net.sf.jsqlparser.expression.operators.conditional.OrExpression;
 import net.sf.jsqlparser.expression.operators.relational.*;
@@ -130,135 +135,176 @@ public class JdbcOriginQueryUtil {
 
             Expression condition = null;
             FilterMeasureEnum measure = FilterMeasureEnum.valueOf(e.getMeasure());
+            Column conditionColumn = new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName());
+            StringValue conditionValue = null;
+            if (!StringUtils.isEmpty(propertyParam.getValue())) {
+                conditionValue = new StringValue(propertyParam.getValue());
+            }
             switch (measure) {
                 case IS_NULL:     //为空
                     condition = new IsNullExpression();
-                    ((IsNullExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
+                    ((IsNullExpression) condition).setLeftExpression(conditionColumn);
                     break;
                 case NOT_NULL:    //不为空
                     condition = new IsNullExpression();
-                    ((IsNullExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
+                    ((IsNullExpression) condition).setLeftExpression(conditionColumn);
                     ((IsNullExpression) condition).setNot(true);
                     break;
                 case IS_EMPTY:    //没值
                     condition = new EqualsTo();
-                    ((EqualsTo) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
+                    ((EqualsTo) condition).setLeftExpression(conditionColumn);
                     ((EqualsTo) condition).setRightExpression(new StringValue(""));
                     break;
                 case NOT_EMPTY:   //有值
                     condition = new NotEqualsTo();
-                    ((NotEqualsTo) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
+                    ((NotEqualsTo) condition).setLeftExpression(conditionColumn);
                     ((NotEqualsTo) condition).setRightExpression(new StringValue(""));
                     break;
                 case IS_TRUE:    //为真
                     condition = new IsBooleanExpression();
-                    ((IsBooleanExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
+                    ((IsBooleanExpression) condition).setLeftExpression(conditionColumn);
                     ((IsBooleanExpression) condition).setIsTrue(true);
                     break;
                 case IS_FALSE:   //为假
                     condition = new IsBooleanExpression();
-                    ((IsBooleanExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
+                    ((IsBooleanExpression) condition).setLeftExpression(conditionColumn);
                     ((IsBooleanExpression) condition).setIsTrue(false);
                     break;
                 case EQUAL:       //等于
                     condition = new EqualsTo();
-                    ((EqualsTo) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((EqualsTo) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((EqualsTo) condition).setLeftExpression(conditionColumn);
+                    ((EqualsTo) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_EQUAL:   //不等于
                     condition = new NotEqualsTo();
-                    ((NotEqualsTo) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((NotEqualsTo) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((NotEqualsTo) condition).setLeftExpression(conditionColumn);
+                    ((NotEqualsTo) condition).setRightExpression(conditionValue);
                     break;
                 case LESS_THAN:         //小于
                     condition = new MinorThan();
-                    ((MinorThan) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((MinorThan) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((MinorThan) condition).setLeftExpression(conditionColumn);
+                    ((MinorThan) condition).setRightExpression(conditionValue);
                     break;
                 case LESS_THAN_EQUAL:   //小于等于
                     condition = new MinorThanEquals();
-                    ((MinorThanEquals) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((MinorThanEquals) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((MinorThanEquals) condition).setLeftExpression(conditionColumn);
+                    ((MinorThanEquals) condition).setRightExpression(conditionValue);
                     break;
                 case GREATER_THAN:      //大于
                     condition = new GreaterThan();
-                    ((GreaterThan) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((GreaterThan) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((GreaterThan) condition).setLeftExpression(conditionColumn);
+                    ((GreaterThan) condition).setRightExpression(conditionValue);
                     break;
                 case GREATER_THAN_EQUAL://大于等于
                     condition = new GreaterThanEquals();
-                    ((GreaterThanEquals) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((GreaterThanEquals) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((GreaterThanEquals) condition).setLeftExpression(conditionColumn);
+                    ((GreaterThanEquals) condition).setRightExpression(conditionValue);
                     break;
                 case RANGE:             //范围
                     condition = new Between();
-                    ((Between) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((Between) condition).setBetweenExpressionStart(new StringValue(e.getValue()));
-                    ((Between) condition).setBetweenExpressionEnd(new StringValue(e.getValue()));
+                    String[] values = propertyParam.getValue().split(",");
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(values[0]));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(values[1]));
                     break;
                 case IN:                //全包含
                     condition = new InExpression();
-                    ((InExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((InExpression) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((InExpression) condition).setLeftExpression(conditionColumn);
+                    ((InExpression) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_IN:            //全不包含
                     condition = new InExpression();
-                    ((InExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((InExpression) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((InExpression) condition).setLeftExpression(conditionColumn);
+                    ((InExpression) condition).setRightExpression(conditionValue);
                     ((InExpression) condition).setNot(true);
                     break;
                 case LIKE:              //包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     break;
                 case LEFT_LIKE:         //左包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     break;
                 case RIGHT_LIKE:        //右包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_LIKE:          //不包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     ((LikeExpression) condition).setNot(true);
                     break;
                 case MATCH_CASE:             //正则匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.MATCH_CASESENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
                 case MATCH_IGNORE_CASE:             //正则匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.MATCH_CASEINSENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_MATCH_CASE:             //正则匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.NOT_MATCH_CASESENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_MATCH_IGNORE_CASE:         //正则不匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.NOT_MATCH_CASEINSENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(propertyParam.getTableId()), propertyParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(e.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
-
+                case LAST_SEVEN_DAY:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), -6))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_FOURTEEN_DAY:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), -13))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_MONTH:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -1))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_QUARTER:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -3))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_HAFT_YEAR:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -6))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_YEAR:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -12))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
             }
 
             if (i < 1) {
                 filterExp = condition;
             } else {
                 BinaryExpression binaryExpression = null;
-                if (FilterLogicEnum.AND.name().equals(parentLogic)) {
-                    binaryExpression = new AndExpression();
-                } else {
+                if (FilterLogicEnum.OR.name().equals(parentLogic)) {
                     binaryExpression = new OrExpression();
+                } else {
+                    binaryExpression = new AndExpression();
                 }
                 binaryExpression.setLeftExpression(filterExp);
                 binaryExpression.setRightExpression(condition);
@@ -276,123 +322,165 @@ public class JdbcOriginQueryUtil {
 
             Expression condition = null;
             FilterMeasureEnum measure = FilterMeasureEnum.valueOf(eventParam.getMeasure());
+            Column conditionColumn = new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName());
+            StringValue conditionValue = null;
+            if (!StringUtils.isEmpty(eventParam.getValue())) {
+                conditionValue = new StringValue(eventParam.getValue());
+            }
             switch (measure) {
                 case IS_NULL:     //为空
                     condition = new IsNullExpression();
-                    ((IsNullExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
+                    ((IsNullExpression) condition).setLeftExpression(conditionColumn);
                     break;
                 case NOT_NULL:    //不为空
                     condition = new IsNullExpression();
-                    ((IsNullExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
+                    ((IsNullExpression) condition).setLeftExpression(conditionColumn);
                     ((IsNullExpression) condition).setNot(true);
                     break;
                 case IS_EMPTY:    //没值
                     condition = new EqualsTo();
-                    ((EqualsTo) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
+                    ((EqualsTo) condition).setLeftExpression(conditionColumn);
                     ((EqualsTo) condition).setRightExpression(new StringValue(""));
                     break;
                 case NOT_EMPTY:   //有值
                     condition = new NotEqualsTo();
-                    ((NotEqualsTo) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
+                    ((NotEqualsTo) condition).setLeftExpression(conditionColumn);
                     ((NotEqualsTo) condition).setRightExpression(new StringValue(""));
                     break;
                 case IS_TRUE:    //为真
                     condition = new IsBooleanExpression();
-                    ((IsBooleanExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
+                    ((IsBooleanExpression) condition).setLeftExpression(conditionColumn);
                     ((IsBooleanExpression) condition).setIsTrue(true);
                     break;
                 case IS_FALSE:   //为假
                     condition = new IsBooleanExpression();
-                    ((IsBooleanExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
+                    ((IsBooleanExpression) condition).setLeftExpression(conditionColumn);
                     ((IsBooleanExpression) condition).setIsTrue(false);
                     break;
                 case EQUAL:       //等于
                     condition = new EqualsTo();
-                    ((EqualsTo) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((EqualsTo) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((EqualsTo) condition).setLeftExpression(conditionColumn);
+                    ((EqualsTo) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_EQUAL:   //不等于
                     condition = new NotEqualsTo();
-                    ((NotEqualsTo) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((NotEqualsTo) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((NotEqualsTo) condition).setLeftExpression(conditionColumn);
+                    ((NotEqualsTo) condition).setRightExpression(conditionValue);
                     break;
                 case LESS_THAN:         //小于
                     condition = new MinorThan();
-                    ((MinorThan) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((MinorThan) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((MinorThan) condition).setLeftExpression(conditionColumn);
+                    ((MinorThan) condition).setRightExpression(conditionValue);
                     break;
                 case LESS_THAN_EQUAL:   //小于等于
                     condition = new MinorThanEquals();
-                    ((MinorThanEquals) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((MinorThanEquals) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((MinorThanEquals) condition).setLeftExpression(conditionColumn);
+                    ((MinorThanEquals) condition).setRightExpression(conditionValue);
                     break;
                 case GREATER_THAN:      //大于
                     condition = new GreaterThan();
-                    ((GreaterThan) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((GreaterThan) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((GreaterThan) condition).setLeftExpression(conditionColumn);
+                    ((GreaterThan) condition).setRightExpression(conditionValue);
                     break;
                 case GREATER_THAN_EQUAL://大于等于
                     condition = new GreaterThanEquals();
-                    ((GreaterThanEquals) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((GreaterThanEquals) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((GreaterThanEquals) condition).setLeftExpression(conditionColumn);
+                    ((GreaterThanEquals) condition).setRightExpression(conditionValue);
                     break;
                 case RANGE:             //范围
                     condition = new Between();
-                    ((Between) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((Between) condition).setBetweenExpressionStart(new StringValue(eventParam.getValue()));
-                    ((Between) condition).setBetweenExpressionEnd(new StringValue(eventParam.getValue()));
+                    String[] values = eventParam.getValue().split(",");
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(values[0]));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(values[1]));
                     break;
                 case IN:                //全包含
                     condition = new InExpression();
-                    ((InExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((InExpression) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((InExpression) condition).setLeftExpression(conditionColumn);
+                    ((InExpression) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_IN:            //全不包含
                     condition = new InExpression();
-                    ((InExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((InExpression) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((InExpression) condition).setLeftExpression(conditionColumn);
+                    ((InExpression) condition).setRightExpression(conditionValue);
                     ((InExpression) condition).setNot(true);
                     break;
                 case LIKE:              //包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     break;
                 case LEFT_LIKE:         //左包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     break;
                 case RIGHT_LIKE:        //右包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_LIKE:          //不包含
                     condition = new LikeExpression();
-                    ((LikeExpression) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((LikeExpression) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((LikeExpression) condition).setLeftExpression(conditionColumn);
+                    ((LikeExpression) condition).setRightExpression(conditionValue);
                     ((LikeExpression) condition).setNot(true);
                     break;
                 case MATCH_CASE:             //正则匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.MATCH_CASESENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
                 case MATCH_IGNORE_CASE:             //正则匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.MATCH_CASEINSENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_MATCH_CASE:             //正则匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.NOT_MATCH_CASESENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
                     break;
                 case NOT_MATCH_IGNORE_CASE:         //正则不匹配
                     condition = new RegExpMatchOperator(RegExpMatchOperatorType.NOT_MATCH_CASEINSENSITIVE);
-                    ((RegExpMatchOperator) condition).setLeftExpression(new Column(tableList.get(eventParam.getTableId()), eventParam.getColumn().getColumnName()));
-                    ((RegExpMatchOperator) condition).setRightExpression(new StringValue(eventParam.getValue()));
+                    ((RegExpMatchOperator) condition).setLeftExpression(conditionColumn);
+                    ((RegExpMatchOperator) condition).setRightExpression(conditionValue);
+                    break;
+                case LAST_SEVEN_DAY:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), -6))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_FOURTEEN_DAY:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), -13))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_MONTH:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -1))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_QUARTER:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -3))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_HAFT_YEAR:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -6))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
+                    break;
+                case LAST_YEAR:
+                    condition = new Between();
+                    ((Between) condition).setLeftExpression(conditionColumn);
+                    ((Between) condition).setBetweenExpressionStart(new StringValue(DateUtil.formatDate(DateUtil.offsetMonth(new Date(), -12))));
+                    ((Between) condition).setBetweenExpressionEnd(new StringValue(DateUtil.formatDate(DateUtil.offsetDay(new Date(), 1))));
                     break;
             }
             if (i < 1 && Objects.isNull(eventExp)) {
@@ -479,7 +567,6 @@ public class JdbcOriginQueryUtil {
         return dimensionList.stream().map(e -> {
             BoardPropertyParam boardPropertyParam = e.getProperty();
             String columnName = boardPropertyParam.getColumn().getColumnName();
-
             Table curTable = tableList.get(boardPropertyParam.getTableId());
             Expression expression = new Column(curTable, columnName);
             if (ColumnTypeEnum.DATE_TIME.name().equals(e.getProperty().getColumn().getColumnType())) {
@@ -507,15 +594,131 @@ public class JdbcOriginQueryUtil {
                             dateFormat = "%Y-%m";
                             break;
                         case YEAR:
-                            dateFormat = "%y";
+                            dateFormat = "%Y";
                             break;
                     }
                 }
-                ExpressionList measureExpList = new ExpressionList(expression,new StringValue(dateFormat));
+                ExpressionList measureExpList = new ExpressionList(expression, new StringValue(dateFormat));
                 Function dateTimeFunc = new Function();
                 dateTimeFunc.setName("DATE_FORMAT");
                 dateTimeFunc.setParameters(measureExpList);
                 expression = dateTimeFunc;
+            } else if (ColumnTypeEnum.NUMBER.name().equals(e.getProperty().getColumn().getColumnType())) {
+                String unitType = e.getProperty().getUnitType();
+                if (StringUtils.hasLength(e.getUnitType())) {
+                    unitType = e.getUnitType();
+                }
+                String unit = e.getProperty().getUnit();
+                if (StringUtils.hasLength(e.getUnit())) {
+                    unit = e.getUnit();
+                }
+                if (!StringUtils.isEmpty(e.getUnit()) && !StringUtils.isEmpty(unitType)) {
+                    PropertyUnitTypeEnum pUnitType = PropertyUnitTypeEnum.valueOf(unitType);
+                    switch (pUnitType) {
+                        case STEP:
+                            Expression unitExpression = new LongValue(unit);
+                            if (unit.contains(".")) {
+                                unitExpression = new DoubleValue(unit);
+                            }
+                            Subtraction leftExp = new Subtraction();
+                            leftExp.setLeftExpression(expression);
+                            Modulo modExp = new Modulo();
+                            modExp.setLeftExpression(expression);
+                            modExp.setRightExpression(unitExpression);
+                            leftExp.setRightExpression(modExp);
+                            Addition rightExp = new Addition();
+                            rightExp.setLeftExpression(expression);
+                            Subtraction sub = new Subtraction();
+                            sub.setLeftExpression(unitExpression);
+                            Modulo modExp2 = new Modulo();
+                            modExp2.setLeftExpression(expression);
+                            modExp2.setRightExpression(unitExpression);
+                            sub.setRightExpression(modExp2);
+                            rightExp.setRightExpression(sub);
+                            ExpressionList unitExpList = new ExpressionList(leftExp, new StringValue("~"), rightExp);
+                            Function concatFunc = new Function();
+                            concatFunc.setName("CONCAT");
+                            concatFunc.setParameters(unitExpList);
+                            expression = concatFunc;
+                            break;
+                        case SELF:
+                            List<List> unitList = JSONUtil.toList(unit, List.class);
+                            if (CollectionUtils.isEmpty(unitList)) {
+                                break;
+                            }
+                            List<WhenClause> whenClauses = new ArrayList<>();
+                            for (int i = 0; i < unitList.size(); i++) {
+                                List units = unitList.get(i);
+                                if (CollectionUtils.isEmpty(units) || units.size() > 2) {
+                                    continue;
+                                }
+                                Expression whenExp = null;
+                                String thenValue = null;
+                                if (i == 0 && (units.size() == 1 || units.get(0) instanceof String)) {
+                                    String rightRealValue = String.valueOf(units.get(0));
+                                    if (units.size() == 2) {
+                                        rightRealValue = String.valueOf(units.get(1));
+                                    }
+                                    thenValue = "-∞ ~ " + rightRealValue;
+                                    Expression rightValueExp = new LongValue(rightRealValue);
+                                    if (rightRealValue.contains(".")) {
+                                        rightValueExp = new DoubleValue(rightRealValue);
+                                    }
+//                                    c<1
+                                    MinorThan rightWhenExp = new MinorThan();
+                                    rightWhenExp.setLeftExpression(expression);
+                                    rightWhenExp.setRightExpression(rightValueExp);
+                                    whenExp = rightWhenExp;
+                                } else if (i == unitList.size() - 1) {
+                                    //设置一个条件
+                                    String realValue = String.valueOf(units.get(0));
+                                    thenValue = realValue = " ~ +∞";
+                                    Expression rightValueExp = new LongValue(realValue);
+                                    if (realValue.contains(".")) {
+                                        rightValueExp = new DoubleValue(realValue);
+                                    }
+                                    GreaterThanEquals leftWhenExp = new GreaterThanEquals();
+                                    leftWhenExp.setLeftExpression(expression);
+                                    leftWhenExp.setRightExpression(rightValueExp);
+                                    whenExp = leftWhenExp;
+                                } else {
+                                    String leftRealValue = String.valueOf(units.get(0));
+                                    String rightRealValue = String.valueOf(units.get(1));
+                                    thenValue = leftRealValue = " ~ " + rightRealValue;
+                                    Expression leftValueExp = new LongValue(leftRealValue);
+                                    if (leftRealValue.contains(".")) {
+                                        leftValueExp = new DoubleValue(leftRealValue);
+                                    }
+                                    Expression rightValueExp = new LongValue(rightRealValue);
+                                    if (rightRealValue.contains(".")) {
+                                        rightValueExp = new DoubleValue(rightRealValue);
+                                    }
+
+                                    AndExpression andExpression = new AndExpression();
+                                    GreaterThanEquals leftWhenExp = new GreaterThanEquals();
+                                    leftWhenExp.setLeftExpression(expression);
+                                    leftWhenExp.setRightExpression(rightValueExp);
+
+                                    MinorThan rightWhenExp = new MinorThan();
+                                    rightWhenExp.setLeftExpression(expression);
+                                    rightWhenExp.setRightExpression(rightValueExp);
+
+                                    andExpression.setLeftExpression(leftWhenExp);
+                                    andExpression.setRightExpression(rightWhenExp);
+                                    whenExp = andExpression;
+                                }
+                                WhenClause whenClause = new WhenClause();
+                                whenClause.setThenExpression(new StringValue(thenValue));
+                                whenClause.setWhenExpression(whenExp);
+                                whenClauses.add(whenClause);
+                            }
+                            CaseExpression caseExpression = new CaseExpression();
+                            caseExpression.setElseExpression(new StringValue("UNKNOWN"));
+                            caseExpression.setWhenClauses(whenClauses);
+                            expression = caseExpression;
+                            break;
+                    }
+                }
             }
             SelectExpressionItem selectExpressionItem = new SelectExpressionItem();
             selectExpressionItem.setExpression(expression);
@@ -538,7 +741,7 @@ public class JdbcOriginQueryUtil {
 
     public static GroupByElement convertDimensionToGroupByElement(Map<Long, Table> tableList, List<BoardAnalysisDimensionParam> dimensionList) {
         GroupByElement groupByElement = new GroupByElement();
-        List<Expression> groupByExpressions = dimensionList.stream().map(e ->new Column(e.getAliasName())).collect(Collectors.toList());
+        List<Expression> groupByExpressions = dimensionList.stream().map(e -> new Column(e.getAliasName())).collect(Collectors.toList());
         groupByElement.setGroupByExpressions(groupByExpressions);
         return groupByElement;
     }

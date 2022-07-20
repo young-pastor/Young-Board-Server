@@ -11,7 +11,7 @@ import com.zhisida.core.consts.SysExpEnumConstant;
  * @author Young-Pastor
  * @date 2022-07-08 14:40:05
  */
-@ExpEnumType(module = SysExpEnumConstant.SYS_MODULE_EXP_CODE)
+@ExpEnumType(module = SysExpEnumConstant.BOARD_SYS_MODULE_EXP_CODE)
 public enum BoardAnalysisPropertyExceptionEnum implements AbstractBaseExceptionEnum {
 
     /**

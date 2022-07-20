@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `sys_app` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统应用表';
 
--- 正在导出表  young-board.sys_app 的数据：~1 rows (大约)
+-- 正在导出表  young-board.sys_app 的数据：~0 rows (大约)
 DELETE FROM `sys_app`;
 /*!40000 ALTER TABLE `sys_app` DISABLE KEYS */;
 INSERT INTO `sys_app` (`id`, `name`, `code`, `active`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -86,11 +86,11 @@ CREATE TABLE IF NOT EXISTS `sys_code_generate` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成基础配置';
 
--- 正在导出表  young-board.sys_code_generate 的数据：~10 rows (大约)
+-- 正在导出表  young-board.sys_code_generate 的数据：~11 rows (大约)
 DELETE FROM `sys_code_generate`;
 /*!40000 ALTER TABLE `sys_code_generate` DISABLE KEYS */;
 INSERT INTO `sys_code_generate` (`id`, `author_name`, `class_name`, `table_prefix`, `generate_type`, `table_name`, `package_name`, `bus_name`, `table_comment`, `app_code`, `menu_pid`, `create_user`, `create_time`, `update_user`, `update_time`) VALUES
-	(1537693479067422721, 'young-pastor', 'BoardDataSource', 'Y', '2', 'tbl_board_data_source', 'com.zhisida.board', 'boardDatasource', '数据源配置表', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:07:49', 1265476890672672808, '2022-06-20 11:34:15'),
+	(1537693479067422721, 'young-pastor', 'BoardDataSource', 'Y', '2', 'tbl_board_data_source', 'com.zhisida.board', 'boardDatasource', '数据源配置表', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:07:49', 1265476890672672808, '2022-07-08 16:12:57'),
 	(1537701005573967874, 'young-pastor', 'BoardTable', 'Y', '2', 'tbl_board_table', 'com.zhisida.board', 'boardTable', '数据表配置', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:37:43', 1265476890672672808, '2022-06-20 11:34:12'),
 	(1537701234742349825, 'young-pastor', 'BoardTableColumn', 'Y', '2', 'tbl_board_table_column', 'com.zhisida.board', 'boardTableColumn', '数据字段配置', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:38:38', 1265476890672672808, '2022-06-20 11:51:59'),
 	(1537701429043482626, 'young-pastor', 'BoardTableConnect', 'Y', '2', 'tbl_board_table_connect', 'com.zhisida.board', 'boardTableConnect', '字段关联配置', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:39:24', 1265476890672672808, '2022-06-20 11:34:02'),
@@ -99,7 +99,8 @@ INSERT INTO `sys_code_generate` (`id`, `author_name`, `class_name`, `table_prefi
 	(1537702828053581826, 'young-pastor', 'BoardProperty', 'Y', '2', 'tbl_board_property', 'com.zhisida.board', 'boardProperty', '属性配置', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:44:58', 1265476890672672808, '2022-06-20 11:58:25'),
 	(1537703542846869506, 'young-pastor', 'BoardPropertyGroup', 'Y', '2', 'tbl_board_property_group', 'com.zhisida.board', 'boardPropertyGroup', '属性分组', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:47:48', 1265476890672672808, '2022-06-20 11:58:19'),
 	(1537703612946272257, 'young-pastor', 'BoardPropertyValue', 'Y', '2', 'tbl_board_property_value', 'com.zhisida.board', 'boardPropertyValue', '属性值', 'system', '1537693069254561793', 1265476890672672808, '2022-06-17 15:48:05', 1265476890672672808, '2022-06-20 11:58:09'),
-	(1540259046307590146, 'young-pastor', 'SysTimersLog', 'N', '2', 'sys_timers_log', 'com.zhisida.board', 'sysTimersLog', '任务日志', 'system', '1264622039642256611', 1265476890672672808, '2022-06-24 17:02:27', NULL, NULL);
+	(1540259046307590146, 'young-pastor', 'SysTimersLog', 'N', '2', 'sys_timers_log', 'com.zhisida.board', 'sysTimersLog', '任务日志', 'system', '1264622039642256611', 1265476890672672808, '2022-06-24 17:02:27', NULL, NULL),
+	(1545063362873036802, 'Young-Pastor', 'BoardAnalysis', 'Y', '0', 'tbl_board_analysis', 'com.zhisida', 'boardanalysis', '实时分析表', 'system', '0', 1265476890672672808, '2022-07-07 23:13:06', NULL, NULL);
 /*!40000 ALTER TABLE `sys_code_generate` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_code_generate_config 结构
@@ -130,22 +131,22 @@ CREATE TABLE IF NOT EXISTS `sys_code_generate_config` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成详细配置';
 
--- 正在导出表  young-board.sys_code_generate_config 的数据：~54 rows (大约)
+-- 正在导出表  young-board.sys_code_generate_config 的数据：~60 rows (大约)
 DELETE FROM `sys_code_generate_config`;
 /*!40000 ALTER TABLE `sys_code_generate_config` DISABLE KEYS */;
 INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `java_name`, `data_type`, `column_comment`, `java_type`, `effect_type`, `dict_type_code`, `whether_table`, `whether_add_update`, `whether_retract`, `whether_required`, `query_whether`, `query_type`, `column_key`, `column_key_name`, `whether_common`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-	(1537693479289720833, 1537693479067422721, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:07:49', 1265476890672672808, NULL, NULL),
-	(1537693479314886658, 1537693479067422721, 'DISPLAY_NAME', 'displayName', 'varchar', '数据源名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:07:49', 1265476890672672808, NULL, NULL),
-	(1537693479344246786, 1537693479067422721, 'GROUP', 'group', 'varchar', '分组', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Group', 'N', '2022-06-17 15:07:49', 1265476890672672808, NULL, NULL),
-	(1537693479365218306, 1537693479067422721, 'CONFIG', 'config', 'text', '数据库配置', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Config', 'N', '2022-06-17 15:07:49', 1265476890672672808, NULL, NULL),
-	(1537693479386189825, 1537693479067422721, 'TYPE', 'type', 'varchar', '数据库类型', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Type', 'N', '2022-06-17 15:07:49', 1265476890672672808, NULL, NULL),
-	(1537693479423938562, 1537693479067422721, 'REMARK', 'remark', 'varchar', '备注', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Remark', 'N', '2022-06-17 15:07:49', 1265476890672672808, NULL, NULL),
-	(1537701005741740034, 1537701005573967874, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:37:43', 1265476890672672808, NULL, NULL),
-	(1537701005766905857, 1537701005573967874, 'DATA_SOURCE_ID', 'dataSourceId', 'bigint', '数据源ID', 'Long', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DataSourceId', 'N', '2022-06-17 15:37:43', 1265476890672672808, NULL, NULL),
-	(1537701005783683073, 1537701005573967874, 'TABLE_NAME', 'tableName', 'varchar', '表名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'TableName', 'N', '2022-06-17 15:37:43', 1265476890672672808, NULL, NULL),
-	(1537701005808848898, 1537701005573967874, 'DISPLAY_NAME', 'displayName', 'varchar', '展示名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:37:43', 1265476890672672808, NULL, NULL),
-	(1537701005834014721, 1537701005573967874, 'REFRESH_TYPE', 'refreshType', 'varchar', '刷新方式', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'RefreshType', 'N', '2022-06-17 15:37:43', 1265476890672672808, NULL, NULL),
-	(1537701005871763457, 1537701005573967874, 'REMARK', 'remark', 'varchar', '备注', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Remark', 'N', '2022-06-17 15:37:43', 1265476890672672808, NULL, NULL),
+	(1537693479289720833, 1537693479067422721, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:07:49', 1265476890672672808, '2022-07-09 13:34:51', 1265476890672672808),
+	(1537693479314886658, 1537693479067422721, 'DISPLAY_NAME', 'displayName', 'varchar', '数据源名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:07:49', 1265476890672672808, '2022-07-09 13:34:51', 1265476890672672808),
+	(1537693479344246786, 1537693479067422721, 'GROUP', 'group', 'varchar', '分组', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Group', 'N', '2022-06-17 15:07:49', 1265476890672672808, '2022-07-09 13:34:51', 1265476890672672808),
+	(1537693479365218306, 1537693479067422721, 'CONFIG', 'config', 'text', '数据库配置', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Config', 'N', '2022-06-17 15:07:49', 1265476890672672808, '2022-07-09 13:34:51', 1265476890672672808),
+	(1537693479386189825, 1537693479067422721, 'TYPE', 'type', 'varchar', '数据库类型', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Type', 'N', '2022-06-17 15:07:49', 1265476890672672808, '2022-07-09 13:34:51', 1265476890672672808),
+	(1537693479423938562, 1537693479067422721, 'REMARK', 'remark', 'varchar', '备注', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Remark', 'N', '2022-06-17 15:07:49', 1265476890672672808, '2022-07-09 13:34:51', 1265476890672672808),
+	(1537701005741740034, 1537701005573967874, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:37:43', 1265476890672672808, '2022-07-06 10:14:36', 1265476890672672808),
+	(1537701005766905857, 1537701005573967874, 'DATA_SOURCE_ID', 'dataSourceId', 'bigint', '数据源ID', 'Long', 'select', 'board_datasource_type', 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DataSourceId', 'N', '2022-06-17 15:37:43', 1265476890672672808, '2022-07-06 10:14:36', 1265476890672672808),
+	(1537701005783683073, 1537701005573967874, 'TABLE_NAME', 'tableName', 'varchar', '表名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'TableName', 'N', '2022-06-17 15:37:43', 1265476890672672808, '2022-07-06 10:14:36', 1265476890672672808),
+	(1537701005808848898, 1537701005573967874, 'DISPLAY_NAME', 'displayName', 'varchar', '展示名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-06-17 15:37:43', 1265476890672672808, '2022-07-06 10:14:36', 1265476890672672808),
+	(1537701005834014721, 1537701005573967874, 'REFRESH_TYPE', 'refreshType', 'varchar', '刷新方式', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'RefreshType', 'N', '2022-06-17 15:37:43', 1265476890672672808, '2022-07-06 10:14:36', 1265476890672672808),
+	(1537701005871763457, 1537701005573967874, 'REMARK', 'remark', 'varchar', '备注', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Remark', 'N', '2022-06-17 15:37:43', 1265476890672672808, '2022-07-06 10:14:36', 1265476890672672808),
 	(1537701234805264385, 1537701234742349825, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-06-17 15:38:38', 1265476890672672808, NULL, NULL),
 	(1537701234872373249, 1537701234742349825, 'TABLE_ID', 'tableId', 'bigint', '数据表ID', 'Long', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'TableId', 'N', '2022-06-17 15:38:38', 1265476890672672808, NULL, NULL),
 	(1537701234872373250, 1537701234742349825, 'COLUMN_NAME', 'columnName', 'varchar', '字段名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ColumnName', 'N', '2022-06-17 15:38:38', 1265476890672672808, NULL, NULL),
@@ -187,7 +188,13 @@ INSERT INTO `sys_code_generate_config` (`id`, `code_gen_id`, `column_name`, `jav
 	(1540259046500528130, 1540259046307590146, 'EXECUTE_END_TIME', 'executeEndTime', 'datetime', '执行结束时间', 'Date', 'datepicker', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteEndTime', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
 	(1540259046508916737, 1540259046307590146, 'EXECUTE_CODE', 'executeCode', 'varchar', '执行结果', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteCode', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
 	(1540259046525693954, 1540259046307590146, 'EXECUTE_MSG', 'executeMsg', 'text', '执行信息', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteMsg', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
-	(1540259046534082562, 1540259046307590146, 'EXECUTE_PARAM', 'executeParam', 'text', '执行参数', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteParam', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL);
+	(1540259046534082562, 1540259046307590146, 'EXECUTE_PARAM', 'executeParam', 'text', '执行参数', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ExecuteParam', 'N', '2022-06-24 17:02:27', 1265476890672672808, NULL, NULL),
+	(1545063362914979842, 1545063362873036802, 'ID', 'id', 'bigint', '主键ID', 'Long', 'input', NULL, 'N', 'N', 'N', 'N', 'N', 'eq', 'PRI', 'Id', 'N', '2022-07-07 23:13:06', 1265476890672672808, NULL, NULL),
+	(1545063362973700098, 1545063362873036802, 'DISPLAY_NAME', 'displayName', 'varchar', '展示名称', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'DisplayName', 'N', '2022-07-07 23:13:06', 1265476890672672808, NULL, NULL),
+	(1545063363024031745, 1545063362873036802, 'TYPE', 'type', 'varchar', '类型', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Type', 'N', '2022-07-07 23:13:06', 1265476890672672808, NULL, NULL),
+	(1545063363049197569, 1545063362873036802, 'CHART_CONFIG', 'chartConfig', 'text', '图标配置', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'ChartConfig', 'N', '2022-07-07 23:13:06', 1265476890672672808, NULL, NULL),
+	(1545063363061780481, 1545063362873036802, 'SUB_LOGIC', 'subLogic', 'varchar', '条件逻辑', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'SubLogic', 'N', '2022-07-07 23:13:06', 1265476890672672808, NULL, NULL),
+	(1545063363070169089, 1545063362873036802, 'SORT', 'sort', 'varchar', '顺序', 'String', 'input', NULL, 'Y', 'Y', 'N', 'Y', 'Y', 'eq', '', 'Sort', 'N', '2022-07-07 23:13:06', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_code_generate_config` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_config 结构
@@ -268,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_data` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统字典值表';
 
--- 正在导出表  young-board.sys_dict_data 的数据：~104 rows (大约)
+-- 正在导出表  young-board.sys_dict_data 的数据：~149 rows (大约)
 DELETE FROM `sys_dict_data`;
 /*!40000 ALTER TABLE `sys_dict_data` DISABLE KEYS */;
 INSERT INTO `sys_dict_data` (`id`, `type_id`, `value`, `code`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -375,7 +382,52 @@ INSERT INTO `sys_dict_data` (`id`, `type_id`, `value`, `code`, `sort`, `remark`,
 	(1540603511316701186, 1540603266612617218, '一对多', 'ONE_TO_MANY', 1, NULL, 0, '2022-06-25 15:51:14', 1265476890672672808, NULL, NULL),
 	(1540603571324608513, 1540603266612617218, '一对一', 'ONE_TO_ONE', 2, NULL, 0, '2022-06-25 15:51:29', 1265476890672672808, NULL, NULL),
 	(1540603705122906114, 1540603266612617218, '多对多', 'MANY_TO_MANY', 3, NULL, 0, '2022-06-25 15:52:01', 1265476890672672808, NULL, NULL),
-	(1540603780159004673, 1540603266612617218, '多对一', 'MANY_TO_ONE', 4, NULL, 0, '2022-06-25 15:52:18', 1265476890672672808, NULL, NULL);
+	(1540603780159004673, 1540603266612617218, '多对一', 'MANY_TO_ONE', 4, NULL, 0, '2022-06-25 15:52:18', 1265476890672672808, NULL, NULL),
+	(1547182304471064577, 1547181995082424321, '总次数', 'COUNT', 100, NULL, 2, '2022-07-13 19:33:01', 1265476890672672808, '2022-07-13 19:34:43', 1265476890672672808),
+	(1547182617252896769, 1547181995082424321, '为空', 'IS_NULL', 100, NULL, 0, '2022-07-13 19:34:15', 1265476890672672808, NULL, NULL),
+	(1547182662475882498, 1547181995082424321, '不为空', 'NOT_NULL', 100, NULL, 0, '2022-07-13 19:34:26', 1265476890672672808, NULL, NULL),
+	(1547182704267927553, 1547181995082424321, '没值', 'IS_EMPTY', 100, NULL, 0, '2022-07-13 19:34:36', 1265476890672672808, NULL, NULL),
+	(1547182799583485953, 1547181995082424321, '有值', 'NOT_EMPTY', 100, NULL, 0, '2022-07-13 19:34:59', 1265476890672672808, NULL, NULL),
+	(1547182848770088961, 1547181995082424321, '为真', 'IS_TRUE', 100, NULL, 0, '2022-07-13 19:35:11', 1265476890672672808, NULL, NULL),
+	(1547182887726784513, 1547181995082424321, '为假', 'IS_FALSE', 100, NULL, 0, '2022-07-13 19:35:20', 1265476890672672808, NULL, NULL),
+	(1547182930928115714, 1547181995082424321, '等于', 'EQUAL', 100, NULL, 0, '2022-07-13 19:35:30', 1265476890672672808, NULL, NULL),
+	(1547182970455236609, 1547181995082424321, '不等于', 'NOT_EQUAL', 100, NULL, 0, '2022-07-13 19:35:40', 1265476890672672808, NULL, NULL),
+	(1547183055209537537, 1547181995082424321, '小于', 'LESS_THAN', 100, NULL, 0, '2022-07-13 19:36:00', 1265476890672672808, NULL, NULL),
+	(1547183134209253378, 1547181995082424321, '小于等于', 'LESS_THAN_EQUAL', 100, NULL, 0, '2022-07-13 19:36:19', 1265476890672672808, NULL, NULL),
+	(1547183175502176257, 1547181995082424321, '大于', 'GREATER_THAN', 100, NULL, 0, '2022-07-13 19:36:28', 1265476890672672808, NULL, NULL),
+	(1547183220330897409, 1547181995082424321, '大于等于', 'GREATER_THAN_EQUAL', 100, NULL, 0, '2022-07-13 19:36:39', 1265476890672672808, NULL, NULL),
+	(1547183265834901506, 1547181995082424321, '范围', 'RANGE', 100, NULL, 0, '2022-07-13 19:36:50', 1265476890672672808, NULL, NULL),
+	(1547183309275308033, 1547181995082424321, '包含', 'IN', 100, NULL, 0, '2022-07-13 19:37:00', 1265476890672672808, NULL, NULL),
+	(1547183364510097410, 1547181995082424321, '不包含', 'NOT_IN', 100, NULL, 0, '2022-07-13 19:37:14', 1265476890672672808, NULL, NULL),
+	(1547183601668628481, 1547181995082424321, '左含有', 'LEFT_LIKE', 100, NULL, 0, '2022-07-13 19:38:10', 1265476890672672808, NULL, NULL),
+	(1547183658073628673, 1547181995082424321, '含有', 'LIKE', 100, NULL, 0, '2022-07-13 19:38:24', 1265476890672672808, NULL, NULL),
+	(1547183698473164802, 1547181995082424321, '右含有', 'RIGHT_LIKE', 100, NULL, 0, '2022-07-13 19:38:33', 1265476890672672808, NULL, NULL),
+	(1547183747768819714, 1547181995082424321, '不含有', 'NOT_LIKE', 100, NULL, 0, '2022-07-13 19:38:45', 1265476890672672808, NULL, NULL),
+	(1547183787723759617, 1547181995082424321, '正则匹配', 'MATCH_CASE', 100, NULL, 0, '2022-07-13 19:38:54', 1265476890672672808, NULL, NULL),
+	(1547183863711965185, 1547181995082424321, '正则匹配（不区分大小写）', 'MATCH_IGNORE_CASE', 100, NULL, 0, '2022-07-13 19:39:13', 1265476890672672808, NULL, NULL),
+	(1547183920519618562, 1547181995082424321, '正则不匹配', 'NOT_MATCH_CASE', 100, NULL, 0, '2022-07-13 19:39:26', 1265476890672672808, NULL, NULL),
+	(1547184024773238786, 1547181995082424321, '正则不匹配（不区分大小写）', 'NOT_MATCH_IGNORE_CASE', 100, NULL, 0, '2022-07-13 19:39:51', 1265476890672672808, NULL, NULL),
+	(1547184380651544577, 1547184211344269314, '总数', 'COUNT', 100, NULL, 0, '2022-07-13 19:41:16', 1265476890672672808, NULL, NULL),
+	(1547184426134577154, 1547184211344269314, '总和', 'SUM', 100, NULL, 0, '2022-07-13 19:41:27', 1265476890672672808, '2022-07-13 19:41:33', 1265476890672672808),
+	(1547184519004856321, 1547184211344269314, '均值', 'AVG', 100, NULL, 0, '2022-07-13 19:41:49', 1265476890672672808, NULL, NULL),
+	(1547184564206870529, 1547184211344269314, '最大值', 'MAX', 100, NULL, 0, '2022-07-13 19:42:00', 1265476890672672808, NULL, NULL),
+	(1547184606552563714, 1547184211344269314, '最小值', 'MIN', 100, NULL, 0, '2022-07-13 19:42:10', 1265476890672672808, NULL, NULL),
+	(1547184646834659329, 1547184211344269314, '去重数', 'DISTINCT', 100, NULL, 0, '2022-07-13 19:42:19', 1265476890672672808, NULL, NULL),
+	(1547994954297831426, 1547994554140258305, '按天', 'DAY', 4, NULL, 0, '2022-07-16 01:22:12', 1265476890672672808, '2022-07-16 01:24:04', 1265476890672672808),
+	(1547995096216301570, 1547994554140258305, '按秒', 'SECOND', 1, NULL, 0, '2022-07-16 01:22:45', 1265476890672672808, '2022-07-16 01:23:18', 1265476890672672808),
+	(1547995298931208194, 1547994554140258305, '按分钟', 'MINUTE', 2, NULL, 0, '2022-07-16 01:23:34', 1265476890672672808, NULL, NULL),
+	(1547995363146002433, 1547994554140258305, '按小时', 'HOUR', 3, NULL, 0, '2022-07-16 01:23:49', 1265476890672672808, NULL, NULL),
+	(1547995459241701378, 1547994554140258305, '按周', 'WEEK', 5, NULL, 0, '2022-07-16 01:24:12', 1265476890672672808, '2022-07-16 01:24:39', 1265476890672672808),
+	(1547995552351055873, 1547994554140258305, '按月', 'MONTH', 6, NULL, 0, '2022-07-16 01:24:34', 1265476890672672808, NULL, NULL),
+	(1547995620118425601, 1547994554140258305, '按年', 'YEAR', 7, NULL, 0, '2022-07-16 01:24:50', 1265476890672672808, NULL, NULL),
+	(1547996057479475202, 1547994836618244098, '间隔', 'STEP', 1, NULL, 0, '2022-07-16 01:26:35', 1265476890672672808, NULL, NULL),
+	(1547996156217585665, 1547994836618244098, '自定义', 'SELF', 2, NULL, 0, '2022-07-16 01:26:58', 1265476890672672808, '2022-07-16 01:27:03', 1265476890672672808),
+	(1547997261601239041, 1547181995082424321, '最近七天', 'LAST_SEVEN_DAY', 100, NULL, 0, '2022-07-16 01:31:22', 1265476890672672808, NULL, NULL),
+	(1547997392920702978, 1547181995082424321, '最近十四天', 'LAST_FOURTEEN_DAY', 100, NULL, 0, '2022-07-16 01:31:53', 1265476890672672808, NULL, NULL),
+	(1547997476601262082, 1547181995082424321, '最近一个月', 'LAST_MONTH', 100, NULL, 0, '2022-07-16 01:32:13', 1265476890672672808, '2022-07-16 01:33:14', 1265476890672672808),
+	(1547997698110844929, 1547181995082424321, '最近一季度', 'LAST_QUARTER', 100, NULL, 0, '2022-07-16 01:33:06', 1265476890672672808, NULL, NULL),
+	(1547997821268193282, 1547181995082424321, '最近半年', 'LAST_HAFT_YEAR', 100, NULL, 0, '2022-07-16 01:33:35', 1265476890672672808, NULL, NULL),
+	(1547997897117986817, 1547181995082424321, '最近一年', 'LAST_YEAR', 100, NULL, 0, '2022-07-16 01:33:53', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_dict_data` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_dict_type 结构
@@ -394,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_type` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统字典类型表';
 
--- 正在导出表  young-board.sys_dict_type 的数据：~24 rows (大约)
+-- 正在导出表  young-board.sys_dict_type 的数据：~28 rows (大约)
 DELETE FROM `sys_dict_type`;
 /*!40000 ALTER TABLE `sys_dict_type` DISABLE KEYS */;
 INSERT INTO `sys_dict_type` (`id`, `name`, `code`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -421,7 +473,11 @@ INSERT INTO `sys_dict_type` (`id`, `name`, `code`, `sort`, `remark`, `status`, `
 	(1358470065111252994, '代码生成java类型', 'code_gen_java_type', 100, '代码生成java类型', 0, '2021-02-08 01:37:57', 1265476890672672808, NULL, NULL),
 	(1540152428538576898, '缓存时间类型', 'cache_time_unit', 100, NULL, 0, '2022-06-24 09:58:48', 1265476890672672808, NULL, NULL),
 	(1540357135957766146, '数据源类型', 'board_datasource_type', 1, NULL, 0, '2022-06-24 23:32:14', 1265476890672672808, NULL, NULL),
-	(1540603266612617218, '表关联类型', 'board_connect_type', 2, NULL, 0, '2022-06-25 15:50:16', 1265476890672672808, '2022-06-25 15:50:31', 1265476890672672808);
+	(1540603266612617218, '表关联类型', 'board_connect_type', 2, NULL, 0, '2022-06-25 15:50:16', 1265476890672672808, '2022-06-25 15:50:31', 1265476890672672808),
+	(1547181995082424321, '字段类型', 'board_column_filter_type', 3, NULL, 0, '2022-07-13 19:31:47', 1265476890672672808, '2022-07-13 19:40:10', 1265476890672672808),
+	(1547184211344269314, '指标计算类型', 'board_column_measure_type', 4, NULL, 0, '2022-07-13 19:40:35', 1265476890672672808, '2022-07-13 19:40:49', 1265476890672672808),
+	(1547994554140258305, '展示单位', 'board_dimension_unit', 5, NULL, 0, '2022-07-16 01:20:36', 1265476890672672808, '2022-07-16 01:25:38', 1265476890672672808),
+	(1547994836618244098, '展示单位类型', 'board_dimension_unit_type', 6, NULL, 0, '2022-07-16 01:21:44', 1265476890672672808, '2022-07-16 01:25:54', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_dict_type` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_emp 结构
@@ -521,7 +577,7 @@ CREATE TABLE IF NOT EXISTS `sys_menu` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统菜单表';
 
--- 正在导出表  young-board.sys_menu 的数据：~183 rows (大约)
+-- 正在导出表  young-board.sys_menu 的数据：~184 rows (大约)
 DELETE FROM `sys_menu`;
 /*!40000 ALTER TABLE `sys_menu` DISABLE KEYS */;
 INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `router`, `component`, `permission`, `application`, `open_type`, `visible`, `link`, `redirect`, `weight`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -673,9 +729,10 @@ INSERT INTO `sys_menu` (`id`, `pid`, `pids`, `name`, `code`, `type`, `icon`, `ro
 	(1410859007809736705, 1264622039642256521, '[0],[1264622039642256521],', '在线文档', 'file_oline', 1, NULL, '/file_oline', 'system/fileOnline/index', '', 'system', 1, 'Y', NULL, '', 1, 100, NULL, 0, '2021-07-02 15:12:55', 1265476890672672808, '2021-08-25 20:02:46', 1265476890672672808),
 	(1537693069254561793, 0, '[0],', '数据管理', 'board_metadata', 0, 'pic-left', '/board_metadata', 'PageView', '', 'system', 1, 'Y', NULL, '', 1, 3, NULL, 0, '2022-06-17 15:06:11', 1265476890672672808, '2022-06-22 18:04:08', 1265476890672672808),
 	(1539187940297420802, 0, '[0],', '实时分析', 'board_analysis', 0, 'bar-chart', '/board_analysis', 'PageView', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:06:16', 1265476890672672808, '2022-06-22 18:03:44', 1265476890672672808),
-	(1539188385652813825, 1539187940297420802, '[0],[1539187940297420802],', '事件分析', 'evnent_analysis', 1, NULL, '/evnent_analysis', 'evnent_analysis', '', 'system', 1, 'Y', NULL, '', 1, 1, NULL, 0, '2022-06-21 18:08:02', 1265476890672672808, '2022-06-24 18:23:32', 1265476890672672808),
+	(1539188385652813825, 1539187940297420802, '[0],[1539187940297420802],', '事件分析', 'event_analysis', 1, NULL, '/eventAnalysis', 'board/boardAnalysis/eventAnalysis', '', 'system', 1, 'Y', NULL, '', 1, 1, NULL, 0, '2022-06-21 18:08:02', 1265476890672672808, '2022-07-10 01:41:08', 1265476890672672808),
 	(1539188990165266434, 1539187940297420802, '[0],[1539187940297420802],', '漏斗分析', 'funnel_analysis', 1, NULL, '/funnel_analysis', 'funnel_analysis', '', 'system', 1, 'Y', NULL, '', 1, 2, NULL, 0, '2022-06-21 18:10:26', 1265476890672672808, '2022-06-24 18:23:20', 1265476890672672808),
 	(1539863115309432833, 1264622039642256351, '[0],[1264622039642256351],', '缓存管理', 'sys_cache_mgr', 1, NULL, '/cache', 'system/cache/index', '', 'system', 1, 'Y', NULL, '', 1, 100, NULL, 0, '2022-06-23 14:49:10', 1265476890672672808, NULL, NULL),
+	(1542915003978399745, 1539187940297420802, '[0],[1539187940297420802],', '属性分析', 'property_analysis', 1, '', '/propertyAnalysis', 'board/boardAnalysis/propertyAnalysis', '', 'system', 1, 'Y', '', '', 1, 3, NULL, 0, '2022-07-02 00:56:17', 1265476890672672808, '2022-07-02 01:27:01', 1265476890672672808),
 	(4747020348341702558, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置编辑', 'boardDatasource_index_edit', 2, NULL, NULL, NULL, 'boardDataSource:edit', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:27', 1265476890672672808),
 	(4988880395349552904, 5053247396277601701, '[0],[1537693069254561793],[5053247396277601701],', '数据表配置导出', 'boardTable_index_export', 2, NULL, NULL, NULL, 'boardTable:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-20 11:26:15', 1265476890672672808),
 	(4995513235449904549, 6524320009635818047, '[0],[1537693069254561793],[6524320009635818047],', '数据源配置导出', 'boardDatasource_index_export', 2, NULL, NULL, NULL, 'boardDataSource:export', 'system', 0, 'Y', NULL, NULL, 1, 100, NULL, 0, NULL, NULL, '2022-06-17 15:35:32', 1265476890672672808),
@@ -829,6 +886,8 @@ CREATE TABLE IF NOT EXISTS `sys_org` (
 -- 正在导出表  young-board.sys_org 的数据：~0 rows (大约)
 DELETE FROM `sys_org`;
 /*!40000 ALTER TABLE `sys_org` DISABLE KEYS */;
+INSERT INTO `sys_org` (`id`, `pid`, `pids`, `name`, `code`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
+	(1544877382991925249, 0, '[0],', '111', '11', 100, '11111', 0, '2022-07-07 10:54:05', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_org` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_pos 结构
@@ -851,6 +910,8 @@ CREATE TABLE IF NOT EXISTS `sys_pos` (
 -- 正在导出表  young-board.sys_pos 的数据：~0 rows (大约)
 DELETE FROM `sys_pos`;
 /*!40000 ALTER TABLE `sys_pos` DISABLE KEYS */;
+INSERT INTO `sys_pos` (`id`, `name`, `code`, `sort`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
+	(1544877435039043585, '111', '1111', 100, '11', 0, '2022-07-07 10:54:17', 1265476890672672808, NULL, NULL);
 /*!40000 ALTER TABLE `sys_pos` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_role 结构
@@ -873,6 +934,8 @@ CREATE TABLE IF NOT EXISTS `sys_role` (
 -- 正在导出表  young-board.sys_role 的数据：~0 rows (大约)
 DELETE FROM `sys_role`;
 /*!40000 ALTER TABLE `sys_role` DISABLE KEYS */;
+INSERT INTO `sys_role` (`id`, `name`, `code`, `sort`, `data_scope_type`, `remark`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
+	(1546317493709348865, '测试', '11', 100, 1, NULL, 0, '2022-07-11 10:16:34', 1265476890672672808, '2022-07-11 10:16:36', 1265476890672672808);
 /*!40000 ALTER TABLE `sys_role` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_role_data_scope 结构
@@ -943,7 +1006,7 @@ CREATE TABLE IF NOT EXISTS `sys_timers` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='定时任务';
 
--- 正在导出表  young-board.sys_timers 的数据：~1 rows (大约)
+-- 正在导出表  young-board.sys_timers 的数据：~0 rows (大约)
 DELETE FROM `sys_timers`;
 /*!40000 ALTER TABLE `sys_timers` DISABLE KEYS */;
 INSERT INTO `sys_timers` (`id`, `timer_name`, `action_class`, `cron`, `job_status`, `param`, `remark`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
@@ -966,6 +1029,8 @@ CREATE TABLE IF NOT EXISTS `sys_timers_log` (
 -- 正在导出表  young-board.sys_timers_log 的数据：~0 rows (大约)
 DELETE FROM `sys_timers_log`;
 /*!40000 ALTER TABLE `sys_timers_log` DISABLE KEYS */;
+INSERT INTO `sys_timers_log` (`ID`, `TIMER_ID`, `EXECUTE_START_TIME`, `EXECUTE_END_TIME`, `EXECUTE_CODE`, `EXECUTE_MSG`, `EXECUTE_PARAM`) VALUES
+	(1545431756117995522, 1288760324837851137, '2022-07-08 23:36:58', '2022-07-08 23:36:58', 'FAIL', 'com.zhisida.board.tasks.RefreshConstantsTaskRunner', NULL);
 /*!40000 ALTER TABLE `sys_timers_log` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_user 结构
@@ -993,11 +1058,11 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统用户表';
 
--- 正在导出表  young-board.sys_user 的数据：~1 rows (大约)
+-- 正在导出表  young-board.sys_user 的数据：~0 rows (大约)
 DELETE FROM `sys_user`;
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
 INSERT INTO `sys_user` (`id`, `account`, `pwd_hash_value`, `nick_name`, `name`, `avatar`, `birthday`, `sex`, `email`, `phone`, `tel`, `last_login_ip`, `last_login_time`, `admin_type`, `status`, `create_time`, `create_user`, `update_time`, `update_user`) VALUES
-	(1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '001757f43bd02871093cd7cbfed021f5', '1234567890', '127.0.0.1', '2022-07-02 00:26:38', 1, 0, '2020-05-29 16:39:28', -1, '2022-07-02 00:26:38', -1);
+	(1265476890672672808, 'admin', '207cf410532f92a47dee245ce9b11ff71f578ebd763eb3bbea44ebd043d018fb', '超级管理员', '超级管理员', NULL, '2020-03-18', 1, 'superAdmin@qq.com', '18888888888', '1234567890', '127.0.0.1', '2022-07-20 10:23:46', 1, 0, '2020-05-29 16:39:28', -1, '2022-07-20 10:23:46', -1);
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 
 -- 导出  表 young-board.sys_user_data_scope 结构
@@ -1046,92 +1111,83 @@ CREATE TABLE IF NOT EXISTS `sys_vis_log` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问日志表';
 
--- 正在导出表  young-board.sys_vis_log 的数据：~5 rows (大约)
+-- 正在导出表  young-board.sys_vis_log 的数据：~0 rows (大约)
 DELETE FROM `sys_vis_log`;
 /*!40000 ALTER TABLE `sys_vis_log` DISABLE KEYS */;
-INSERT INTO `sys_vis_log` (`id`, `name`, `success`, `message`, `ip`, `location`, `browser`, `os`, `vis_type`, `vis_time`, `account`, `sign_value`) VALUES
-	(1542881510112194561, '登录', 'Y', '登录成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', 1, '2022-07-01 22:43:09', 'admin', '0617d30d7ecc876601147b87c60b1c090d10f36f4d45a6f537042ef1f530e51df0910e2f2f971f1b8af0ae991c2fcc611027bb1003fac6d130a277164e1a0ba7'),
-	(1542889860782673922, '登录', 'Y', '登录成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', 1, '2022-07-01 23:16:21', 'admin', '089470a36ad51d12305c94069db22d1428dffb02bc1aba6b6dc3dede24dcc31788a1f81764d577c2c585b6b62d1fec899a3ce686ff2b6516b0ee3110a9ac9bb7'),
-	(1542893564273446914, '登出', 'Y', '登出成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', 2, '2022-07-01 23:30:58', 'admin', '8f795f9d6d2dff85a118046011b1bfc58c1b14c67ca3f579bf7569761bb8a2762c2c79710da77a48571842427d124b4dd872505641fbd4a03c05ae14012c0667'),
-	(1542894000372011010, '登录', 'Y', '登录成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', 1, '2022-07-01 23:32:48', 'admin', '79a5f2a5c6eff870eac101635855a2f713c8176eac31646907ca703b7e392a7e89c6c8af8ae5a0b061ffde912625f8a1922f8097b5e2bf153dbd1d4a19fe8b7e'),
-	(1542907557213933569, '登录', 'Y', '登录成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', 1, '2022-07-02 00:26:38', 'admin', 'e54c7a384a529088fd1a31af52fa7ce19a9337df83c9711c7e4d59fbf6c0afa9c7d1b732fc2f51447791ff807c8c83b36947f473bd21ef4555765534a0527b64');
 /*!40000 ALTER TABLE `sys_vis_log` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_analysis 结构
 DROP TABLE IF EXISTS `tbl_board_analysis`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '展示名称',
-  `TYPE` varchar(128) NOT NULL COMMENT '类型',
+  `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '展示名称',
+  `TYPE` varchar(64) DEFAULT NULL COMMENT '类型',
   `CHART_CONFIG` text DEFAULT NULL COMMENT '图标配置',
-  `START_TIME` datetime DEFAULT NULL COMMENT '开始时间',
-  `END_TIME` datetime DEFAULT NULL COMMENT '结束时间',
-  `FILTER_LOGIC` varchar(20) DEFAULT NULL COMMENT '条件逻辑',
+  `SUB_LOGIC` varchar(64) DEFAULT NULL COMMENT '条件逻辑',
+  `SORT` int(11) DEFAULT NULL COMMENT '顺序',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析表';
 
 -- 正在导出表  young-board.tbl_board_analysis 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis`;
 /*!40000 ALTER TABLE `tbl_board_analysis` DISABLE KEYS */;
+INSERT INTO `tbl_board_analysis` (`ID`, `DISPLAY_NAME`, `TYPE`, `CHART_CONFIG`, `SUB_LOGIC`, `SORT`) VALUES
+	(1, NULL, 'EVENT', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `tbl_board_analysis` ENABLE KEYS */;
+
+-- 导出  表 young-board.tbl_board_analysis_dimension 结构
+DROP TABLE IF EXISTS `tbl_board_analysis_dimension`;
+CREATE TABLE IF NOT EXISTS `tbl_board_analysis_dimension` (
+  `ID` bigint(20) NOT NULL COMMENT '主键ID',
+  `ANALYSIS_ID` bigint(20) DEFAULT NULL COMMENT '实时分析ID',
+  `ANALYSIS_EVENT_ID` bigint(20) DEFAULT NULL COMMENT '实时分析事件ID',
+  `ANALYSIS_PROPERTY_ID` bigint(20) DEFAULT NULL COMMENT '实时分析属性ID',
+  `PROPERTY_ID` bigint(20) DEFAULT NULL COMMENT '属性ID',
+  `SORT` int(11) DEFAULT NULL COMMENT '排序',
+  `UNIT` text DEFAULT NULL COMMENT '分组单位',
+  `UNIT_TYPE` longtext DEFAULT NULL COMMENT '分组单位类型',
+  `TYPE` varchar(64) DEFAULT NULL COMMENT '类型',
+  `DISPLAY_NAME` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析分组属性表';
+
+-- 正在导出表  young-board.tbl_board_analysis_dimension 的数据：~0 rows (大约)
+DELETE FROM `tbl_board_analysis_dimension`;
+/*!40000 ALTER TABLE `tbl_board_analysis_dimension` DISABLE KEYS */;
+INSERT INTO `tbl_board_analysis_dimension` (`ID`, `ANALYSIS_ID`, `ANALYSIS_EVENT_ID`, `ANALYSIS_PROPERTY_ID`, `PROPERTY_ID`, `SORT`, `UNIT`, `UNIT_TYPE`, `TYPE`, `DISPLAY_NAME`) VALUES
+	(1, 1, NULL, NULL, 1542918100779843586, NULL, NULL, NULL, 'ROW', NULL);
+/*!40000 ALTER TABLE `tbl_board_analysis_dimension` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_analysis_event 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_event`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
-  `EVENT_ID` bigint(20) NOT NULL COMMENT '事件ID',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `ANALYSIS_ID` bigint(64) DEFAULT NULL COMMENT '实时分析ID',
+  `EVENT_ID` bigint(64) DEFAULT NULL COMMENT '事件ID',
   `SORT` int(11) DEFAULT NULL COMMENT '排序',
+  `SUB_LOGIC` varchar(64) DEFAULT NULL,
+  `DISPLAY_NAME` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件表';
 
 -- 正在导出表  young-board.tbl_board_analysis_event 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_analysis_event`;
 /*!40000 ALTER TABLE `tbl_board_analysis_event` DISABLE KEYS */;
+INSERT INTO `tbl_board_analysis_event` (`ID`, `ANALYSIS_ID`, `EVENT_ID`, `SORT`, `SUB_LOGIC`, `DISPLAY_NAME`) VALUES
+	(1, 1, 1542899414434091010, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `tbl_board_analysis_event` ENABLE KEYS */;
-
--- 导出  表 young-board.tbl_board_analysis_event_filter 结构
-DROP TABLE IF EXISTS `tbl_board_analysis_event_filter`;
-CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_filter` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `PARENT_ID` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
-  `ANALYSIS_EVENT_ID` bigint(20) NOT NULL COMMENT '实时分析事件ID',
-  `PROPERTY_ID` bigint(20) NOT NULL COMMENT '属性ID',
-  `SUB_LOGIC` varchar(128) DEFAULT NULL COMMENT '子级条件逻辑',
-  `MEASURE` varchar(128) DEFAULT NULL COMMENT '计算方式',
-  `VALUE` text DEFAULT NULL COMMENT '条件值',
-  PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件条件表';
-
--- 正在导出表  young-board.tbl_board_analysis_event_filter 的数据：~0 rows (大约)
-DELETE FROM `tbl_board_analysis_event_filter`;
-/*!40000 ALTER TABLE `tbl_board_analysis_event_filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_board_analysis_event_filter` ENABLE KEYS */;
-
--- 导出  表 young-board.tbl_board_analysis_event_property 结构
-DROP TABLE IF EXISTS `tbl_board_analysis_event_property`;
-CREATE TABLE IF NOT EXISTS `tbl_board_analysis_event_property` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `ANALYSIS_EVENT_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
-  `property_Id` bigint(20) NOT NULL COMMENT '事件ID',
-  `measure` varchar(11) DEFAULT NULL COMMENT '计算方式',
-  PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析事件计算属性表';
-
--- 正在导出表  young-board.tbl_board_analysis_event_property 的数据：~0 rows (大约)
-DELETE FROM `tbl_board_analysis_event_property`;
-/*!40000 ALTER TABLE `tbl_board_analysis_event_property` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_board_analysis_event_property` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_analysis_filter 结构
 DROP TABLE IF EXISTS `tbl_board_analysis_filter`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_filter` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `PARENT_ID` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
-  `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析事件ID',
-  `PROPERTY_ID` bigint(20) NOT NULL COMMENT '属性ID',
-  `SUB_LOGIC` varchar(128) DEFAULT NULL COMMENT '子级条件逻辑',
-  `MEASURE` varchar(128) DEFAULT NULL COMMENT '计算方式',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `PARENT_ID` bigint(64) DEFAULT NULL COMMENT '父级条件ID',
+  `ANALYSIS_EVENT_ID` bigint(64) DEFAULT NULL COMMENT '分析事件ID',
+  `ANALYSIS_PROPERTY_ID` bigint(64) DEFAULT NULL COMMENT '分析属性ID',
+  `ANALYSIS_ID` bigint(64) NOT NULL COMMENT '实时分析事件ID',
+  `PROPERTY_ID` bigint(64) NOT NULL COMMENT '属性ID',
+  `SUB_LOGIC` varchar(64) DEFAULT NULL COMMENT '子级条件逻辑',
+  `MEASURE` varchar(64) DEFAULT NULL COMMENT '计算方式',
   `VALUE` text DEFAULT NULL COMMENT '条件值',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析条件表';
@@ -1145,11 +1201,9 @@ DELETE FROM `tbl_board_analysis_filter`;
 DROP TABLE IF EXISTS `tbl_board_analysis_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_analysis_group` (
   `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `PARENT_ID` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
-  `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
-  `PROPERTY_ID` bigint(20) NOT NULL COMMENT '属性ID',
-  `unit` varchar(128) DEFAULT NULL COMMENT '分组单位',
-  `unit_Type` text DEFAULT NULL COMMENT '分组单位类型',
+  `DISPLAY_NAME` bigint(20) DEFAULT NULL COMMENT '父级条件ID',
+  `PID` bigint(20) DEFAULT NULL,
+  `PIDS` text DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析分组表';
 
@@ -1158,10 +1212,31 @@ DELETE FROM `tbl_board_analysis_group`;
 /*!40000 ALTER TABLE `tbl_board_analysis_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_board_analysis_group` ENABLE KEYS */;
 
+-- 导出  表 young-board.tbl_board_analysis_property 结构
+DROP TABLE IF EXISTS `tbl_board_analysis_property`;
+CREATE TABLE IF NOT EXISTS `tbl_board_analysis_property` (
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `PROPERTY_ID` bigint(64) DEFAULT NULL COMMENT '属性ID',
+  `ANALYSIS_EVENT_ID` bigint(64) DEFAULT NULL,
+  `ANALYSIS_ID` bigint(64) DEFAULT NULL,
+  `SORT` int(11) DEFAULT NULL COMMENT '排序',
+  `SUB_LOGIC` varchar(64) DEFAULT NULL,
+  `MEASURE` varchar(64) DEFAULT NULL COMMENT '计算方式',
+  `DISPLAY_NAME` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='实时分析属性表';
+
+-- 正在导出表  young-board.tbl_board_analysis_property 的数据：~0 rows (大约)
+DELETE FROM `tbl_board_analysis_property`;
+/*!40000 ALTER TABLE `tbl_board_analysis_property` DISABLE KEYS */;
+INSERT INTO `tbl_board_analysis_property` (`ID`, `PROPERTY_ID`, `ANALYSIS_EVENT_ID`, `ANALYSIS_ID`, `SORT`, `SUB_LOGIC`, `MEASURE`, `DISPLAY_NAME`) VALUES
+	(1, 1542918100779843586, 1, 1, NULL, NULL, 'COUNT', NULL);
+/*!40000 ALTER TABLE `tbl_board_analysis_property` ENABLE KEYS */;
+
 -- 导出  表 young-board.tbl_board_dash 结构
 DROP TABLE IF EXISTS `tbl_board_dash`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板表';
 
@@ -1173,8 +1248,8 @@ DELETE FROM `tbl_board_dash`;
 -- 导出  表 young-board.tbl_board_dash_analysis 结构
 DROP TABLE IF EXISTS `tbl_board_dash_analysis`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash_analysis` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `ANALYSIS_ID` bigint(20) NOT NULL COMMENT '实时分析ID',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `ANALYSIS_ID` bigint(64) NOT NULL COMMENT '实时分析ID',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板实时分析表';
 
@@ -1186,7 +1261,7 @@ DELETE FROM `tbl_board_dash_analysis`;
 -- 导出  表 young-board.tbl_board_dash_group 结构
 DROP TABLE IF EXISTS `tbl_board_dash_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_dash_group` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '分组描述',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据面板分组表';
@@ -1199,57 +1274,136 @@ DELETE FROM `tbl_board_dash_group`;
 -- 导出  表 young-board.tbl_board_data_source 结构
 DROP TABLE IF EXISTS `tbl_board_data_source`;
 CREATE TABLE IF NOT EXISTS `tbl_board_data_source` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
   `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '数据源名称',
-  `TABLE_PREFIX` varchar(50) DEFAULT NULL COMMENT '表前缀',
-  `TABLE_SUBFIX` varchar(50) DEFAULT NULL COMMENT '表后缀',
-  `PRIMARY_KEYS` varchar(50) DEFAULT NULL,
+  `TABLE_PREFIX` varchar(256) DEFAULT NULL COMMENT '表前缀',
+  `TABLE_SUBFIX` varchar(256) DEFAULT NULL COMMENT '表后缀',
+  `PRIMARY_KEYS` varchar(256) DEFAULT NULL,
   `CONFIG` text DEFAULT NULL COMMENT '数据库配置',
-  `TYPE` varchar(128) DEFAULT NULL COMMENT '数据库类型',
+  `TYPE` varchar(64) DEFAULT NULL COMMENT '数据库类型',
   `REMARK` varchar(512) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据源配置表';
 
--- 正在导出表  young-board.tbl_board_data_source 的数据：~1 rows (大约)
+-- 正在导出表  young-board.tbl_board_data_source 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_data_source`;
 /*!40000 ALTER TABLE `tbl_board_data_source` DISABLE KEYS */;
 INSERT INTO `tbl_board_data_source` (`ID`, `DISPLAY_NAME`, `TABLE_PREFIX`, `TABLE_SUBFIX`, `PRIMARY_KEYS`, `CONFIG`, `TYPE`, `REMARK`) VALUES
-	(1540375348154290178, '基础数据库', NULL, NULL, NULL, '{"url":"jdbc:mysql://localhost:3306/young-board?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&nullCatalogMeansCurrent=true",             "username":"root",             "password":"123456"         }', 'JDBC', '1');
+	(1540375348154290178, '基础数据库', NULL, NULL, NULL, '{"url":"jdbc:mysql://localhost:3306/young-board?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&nullCatalogMeansCurrent=true",             "username":"young-board",             "password":"P@ssw0rd"         }', 'JDBC', '1');
 /*!40000 ALTER TABLE `tbl_board_data_source` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_event 结构
 DROP TABLE IF EXISTS `tbl_board_event`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `EVENT_GROUP_ID` varchar(256) NOT NULL COMMENT '事件分组',
-  `DISPLAY_NAME` varchar(128) NOT NULL COMMENT '事件名称',
-  `DATA_SOURCE_ID` bigint(20) NOT NULL COMMENT '数据库ID',
-  `TABLE_ID` bigint(20) NOT NULL COMMENT '数据表ID',
-  `TABLE_COLUMN_ID` bigint(20) NOT NULL COMMENT '表字段ID',
-  `MEASURE` varchar(128) NOT NULL COMMENT '计算方式',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `EVENT_GROUP_ID` bigint(64) NOT NULL DEFAULT 0 COMMENT '事件分组',
+  `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '事件名称',
+  `DATA_SOURCE_ID` bigint(64) NOT NULL COMMENT '数据库ID',
+  `TABLE_ID` bigint(64) NOT NULL COMMENT '数据表ID',
+  `TABLE_COLUMN_ID` bigint(64) NOT NULL COMMENT '表字段ID',
+  `MEASURE` varchar(64) NOT NULL COMMENT '计算方式',
   `VALUE` varchar(512) NOT NULL COMMENT '事件值',
-  `VALUE_TYPE` varchar(512) NOT NULL COMMENT '事件值类型',
+  `VALUE_TYPE` varchar(64) DEFAULT NULL COMMENT '事件值类型',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件配置表';
 
--- 正在导出表  young-board.tbl_board_event 的数据：~1 rows (大约)
+-- 正在导出表  young-board.tbl_board_event 的数据：~80 rows (大约)
 DELETE FROM `tbl_board_event`;
 /*!40000 ALTER TABLE `tbl_board_event` DISABLE KEYS */;
 INSERT INTO `tbl_board_event` (`ID`, `EVENT_GROUP_ID`, `DISPLAY_NAME`, `DATA_SOURCE_ID`, `TABLE_ID`, `TABLE_COLUMN_ID`, `MEASURE`, `VALUE`, `VALUE_TYPE`) VALUES
-	(1542899414434091010, '1540523165199982593', '1', 1540375348154290178, 1540526435444285441, 1540556831401832449, '1', '1', '1');
+	(1547828949751738369, 0, '属性配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性配置_查询', NULL),
+	(1547828949802070017, 0, '数据源配置表_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据源配置表_查询', NULL),
+	(1547828949877567489, 0, '系统应用_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统应用_列表', NULL),
+	(1547828949911121922, 0, '系统字典类型_下拉', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典类型_下拉', NULL),
+	(1547828949936287745, 0, '系统菜单_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统菜单_列表', NULL),
+	(1547828949978230785, 0, '系统菜单_树', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统菜单_树', NULL),
+	(1547828949999202306, 0, '系统菜单_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统菜单_增加', NULL),
+	(1547828950011785217, 0, '系统字典类型_树', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典类型_树', NULL),
+	(1547828950032756738, 0, '数据源配置表_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据源配置表_列表', NULL),
+	(1547828950062116865, 0, '数据表配置_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据表配置_列表', NULL),
+	(1547828950078894081, 0, '数据字段配置_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据字段配置_列表', NULL),
+	(1547828950091476994, 0, '属性配置_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性配置_增加', NULL),
+	(1547828950116642817, 0, '属性分组_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性分组_列表', NULL),
+	(1547828950129225730, 0, '数据表配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据表配置_查询', NULL),
+	(1547828950141808642, 0, '元事件分组_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件分组_列表', NULL),
+	(1547828950162780161, 0, '元事件分组_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件分组_查询', NULL),
+	(1547828950171168770, 0, '元事件配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件配置_查询', NULL),
+	(1547828950179557377, 0, '系统菜单_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统菜单_编辑', NULL),
+	(1547828950187945986, 0, '元事件分组_查看', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件分组_查看', NULL),
+	(1547828950200528897, 0, '系统属性监控_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统属性监控_查询', NULL),
+	(1547828950208917505, 0, '系统在线用户_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统在线用户_列表', NULL),
+	(1547828950217306114, 0, '系统缓存监控_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统缓存监控_查询', NULL),
+	(1547828950225694722, 0, '文件信息表_分页查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '文件信息表_分页查询', NULL),
+	(1547828950234083329, 0, '定时任务_分页查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '定时任务_分页查询', NULL),
+	(1547828950263443457, 0, '定时任务_任务列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '定时任务_任务列表', NULL),
+	(1547828950280220673, 0, '系统参数配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统参数配置_查询', NULL),
+	(1547828950288609282, 0, '代码生成配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成配置_查询', NULL),
+	(1547828950301192193, 0, '短信发送记录查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '短信发送记录查询', NULL),
+	(1547828950301192194, 0, '系统字典类型_分页查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典类型_分页查询', NULL),
+	(1547828950338940930, 0, '系统组织机构_树', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统组织机构_树', NULL),
+	(1547828950376689665, 0, '系统用户_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统用户_查询', NULL),
+	(1547828950406049793, 0, '系统机构_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统机构_查询', NULL),
+	(1547828950435409922, 0, '系统职位_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统职位_查询', NULL),
+	(1547828950447992834, 0, '系统应用_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统应用_查询', NULL),
+	(1547828950460575745, 0, '系统角色_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统角色_查询', NULL),
+	(1547828950473158658, 0, '字段关联配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '字段关联配置_查询', NULL),
+	(1547828950498324481, 0, '数据源配置表_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据源配置表_编辑', NULL),
+	(1547828950510907393, 0, '数据表配置_同步', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据表配置_同步', NULL),
+	(1547828950531878914, 0, '代码生成详细配置_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成详细配置_列表', NULL),
+	(1547828950548656129, 0, '代码生成_返回预览', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成_返回预览', NULL),
+	(1547828950674485249, 0, '系统通知公告_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统通知公告_查询', NULL),
+	(1547828950687068161, 0, '系统区域_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统区域_列表', NULL),
+	(1547828950699651073, 0, '数据字段配置_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据字段配置_查询', NULL),
+	(1547828950712233985, 0, '数据库表列表_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据库表列表_查询', NULL),
+	(1547828950724816897, 0, '系统通知公告_已收', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统通知公告_已收', NULL),
+	(1547828950733205506, 0, '代码生成详细配置_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成详细配置_编辑', NULL),
+	(1547828950770954241, 0, '系统菜单_切换', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统菜单_切换', NULL),
+	(1547828950812897281, 0, '系统组织机构_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统组织机构_列表', NULL),
+	(1547828950825480194, 0, '系统职位_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统职位_列表', NULL),
+	(1547828950833868802, 0, '系统组织机构_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统组织机构_增加', NULL),
+	(1547828950846451714, 0, '系统职位_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统职位_增加', NULL),
+	(1547828950854840321, 0, '系统用户_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统用户_增加', NULL),
+	(1547828950871617537, 0, '代码生成配置_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成配置_增加', NULL),
+	(1547828950884200450, 0, '系统缓存监控_添加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统缓存监控_添加', NULL),
+	(1547828950896783362, 0, '代码生成_本地项目', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成_本地项目', NULL),
+	(1547828950917754881, 0, '代码生成配置_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '代码生成配置_编辑', NULL),
+	(1547828950926143489, 0, '系统参数配置_删除', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统参数配置_删除', NULL),
+	(1547828950968086529, 0, '定时任务_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '定时任务_编辑', NULL),
+	(1547828950989058050, 0, '定时任务_查询所有', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '定时任务_查询所有', NULL),
+	(1547828951005835265, 0, '任务日志_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '任务日志_查询', NULL),
+	(1547828951031001089, 0, '数据源配置表_导出', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '数据源配置表_导出', NULL),
+	(1547828951047778305, 0, '元事件配置_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件配置_列表', NULL),
+	(1547828951056166914, 0, '属性配置_列表', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性配置_列表', NULL),
+	(1547828951077138434, 0, '实时分析_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '实时分析_查询', NULL),
+	(1547828951089721345, 0, '属性配置_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性配置_编辑', NULL),
+	(1547828951102304257, 0, '系统角色_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统角色_增加', NULL),
+	(1547828951119081474, 0, '系统角色_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统角色_编辑', NULL),
+	(1547828951131664386, 0, '系统角色_拥有菜单', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统角色_拥有菜单', NULL),
+	(1547828951148441602, 0, '系统菜单_授权树', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统菜单_授权树', NULL),
+	(1547828951169413121, 0, '元事件配置_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件配置_增加', NULL),
+	(1547828951181996033, 0, '系统字典类型_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典类型_增加', NULL),
+	(1547828951198773249, 0, '系统字典类型_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典类型_编辑', NULL),
+	(1547828951207161857, 0, '系统字典值_查询', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典值_查询', NULL),
+	(1547828951219744770, 0, '系统字典值_增加', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典值_增加', NULL),
+	(1547828951240716289, 0, '系统字典值_删除', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典值_删除', NULL),
+	(1547828951249104898, 0, '系统字典值_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '系统字典值_编辑', NULL),
+	(1547828951261687809, 0, '属性配置_自动生成', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性配置_自动生成', NULL),
+	(1547828951270076418, 0, '属性配置_删除', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '属性配置_删除', NULL),
+	(1547828951274270721, 0, '元事件配置_编辑', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件配置_编辑', NULL),
+	(1547828951282659330, 0, '元事件配置_删除', 1540375348154290178, 1540526436106985474, 1540526436106985476, 'EQUAL', '元事件配置_删除', NULL);
 /*!40000 ALTER TABLE `tbl_board_event` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_event_group 结构
 DROP TABLE IF EXISTS `tbl_board_event_group`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_group` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `PID` bigint(20) DEFAULT NULL,
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `PID` bigint(64) DEFAULT NULL,
   `PIDS` text DEFAULT NULL,
   `DISPLAY_NAME` varchar(256) NOT NULL COMMENT '事件名称',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件分组表';
 
--- 正在导出表  young-board.tbl_board_event_group 的数据：~1 rows (大约)
+-- 正在导出表  young-board.tbl_board_event_group 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_event_group`;
 /*!40000 ALTER TABLE `tbl_board_event_group` DISABLE KEYS */;
 INSERT INTO `tbl_board_event_group` (`ID`, `PID`, `PIDS`, `DISPLAY_NAME`) VALUES
@@ -1259,9 +1413,9 @@ INSERT INTO `tbl_board_event_group` (`ID`, `PID`, `PIDS`, `DISPLAY_NAME`) VALUES
 -- 导出  表 young-board.tbl_board_event_property 结构
 DROP TABLE IF EXISTS `tbl_board_event_property`;
 CREATE TABLE IF NOT EXISTS `tbl_board_event_property` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
-  `EVENT_ID` bigint(20) NOT NULL COMMENT '事件编号',
-  `PROPERTY_ID` bigint(20) NOT NULL COMMENT '属性编号',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
+  `EVENT_ID` bigint(64) NOT NULL COMMENT '事件编号',
+  `PROPERTY_ID` bigint(64) NOT NULL COMMENT '属性编号',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='元事件属性关联表';
 
@@ -1273,7 +1427,7 @@ DELETE FROM `tbl_board_event_property`;
 -- 导出  表 young-board.tbl_board_indicator 结构
 DROP TABLE IF EXISTS `tbl_board_indicator`;
 CREATE TABLE IF NOT EXISTS `tbl_board_indicator` (
-  `ID` bigint(20) NOT NULL COMMENT '主键ID',
+  `ID` bigint(64) NOT NULL COMMENT '主键ID',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='指标数据';
 
@@ -1301,9 +1455,28 @@ CREATE TABLE IF NOT EXISTS `tbl_board_property` (
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性配置表';
 
--- 正在导出表  young-board.tbl_board_property 的数据：~0 rows (大约)
+-- 正在导出表  young-board.tbl_board_property 的数据：~18 rows (大约)
 DELETE FROM `tbl_board_property`;
 /*!40000 ALTER TABLE `tbl_board_property` DISABLE KEYS */;
+INSERT INTO `tbl_board_property` (`ID`, `DISPLAY_NAME`, `PROPERTY_GROUP_ID`, `DATA_SOURCE_ID`, `TABLE_ID`, `TABLE_COLUMN_ID`, `MEASURE`, `VALUE`, `VALUE_TYPE`, `UNIT`, `UNIT_TYPE`, `IS_DEFAULT`, `REMARK`) VALUES
+	(1548572131116486658, '主键', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985475, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131158429698, '名称', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985476, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131246510082, '操作类型', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985477, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131259092993, '是否执行成功（Y-是，N-否）', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985478, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131271675906, '具体消息', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985479, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131288453121, 'ip', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985480, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131313618946, '地址', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985481, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131330396161, '浏览器', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985482, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131351367682, '操作系统', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985483, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131363950593, '请求地址', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985484, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131426865153, '类名称', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985485, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131468808193, '方法名称', NULL, 1540375348154290178, 1540526436106985474, 1540526436106985486, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131493974018, '请求方式（GET POST PUT DELETE)', NULL, 1540375348154290178, 1540526436106985474, 1540526436144734209, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131510751234, '请求参数', NULL, 1540375348154290178, 1540526436106985474, 1540526436144734210, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131523334146, '返回结果', NULL, 1540375348154290178, 1540526436106985474, 1540526436144734211, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131540111362, '操作时间', NULL, 1540375348154290178, 1540526436106985474, 1540526436144734212, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131552694273, '操作账号', NULL, 1540375348154290178, 1540526436106985474, 1540526436144734213, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(1548572131565277185, '签名数据（除ID外）', NULL, 1540375348154290178, 1540526436106985474, 1540526436144734214, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `tbl_board_property` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_property_group 结构
@@ -1316,7 +1489,7 @@ CREATE TABLE IF NOT EXISTS `tbl_board_property_group` (
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='属性分组表';
 
--- 正在导出表  young-board.tbl_board_property_group 的数据：~1 rows (大约)
+-- 正在导出表  young-board.tbl_board_property_group 的数据：~0 rows (大约)
 DELETE FROM `tbl_board_property_group`;
 /*!40000 ALTER TABLE `tbl_board_property_group` DISABLE KEYS */;
 INSERT INTO `tbl_board_property_group` (`ID`, `PID`, `PIDS`, `DISPLAY_NAME`) VALUES
@@ -1438,421 +1611,422 @@ CREATE TABLE IF NOT EXISTS `tbl_board_table_column` (
   `DISPLAY_NAME` varchar(256) DEFAULT NULL COMMENT '展示名称',
   `REFRESH_TYPE` varchar(128) DEFAULT NULL COMMENT '刷新方式',
   `COLUMN_TYPE` varchar(128) DEFAULT NULL COMMENT '字段类型',
+  `BUSINESS_TYPE` varchar(128) DEFAULT NULL,
   `DATA_TYPE` varchar(128) DEFAULT NULL COMMENT '数据类型',
   `REMARK` varchar(512) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='数据字段配置表';
 
--- 正在导出表  young-board.tbl_board_table_column 的数据：~406 rows (大约)
+-- 正在导出表  young-board.tbl_board_table_column 的数据：~327 rows (大约)
 DELETE FROM `tbl_board_table_column`;
 /*!40000 ALTER TABLE `tbl_board_table_column` DISABLE KEYS */;
-INSERT INTO `tbl_board_table_column` (`ID`, `TABLE_ID`, `COLUMN_NAME`, `DISPLAY_NAME`, `REFRESH_TYPE`, `COLUMN_TYPE`, `DATA_TYPE`, `REMARK`) VALUES
-	(1540526435477839884, 1540526435477839883, 'id', '', NULL, NULL, 'bigint', NULL),
-	(1540526435477839885, 1540526435477839883, 'level_code', '层级', NULL, NULL, 'tinyint', NULL),
-	(1540526435477839886, 1540526435477839883, 'parent_code', '父级行政代码', NULL, NULL, 'varchar', NULL),
-	(1540526435477839887, 1540526435477839883, 'area_code', '行政代码', NULL, NULL, 'varchar', NULL),
-	(1540526435477839888, 1540526435477839883, 'zip_code', '邮政编码', NULL, NULL, 'varchar', NULL),
-	(1540526435477839889, 1540526435477839883, 'city_code', '区号', NULL, NULL, 'varchar', NULL),
-	(1540526435477839890, 1540526435477839883, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526435477839891, 1540526435477839883, 'short_name', '简称', NULL, NULL, 'varchar', NULL),
-	(1540526435477839892, 1540526435477839883, 'merger_name', '组合名', NULL, NULL, 'varchar', NULL),
-	(1540526435477839893, 1540526435477839883, 'pinyin', '拼音', NULL, NULL, 'varchar', NULL),
-	(1540526435477839894, 1540526435477839883, 'lng', '经度', NULL, NULL, 'decimal', NULL),
-	(1540526435477839895, 1540526435477839883, 'lat', '纬度', NULL, NULL, 'decimal', NULL),
-	(1540526435540754435, 1540526435540754434, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435540754436, 1540526435540754434, 'author_name', '作者姓名', NULL, NULL, 'varchar', NULL),
-	(1540526435540754437, 1540526435540754434, 'class_name', '类名', NULL, NULL, 'varchar', NULL),
-	(1540526435540754438, 1540526435540754434, 'table_prefix', '是否移除表前缀', NULL, NULL, 'varchar', NULL),
-	(1540526435574308865, 1540526435540754434, 'generate_type', '生成位置类型', NULL, NULL, 'varchar', NULL),
-	(1540526435574308866, 1540526435540754434, 'table_name', '数据库表名', NULL, NULL, 'varchar', NULL),
-	(1540526435574308867, 1540526435540754434, 'package_name', '包名称', NULL, NULL, 'varchar', NULL),
-	(1540526435574308868, 1540526435540754434, 'bus_name', '业务名', NULL, NULL, 'varchar', NULL),
-	(1540526435574308869, 1540526435540754434, 'table_comment', '功能名', NULL, NULL, 'varchar', NULL),
-	(1540526435574308870, 1540526435540754434, 'app_code', '所属应用', NULL, NULL, 'varchar', NULL),
-	(1540526435574308871, 1540526435540754434, 'menu_pid', '菜单上级', NULL, NULL, 'varchar', NULL),
-	(1540526435574308872, 1540526435540754434, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435574308873, 1540526435540754434, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435574308874, 1540526435540754434, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526435574308875, 1540526435540754434, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526435616251905, 1540526435574308876, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435616251906, 1540526435574308876, 'code_gen_id', '代码生成主表ID', NULL, NULL, 'bigint', NULL),
-	(1540526435616251907, 1540526435574308876, 'column_name', '数据库字段名', NULL, NULL, 'varchar', NULL),
-	(1540526435616251908, 1540526435574308876, 'java_name', 'java类字段名', NULL, NULL, 'varchar', NULL),
-	(1540526435616251909, 1540526435574308876, 'data_type', '物理类型', NULL, NULL, 'varchar', NULL),
-	(1540526435616251910, 1540526435574308876, 'column_comment', '字段描述', NULL, NULL, 'varchar', NULL),
-	(1540526435616251911, 1540526435574308876, 'java_type', 'java类型', NULL, NULL, 'varchar', NULL),
-	(1540526435616251912, 1540526435574308876, 'effect_type', '作用类型（字典）', NULL, NULL, 'varchar', NULL),
-	(1540526435616251913, 1540526435574308876, 'dict_type_code', '字典code', NULL, NULL, 'varchar', NULL),
-	(1540526435616251914, 1540526435574308876, 'whether_table', '列表展示', NULL, NULL, 'varchar', NULL),
-	(1540526435616251915, 1540526435574308876, 'whether_add_update', '增改', NULL, NULL, 'varchar', NULL),
-	(1540526435616251916, 1540526435574308876, 'whether_retract', '列表是否缩进（字典）', NULL, NULL, 'varchar', NULL),
-	(1540526435616251917, 1540526435574308876, 'whether_required', '是否必填（字典）', NULL, NULL, 'varchar', NULL),
-	(1540526435616251918, 1540526435574308876, 'query_whether', '是否是查询条件', NULL, NULL, 'varchar', NULL),
-	(1540526435616251919, 1540526435574308876, 'query_type', '查询方式', NULL, NULL, 'varchar', NULL),
-	(1540526435616251920, 1540526435574308876, 'column_key', '主键', NULL, NULL, 'varchar', NULL),
-	(1540526435616251921, 1540526435574308876, 'column_key_name', '主外键名称', NULL, NULL, 'varchar', NULL),
-	(1540526435616251922, 1540526435574308876, 'whether_common', '是否是通用字段', NULL, NULL, 'varchar', NULL),
-	(1540526435616251923, 1540526435574308876, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435616251924, 1540526435574308876, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435616251925, 1540526435574308876, 'update_time', '修改时间', NULL, NULL, 'datetime', NULL),
-	(1540526435616251926, 1540526435574308876, 'update_user', '修改人', NULL, NULL, 'bigint', NULL),
-	(1540526435616251928, 1540526435616251927, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435616251929, 1540526435616251927, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526435616251930, 1540526435616251927, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526435616251931, 1540526435616251927, 'value', '值', NULL, NULL, 'varchar', NULL),
-	(1540526435616251932, 1540526435616251927, 'sys_flag', '是否是系统参数（Y-是，N-否）', NULL, NULL, 'char', NULL),
-	(1540526435616251933, 1540526435616251927, 'remark', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526435616251934, 1540526435616251927, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526435616251935, 1540526435616251927, 'group_code', '常量所属分类的编码，来自于“常量的分类”字典', NULL, NULL, 'varchar', NULL),
-	(1540526435616251936, 1540526435616251927, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435616251937, 1540526435616251927, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435616251938, 1540526435616251927, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526435616251939, 1540526435616251927, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526435687555074, 1540526435687555073, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435721109506, 1540526435687555073, 'type_id', '字典类型id', NULL, NULL, 'bigint', NULL),
-	(1540526435721109507, 1540526435687555073, 'value', '值', NULL, NULL, 'text', NULL),
-	(1540526435721109508, 1540526435687555073, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526435721109509, 1540526435687555073, 'sort', '排序', NULL, NULL, 'int', NULL),
-	(1540526435721109510, 1540526435687555073, 'remark', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526435721109511, 1540526435687555073, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526435721109512, 1540526435687555073, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435721109513, 1540526435687555073, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435721109514, 1540526435687555073, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526435721109515, 1540526435687555073, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526435758858241, 1540526435721109516, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435758858242, 1540526435721109516, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526435758858243, 1540526435721109516, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526435758858244, 1540526435721109516, 'sort', '排序', NULL, NULL, 'int', NULL),
-	(1540526435758858245, 1540526435721109516, 'remark', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526435758858246, 1540526435721109516, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526435758858247, 1540526435721109516, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435758858248, 1540526435721109516, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435758858249, 1540526435721109516, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526435758858250, 1540526435721109516, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526435758858252, 1540526435758858251, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435758858253, 1540526435758858251, 'job_num', '工号', NULL, NULL, 'varchar', NULL),
-	(1540526435758858254, 1540526435758858251, 'org_id', '所属机构id', NULL, NULL, 'bigint', NULL),
-	(1540526435758858255, 1540526435758858251, 'org_name', '所属机构名称', NULL, NULL, 'varchar', NULL),
-	(1540526435758858257, 1540526435758858256, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435758858258, 1540526435758858256, 'emp_id', '员工id', NULL, NULL, 'bigint', NULL),
-	(1540526435758858259, 1540526435758858256, 'org_id', '机构id', NULL, NULL, 'bigint', NULL),
-	(1540526435758858260, 1540526435758858256, 'pos_id', '岗位id', NULL, NULL, 'bigint', NULL),
-	(1540526435825967105, 1540526435758858261, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435825967106, 1540526435758858261, 'emp_id', '员工id', NULL, NULL, 'bigint', NULL),
-	(1540526435825967107, 1540526435758858261, 'pos_id', '职位id', NULL, NULL, 'bigint', NULL),
-	(1540526435825967109, 1540526435825967108, 'id', '主键id', NULL, NULL, 'bigint', NULL),
-	(1540526435825967110, 1540526435825967108, 'file_location', '文件存储位置（1:阿里云，2:腾讯云，3:minio，4:本地）', NULL, NULL, 'tinyint', NULL),
-	(1540526435825967111, 1540526435825967108, 'file_bucket', '文件仓库', NULL, NULL, 'varchar', NULL),
-	(1540526435825967112, 1540526435825967108, 'file_origin_name', '文件名称（上传时候的文件名）', NULL, NULL, 'varchar', NULL),
-	(1540526435825967113, 1540526435825967108, 'file_suffix', '文件后缀', NULL, NULL, 'varchar', NULL),
-	(1540526435825967114, 1540526435825967108, 'file_size_kb', '文件大小kb', NULL, NULL, 'bigint', NULL),
-	(1540526435825967115, 1540526435825967108, 'file_size_info', '文件大小信息，计算后的', NULL, NULL, 'varchar', NULL),
-	(1540526435825967116, 1540526435825967108, 'file_object_name', '存储到bucket的名称（文件唯一标识id）', NULL, NULL, 'varchar', NULL),
-	(1540526435825967117, 1540526435825967108, 'file_path', '存储路径', NULL, NULL, 'varchar', NULL),
-	(1540526435825967118, 1540526435825967108, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435825967119, 1540526435825967108, 'create_user', '创建用户', NULL, NULL, 'bigint', NULL),
-	(1540526435825967120, 1540526435825967108, 'update_time', '修改时间', NULL, NULL, 'datetime', NULL),
-	(1540526435825967121, 1540526435825967108, 'update_user', '修改用户', NULL, NULL, 'bigint', NULL),
-	(1540526435893075970, 1540526435893075969, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435893075971, 1540526435893075969, 'pid', '父id', NULL, NULL, 'bigint', NULL),
-	(1540526435930824706, 1540526435893075969, 'pids', '父ids', NULL, NULL, 'text', NULL),
-	(1540526435930824707, 1540526435893075969, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526435930824708, 1540526435893075969, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526435930824709, 1540526435893075969, 'type', '菜单类型（字典 0目录 1菜单 2按钮）', NULL, NULL, 'tinyint', NULL),
-	(1540526435930824710, 1540526435893075969, 'icon', '图标', NULL, NULL, 'varchar', NULL),
-	(1540526435930824711, 1540526435893075969, 'router', '路由地址', NULL, NULL, 'varchar', NULL),
-	(1540526435930824712, 1540526435893075969, 'component', '组件地址', NULL, NULL, 'varchar', NULL),
-	(1540526435930824713, 1540526435893075969, 'permission', '权限标识', NULL, NULL, 'varchar', NULL),
-	(1540526435930824714, 1540526435893075969, 'application', '应用分类（应用编码）', NULL, NULL, 'varchar', NULL),
-	(1540526435930824715, 1540526435893075969, 'open_type', '打开方式（字典 0无 1组件 2内链 3外链）', NULL, NULL, 'tinyint', NULL),
-	(1540526435930824716, 1540526435893075969, 'visible', '是否可见（Y-是，N-否）', NULL, NULL, 'char', NULL),
-	(1540526435930824717, 1540526435893075969, 'link', '链接地址', NULL, NULL, 'varchar', NULL),
-	(1540526435930824718, 1540526435893075969, 'redirect', '重定向地址', NULL, NULL, 'varchar', NULL),
-	(1540526435930824719, 1540526435893075969, 'weight', '权重（字典 1系统权重 2业务权重）', NULL, NULL, 'tinyint', NULL),
-	(1540526435930824720, 1540526435893075969, 'sort', '排序', NULL, NULL, 'int', NULL),
-	(1540526435930824721, 1540526435893075969, 'remark', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526435930824722, 1540526435893075969, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526435930824723, 1540526435893075969, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435930824724, 1540526435893075969, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435930824725, 1540526435893075969, 'update_time', '修改时间', NULL, NULL, 'datetime', NULL),
-	(1540526435930824726, 1540526435893075969, 'update_user', '修改人', NULL, NULL, 'bigint', NULL),
-	(1540526435964379138, 1540526435964379137, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526435964379139, 1540526435964379137, 'title', '标题', NULL, NULL, 'varchar', NULL),
-	(1540526435964379140, 1540526435964379137, 'content', '内容', NULL, NULL, 'text', NULL),
-	(1540526435964379141, 1540526435964379137, 'type', '类型（字典 1通知 2公告）', NULL, NULL, 'tinyint', NULL),
-	(1540526435964379142, 1540526435964379137, 'public_user_id', '发布人id', NULL, NULL, 'bigint', NULL),
-	(1540526435964379143, 1540526435964379137, 'public_user_name', '发布人姓名', NULL, NULL, 'varchar', NULL),
-	(1540526435964379144, 1540526435964379137, 'public_org_id', '发布机构id', NULL, NULL, 'bigint', NULL),
-	(1540526435964379145, 1540526435964379137, 'public_org_name', '发布机构名称', NULL, NULL, 'varchar', NULL),
-	(1540526435964379146, 1540526435964379137, 'public_time', '发布时间', NULL, NULL, 'datetime', NULL),
-	(1540526435964379147, 1540526435964379137, 'cancel_time', '撤回时间', NULL, NULL, 'datetime', NULL),
-	(1540526435964379148, 1540526435964379137, 'status', '状态（字典 0草稿 1发布 2撤回 3删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526435964379149, 1540526435964379137, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526435964379150, 1540526435964379137, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526435964379151, 1540526435964379137, 'update_time', '修改时间', NULL, NULL, 'datetime', NULL),
-	(1540526435964379152, 1540526435964379137, 'update_user', '修改人', NULL, NULL, 'bigint', NULL),
-	(1540526436027293698, 1540526436027293697, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436027293699, 1540526436027293697, 'notice_id', '通知公告id', NULL, NULL, 'bigint', NULL),
-	(1540526436027293700, 1540526436027293697, 'user_id', '用户id', NULL, NULL, 'bigint', NULL),
-	(1540526436027293701, 1540526436027293697, 'status', '状态（字典 0未读 1已读）', NULL, NULL, 'tinyint', NULL),
-	(1540526436027293702, 1540526436027293697, 'read_time', '阅读时间', NULL, NULL, 'datetime', NULL),
-	(1540526436065042434, 1540526436065042433, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436065042435, 1540526436065042433, 'uuid', '第三方平台的用户唯一id', NULL, NULL, 'varchar', NULL),
-	(1540526436065042436, 1540526436065042433, 'access_token', '用户授权的token', NULL, NULL, 'varchar', NULL),
-	(1540526436065042437, 1540526436065042433, 'nick_name', '昵称', NULL, NULL, 'varchar', NULL),
-	(1540526436065042438, 1540526436065042433, 'avatar', '头像', NULL, NULL, 'varchar', NULL),
-	(1540526436065042439, 1540526436065042433, 'blog', '用户网址', NULL, NULL, 'varchar', NULL),
-	(1540526436065042440, 1540526436065042433, 'company', '所在公司', NULL, NULL, 'varchar', NULL),
-	(1540526436065042441, 1540526436065042433, 'location', '位置', NULL, NULL, 'varchar', NULL),
-	(1540526436065042442, 1540526436065042433, 'email', '邮箱', NULL, NULL, 'varchar', NULL),
-	(1540526436065042443, 1540526436065042433, 'gender', '性别', NULL, NULL, 'varchar', NULL),
-	(1540526436065042444, 1540526436065042433, 'source', '用户来源', NULL, NULL, 'varchar', NULL),
-	(1540526436065042445, 1540526436065042433, 'remark', '用户备注（各平台中的用户个人介绍）', NULL, NULL, 'varchar', NULL),
-	(1540526436065042446, 1540526436065042433, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436065042447, 1540526436065042433, 'create_user', '创建用户', NULL, NULL, 'bigint', NULL),
-	(1540526436065042448, 1540526436065042433, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436065042449, 1540526436065042433, 'update_user', '更新用户', NULL, NULL, 'bigint', NULL),
-	(1540526436106985475, 1540526436106985474, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436106985476, 1540526436106985474, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526436106985477, 1540526436106985474, 'op_type', '操作类型', NULL, NULL, 'tinyint', NULL),
-	(1540526436106985478, 1540526436106985474, 'success', '是否执行成功（Y-是，N-否）', NULL, NULL, 'char', NULL),
-	(1540526436106985479, 1540526436106985474, 'message', '具体消息', NULL, NULL, 'text', NULL),
-	(1540526436106985480, 1540526436106985474, 'ip', 'ip', NULL, NULL, 'varchar', NULL),
-	(1540526436106985481, 1540526436106985474, 'location', '地址', NULL, NULL, 'varchar', NULL),
-	(1540526436106985482, 1540526436106985474, 'browser', '浏览器', NULL, NULL, 'varchar', NULL),
-	(1540526436106985483, 1540526436106985474, 'os', '操作系统', NULL, NULL, 'varchar', NULL),
-	(1540526436106985484, 1540526436106985474, 'url', '请求地址', NULL, NULL, 'varchar', NULL),
-	(1540526436106985485, 1540526436106985474, 'class_name', '类名称', NULL, NULL, 'varchar', NULL),
-	(1540526436106985486, 1540526436106985474, 'method_name', '方法名称', NULL, NULL, 'varchar', NULL),
-	(1540526436144734209, 1540526436106985474, 'req_method', '请求方式（GET POST PUT DELETE)', NULL, NULL, 'varchar', NULL),
-	(1540526436144734210, 1540526436106985474, 'param', '请求参数', NULL, NULL, 'text', NULL),
-	(1540526436144734211, 1540526436106985474, 'result', '返回结果', NULL, NULL, 'longtext', NULL),
-	(1540526436144734212, 1540526436106985474, 'op_time', '操作时间', NULL, NULL, 'datetime', NULL),
-	(1540526436144734213, 1540526436106985474, 'account', '操作账号', NULL, NULL, 'varchar', NULL),
-	(1540526436144734214, 1540526436106985474, 'sign_value', '签名数据（除ID外）', NULL, NULL, 'varchar', NULL),
-	(1540526436144734216, 1540526436144734215, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436144734217, 1540526436144734215, 'pid', '父id', NULL, NULL, 'bigint', NULL),
-	(1540526436144734218, 1540526436144734215, 'pids', '父ids', NULL, NULL, 'text', NULL),
-	(1540526436144734219, 1540526436144734215, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526436144734220, 1540526436144734215, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526436144734221, 1540526436144734215, 'sort', '排序', NULL, NULL, 'int', NULL),
-	(1540526436144734222, 1540526436144734215, 'remark', '描述', NULL, NULL, 'varchar', NULL),
-	(1540526436144734223, 1540526436144734215, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526436144734224, 1540526436144734215, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436144734225, 1540526436144734215, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526436144734226, 1540526436144734215, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436144734227, 1540526436144734215, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526436144734229, 1540526436144734228, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436144734230, 1540526436144734228, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526436144734231, 1540526436144734228, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526436144734232, 1540526436144734228, 'sort', '排序', NULL, NULL, 'int', NULL),
-	(1540526436144734233, 1540526436144734228, 'remark', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526436144734234, 1540526436144734228, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526436144734235, 1540526436144734228, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436144734236, 1540526436144734228, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526436144734237, 1540526436144734228, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436144734238, 1540526436144734228, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526436241203203, 1540526436241203202, 'id', '主键id', NULL, NULL, 'bigint', NULL),
-	(1540526436241203204, 1540526436241203202, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526436241203205, 1540526436241203202, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540526436241203206, 1540526436241203202, 'sort', '序号', NULL, NULL, 'int', NULL),
-	(1540526436241203207, 1540526436241203202, 'data_scope_type', '数据范围类型（字典 1全部数据 2本部门及以下数据 3本部门数据 4仅本人数据 5自定义数据）', NULL, NULL, 'tinyint', NULL),
-	(1540526436241203208, 1540526436241203202, 'remark', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526436241203209, 1540526436241203202, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526436241203210, 1540526436241203202, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436241203211, 1540526436241203202, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526436241203212, 1540526436241203202, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436241203213, 1540526436241203202, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526436278951938, 1540526436241203214, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436278951939, 1540526436241203214, 'role_id', '角色id', NULL, NULL, 'bigint', NULL),
-	(1540526436278951940, 1540526436241203214, 'org_id', '机构id', NULL, NULL, 'bigint', NULL),
-	(1540526436278951942, 1540526436278951941, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436278951943, 1540526436278951941, 'role_id', '角色id', NULL, NULL, 'bigint', NULL),
-	(1540526436278951944, 1540526436278951941, 'menu_id', '菜单id', NULL, NULL, 'bigint', NULL),
-	(1540526436278951946, 1540526436278951945, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436278951947, 1540526436278951945, 'phone_numbers', '手机号', NULL, NULL, 'varchar', NULL),
-	(1540526436278951948, 1540526436278951945, 'validate_code', '短信验证码', NULL, NULL, 'varchar', NULL),
-	(1540526436316700673, 1540526436278951945, 'template_code', '短信模板ID', NULL, NULL, 'varchar', NULL),
-	(1540526436316700674, 1540526436278951945, 'biz_id', '回执id，可根据该id查询具体的发送状态', NULL, NULL, 'varchar', NULL),
-	(1540526436316700675, 1540526436278951945, 'status', '发送状态（字典 0 未发送，1 发送成功，2 发送失败，3 失效）', NULL, NULL, 'tinyint', NULL),
-	(1540526436316700676, 1540526436278951945, 'source', '来源（字典 1 app， 2 pc， 3 其他）', NULL, NULL, 'tinyint', NULL),
-	(1540526436316700677, 1540526436278951945, 'invalid_time', '失效时间', NULL, NULL, 'datetime', NULL),
-	(1540526436316700678, 1540526436278951945, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436316700679, 1540526436278951945, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526436316700680, 1540526436278951945, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436316700681, 1540526436278951945, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526436316700683, 1540526436316700682, 'id', '定时器id', NULL, NULL, 'bigint', NULL),
-	(1540526436316700684, 1540526436316700682, 'timer_name', '任务名称', NULL, NULL, 'varchar', NULL),
-	(1540526436316700685, 1540526436316700682, 'action_class', '执行任务的class的类名（实现了TimerTaskRunner接口的类的全称）', NULL, NULL, 'varchar', NULL),
-	(1540526436316700686, 1540526436316700682, 'cron', '定时任务表达式', NULL, NULL, 'varchar', NULL),
-	(1540526436316700687, 1540526436316700682, 'job_status', '状态（字典 1运行  2停止）', NULL, NULL, 'tinyint', NULL),
-	(1540526436316700688, 1540526436316700682, 'param', '', NULL, NULL, 'text', NULL),
-	(1540526436316700689, 1540526436316700682, 'remark', '备注信息', NULL, NULL, 'varchar', NULL),
-	(1540526436316700690, 1540526436316700682, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436316700691, 1540526436316700682, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526436316700692, 1540526436316700682, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436316700693, 1540526436316700682, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526436383809537, 1540526436316700694, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436383809538, 1540526436316700694, 'TIMER_ID', '任务编号', NULL, NULL, 'bigint', NULL),
-	(1540526436383809539, 1540526436316700694, 'EXECUTE_START_TIME', '执行开始时间', NULL, NULL, 'datetime', NULL),
-	(1540526436383809540, 1540526436316700694, 'EXECUTE_END_TIME', '执行结束时间', NULL, NULL, 'datetime', NULL),
-	(1540526436383809541, 1540526436316700694, 'EXECUTE_CODE', '执行结果', NULL, NULL, 'varchar', NULL),
-	(1540526436383809542, 1540526436316700694, 'EXECUTE_MSG', '执行信息', NULL, NULL, 'text', NULL),
-	(1540526436383809543, 1540526436316700694, 'EXECUTE_PARAM', '执行参数', NULL, NULL, 'text', NULL),
-	(1540526436383809545, 1540526436383809544, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436383809546, 1540526436383809544, 'account', '账号', NULL, NULL, 'varchar', NULL),
-	(1540526436383809547, 1540526436383809544, 'pwd_hash_value', '密码', NULL, NULL, 'varchar', NULL),
-	(1540526436383809548, 1540526436383809544, 'nick_name', '昵称', NULL, NULL, 'varchar', NULL),
-	(1540526436383809549, 1540526436383809544, 'name', '姓名', NULL, NULL, 'varchar', NULL),
-	(1540526436383809550, 1540526436383809544, 'avatar', '头像', NULL, NULL, 'bigint', NULL),
-	(1540526436383809551, 1540526436383809544, 'birthday', '生日', NULL, NULL, 'date', NULL),
-	(1540526436383809552, 1540526436383809544, 'sex', '性别(字典 1男 2女 3未知)', NULL, NULL, 'tinyint', NULL),
-	(1540526436383809553, 1540526436383809544, 'email', '邮箱', NULL, NULL, 'varchar', NULL),
-	(1540526436383809554, 1540526436383809544, 'phone', '手机', NULL, NULL, 'varchar', NULL),
-	(1540526436383809555, 1540526436383809544, 'tel', '电话', NULL, NULL, 'varchar', NULL),
-	(1540526436383809556, 1540526436383809544, 'last_login_ip', '最后登陆IP', NULL, NULL, 'varchar', NULL),
-	(1540526436383809557, 1540526436383809544, 'last_login_time', '最后登陆时间', NULL, NULL, 'datetime', NULL),
-	(1540526436383809558, 1540526436383809544, 'admin_type', '管理员类型（0超级管理员 1非管理员）', NULL, NULL, 'tinyint', NULL),
-	(1540526436383809559, 1540526436383809544, 'status', '状态（字典 0正常 1冻结 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540526436383809560, 1540526436383809544, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540526436383809561, 1540526436383809544, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540526436383809562, 1540526436383809544, 'update_time', '更新时间', NULL, NULL, 'datetime', NULL),
-	(1540526436383809563, 1540526436383809544, 'update_user', '更新人', NULL, NULL, 'bigint', NULL),
-	(1540526436450918403, 1540526436450918402, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436450918404, 1540526436450918402, 'user_id', '用户id', NULL, NULL, 'bigint', NULL),
-	(1540526436450918405, 1540526436450918402, 'org_id', '机构id', NULL, NULL, 'bigint', NULL),
-	(1540526436450918407, 1540526436450918406, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436450918408, 1540526436450918406, 'user_id', '用户id', NULL, NULL, 'bigint', NULL),
-	(1540526436450918409, 1540526436450918406, 'role_id', '角色id', NULL, NULL, 'bigint', NULL),
-	(1540526436450918411, 1540526436450918410, 'id', '主键', NULL, NULL, 'bigint', NULL),
-	(1540526436450918412, 1540526436450918410, 'name', '名称', NULL, NULL, 'varchar', NULL),
-	(1540526436450918413, 1540526436450918410, 'success', '是否执行成功（Y-是，N-否）', NULL, NULL, 'char', NULL),
-	(1540526436450918414, 1540526436450918410, 'message', '具体消息', NULL, NULL, 'text', NULL),
-	(1540526436450918415, 1540526436450918410, 'ip', 'ip', NULL, NULL, 'varchar', NULL),
-	(1540526436450918416, 1540526436450918410, 'location', '地址', NULL, NULL, 'varchar', NULL),
-	(1540526436450918417, 1540526436450918410, 'browser', '浏览器', NULL, NULL, 'varchar', NULL),
-	(1540526436450918418, 1540526436450918410, 'os', '操作系统', NULL, NULL, 'varchar', NULL),
-	(1540526436450918419, 1540526436450918410, 'vis_type', '操作类型（字典 1登入 2登出）', NULL, NULL, 'tinyint', NULL),
-	(1540526436450918420, 1540526436450918410, 'vis_time', '访问时间', NULL, NULL, 'datetime', NULL),
-	(1540526436450918421, 1540526436450918410, 'account', '访问账号', NULL, NULL, 'varchar', NULL),
-	(1540526436450918422, 1540526436450918410, 'sign_value', '签名数据（除ID外）', NULL, NULL, 'varchar', NULL),
-	(1540526436518027267, 1540526436518027266, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436518027268, 1540526436518027266, 'DISPLAY_NAME', '展示名称', NULL, NULL, 'varchar', NULL),
-	(1540526436518027269, 1540526436518027266, 'TYPE', '类型', NULL, NULL, 'varchar', NULL),
-	(1540526436518027270, 1540526436518027266, 'CHART_CONFIG', '图标配置', NULL, NULL, 'text', NULL),
-	(1540526436518027271, 1540526436518027266, 'START_TIME', '开始时间', NULL, NULL, 'datetime', NULL),
-	(1540526436518027272, 1540526436518027266, 'END_TIME', '结束时间', NULL, NULL, 'datetime', NULL),
-	(1540526436518027273, 1540526436518027266, 'FILTER_LOGIC', '条件逻辑', NULL, NULL, 'varchar', NULL),
-	(1540526436518027275, 1540526436518027274, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436518027276, 1540526436518027274, 'ANALYSIS_ID', '实时分析ID', NULL, NULL, 'bigint', NULL),
-	(1540526436518027277, 1540526436518027274, 'EVENT_ID', '事件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436518027278, 1540526436518027274, 'SORT', '排序', NULL, NULL, 'int', NULL),
-	(1540526436597719041, 1540526436518027279, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436597719042, 1540526436518027279, 'PARENT_ID', '父级条件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436597719043, 1540526436518027279, 'ANALYSIS_EVENT_ID', '实时分析事件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436597719044, 1540526436518027279, 'PROPERTY_ID', '属性ID', NULL, NULL, 'bigint', NULL),
-	(1540526436597719045, 1540526436518027279, 'SUB_LOGIC', '子级条件逻辑', NULL, NULL, 'varchar', NULL),
-	(1540526436597719046, 1540526436518027279, 'MEASURE', '计算方式', NULL, NULL, 'varchar', NULL),
-	(1540526436597719047, 1540526436518027279, 'VALUE', '条件值', NULL, NULL, 'text', NULL),
-	(1540526436631273473, 1540526436597719048, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273474, 1540526436597719048, 'ANALYSIS_EVENT_ID', '实时分析ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273475, 1540526436597719048, 'property_Id', '事件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273476, 1540526436597719048, 'measure', '计算方式', NULL, NULL, 'varchar', NULL),
-	(1540526436631273478, 1540526436631273477, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273479, 1540526436631273477, 'PARENT_ID', '父级条件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273480, 1540526436631273477, 'ANALYSIS_ID', '实时分析事件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273481, 1540526436631273477, 'PROPERTY_ID', '属性ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273482, 1540526436631273477, 'SUB_LOGIC', '子级条件逻辑', NULL, NULL, 'varchar', NULL),
-	(1540526436631273483, 1540526436631273477, 'MEASURE', '计算方式', NULL, NULL, 'varchar', NULL),
-	(1540526436631273484, 1540526436631273477, 'VALUE', '条件值', NULL, NULL, 'text', NULL),
-	(1540526436631273486, 1540526436631273485, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273487, 1540526436631273485, 'PARENT_ID', '父级条件ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273488, 1540526436631273485, 'ANALYSIS_ID', '实时分析ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273489, 1540526436631273485, 'PROPERTY_ID', '属性ID', NULL, NULL, 'bigint', NULL),
-	(1540526436631273490, 1540526436631273485, 'unit', '分组单位', NULL, NULL, 'varchar', NULL),
-	(1540526436631273491, 1540526436631273485, 'unit_Type', '分组单位类型', NULL, NULL, 'text', NULL),
-	(1540526436698382339, 1540526436698382338, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436698382341, 1540526436698382340, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436698382342, 1540526436698382340, 'ANALYSIS_ID', '实时分析ID', NULL, NULL, 'bigint', NULL),
-	(1540526436740325379, 1540526436740325378, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436740325380, 1540526436740325378, 'DISPLAY_NAME', '分组描述', NULL, NULL, 'varchar', NULL),
-	(1540526436740325382, 1540526436740325381, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436740325383, 1540526436740325381, 'DISPLAY_NAME', '数据源名称', NULL, NULL, 'varchar', NULL),
-	(1540526436740325384, 1540526436740325381, 'CONFIG', '数据库配置', NULL, NULL, 'text', NULL),
-	(1540526436740325385, 1540526436740325381, 'TYPE', '数据库类型', NULL, NULL, 'varchar', NULL),
-	(1540526436740325386, 1540526436740325381, 'REMARK', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526436740325388, 1540526436740325387, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436799045633, 1540526436740325387, 'EVENT_GORUP_ID', '事件分组', NULL, NULL, 'varchar', NULL),
-	(1540526436799045634, 1540526436740325387, 'DISPLAY_NAME', '事件名称', NULL, NULL, 'varchar', NULL),
-	(1540526436799045635, 1540526436740325387, 'TABLE_COLUMN_ID', '表字段ID', NULL, NULL, 'bigint', NULL),
-	(1540526436799045636, 1540526436740325387, 'MEASURE', '计算方式', NULL, NULL, 'varchar', NULL),
-	(1540526436799045637, 1540526436740325387, 'VALUE', '事件值', NULL, NULL, 'varchar', NULL),
-	(1540526436799045638, 1540526436740325387, 'VALUE_TYPE', '事件值类型', NULL, NULL, 'varchar', NULL),
-	(1540526436799045640, 1540526436799045639, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436799045641, 1540526436799045639, 'PID', '', NULL, NULL, 'bigint', NULL),
-	(1540526436799045642, 1540526436799045639, 'PIDS', '', NULL, NULL, 'text', NULL),
-	(1540526436799045643, 1540526436799045639, 'DISPLAY_NAME', '事件名称', NULL, NULL, 'varchar', NULL),
-	(1540526436836794369, 1540526436799045644, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436836794370, 1540526436799045644, 'EVENT_ID', '事件编号', NULL, NULL, 'bigint', NULL),
-	(1540526436836794371, 1540526436799045644, 'PROPERTY_ID', '属性编号', NULL, NULL, 'bigint', NULL),
-	(1540526436836794373, 1540526436836794372, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436836794375, 1540526436836794374, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436836794376, 1540526436836794374, 'DISPLAY_NAME', '属性名称', NULL, NULL, 'varchar', NULL),
-	(1540526436836794377, 1540526436836794374, 'PROPERTY_GROUP_ID', '属性分组', NULL, NULL, 'bigint', NULL),
-	(1540526436874543105, 1540526436836794374, 'TABLE_COLUMN_ID', '表字段ID', NULL, NULL, 'bigint', NULL),
-	(1540526436874543106, 1540526436836794374, 'MEASURE', '计算方式', NULL, NULL, 'varchar', NULL),
-	(1540526436874543107, 1540526436836794374, 'VALUE', '属性值', NULL, NULL, 'text', NULL),
-	(1540526436874543108, 1540526436836794374, 'VALUE_TYPE', '属性值类型', NULL, NULL, 'varchar', NULL),
-	(1540526436874543109, 1540526436836794374, 'UNIT', '属性值', NULL, NULL, 'text', NULL),
-	(1540526436874543110, 1540526436836794374, 'UNIT_TYPE', '属性值类型', NULL, NULL, 'varchar', NULL),
-	(1540526436874543111, 1540526436836794374, 'IS_DEFAULT', '属性值类型', NULL, NULL, 'varchar', NULL),
-	(1540526436874543112, 1540526436836794374, 'REMARK', '属性值类型', NULL, NULL, 'varchar', NULL),
-	(1540526436874543114, 1540526436874543113, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436874543115, 1540526436874543113, 'PID', '', NULL, NULL, 'bigint', NULL),
-	(1540526436874543116, 1540526436874543113, 'PIDS', '', NULL, NULL, 'text', NULL),
-	(1540526436874543117, 1540526436874543113, 'DISPLAY_NAME', '分组名称', NULL, NULL, 'varchar', NULL),
-	(1540526436874543119, 1540526436874543118, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436933263363, 1540526436933263362, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436933263365, 1540526436933263364, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436933263366, 1540526436933263364, 'REPORT_ID', '报表ID', NULL, NULL, 'bigint', NULL),
-	(1540526436933263367, 1540526436933263364, 'INDICATOR_ID', '指标ID', NULL, NULL, 'bigint', NULL),
-	(1540526436966817794, 1540526436966817793, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526436966817795, 1540526436966817793, 'DATA_SOURCE_ID', '数据源ID', NULL, NULL, 'bigint', NULL),
-	(1540526436966817796, 1540526436966817793, 'TABLE_NAME', '表名称', NULL, NULL, 'varchar', NULL),
-	(1540526436966817797, 1540526436966817793, 'DISPLAY_NAME', '展示名称', NULL, NULL, 'varchar', NULL),
-	(1540526436966817798, 1540526436966817793, 'REFRESH_TYPE', '刷新方式', NULL, NULL, 'varchar', NULL),
-	(1540526436966817799, 1540526436966817793, 'REMARK', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526437000372225, 1540526436966817800, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526437000372226, 1540526436966817800, 'TABLE_ID', '数据表ID', NULL, NULL, 'bigint', NULL),
-	(1540526437000372227, 1540526436966817800, 'COLUMN_NAME', '字段名称', NULL, NULL, 'varchar', NULL),
-	(1540526437000372228, 1540526436966817800, 'DISPLAY_NAME', '展示名称', NULL, NULL, 'varchar', NULL),
-	(1540526437000372229, 1540526436966817800, 'REFRESH_TYPE', '刷新方式', NULL, NULL, 'varchar', NULL),
-	(1540526437000372230, 1540526436966817800, 'COLUMN_TYPE', '字段类型', NULL, NULL, 'varchar', NULL),
-	(1540526437000372231, 1540526436966817800, 'DATA_TYPE', '数据类型', NULL, NULL, 'varchar', NULL),
-	(1540526437000372232, 1540526436966817800, 'REMARK', '备注', NULL, NULL, 'varchar', NULL),
-	(1540526437000372234, 1540526437000372233, 'ID', '主键ID', NULL, NULL, 'bigint', NULL),
-	(1540526437000372235, 1540526437000372233, 'column_Id', '字段ID', NULL, NULL, 'bigint', NULL),
-	(1540526437000372236, 1540526437000372233, 'connect_Column_Id', '关联字段ID', NULL, NULL, 'bigint', NULL),
-	(1540526437000372237, 1540526437000372233, 'connect_Type', '关联类型', NULL, NULL, 'varchar', NULL),
-	(1540556831401832449, 1540526435444285441, 'id', '主键id', NULL, NULL, 'bigint', NULL),
-	(1540556831468941313, 1540526435444285441, 'name', '应用名称', NULL, NULL, 'varchar', NULL),
-	(1540556831468941314, 1540526435444285441, 'code', '编码', NULL, NULL, 'varchar', NULL),
-	(1540556831468941315, 1540526435444285441, 'active', '是否默认激活（Y-是，N-否）', NULL, NULL, 'varchar', NULL),
-	(1540556831468941316, 1540526435444285441, 'status', '状态（字典 0正常 1停用 2删除）', NULL, NULL, 'tinyint', NULL),
-	(1540556831468941317, 1540526435444285441, 'create_time', '创建时间', NULL, NULL, 'datetime', NULL),
-	(1540556831468941318, 1540526435444285441, 'create_user', '创建人', NULL, NULL, 'bigint', NULL),
-	(1540556831468941319, 1540526435444285441, 'update_time', '修改时间', NULL, NULL, 'datetime', NULL),
-	(1540556831468941320, 1540526435444285441, 'update_user', '修改人', NULL, NULL, 'bigint', NULL),
-	(1542892619376447489, 1540526436740325381, 'TABLE_PREFIX', '表前缀', NULL, NULL, 'varchar', NULL),
-	(1542892619376447490, 1540526436740325381, 'TABLE_SUBFIX', '表后缀', NULL, NULL, 'varchar', NULL),
-	(1542892619422584834, 1540526436740325381, 'PRIMARY_KEYS', '', NULL, NULL, 'varchar', NULL),
-	(1542892621872058370, 1540526437000372233, 'table_id', '表ID', NULL, NULL, 'bigint', NULL),
-	(1542892621872058371, 1540526437000372233, 'connect_table_id', '关联表ID', NULL, NULL, 'bigint', NULL),
-	(1542892673499746305, 1540526436740325381, 'TABLE_PREFIX', '表前缀', NULL, NULL, 'varchar', NULL),
-	(1542892673629769730, 1540526436740325381, 'TABLE_SUBFIX', '表后缀', NULL, NULL, 'varchar', NULL),
-	(1542892673629769731, 1540526436740325381, 'PRIMARY_KEYS', '', NULL, NULL, 'varchar', NULL),
-	(1542892676532228098, 1540526437000372233, 'table_id', '表ID', NULL, NULL, 'bigint', NULL),
-	(1542892676569976834, 1540526437000372233, 'connect_table_id', '关联表ID', NULL, NULL, 'bigint', NULL);
+INSERT INTO `tbl_board_table_column` (`ID`, `TABLE_ID`, `COLUMN_NAME`, `DISPLAY_NAME`, `REFRESH_TYPE`, `COLUMN_TYPE`, `BUSINESS_TYPE`, `DATA_TYPE`, `REMARK`) VALUES
+	(1540526435477839884, 1540526435477839883, 'id', '', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435477839885, 1540526435477839883, 'level_code', '层级', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435477839886, 1540526435477839883, 'parent_code', '父级行政代码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839887, 1540526435477839883, 'area_code', '行政代码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839888, 1540526435477839883, 'zip_code', '邮政编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839889, 1540526435477839883, 'city_code', '区号', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839890, 1540526435477839883, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839891, 1540526435477839883, 'short_name', '简称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839892, 1540526435477839883, 'merger_name', '组合名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839893, 1540526435477839883, 'pinyin', '拼音', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435477839894, 1540526435477839883, 'lng', '经度', NULL, 'NUMBER', NULL, 'decimal', NULL),
+	(1540526435477839895, 1540526435477839883, 'lat', '纬度', NULL, 'NUMBER', NULL, 'decimal', NULL),
+	(1540526435540754435, 1540526435540754434, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435540754436, 1540526435540754434, 'author_name', '作者姓名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435540754437, 1540526435540754434, 'class_name', '类名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435540754438, 1540526435540754434, 'table_prefix', '是否移除表前缀', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308865, 1540526435540754434, 'generate_type', '生成位置类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308866, 1540526435540754434, 'table_name', '数据库表名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308867, 1540526435540754434, 'package_name', '包名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308868, 1540526435540754434, 'bus_name', '业务名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308869, 1540526435540754434, 'table_comment', '功能名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308870, 1540526435540754434, 'app_code', '所属应用', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308871, 1540526435540754434, 'menu_pid', '菜单上级', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435574308872, 1540526435540754434, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435574308873, 1540526435540754434, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435574308874, 1540526435540754434, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435574308875, 1540526435540754434, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435616251905, 1540526435574308876, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435616251906, 1540526435574308876, 'code_gen_id', '代码生成主表ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435616251907, 1540526435574308876, 'column_name', '数据库字段名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251908, 1540526435574308876, 'java_name', 'java类字段名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251909, 1540526435574308876, 'data_type', '物理类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251910, 1540526435574308876, 'column_comment', '字段描述', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251911, 1540526435574308876, 'java_type', 'java类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251912, 1540526435574308876, 'effect_type', '作用类型（字典）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251913, 1540526435574308876, 'dict_type_code', '字典code', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251914, 1540526435574308876, 'whether_table', '列表展示', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251915, 1540526435574308876, 'whether_add_update', '增改', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251916, 1540526435574308876, 'whether_retract', '列表是否缩进（字典）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251917, 1540526435574308876, 'whether_required', '是否必填（字典）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251918, 1540526435574308876, 'query_whether', '是否是查询条件', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251919, 1540526435574308876, 'query_type', '查询方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251920, 1540526435574308876, 'column_key', '主键', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251921, 1540526435574308876, 'column_key_name', '主外键名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251922, 1540526435574308876, 'whether_common', '是否是通用字段', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251923, 1540526435574308876, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435616251924, 1540526435574308876, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435616251925, 1540526435574308876, 'update_time', '修改时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435616251926, 1540526435574308876, 'update_user', '修改人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435616251928, 1540526435616251927, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435616251929, 1540526435616251927, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251930, 1540526435616251927, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251931, 1540526435616251927, 'value', '值', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251932, 1540526435616251927, 'sys_flag', '是否是系统参数（Y-是，N-否）', NULL, 'STRING', NULL, 'char', NULL),
+	(1540526435616251933, 1540526435616251927, 'remark', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251934, 1540526435616251927, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435616251935, 1540526435616251927, 'group_code', '常量所属分类的编码，来自于“常量的分类”字典', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435616251936, 1540526435616251927, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435616251937, 1540526435616251927, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435616251938, 1540526435616251927, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435616251939, 1540526435616251927, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435687555074, 1540526435687555073, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435721109506, 1540526435687555073, 'type_id', '字典类型id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435721109507, 1540526435687555073, 'value', '值', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526435721109508, 1540526435687555073, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435721109509, 1540526435687555073, 'sort', '排序', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526435721109510, 1540526435687555073, 'remark', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435721109511, 1540526435687555073, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435721109512, 1540526435687555073, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435721109513, 1540526435687555073, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435721109514, 1540526435687555073, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435721109515, 1540526435687555073, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858241, 1540526435721109516, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858242, 1540526435721109516, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435758858243, 1540526435721109516, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435758858244, 1540526435721109516, 'sort', '排序', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526435758858245, 1540526435721109516, 'remark', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435758858246, 1540526435721109516, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435758858247, 1540526435721109516, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435758858248, 1540526435721109516, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858249, 1540526435721109516, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435758858250, 1540526435721109516, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858252, 1540526435758858251, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858253, 1540526435758858251, 'job_num', '工号', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435758858254, 1540526435758858251, 'org_id', '所属机构id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858255, 1540526435758858251, 'org_name', '所属机构名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435758858257, 1540526435758858256, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858258, 1540526435758858256, 'emp_id', '员工id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858259, 1540526435758858256, 'org_id', '机构id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435758858260, 1540526435758858256, 'pos_id', '岗位id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967105, 1540526435758858261, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967106, 1540526435758858261, 'emp_id', '员工id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967107, 1540526435758858261, 'pos_id', '职位id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967109, 1540526435825967108, 'id', '主键id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967110, 1540526435825967108, 'file_location', '文件存储位置（1:阿里云，2:腾讯云，3:minio，4:本地）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435825967111, 1540526435825967108, 'file_bucket', '文件仓库', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435825967112, 1540526435825967108, 'file_origin_name', '文件名称（上传时候的文件名）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435825967113, 1540526435825967108, 'file_suffix', '文件后缀', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435825967114, 1540526435825967108, 'file_size_kb', '文件大小kb', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967115, 1540526435825967108, 'file_size_info', '文件大小信息，计算后的', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435825967116, 1540526435825967108, 'file_object_name', '存储到bucket的名称（文件唯一标识id）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435825967117, 1540526435825967108, 'file_path', '存储路径', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435825967118, 1540526435825967108, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435825967119, 1540526435825967108, 'create_user', '创建用户', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435825967120, 1540526435825967108, 'update_time', '修改时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435825967121, 1540526435825967108, 'update_user', '修改用户', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435893075970, 1540526435893075969, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435893075971, 1540526435893075969, 'pid', '父id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435930824706, 1540526435893075969, 'pids', '父ids', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526435930824707, 1540526435893075969, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824708, 1540526435893075969, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824709, 1540526435893075969, 'type', '菜单类型（字典 0目录 1菜单 2按钮）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435930824710, 1540526435893075969, 'icon', '图标', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824711, 1540526435893075969, 'router', '路由地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824712, 1540526435893075969, 'component', '组件地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824713, 1540526435893075969, 'permission', '权限标识', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824714, 1540526435893075969, 'application', '应用分类（应用编码）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824715, 1540526435893075969, 'open_type', '打开方式（字典 0无 1组件 2内链 3外链）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435930824716, 1540526435893075969, 'visible', '是否可见（Y-是，N-否）', NULL, 'STRING', NULL, 'char', NULL),
+	(1540526435930824717, 1540526435893075969, 'link', '链接地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824718, 1540526435893075969, 'redirect', '重定向地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824719, 1540526435893075969, 'weight', '权重（字典 1系统权重 2业务权重）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435930824720, 1540526435893075969, 'sort', '排序', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526435930824721, 1540526435893075969, 'remark', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435930824722, 1540526435893075969, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435930824723, 1540526435893075969, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435930824724, 1540526435893075969, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435930824725, 1540526435893075969, 'update_time', '修改时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435930824726, 1540526435893075969, 'update_user', '修改人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435964379138, 1540526435964379137, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435964379139, 1540526435964379137, 'title', '标题', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435964379140, 1540526435964379137, 'content', '内容', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526435964379141, 1540526435964379137, 'type', '类型（字典 1通知 2公告）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435964379142, 1540526435964379137, 'public_user_id', '发布人id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435964379143, 1540526435964379137, 'public_user_name', '发布人姓名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435964379144, 1540526435964379137, 'public_org_id', '发布机构id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435964379145, 1540526435964379137, 'public_org_name', '发布机构名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526435964379146, 1540526435964379137, 'public_time', '发布时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435964379147, 1540526435964379137, 'cancel_time', '撤回时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435964379148, 1540526435964379137, 'status', '状态（字典 0草稿 1发布 2撤回 3删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526435964379149, 1540526435964379137, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435964379150, 1540526435964379137, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526435964379151, 1540526435964379137, 'update_time', '修改时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526435964379152, 1540526435964379137, 'update_user', '修改人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436027293698, 1540526436027293697, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436027293699, 1540526436027293697, 'notice_id', '通知公告id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436027293700, 1540526436027293697, 'user_id', '用户id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436027293701, 1540526436027293697, 'status', '状态（字典 0未读 1已读）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436027293702, 1540526436027293697, 'read_time', '阅读时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436065042434, 1540526436065042433, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436065042435, 1540526436065042433, 'uuid', '第三方平台的用户唯一id', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042436, 1540526436065042433, 'access_token', '用户授权的token', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042437, 1540526436065042433, 'nick_name', '昵称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042438, 1540526436065042433, 'avatar', '头像', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042439, 1540526436065042433, 'blog', '用户网址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042440, 1540526436065042433, 'company', '所在公司', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042441, 1540526436065042433, 'location', '位置', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042442, 1540526436065042433, 'email', '邮箱', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042443, 1540526436065042433, 'gender', '性别', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042444, 1540526436065042433, 'source', '用户来源', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042445, 1540526436065042433, 'remark', '用户备注（各平台中的用户个人介绍）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436065042446, 1540526436065042433, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436065042447, 1540526436065042433, 'create_user', '创建用户', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436065042448, 1540526436065042433, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436065042449, 1540526436065042433, 'update_user', '更新用户', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436106985475, 1540526436106985474, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436106985476, 1540526436106985474, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985477, 1540526436106985474, 'op_type', '操作类型', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436106985478, 1540526436106985474, 'success', '是否执行成功（Y-是，N-否）', NULL, 'STRING', NULL, 'char', NULL),
+	(1540526436106985479, 1540526436106985474, 'message', '具体消息', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436106985480, 1540526436106985474, 'ip', 'ip', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985481, 1540526436106985474, 'location', '地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985482, 1540526436106985474, 'browser', '浏览器', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985483, 1540526436106985474, 'os', '操作系统', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985484, 1540526436106985474, 'url', '请求地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985485, 1540526436106985474, 'class_name', '类名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436106985486, 1540526436106985474, 'method_name', '方法名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734209, 1540526436106985474, 'req_method', '请求方式（GET POST PUT DELETE)', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734210, 1540526436106985474, 'param', '请求参数', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436144734211, 1540526436106985474, 'result', '返回结果', NULL, 'STRING', NULL, 'longtext', NULL),
+	(1540526436144734212, 1540526436106985474, 'op_time', '操作时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436144734213, 1540526436106985474, 'account', '操作账号', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734214, 1540526436106985474, 'sign_value', '签名数据（除ID外）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734216, 1540526436144734215, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436144734217, 1540526436144734215, 'pid', '父id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436144734218, 1540526436144734215, 'pids', '父ids', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436144734219, 1540526436144734215, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734220, 1540526436144734215, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734221, 1540526436144734215, 'sort', '排序', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526436144734222, 1540526436144734215, 'remark', '描述', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734223, 1540526436144734215, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436144734224, 1540526436144734215, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436144734225, 1540526436144734215, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436144734226, 1540526436144734215, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436144734227, 1540526436144734215, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436144734229, 1540526436144734228, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436144734230, 1540526436144734228, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734231, 1540526436144734228, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734232, 1540526436144734228, 'sort', '排序', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526436144734233, 1540526436144734228, 'remark', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436144734234, 1540526436144734228, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436144734235, 1540526436144734228, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436144734236, 1540526436144734228, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436144734237, 1540526436144734228, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436144734238, 1540526436144734228, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436241203203, 1540526436241203202, 'id', '主键id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436241203204, 1540526436241203202, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436241203205, 1540526436241203202, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436241203206, 1540526436241203202, 'sort', '序号', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526436241203207, 1540526436241203202, 'data_scope_type', '数据范围类型（字典 1全部数据 2本部门及以下数据 3本部门数据 4仅本人数据 5自定义数据）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436241203208, 1540526436241203202, 'remark', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436241203209, 1540526436241203202, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436241203210, 1540526436241203202, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436241203211, 1540526436241203202, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436241203212, 1540526436241203202, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436241203213, 1540526436241203202, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951938, 1540526436241203214, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951939, 1540526436241203214, 'role_id', '角色id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951940, 1540526436241203214, 'org_id', '机构id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951942, 1540526436278951941, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951943, 1540526436278951941, 'role_id', '角色id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951944, 1540526436278951941, 'menu_id', '菜单id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951946, 1540526436278951945, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436278951947, 1540526436278951945, 'phone_numbers', '手机号', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436278951948, 1540526436278951945, 'validate_code', '短信验证码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700673, 1540526436278951945, 'template_code', '短信模板ID', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700674, 1540526436278951945, 'biz_id', '回执id，可根据该id查询具体的发送状态', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700675, 1540526436278951945, 'status', '发送状态（字典 0 未发送，1 发送成功，2 发送失败，3 失效）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436316700676, 1540526436278951945, 'source', '来源（字典 1 app， 2 pc， 3 其他）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436316700677, 1540526436278951945, 'invalid_time', '失效时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436316700678, 1540526436278951945, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436316700679, 1540526436278951945, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436316700680, 1540526436278951945, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436316700681, 1540526436278951945, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436316700683, 1540526436316700682, 'id', '定时器id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436316700684, 1540526436316700682, 'timer_name', '任务名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700685, 1540526436316700682, 'action_class', '执行任务的class的类名（实现了TimerTaskRunner接口的类的全称）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700686, 1540526436316700682, 'cron', '定时任务表达式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700687, 1540526436316700682, 'job_status', '状态（字典 1运行  2停止）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436316700688, 1540526436316700682, 'param', '', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436316700689, 1540526436316700682, 'remark', '备注信息', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436316700690, 1540526436316700682, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436316700691, 1540526436316700682, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436316700692, 1540526436316700682, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436316700693, 1540526436316700682, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436383809537, 1540526436316700694, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436383809538, 1540526436316700694, 'TIMER_ID', '任务编号', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436383809539, 1540526436316700694, 'EXECUTE_START_TIME', '执行开始时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436383809540, 1540526436316700694, 'EXECUTE_END_TIME', '执行结束时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436383809541, 1540526436316700694, 'EXECUTE_CODE', '执行结果', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809542, 1540526436316700694, 'EXECUTE_MSG', '执行信息', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436383809543, 1540526436316700694, 'EXECUTE_PARAM', '执行参数', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436383809545, 1540526436383809544, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436383809546, 1540526436383809544, 'account', '账号', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809547, 1540526436383809544, 'pwd_hash_value', '密码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809548, 1540526436383809544, 'nick_name', '昵称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809549, 1540526436383809544, 'name', '姓名', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809550, 1540526436383809544, 'avatar', '头像', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436383809551, 1540526436383809544, 'birthday', '生日', NULL, 'DATE_TIME', NULL, 'date', NULL),
+	(1540526436383809552, 1540526436383809544, 'sex', '性别(字典 1男 2女 3未知)', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436383809553, 1540526436383809544, 'email', '邮箱', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809554, 1540526436383809544, 'phone', '手机', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809555, 1540526436383809544, 'tel', '电话', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809556, 1540526436383809544, 'last_login_ip', '最后登陆IP', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436383809557, 1540526436383809544, 'last_login_time', '最后登陆时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436383809558, 1540526436383809544, 'admin_type', '管理员类型（0超级管理员 1非管理员）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436383809559, 1540526436383809544, 'status', '状态（字典 0正常 1冻结 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436383809560, 1540526436383809544, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436383809561, 1540526436383809544, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436383809562, 1540526436383809544, 'update_time', '更新时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436383809563, 1540526436383809544, 'update_user', '更新人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918403, 1540526436450918402, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918404, 1540526436450918402, 'user_id', '用户id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918405, 1540526436450918402, 'org_id', '机构id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918407, 1540526436450918406, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918408, 1540526436450918406, 'user_id', '用户id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918409, 1540526436450918406, 'role_id', '角色id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918411, 1540526436450918410, 'id', '主键', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436450918412, 1540526436450918410, 'name', '名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436450918413, 1540526436450918410, 'success', '是否执行成功（Y-是，N-否）', NULL, 'STRING', NULL, 'char', NULL),
+	(1540526436450918414, 1540526436450918410, 'message', '具体消息', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436450918415, 1540526436450918410, 'ip', 'ip', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436450918416, 1540526436450918410, 'location', '地址', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436450918417, 1540526436450918410, 'browser', '浏览器', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436450918418, 1540526436450918410, 'os', '操作系统', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436450918419, 1540526436450918410, 'vis_type', '操作类型（字典 1登入 2登出）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540526436450918420, 1540526436450918410, 'vis_time', '访问时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436450918421, 1540526436450918410, 'account', '访问账号', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436450918422, 1540526436450918410, 'sign_value', '签名数据（除ID外）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436518027267, 1540526436518027266, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436518027268, 1540526436518027266, 'DISPLAY_NAME', '展示名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436518027269, 1540526436518027266, 'TYPE', '类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436518027270, 1540526436518027266, 'CHART_CONFIG', '图标配置', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436518027271, 1540526436518027266, 'START_TIME', '开始时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436518027272, 1540526436518027266, 'END_TIME', '结束时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540526436518027273, 1540526436518027266, 'FILTER_LOGIC', '条件逻辑', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436518027275, 1540526436518027274, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436518027276, 1540526436518027274, 'ANALYSIS_ID', '实时分析ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436518027277, 1540526436518027274, 'EVENT_ID', '事件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436518027278, 1540526436518027274, 'SORT', '排序', NULL, 'NUMBER', NULL, 'int', NULL),
+	(1540526436597719041, 1540526436518027279, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436597719042, 1540526436518027279, 'PARENT_ID', '父级条件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436597719043, 1540526436518027279, 'ANALYSIS_EVENT_ID', '实时分析事件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436597719044, 1540526436518027279, 'PROPERTY_ID', '属性ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436597719045, 1540526436518027279, 'SUB_LOGIC', '子级条件逻辑', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436597719046, 1540526436518027279, 'MEASURE', '计算方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436597719047, 1540526436518027279, 'VALUE', '条件值', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436631273473, 1540526436597719048, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273474, 1540526436597719048, 'ANALYSIS_EVENT_ID', '实时分析ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273475, 1540526436597719048, 'property_Id', '事件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273476, 1540526436597719048, 'measure', '计算方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436631273478, 1540526436631273477, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273479, 1540526436631273477, 'PARENT_ID', '父级条件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273480, 1540526436631273477, 'ANALYSIS_ID', '实时分析事件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273481, 1540526436631273477, 'PROPERTY_ID', '属性ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273482, 1540526436631273477, 'SUB_LOGIC', '子级条件逻辑', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436631273483, 1540526436631273477, 'MEASURE', '计算方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436631273484, 1540526436631273477, 'VALUE', '条件值', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436631273486, 1540526436631273485, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273487, 1540526436631273485, 'PARENT_ID', '父级条件ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273488, 1540526436631273485, 'ANALYSIS_ID', '实时分析ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273489, 1540526436631273485, 'PROPERTY_ID', '属性ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436631273490, 1540526436631273485, 'unit', '分组单位', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436631273491, 1540526436631273485, 'unit_Type', '分组单位类型', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436698382339, 1540526436698382338, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436698382341, 1540526436698382340, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436698382342, 1540526436698382340, 'ANALYSIS_ID', '实时分析ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436740325379, 1540526436740325378, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436740325380, 1540526436740325378, 'DISPLAY_NAME', '分组描述', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436740325382, 1540526436740325381, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436740325383, 1540526436740325381, 'DISPLAY_NAME', '数据源名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436740325384, 1540526436740325381, 'CONFIG', '数据库配置', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436740325385, 1540526436740325381, 'TYPE', '数据库类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436740325386, 1540526436740325381, 'REMARK', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436740325388, 1540526436740325387, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436799045633, 1540526436740325387, 'EVENT_GORUP_ID', '事件分组', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436799045634, 1540526436740325387, 'DISPLAY_NAME', '事件名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436799045635, 1540526436740325387, 'TABLE_COLUMN_ID', '表字段ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436799045636, 1540526436740325387, 'MEASURE', '计算方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436799045637, 1540526436740325387, 'VALUE', '事件值', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436799045638, 1540526436740325387, 'VALUE_TYPE', '事件值类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436799045640, 1540526436799045639, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436799045641, 1540526436799045639, 'PID', '', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436799045642, 1540526436799045639, 'PIDS', '', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436799045643, 1540526436799045639, 'DISPLAY_NAME', '事件名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436836794369, 1540526436799045644, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436836794370, 1540526436799045644, 'EVENT_ID', '事件编号', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436836794371, 1540526436799045644, 'PROPERTY_ID', '属性编号', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436836794373, 1540526436836794372, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436836794375, 1540526436836794374, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436836794376, 1540526436836794374, 'DISPLAY_NAME', '属性名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436836794377, 1540526436836794374, 'PROPERTY_GROUP_ID', '属性分组', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436874543105, 1540526436836794374, 'TABLE_COLUMN_ID', '表字段ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436874543106, 1540526436836794374, 'MEASURE', '计算方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436874543107, 1540526436836794374, 'VALUE', '属性值', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436874543108, 1540526436836794374, 'VALUE_TYPE', '属性值类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436874543109, 1540526436836794374, 'UNIT', '属性值', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436874543110, 1540526436836794374, 'UNIT_TYPE', '属性值类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436874543111, 1540526436836794374, 'IS_DEFAULT', '属性值类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436874543112, 1540526436836794374, 'REMARK', '属性值类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436874543114, 1540526436874543113, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436874543115, 1540526436874543113, 'PID', '', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436874543116, 1540526436874543113, 'PIDS', '', NULL, 'STRING', NULL, 'text', NULL),
+	(1540526436874543117, 1540526436874543113, 'DISPLAY_NAME', '分组名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436874543119, 1540526436874543118, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436933263363, 1540526436933263362, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436933263365, 1540526436933263364, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436933263366, 1540526436933263364, 'REPORT_ID', '报表ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436933263367, 1540526436933263364, 'INDICATOR_ID', '指标ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436966817794, 1540526436966817793, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436966817795, 1540526436966817793, 'DATA_SOURCE_ID', '数据源ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526436966817796, 1540526436966817793, 'TABLE_NAME', '表名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436966817797, 1540526436966817793, 'DISPLAY_NAME', '展示名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436966817798, 1540526436966817793, 'REFRESH_TYPE', '刷新方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526436966817799, 1540526436966817793, 'REMARK', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372225, 1540526436966817800, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526437000372226, 1540526436966817800, 'TABLE_ID', '数据表ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526437000372227, 1540526436966817800, 'COLUMN_NAME', '字段名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372228, 1540526436966817800, 'DISPLAY_NAME', '展示名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372229, 1540526436966817800, 'REFRESH_TYPE', '刷新方式', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372230, 1540526436966817800, 'COLUMN_TYPE', '字段类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372231, 1540526436966817800, 'DATA_TYPE', '数据类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372232, 1540526436966817800, 'REMARK', '备注', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540526437000372234, 1540526437000372233, 'ID', '主键ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526437000372235, 1540526437000372233, 'column_Id', '字段ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526437000372236, 1540526437000372233, 'connect_Column_Id', '关联字段ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540526437000372237, 1540526437000372233, 'connect_Type', '关联类型', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540556831401832449, 1540526435444285441, 'id', '主键id', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540556831468941313, 1540526435444285441, 'name', '应用名称', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540556831468941314, 1540526435444285441, 'code', '编码', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540556831468941315, 1540526435444285441, 'active', '是否默认激活（Y-是，N-否）', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1540556831468941316, 1540526435444285441, 'status', '状态（字典 0正常 1停用 2删除）', NULL, 'NUMBER', NULL, 'tinyint', NULL),
+	(1540556831468941317, 1540526435444285441, 'create_time', '创建时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540556831468941318, 1540526435444285441, 'create_user', '创建人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1540556831468941319, 1540526435444285441, 'update_time', '修改时间', NULL, 'DATE_TIME', NULL, 'datetime', NULL),
+	(1540556831468941320, 1540526435444285441, 'update_user', '修改人', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1542892619376447489, 1540526436740325381, 'TABLE_PREFIX', '表前缀', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1542892619376447490, 1540526436740325381, 'TABLE_SUBFIX', '表后缀', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1542892619422584834, 1540526436740325381, 'PRIMARY_KEYS', '', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1542892621872058370, 1540526437000372233, 'table_id', '表ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1542892621872058371, 1540526437000372233, 'connect_table_id', '关联表ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1542892673499746305, 1540526436740325381, 'TABLE_PREFIX', '表前缀', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1542892673629769730, 1540526436740325381, 'TABLE_SUBFIX', '表后缀', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1542892673629769731, 1540526436740325381, 'PRIMARY_KEYS', '', NULL, 'STRING', NULL, 'varchar', NULL),
+	(1542892676532228098, 1540526437000372233, 'table_id', '表ID', NULL, 'NUMBER', NULL, 'bigint', NULL),
+	(1542892676569976834, 1540526437000372233, 'connect_table_id', '关联表ID', NULL, 'NUMBER', NULL, 'bigint', NULL);
 /*!40000 ALTER TABLE `tbl_board_table_column` ENABLE KEYS */;
 
 -- 导出  表 young-board.tbl_board_table_connect 结构
