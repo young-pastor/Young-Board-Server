@@ -137,23 +137,9 @@ If you need commercial value-added services, please add wechat communication.
 
 We hope your logo will appear here. Please click here [issue to register](https://gitee.com/young-pastor/Young-Board-Server/issues), we will give priority to technical support
 
-#### Donation support
-If you feel that our open source project Xiaoxiang data behavior analysis is helpful to you, please invite the project developers to have a cup of tea!Currently, we accept donations from wechat, Alipay or code cloud. Please note your nickname or postscript when donating.
-Your donation will be used to pay some expenses of the project, and encourage developers to better promote the development of the project. At the same time, you are welcome to donate public servers to improve the online demonstration system experience.
-
-|![enter picture description](Image/alipay.jpg "screenshot.Png") |![enter picture description](Image/alipay.jpg "screenshot.Png")|
-|---|---|
 
 
 
-#### Long term donation
+#### contact us
 
-If you are the operator of the enterprise and have plans to use the behavior analysis of Xiaoxiang data in the company's operating products, you are welcome to make a long-term donation. The commercial benefits of long-term donation include:
-
-- Positive response, rapid maintenance and timely update;
-
-- The enterprise name, logo and official website link will be displayed in the open source warehouse, Xiaoxiang smart official website and publicity materials for a long time;
-
-- The donation amount shall be deducted in the same proportion from the price of paid products for the future data behavior analysis of small elephants.
-
-If you are interested in sponsoring the small elephant smart team for a long time, or have other good ideas, please contact the development team on wechat my0o0heart, or send an email to young@zhisida.com。
+please contact the development team on wechat my0o0heart, or send an email to young@zhisida.com。
