@@ -4,7 +4,7 @@
 
 ## 完整开发使用文档
 [演示地址](http://board.zhisida.com)
-- 账户 ：admin
+- 账户 ：SuperAdmin
 - 密码 ：123456
 
 [详情开发使用介绍](http://board.zhisida.com/docs/share/162f64f8-bc27-41c1-818c-57f6a953fab1)
